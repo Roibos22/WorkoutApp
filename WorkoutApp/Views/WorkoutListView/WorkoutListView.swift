@@ -16,9 +16,14 @@ struct WorkoutListView: View {
             ScrollView {
                 VStack {
                     ForEach(workouts) { workout in
-                        WorkoutCardView(workout: workout)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal)
+                        NavigationLink {
+                            WorkoutDetailView(workout: workout)
+                        } label: {
+                            WorkoutCardView(workout: workout)
+                                .padding(.vertical, 10)
+                                .padding(.horizontal)
+                                .foregroundColor(.black)
+                        }
                     }
                 }
             }
