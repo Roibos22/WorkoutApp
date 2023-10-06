@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  WorkoutListView.swift
 //  WorkoutApp
 //
-//  Created by Leon Grimmeisen on 04.10.23.
+//  Created by Leon Grimmeisen on 06.10.23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct WorkoutListView: View {
     
     let workouts: [Workout] = Workout.sampleWorkouts
     
@@ -59,8 +59,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WorkoutListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WorkoutListView()
     }
 }
