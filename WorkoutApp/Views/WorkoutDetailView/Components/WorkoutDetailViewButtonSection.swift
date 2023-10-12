@@ -49,7 +49,7 @@ struct WorkoutDetailViewButtonSection: View {
             }
             // Start Workout
             NavigationLink {
-                // Workout
+                WorkoutActiveView(workout: workout)
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)

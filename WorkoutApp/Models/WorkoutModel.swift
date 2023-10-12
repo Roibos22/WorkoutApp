@@ -7,20 +7,33 @@
 
 import Foundation
 
-struct Exercise: Identifiable {
-    let id = UUID()
+struct Exercise: Identifiable, Codable {
+    var id = UUID()
     var title: String
     var duration: Double
     var rest: Double
 }
 
-struct Workout: Identifiable {
-    let id = UUID()
+struct Workout: Identifiable, Codable {
+    var id = UUID()
     var title: String
     var cycles: Int
     var duration: Double
     var exercises: [Exercise]
     var completions: Int
+    
+    init(id: UUID = UUID(), title: String, cycles: Int, duration: Double, exercises: [Exercise], completions: Int) {
+        self.id = id
+        self.title = title
+        self.cycles = cycles
+        self.duration = duration
+        self.exercises = exercises
+        self.completions = completions
+    }
+    
+    func updateCompletion() -> Workout {
+        return Workout(title: title, cycles: cycles, duration: duration, exercises: exercises, completions: completions)
+    }
 }
 
 extension Workout {
@@ -47,3 +60,5 @@ extension Workout {
         ], completions: 4)
     ]
 }
+
+

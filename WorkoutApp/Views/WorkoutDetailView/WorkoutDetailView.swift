@@ -7,9 +7,39 @@
 
 import SwiftUI
 
+struct WorkoutRemoveCard: View {
+    
+    let workout: Workout
+    
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Text("")
+                .offset(x: 15, y: -43)
+                .foregroundColor(.gray)
+                .bold()
+                .font(.subheadline)
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundColor(Color.red)
+                .frame(height: 60)
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black, lineWidth: 2))
+            HStack {
+                Spacer()
+                Text("Delete Workout")
+                Spacer()
+            }
+            .padding()
+            .font(.title2)
+            .bold()
+        }
+        .padding(.vertical, 10)
+
+    }
+}
+
 struct WorkoutDetailView: View {
     
     let workout: Workout
+    @State private var showDeleteWorkoutAlert: Bool = false
     
     var body: some View {
 
@@ -25,10 +55,33 @@ struct WorkoutDetailView: View {
                     // Exercises
                     WorkoutDetailViewExercisesSection(workout: workout)
                     
+                    WorkoutRemoveCard(workout: workout)
+                        .onTapGesture {
+                            showDeleteWorkoutAlert.toggle()
+                        }
+
+                    
                     Spacer()
                 }
                 .padding(.horizontal)
                 .navigationTitle(workout.title)
+                .confirmationDialog(
+                    Text("Delete Workout?"),
+                    isPresented: $showDeleteWorkoutAlert,
+                    titleVisibility: .visible
+                ) {
+                    Button(role: .destructive) {
+                        withAnimation {
+                            //if let tabata = tabataToBeDeleted {
+                            //    vm.deleteTabataWithoutIndex(tabata: tabata)
+                            //} else {
+                                // do nothing
+                            //}
+                        }
+                    } label: {
+                        Text("Delete")
+                    }
+                }
             }
         }
 

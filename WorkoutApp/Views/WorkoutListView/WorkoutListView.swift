@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct WorkoutListView: View {
     
     let workouts: [Workout] = Workout.sampleWorkouts

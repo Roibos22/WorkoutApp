@@ -98,14 +98,16 @@ struct ExerciseDetailView: View {
     let exercise: Exercise
     
     var body: some View {
-        VStack {
-            ExerciseSettingsTitleCard(exercise: exercise)
-            ExerciseSettingsValueCard(exercise: exercise, title: "Exercise Duration", icon: "stopwatch", value: exercise.duration)
-            ExerciseSettingsValueCard(exercise: exercise, title: "Exercise Rest", icon: "hourglass", value: exercise.rest)
-            ExerciseSettingsRemoveCard(exercise: exercise)
+        ScrollView {
+            VStack {
+                ExerciseSettingsTitleCard(exercise: exercise)
+                ExerciseSettingsValueCard(exercise: exercise, title: "Exercise Duration", icon: "stopwatch", value: exercise.duration)
+                ExerciseSettingsValueCard(exercise: exercise, title: "Exercise Rest", icon: "hourglass", value: exercise.rest)
+                ExerciseSettingsRemoveCard(exercise: exercise)
+            }
+            .padding()
+            .navigationTitle(exercise.title)
         }
-        .padding(.horizontal)
-        .navigationTitle(exercise.title)
     }
 }
 
