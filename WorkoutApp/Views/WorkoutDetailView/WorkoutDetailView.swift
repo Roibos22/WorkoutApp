@@ -40,6 +40,7 @@ struct WorkoutDetailView: View {
     
     let workout: Workout
     @State private var showDeleteWorkoutAlert: Bool = false
+    @EnvironmentObject var vm: ViewModel
     
     var body: some View {
 
@@ -59,8 +60,6 @@ struct WorkoutDetailView: View {
                         .onTapGesture {
                             showDeleteWorkoutAlert.toggle()
                         }
-
-                    
                     Spacer()
                 }
                 .padding(.horizontal)
@@ -72,6 +71,7 @@ struct WorkoutDetailView: View {
                 ) {
                     Button(role: .destructive) {
                         withAnimation {
+                            vm.delete(workout: workout)
                             //if let tabata = tabataToBeDeleted {
                             //    vm.deleteTabataWithoutIndex(tabata: tabata)
                             //} else {

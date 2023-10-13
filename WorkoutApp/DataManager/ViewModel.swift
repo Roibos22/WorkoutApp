@@ -18,7 +18,13 @@ class ViewModel: ObservableObject {
             let data = try Data(contentsOf: savePath)
             workouts = try JSONDecoder().decode([Workout].self, from: data)
         } catch {
-            workouts = []
+            workouts = [
+                Workout(title: "Workout", cycles: 2, duration: 500, exercises: [
+                    Exercise(title: "Push ups", duration: 20, rest: 10),
+                    Exercise(title: "Crunches", duration: 20, rest: 10),
+                    Exercise(title: "Exercise", duration: 20, rest: 10)
+                ], completions: 0)
+            ]
         }
     }
     
