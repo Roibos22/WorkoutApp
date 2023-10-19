@@ -34,9 +34,19 @@ struct Workout: Identifiable, Codable {
     func updateCompletion() -> Workout {
         return Workout(title: title, cycles: cycles, duration: duration, exercises: exercises, completions: completions)
     }
+    
+
+    
 }
 
 extension Workout {
+    
+    static var newWorkout: Workout = Workout(title: "Workout", cycles: 0, duration: 200, exercises: [
+        Exercise(title: "Exercise 1", duration: 20, rest: 10),
+        Exercise(title: "Exercise 2", duration: 20, rest: 10),
+        Exercise(title: "Exercise 3", duration: 20, rest: 10)
+    ], completions: 0)
+    
     static var sampleWorkouts: [Workout] = [
         Workout(title: "Tabata", cycles: 2, duration: 1060, exercises: [
             Exercise(title: "Push ups", duration: 20, rest: 20),

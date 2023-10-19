@@ -18,7 +18,7 @@ struct WorkoutListView: View {
                 VStack {
                     ForEach(vm.workouts) { workout in
                         NavigationLink {
-                            WorkoutDetailView(workout: workout)
+                            WorkoutDetailView(workout: workout, createNew: false, workoutTitle: workout.title)
                                 .environmentObject(vm)
                         } label: {
                             WorkoutCardView(workout: workout)
@@ -52,14 +52,11 @@ struct WorkoutListView: View {
                 }
                 
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                    Button {
-                        // create and add new workout
-                        let workout = Workout(title: "New", cycles: 1, duration: 100, exercises: [
-                            Exercise(title: "Exercise", duration: 20, rest: 10)
-                        ], completions: 0)
-                        vm.addWorkout(workout: workout)
-                        // open add workout view
-
+                    NavigationLink {
+                        WorkoutDetailView(workout: Workout.newWorkout, createNew: true, workoutTitle: Workout.newWorkout.title)
+                             .environmentObject(vm)
+                        // create copy of workout and inject here
+                        // in DetailView: after 1 sec, check if workout already exists and save
                     } label: {
                         Image(systemName: "plus.circle.fill")
                             .foregroundColor(.black)

@@ -38,15 +38,17 @@ struct WorkoutRemoveCard: View {
 
 struct WorkoutDetailView: View {
     
-    let workout: Workout
-    @State private var showDeleteWorkoutAlert: Bool = false
     @EnvironmentObject var vm: ViewModel
+    let workout: Workout
+    let createNew: Bool
+
+    @State private var showDeleteWorkoutAlert: Bool = false
+    @State var workoutTitle: String
     
     var body: some View {
 
             ScrollView {
                 VStack {
-                    
                     // Button Section
                     WorkoutDetailViewButtonSection(workout: workout)
 
@@ -63,32 +65,55 @@ struct WorkoutDetailView: View {
                     Spacer()
                 }
                 .padding(.horizontal)
-                .navigationTitle(workout.title)
-                .confirmationDialog(
-                    Text("Delete Workout?"),
-                    isPresented: $showDeleteWorkoutAlert,
-                    titleVisibility: .visible
-                ) {
-                    Button(role: .destructive) {
-                        withAnimation {
-                            vm.delete(workout: workout)
-                            //if let tabata = tabataToBeDeleted {
-                            //    vm.deleteTabataWithoutIndex(tabata: tabata)
-                            //} else {
-                                // do nothing
-                            //}
-                        }
-                    } label: {
-                        Text("Delete")
+                Spacer()
+
+            }
+            .confirmationDialog(
+                Text("Delete Workout?"),
+                isPresented: $showDeleteWorkoutAlert,
+                titleVisibility: .visible
+            ) {
+                Button(role: .destructive) {
+                    withAnimation {
+                        vm.delete(workout: workout)
+                        //if let tabata = tabataToBeDeleted {
+                        //    vm.deleteTabataWithoutIndex(tabata: tabata)
+                        //} else {
+                            // do nothing
+                        //}
                     }
+                } label: {
+                    Text("Delete")
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                        TextField("Workout Title", text: $workoutTitle)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .font(.title)
+                            .bold()
+                            .onSubmit {
+                                vm.updateWorkoutTitle(workout: workout, title: workoutTitle)
+                            }
+                }
+            }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    if createNew == true {
+                        vm.addWorkout(workout: workout)
+                    }
+                }
+                
+            }
         }
-
 }
 
 struct WorkoutDetailView_Previews: PreviewProvider {
+    static let myEnvObject = ViewModel()
     static var previews: some View {
-        WorkoutDetailView(workout: Workout.sampleWorkouts[0])
+        NavigationView {
+            WorkoutDetailView(workout: Workout.sampleWorkouts[0], createNew: true, workoutTitle: Workout.sampleWorkouts[0].title)
+                .environmentObject(myEnvObject)
+        }
     }
 }
