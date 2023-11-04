@@ -51,6 +51,7 @@ struct WorkoutDetailView: View {
                 VStack {
                     // Button Section
                     WorkoutDetailViewButtonSection(workout: workout)
+                        .environmentObject(vm)
 
                     // Workout Settings
                     WorkoutSettingsSection()
@@ -113,7 +114,6 @@ struct WorkoutDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             WorkoutDetailView(workout: Workout.sampleWorkouts[0], createNew: true, workoutTitle: Workout.sampleWorkouts[0].title)
-                .environmentObject(myEnvObject)
         }
     }
 }

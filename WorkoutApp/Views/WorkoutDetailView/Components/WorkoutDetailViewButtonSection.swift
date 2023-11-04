@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkoutDetailViewButtonSection: View {
     
     let workout: Workout
+    @EnvironmentObject var vm: ViewModel
     
     var body: some View {
         HStack {
@@ -49,7 +50,7 @@ struct WorkoutDetailViewButtonSection: View {
             }
             // Start Workout
             NavigationLink {
-                WorkoutActiveView(workout: workout)
+                WorkoutActiveView(workout: workout, workoutTimeline: vm.getWorkoutTimeline(workout: workout))
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)

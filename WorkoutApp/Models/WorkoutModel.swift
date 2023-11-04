@@ -14,56 +14,81 @@ struct Exercise: Identifiable, Codable {
     var rest: Double
 }
 
+struct Activity: Hashable, Identifiable {
+    var id = UUID()
+    var title: String
+    var type: activityType
+    var duration: Double
+    var timeLeft: Double
+    var startingTime: Double
+    var cycleNo: Int
+    
+    enum activityType: String, Identifiable, Codable {
+        case countdown
+        case exercise
+        case rest
+        case done
+        
+        var name: String {
+            rawValue.capitalized
+        }
+        
+        var id: String {
+            name
+        }
+    }
+}
+
 struct Workout: Identifiable, Codable {
     var id = UUID()
     var title: String
     var cycles: Int
+    var cycleRestTime: Double
     var duration: Double
     var exercises: [Exercise]
     var completions: Int
     
-    init(id: UUID = UUID(), title: String, cycles: Int, duration: Double, exercises: [Exercise], completions: Int) {
+    init(id: UUID = UUID(), title: String, cycles: Int, cycleRestTime: Double, duration: Double, exercises: [Exercise], completions: Int) {
         self.id = id
         self.title = title
         self.cycles = cycles
+        self.cycleRestTime = cycleRestTime
         self.duration = duration
         self.exercises = exercises
         self.completions = completions
     }
     
     func updateCompletion() -> Workout {
-        return Workout(title: title, cycles: cycles, duration: duration, exercises: exercises, completions: completions)
+        return Workout(title: title, cycles: cycles, cycleRestTime: cycleRestTime, duration: duration, exercises: exercises, completions: completions)
     }
-    
-
-    
+        
 }
 
 extension Workout {
     
-    static var newWorkout: Workout = Workout(title: "Workout", cycles: 0, duration: 200, exercises: [
+    static var newWorkout: Workout = Workout(title: "Workout", cycles: 0, cycleRestTime: 60, duration: 200, exercises: [
         Exercise(title: "Exercise 1", duration: 20, rest: 10),
         Exercise(title: "Exercise 2", duration: 20, rest: 10),
         Exercise(title: "Exercise 3", duration: 20, rest: 10)
     ], completions: 0)
     
     static var sampleWorkouts: [Workout] = [
-        Workout(title: "Tabata", cycles: 2, duration: 1060, exercises: [
+        Workout(title: "Tabata", cycles: 2, cycleRestTime: 60, duration: 1060, exercises: [
             Exercise(title: "Push ups", duration: 20, rest: 20),
             Exercise(title: "Crunches", duration: 20, rest: 20),
             Exercise(title: "Plank", duration: 30, rest: 20)
         ], completions: 24),
-        Workout(title: "Kegel", cycles: 3, duration: 500, exercises: [
+        Workout(title: "Kegel", cycles: 3, cycleRestTime: 60, duration: 500, exercises: [
             Exercise(title: "Push ups", duration: 20, rest: 20),
             Exercise(title: "Crunches", duration: 20, rest: 20),
             Exercise(title: "Plank", duration: 30, rest: 20)
         ], completions: 133),
-        Workout(title: "Workout", cycles: 17, duration: 3000, exercises: [
+        Workout(title: "Workout", cycles: 17, cycleRestTime: 60, duration: 3000, exercises: [
             Exercise(title: "Push ups", duration: 20, rest: 20),
             Exercise(title: "Crunches", duration: 20, rest: 20),
             Exercise(title: "Plank", duration: 30, rest: 20)
         ], completions: 2),
-        Workout(title: "Body Core", cycles: 4, duration: 2500, exercises: [
+        Workout(title: "Body Core", cycles: 4, cycleRestTime: 60, duration: 2500, exercises: [
             Exercise(title: "Push ups", duration: 20, rest: 20),
             Exercise(title: "Crunches", duration: 20, rest: 20),
             Exercise(title: "Plank", duration: 30, rest: 20)
