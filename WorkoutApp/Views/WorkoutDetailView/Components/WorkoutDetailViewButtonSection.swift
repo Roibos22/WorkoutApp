@@ -12,6 +12,10 @@ struct WorkoutDetailViewButtonSection: View {
     let workout: Workout
     @EnvironmentObject var vm: ViewModel
     
+    var activitiesTimeline: [Activity] {
+        vm.getWorkoutTimeline(workout: workout)
+    }
+    
     var body: some View {
         HStack {
             // Preview
@@ -50,7 +54,8 @@ struct WorkoutDetailViewButtonSection: View {
             }
             // Start Workout
             NavigationLink {
-                WorkoutActiveView(workout: workout, workoutTimeline: vm.getWorkoutTimeline(workout: workout))
+                WorkoutActiveView(workout: workout, workoutTimeline: activitiesTimeline, workoutTimeLeft: workout.duration, currentActivityTimeLeft: activitiesTimeline[0].duration)
+                    .environmentObject(vm)
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)

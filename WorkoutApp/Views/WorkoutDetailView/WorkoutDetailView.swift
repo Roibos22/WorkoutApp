@@ -37,7 +37,7 @@ struct WorkoutRemoveCard: View {
 }
 
 struct WorkoutDetailView: View {
-    
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var vm: ViewModel
     let workout: Workout
     let createNew: Bool
@@ -77,11 +77,7 @@ struct WorkoutDetailView: View {
                 Button(role: .destructive) {
                     withAnimation {
                         vm.delete(workout: workout)
-                        //if let tabata = tabataToBeDeleted {
-                        //    vm.deleteTabataWithoutIndex(tabata: tabata)
-                        //} else {
-                            // do nothing
-                        //}
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                 } label: {
                     Text("Delete")
