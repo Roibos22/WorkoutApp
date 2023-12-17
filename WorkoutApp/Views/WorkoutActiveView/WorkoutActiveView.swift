@@ -65,14 +65,9 @@ struct WorkoutActiveView: View {
     // Buttons
     @State private var paused: Bool = false
 
-    // Colors
-    //var mainColor : Color {
-    //    vm.selectedColorTheme.mainColor
-    //}
-    
-    //var accentColor : Color {
-    //    colorScheme == .light ? vm.selectedColorTheme.lightAccentColor : vm.selectedColorTheme.darkAccentColor
-    //}
+    //Colors
+    var mainColor : Color = .blue
+    var accentColor : Color = .black
 
     // Alerts
     @State private var showEndAlert = false
@@ -100,9 +95,13 @@ struct WorkoutActiveView: View {
                         //TabataCompletedView(tabata: tabata, tabataTimeline: tabataTimeline)
                         //  .environmentObject(vm)
                     } else {
+                        ForEach(workoutTimeline) { timeline in
+                            Text(timeline.title)
+                        }
                         Spacer()
-                        nextActivity
                         runningActivity
+                        nextActivity
+                            .padding(.top)
                         Spacer()
                         progressCircle
                             .frame(width: UIScreen.screenWidth * 0.8, height: UIScreen.screenWidth * 0.8)
@@ -115,7 +114,7 @@ struct WorkoutActiveView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        //.background(isRestActivity ? accentColor : mainColor)
+        .background(isRestActivity ? accentColor : mainColor)
         .alert("End Tabata", isPresented: $showEndAlert) {
             Button("End Tabata") {
                 dismiss()
@@ -154,7 +153,8 @@ struct WorkoutActiveView: View {
                     currentActivityDurationDone += 0.01
                     withAnimation() {
                         circleProgress = (currentActivityDurationDone) / (currentActivityDuration)
-                        barProgress = (totalWorkoutTime - workoutTimeLeft) / (totalWorkoutTime)
+                        //barProgress = (totalWorkoutTime - workoutTimeLeft) / (totalWorkoutTime)
+                        barProgress = totalWorkoutTime
                     }
                 }
                                 
@@ -180,7 +180,6 @@ struct WorkoutActiveView: View {
             }
             
         }
-        //.environment(\.locale, .init(identifier: vm.selectedLanguage.rawValue))
         .ignoresSafeArea()
         .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)
@@ -210,7 +209,7 @@ extension WorkoutActiveView {
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
-            //.foregroundColor(isRestActivity ? mainColor : accentColor)
+            .foregroundColor(isRestActivity ? mainColor : accentColor)
             .font(.title2)
             .frame(width: UIScreen.screenWidth * 0.8)
         }
@@ -219,13 +218,13 @@ extension WorkoutActiveView {
     private var runningActivity: some View {
         
         Text("\(currentActivity.title)")
-            //.foregroundColor(isRestActivity ? mainColor : accentColor)
+            .foregroundColor(isRestActivity ? mainColor : accentColor)
             .font(.title)
             .bold()
             .background(
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(
-                        //isRestActivity ? mainColor : accentColor,
+                        isRestActivity ? mainColor : accentColor,
                         lineWidth: 15
                     )
                     .frame(width: UIScreen.screenWidth * 0.8)
@@ -243,7 +242,7 @@ extension WorkoutActiveView {
             Circle()
                 .trim(from: 0, to:circleProgress)
                 .stroke(
-                    //isRestActivity ? mainColor : accentColor,
+                    isRestActivity ? mainColor : accentColor,
                     style: StrokeStyle(
                         lineWidth: 30,
                         lineCap: .round
@@ -281,7 +280,7 @@ extension WorkoutActiveView {
                 Text("\((currentActivityTimeLeft + 1).asDigitalMinutes())")
                     .font(.system(size: 80))
             }
-            //.foregroundColor(isRestActivity ? mainColor : accentColor)
+            .foregroundColor(isRestActivity ? mainColor : accentColor)
             .bold()
         }
     }
@@ -290,12 +289,16 @@ extension WorkoutActiveView {
     
     private var progressBarHeader: some View {
         HStack(alignment: .bottom) {
-            (Text("Cycle:") + Text(" \(currentActivity.cycleNo)/\(workout.cycles)"))
-                //.foregroundColor(isRestActivity ? mainColor : accentColor)
-                .bold()
-                .multilineTextAlignment(.leading)
+            HStack {
+                Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                Text(" \(currentActivity.cycleNo)/\(workout.cycles)")
+            }
+            .bold()
+            .multilineTextAlignment(.leading)
+            .foregroundColor(isRestActivity ? mainColor : accentColor)
+                
             Spacer()
-            
+            Text("\(barProgress)")
             HStack {
                 if paused {
                     endButton
@@ -307,9 +310,15 @@ extension WorkoutActiveView {
             }
             
             Spacer()
-            //Text("Set: \(currentActivity.setNo)/\(workout.)")
-                //.foregroundColor(isRestActivity ? mainColor : accentColor)
-                .bold()
+            
+            HStack {
+                Image(systemName: "dumbbell.fill")
+                Text(" \(currentActivity.activityNo)/\(workout.exercises.count)")
+            }
+            .bold()
+            .multilineTextAlignment(.leading)
+            .foregroundColor(isRestActivity ? mainColor : accentColor)
+
         }
         .font(.title3)
     }
@@ -321,14 +330,13 @@ extension WorkoutActiveView {
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(
-                       //isRestActivity ? mainColor : accentColor,
-                       // isRestActivity ? accentColor : mainColor,
-                        lineWidth: 10
+                       isRestActivity ? mainColor : accentColor,
+                       lineWidth: 10
                     )
                     .frame(width: UIScreen.screenWidth * 0.8, height: 30)
                 
                 RoundedRectangle(cornerRadius: 20)
-                    //.fill(isRestActivity ? mainColor : accentColor)
+                    .fill(isRestActivity ? mainColor : accentColor)
                     .frame(width: (UIScreen.screenWidth * 0.8 * barProgress) * 0.97 , height: 30)
                     .padding(.leading, 5)
                     .padding(.trailing, 5)
@@ -360,7 +368,7 @@ extension WorkoutActiveView {
             Image(systemName: "chevron.right.circle.fill")
                 .resizable()
                 .frame(width: 30, height: 30)
-                //.foregroundColor((isRestActivity ? mainColor : accentColor))
+                .foregroundColor((isRestActivity ? mainColor : accentColor))
         }
     }
     
@@ -377,7 +385,7 @@ extension WorkoutActiveView {
             Image(systemName: "pause.circle.fill")
                 .resizable()
                 .frame(width: 30, height: 30)
-                //.foregroundColor((isRestActivity ? mainColor : accentColor))
+                .foregroundColor((isRestActivity ? mainColor : accentColor))
         }
     }
     
@@ -388,7 +396,7 @@ extension WorkoutActiveView {
             Image(systemName: "stop.circle.fill")
                 .resizable()
                 .frame(width: 30, height: 30)
-            //.foregroundColor((isRestActivity ? mainColor : accentColor))
+            .foregroundColor((isRestActivity ? mainColor : accentColor))
         }
     }
     
@@ -405,7 +413,7 @@ extension WorkoutActiveView {
             Image(systemName: "play.circle.fill")
                 .resizable()
                 .frame(width: 30, height: 30)
-            //.foregroundColor((isRestActivity ? mainColor : accentColor))
+            .foregroundColor((isRestActivity ? mainColor : accentColor))
         }
     }
 

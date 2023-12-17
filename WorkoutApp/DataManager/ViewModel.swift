@@ -86,7 +86,7 @@ class ViewModel: ObservableObject {
         }
         
         // create and add preperation Activity
-        let newActivity = Activity(title: "Preperation", type: .countdown, duration: 10.0, timeLeft: 10.0, startingTime: activityStartTime, cycleNo: 0)
+        let newActivity = Activity(title: "Preperation", type: .countdown, duration: 10.0, timeLeft: 10.0, startingTime: activityStartTime, cycleNo: 0, activityNo: 0)
         activityStartTime += newActivity.duration
         res.append(newActivity)
         
@@ -97,13 +97,13 @@ class ViewModel: ObservableObject {
             for j in 1...workout.exercises.count {
                 
                 // create and add new Exercise Activity
-                let newExerciseActivity = Activity(title: "\(workout.exercises[j-1].title)", type: .exercise, duration: workout.exercises[j-1].duration, timeLeft: workout.exercises[j-1].duration, startingTime: activityStartTime, cycleNo: i)
+                let newExerciseActivity = Activity(title: "\(workout.exercises[j-1].title)", type: .exercise, duration: workout.exercises[j-1].duration, timeLeft: workout.exercises[j-1].duration, startingTime: activityStartTime, cycleNo: i, activityNo: j)
                 activityStartTime += newExerciseActivity.duration
                 res.append(newExerciseActivity)
                 
                 // create and add new Rest Activity if not last activity in circle
                 if !(j == workout.exercises.count) {
-                    let newRestActivity = Activity(title: "Rest", type: .rest, duration: workout.exercises[j-1].rest, timeLeft: workout.exercises[j-1].rest, startingTime: activityStartTime, cycleNo: i)
+                    let newRestActivity = Activity(title: "Rest", type: .rest, duration: workout.exercises[j-1].rest, timeLeft: workout.exercises[j-1].rest, startingTime: activityStartTime, cycleNo: i, activityNo: j)
                     activityStartTime += newRestActivity.duration
                     res.append(newRestActivity)
                 }
@@ -111,14 +111,14 @@ class ViewModel: ObservableObject {
             
             // create and add new Cycle Rest Activity if not last circle
             if !(i == workout.cycles) {
-                let newCycleRestActivity = Activity(title: "Rest", type: .rest, duration: workout.cycleRestTime, timeLeft: workout.cycleRestTime, startingTime: activityStartTime, cycleNo: i)
+                let newCycleRestActivity = Activity(title: "Rest", type: .rest, duration: workout.cycleRestTime, timeLeft: workout.cycleRestTime, startingTime: activityStartTime, cycleNo: i, activityNo: 0)
                 activityStartTime += newCycleRestActivity.duration
                 res.append(newCycleRestActivity)
             }
         }
         
         // create and add Done Activity
-        let doneActivity = Activity(title: "Done", type: .done, duration: 0, timeLeft: 0, startingTime: activityStartTime, cycleNo: workout.cycles)
+        let doneActivity = Activity(title: "Done", type: .done, duration: 0, timeLeft: 0, startingTime: activityStartTime, cycleNo: workout.cycles, activityNo: workout.exercises.count)
         activityStartTime += doneActivity.duration
         res.append(doneActivity)
         

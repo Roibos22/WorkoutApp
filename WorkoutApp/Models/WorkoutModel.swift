@@ -22,6 +22,7 @@ struct Activity: Hashable, Identifiable {
     var timeLeft: Double
     var startingTime: Double
     var cycleNo: Int
+    var activityNo: Int
     
     enum activityType: String, Identifiable, Codable {
         case countdown
