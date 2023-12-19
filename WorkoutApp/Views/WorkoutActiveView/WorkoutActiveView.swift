@@ -7,82 +7,41 @@
 
 import SwiftUI
 
-extension UIScreen{
-   static let screenWidth = UIScreen.main.bounds.size.width
-   static let screenHeight = UIScreen.main.bounds.size.height
-   static let screenSize = UIScreen.main.bounds.size
-}
-
 struct WorkoutActiveView: View {
     
     //MARK: VARIABLES
-    // Environment
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var vm: ViewModel
     
-    // Passed in variables
     @State var workout: Workout
     @State var workoutTimeline: [Activity]
-    
-    // View State
-    @State private var isRunning: Bool = true
-    @State private var tabataFinished: Bool = false
-    
-    // Circle & Bar progress
-    @State private var circleProgress: Double = 0.0
-    @State private var barProgress: Double = 0.0
-    
-    // Time
-    
-    // make this a passed in value later
     @State var workoutTimeLeft: Double
     @State var currentActivityTimeLeft: Double
+        
+    @State private var isRunning = true
+    @State private var tabataFinished = false
+    @State private var workoutDurationDone = 0.0
+    @State private var currentActivityDurationDone = 0.0
+    @State private var countdownPlayed = false
+    @State private var showEndAlert = false
+    @State private var skippedTimer = 1.0
+    @State var showSkipped = false
+    @State var circleProgress = 0.0
+    @State var barProgress = 0.0
+    @State var activityCount = 0
+    @State var paused = false
     
-//    var totalWorkoutTime: Double {
-//        workoutTimeline.lazy.reduce(0) {
-//            $0 + $1.duration
-//        }
-//    }
-    @State private var workoutDurationDone: Double = 0.0
-    @State private var currentActivityDurationDone: Double = 0.0
-
-    var currentActivityDuration: Double { currentActivity.duration }
-    
-    
-    // Timer
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
-    // Activities
     var currentActivity: Activity { workoutTimeline[activityCount] }
-
-    @State private var activityCount: Int = 0
-    
-    var isRestActivity : Bool {
-        currentActivity.title == "Rest"
-    }
-    
-    // Buttons
-    @State private var paused: Bool = false
-
-    //Colors
-    var mainColor : Color = .blue
-    var accentColor : Color = .black
-
-    // Alerts
-    @State private var showEndAlert = false
-    
-    // Skipping
-    @State private var skippedTimer: Double = 1.0
-    @State private var showSkipped: Bool = false
-    
-    // Sounds
-    
-    @State private var countdownPlayed: Bool = false
-
-    //MARK: BODY
+    var currentActivityDuration: Double { currentActivity.duration }
+    var isRestActivity: Bool { currentActivity.title == "Rest" }
+    var mainColor: Color { .blue }
+    var accentColor: Color { .black }
     
     var body: some View {
         
+        //MARK: BODY
         VStack {
             if tabataFinished {
                 WorkoutCompletedView(workout: workout, workoutTimeline: workoutTimeline)
@@ -93,19 +52,7 @@ struct WorkoutActiveView: View {
                         WorkoutCompletedView(workout: workout, workoutTimeline: workoutTimeline)
                           .environmentObject(vm)
                     } else {
-                        Spacer()
-                        runningActivity
-                        nextActivity
-                            .padding(.top)
-                        Text("\(activityCount)")
-                        Text("\(workoutTimeline.count)")
-                        Spacer()
-                        progressCircle
-                            .frame(width: UIScreen.screenWidth * 0.8, height: UIScreen.screenWidth * 0.8)
-                        Spacer()
-                        progressBar
-                            .frame(width: UIScreen.screenWidth * 0.8)
-                        Spacer()
+                        workoutActiveContent
                     }
                 }
             }
@@ -113,92 +60,105 @@ struct WorkoutActiveView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(isRestActivity ? accentColor : mainColor)
         .alert("End Tabata", isPresented: $showEndAlert) {
-            Button("End Tabata") {
-                dismiss()
-            }
+            Button("End Tabata") { dismiss() }
             Button("Cancel", role: .cancel, action: {})
         } message:  {
             Text("Are you sure you want to end your workout?")
         }
-        
-        //MARK: RECEIVE TIMER
-        .onReceive(timer) { time in
-        
-            if !tabataFinished {
-                print ("\(currentActivityTimeLeft)")
-                if currentActivityTimeLeft < 0 {
-                    // check if it was last activity
-                    if activityCount == workoutTimeline.count - 2 {
-                        // if yes end
-                        isRunning = false
-                        tabataFinished = true
-                        print ("\(tabataFinished)")
-                        self.timer.upstream.connect().cancel()
-                    } else {
-                        // if no set up next one
-                        activityCount += 1
-                        print(activityCount)
-                        print(workoutTimeline.count)
-                        currentActivityTimeLeft = currentActivity.duration
-                        currentActivityDurationDone = 0.0
-                        countdownPlayed = false
-                    }
-                }
-                
-                if isRunning {
-                    currentActivityTimeLeft -= 0.01
-                    workoutTimeLeft -= 0.01
-                    currentActivityDurationDone += 0.01
-                    withAnimation() {
-                        circleProgress = (currentActivityDurationDone) / (currentActivityDuration)
-                        //barProgress = (totalWorkoutTime - workoutTimeLeft) / (totalWorkoutTime)
-                        barProgress = (workout.duration - workoutTimeLeft) / workout.duration
-                    }
-                }
-                                
-                // play sounds
-//                if vm.soundsEnabled {
-//                    if currentActivityTimeLeft < 3 && countdownPlayed == false {
-//                        DispatchQueue.main.async {
-//                            //SoundManager.instance.playSound(sound: .countdown)
-//                        }
-//                        countdownPlayed = true
-//                    }
-//                }
-                
-            }
-            
-            if showSkipped {
-                skippedTimer -= 0.01
-                if skippedTimer <= 0 {
-                    withAnimation(Animation.easeOut(duration: 1.0)) {
-                        showSkipped = false
-                    }
-                }
-            }
-            
-        }
+        .onReceive(timer, perform: updateTimer)
         .ignoresSafeArea()
         .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)
 //        .onAppear{
-//
 //            DispatchQueue.main.async {
 //                SoundManager.instance.prepare()
 //            }
-//
 //        }
-
     }
 }
 
-//MARK: COMPONENTS
+//MARK: TIMER FUNCTION
+
+private extension WorkoutActiveView {
+    
+    func updateTimer(_ time: Timer.TimerPublisher.Output) {
+        
+        if !tabataFinished && currentActivityTimeLeft < 0 {
+            if activityCount == workoutTimeline.count - 2 {
+                isRunning = false
+                tabataFinished = true
+                self.timer.upstream.connect().cancel()
+            } else {
+                activityCount += 1
+                currentActivityTimeLeft = currentActivity.duration
+                currentActivityDurationDone = 0.0
+                countdownPlayed = false
+            }
+        }
+        
+        if isRunning {
+            currentActivityTimeLeft -= 0.01
+            workoutTimeLeft -= 0.01
+            currentActivityDurationDone += 0.01
+            withAnimation() {
+                circleProgress = (currentActivityDurationDone) / (currentActivityDuration)
+                barProgress = (workout.duration - workoutTimeLeft) / workout.duration
+            }
+        }
+        
+        if vm.soundsEnabled {
+            if currentActivityTimeLeft < 3 && countdownPlayed == false {
+                DispatchQueue.main.async {
+                    SoundManager.instance.playSound(sound: .countdown)
+                }
+                countdownPlayed = true
+            }
+        }
+        
+        if showSkipped {
+            skippedTimer -= 0.01
+            if skippedTimer <= 0 {
+                withAnimation(Animation.easeOut(duration: 1.0)) {
+                    showSkipped = false
+                }
+            }
+        }
+        
+    }
+}
+
+//MARK: WORKOUT ACTIVE CONTENT
+
+private extension WorkoutActiveView {
+    private var workoutActiveContent: some View {
+        VStack {
+            Spacer()
+            activityDisplay
+            Spacer()
+            progressCircle
+                .frame(height: UIScreen.screenWidth * 0.8)
+            Spacer()
+            progressBar
+            Spacer()
+        }
+        .frame(width: UIScreen.screenWidth * 0.8)
+    }
+}
+
+
+//MARK: ACTIVITY DISPLAY
 
 extension WorkoutActiveView {
     
-    //MARK: ACTIVITY DISPLAY
+    var activityDisplay: some View {
+        VStack {
+            runningActivity
+            nextActivity
+                .padding(.top)
+        }
+    }
     
-    private var nextActivity: some View {
+    var nextActivity: some View {
         VStack {
             HStack {
                 Text("Next:")
@@ -213,8 +173,7 @@ extension WorkoutActiveView {
         }
     }
     
-    private var runningActivity: some View {
-        
+    var runningActivity: some View {
         Text("\(currentActivity.title)")
             .foregroundColor(isRestActivity ? mainColor : accentColor)
             .font(.title)
@@ -228,17 +187,18 @@ extension WorkoutActiveView {
                     .frame(width: UIScreen.screenWidth * 0.8)
                     .frame(minHeight: 75)
             )
-            .frame(width: UIScreen.screenWidth * 0.8)
             .frame(minHeight: 70)
             .fixedSize(horizontal: false, vertical: true)
     }
+}
 
-    //MARK: CIRCLE DISPLAY
-
-    private var progressCircle: some View {
+//MARK: PROGRESS CIRCLE
+extension WorkoutActiveView {
+    
+    var progressCircle: some View {
         ZStack {
             Circle()
-                .trim(from: 0, to:circleProgress)
+                .trim(from: 0, to: circleProgress)
                 .stroke(
                     isRestActivity ? mainColor : accentColor,
                     style: StrokeStyle(
@@ -252,20 +212,16 @@ extension WorkoutActiveView {
             ZStack {
                 VStack {
                     Spacer()
-                    //Text("skipped")
-                    
                     ZStack {
                         if paused {
                             Text("paused")
                         } else {
                             Text(showSkipped ? "skipped" : "      ")
-
                                 .opacity(showSkipped ? 1.0 : 0)
                         }
                     }
                     .frame(alignment: .center)
                     .font(.title)
-
                     Spacer()
                     Spacer()
                     HStack {
@@ -282,9 +238,12 @@ extension WorkoutActiveView {
             .bold()
         }
     }
-    
-    //MARK: PROGRESS BAR
-    
+}
+
+//MARK: PROGRESS BAR
+
+private extension WorkoutActiveView {
+        
     private var progressBarHeader: some View {
         HStack(alignment: .bottom) {
             HStack {
@@ -305,9 +264,8 @@ extension WorkoutActiveView {
                     pauseButton
                 }
             }
-            
             Spacer()
-            
+
             HStack {
                 Image(systemName: "dumbbell.fill")
                 Text(" \(currentActivity.activityNo)/\(workout.exercises.count)")
@@ -338,7 +296,6 @@ extension WorkoutActiveView {
                     .padding(.leading, 5)
                     .padding(.trailing, 5)
             }
-            
         }
     }
     
@@ -346,21 +303,17 @@ extension WorkoutActiveView {
     
     private var skipButton : some View {
         Button {
-            
             if activityCount == workoutTimeline.count - 2 {
-                // if yes end
                 isRunning = false
                 tabataFinished = true
                 self.timer.upstream.connect().cancel()
             }
-            
             workoutTimeLeft -= currentActivityTimeLeft
             activityCount += 1
             currentActivityTimeLeft = currentActivity.duration
             currentActivityDurationDone = 0.0
             skippedTimer = 1.0
             showSkipped = true
-            
         } label: {
             Image(systemName: "chevron.right.circle.fill")
                 .resizable()
@@ -373,11 +326,11 @@ extension WorkoutActiveView {
         Button {
             paused.toggle()
             isRunning = false
-//            if vm.soundsEnabled {
-//                DispatchQueue.main.async {
-//                    //SoundManager.instance.player?.pause()
-//                }
-//            }
+            if vm.soundsEnabled {
+                DispatchQueue.main.async {
+                    SoundManager.instance.player?.pause()
+                }
+            }
         } label: {
             Image(systemName: "pause.circle.fill")
                 .resizable()
@@ -401,11 +354,11 @@ extension WorkoutActiveView {
         Button {
             isRunning = true
             paused.toggle()
-            //if vm.soundsEnabled {
-            //    DispatchQueue.main.async {
-            //        //SoundManager.instance.player?.play()
-            //    }
-            //}
+            if vm.soundsEnabled {
+                DispatchQueue.main.async {
+                    SoundManager.instance.player?.play()
+                }
+            }
         } label: {
             Image(systemName: "play.circle.fill")
                 .resizable()
@@ -413,7 +366,6 @@ extension WorkoutActiveView {
             .foregroundColor((isRestActivity ? mainColor : accentColor))
         }
     }
-
 }
 
 
@@ -421,12 +373,6 @@ struct WorkoutActiveView_Previews: PreviewProvider {
     static let vm = ViewModel()
     static var previews: some View {
         WorkoutActiveView(workout: Workout.sampleWorkouts[0], workoutTimeline: vm.getWorkoutTimeline(workout: Workout.sampleWorkouts[0]), workoutTimeLeft: Workout.sampleWorkouts[0].duration, currentActivityTimeLeft: 10.0)
+            .environmentObject(vm)
     }
-    //static var previews: some View {
-    //    NavigationView {
-    //        WorkoutView(tabata: dev.tabataOne, tabataTimeline: dev.tabataOneTimeline, tabataTimeLeft: dev.tabataOneDuration, currentActivityTimeLeft: dev.tabataOneFirstAvtivityDuration)
-     //   }
-     //   .navigationTitle("Tabata")
-     //   .environmentObject(myEnvObject)
-    //}
 }

@@ -14,6 +14,11 @@
 		352A62ED2ACDD47300CAC187 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62EC2ACDD47300CAC187 /* Double.swift */; };
 		352A62F22ACDD8F800CAC187 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62F12ACDD8F800CAC187 /* WorkoutModel.swift */; };
 		352A62F42ACDD91900CAC187 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */; };
+		358113B42B323012003325C0 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358113B32B323012003325C0 /* Screen.swift */; };
+		358113C42B32512C003325C0 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358113C32B32512C003325C0 /* SoundManager.swift */; };
+		358113C82B325192003325C0 /* jubilant.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 358113C52B325192003325C0 /* jubilant.mp3 */; };
+		358113C92B325192003325C0 /* countdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 358113C62B325192003325C0 /* countdown.mp3 */; };
+		358113CA2B325192003325C0 /* dadam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 358113C72B325192003325C0 /* dadam.mp3 */; };
 		3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582F8382B31F8A000AC6C53 /* WorkoutCompletedView.swift */; };
 		3582F83C2B31FA0B00AC6C53 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3582F83B2B31FA0B00AC6C53 /* ConfettiSwiftUI */; };
 		358EE3C62ACFECFA00F04CFC /* WorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EE3C52ACFECFA00F04CFC /* WorkoutListView.swift */; };
@@ -37,6 +42,11 @@
 		352A62EC2ACDD47300CAC187 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		352A62F12ACDD8F800CAC187 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
+		358113B32B323012003325C0 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		358113C32B32512C003325C0 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		358113C52B325192003325C0 /* jubilant.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jubilant.mp3; sourceTree = "<group>"; };
+		358113C62B325192003325C0 /* countdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdown.mp3; sourceTree = "<group>"; };
+		358113C72B325192003325C0 /* dadam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dadam.mp3; sourceTree = "<group>"; };
 		3582F8382B31F8A000AC6C53 /* WorkoutCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCompletedView.swift; sourceTree = "<group>"; };
 		358EE3C52ACFECFA00F04CFC /* WorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListView.swift; sourceTree = "<group>"; };
 		358EE3C82ACFED5F00F04CFC /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
@@ -82,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				352A62D72ACDC85000CAC187 /* WorkoutAppApp.swift */,
+				358113C22B325118003325C0 /* SoundManager */,
 				352A62F02ACDD8E500CAC187 /* Models */,
 				352A62EE2ACDD8AE00CAC187 /* Extensions */,
 				35E3FA4B2AD7DA780039A0E6 /* DataManager */,
@@ -105,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				352A62EC2ACDD47300CAC187 /* Double.swift */,
+				358113B32B323012003325C0 /* Screen.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -126,6 +138,17 @@
 				352A62F12ACDD8F800CAC187 /* WorkoutModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		358113C22B325118003325C0 /* SoundManager */ = {
+			isa = PBXGroup;
+			children = (
+				358113C32B32512C003325C0 /* SoundManager.swift */,
+				358113C62B325192003325C0 /* countdown.mp3 */,
+				358113C72B325192003325C0 /* dadam.mp3 */,
+				358113C52B325192003325C0 /* jubilant.mp3 */,
+			);
+			path = SoundManager;
 			sourceTree = "<group>";
 		};
 		358EE3C72ACFED3B00F04CFC /* Components */ = {
@@ -175,8 +198,8 @@
 		35E3FA482AD71BB30039A0E6 /* WorkoutActiveView */ = {
 			isa = PBXGroup;
 			children = (
-				35E3FA492AD71BDC0039A0E6 /* WorkoutActiveView.swift */,
 				3582F8382B31F8A000AC6C53 /* WorkoutCompletedView.swift */,
+				35E3FA492AD71BDC0039A0E6 /* WorkoutActiveView.swift */,
 			);
 			path = WorkoutActiveView;
 			sourceTree = "<group>";
@@ -254,8 +277,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358113C92B325192003325C0 /* countdown.mp3 in Resources */,
+				358113C82B325192003325C0 /* jubilant.mp3 in Resources */,
 				352A62E02ACDC85200CAC187 /* Preview Assets.xcassets in Resources */,
 				352A62DC2ACDC85200CAC187 /* Assets.xcassets in Resources */,
+				358113CA2B325192003325C0 /* dadam.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +299,7 @@
 				35E3FA432AD691440039A0E6 /* WorkoutDetailViewExercisesSection.swift in Sources */,
 				358EE3CB2ACFF4F100F04CFC /* WorkoutSettingsSectionView.swift in Sources */,
 				3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */,
+				358113B42B323012003325C0 /* Screen.swift in Sources */,
 				358EE3C62ACFECFA00F04CFC /* WorkoutListView.swift in Sources */,
 				35E3FA4D2AD7DAAF0039A0E6 /* ViewModel.swift in Sources */,
 				352A62F42ACDD91900CAC187 /* WorkoutCardView.swift in Sources */,
@@ -281,6 +308,7 @@
 				35E3FA462AD692190039A0E6 /* ExerciseDetailView.swift in Sources */,
 				35E3FA412AD691140039A0E6 /* WorkoutDetailViewButtonSection.swift in Sources */,
 				352A62D82ACDC85000CAC187 /* WorkoutAppApp.swift in Sources */,
+				358113C42B32512C003325C0 /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

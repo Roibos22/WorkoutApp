@@ -10,6 +10,7 @@ import Foundation
 class ViewModel: ObservableObject {
     @Published private(set) var workouts: [Workout]
    // @Published var selectedDataModel: DataModel?
+    @Published var soundsEnabled: Bool = true
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("Workouts")
     
@@ -34,6 +35,7 @@ class ViewModel: ObservableObject {
         }
     }
         
+    
     func save() {
         do {
             let data = try JSONEncoder().encode(workouts)
