@@ -13,7 +13,7 @@ class ViewModel: ObservableObject {
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("Workouts")
     
-    var placeholderWorkout = Workout(title: "Workout", cycles: 1, cycleRestTime: 60, duration: 100, exercises: [
+    var placeholderWorkout = Workout(title: "Workout", cycles: 1, cycleRestTime: 60, exercises: [
             Exercise(title: "Push ups", duration: 20, rest: 10),
             Exercise(title: "Crunches", duration: 20, rest: 10),
             Exercise(title: "Exercise", duration: 20, rest: 10)
@@ -25,7 +25,7 @@ class ViewModel: ObservableObject {
             workouts = try JSONDecoder().decode([Workout].self, from: data)
         } catch {
             workouts = [
-                Workout(title: "Workout", cycles: 2, cycleRestTime: 60, duration: 500, exercises: [
+                Workout(title: "Workout", cycles: 2, cycleRestTime: 60, exercises: [
                     Exercise(title: "Push ups", duration: 20, rest: 10),
                     Exercise(title: "Crunches", duration: 20, rest: 10),
                     Exercise(title: "Exercise", duration: 20, rest: 10)

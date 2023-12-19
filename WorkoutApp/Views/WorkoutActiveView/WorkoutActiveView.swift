@@ -38,12 +38,11 @@ struct WorkoutActiveView: View {
     @State var workoutTimeLeft: Double
     @State var currentActivityTimeLeft: Double
     
-    var totalWorkoutTime: Double {
-        workoutTimeline.lazy.reduce(0) {
-            $0 + $1.duration
-        }
-    }
-    
+//    var totalWorkoutTime: Double {
+//        workoutTimeline.lazy.reduce(0) {
+//            $0 + $1.duration
+//        }
+//    }
     @State private var workoutDurationDone: Double = 0.0
     @State private var currentActivityDurationDone: Double = 0.0
 
@@ -86,22 +85,20 @@ struct WorkoutActiveView: View {
         
         VStack {
             if tabataFinished {
-                //TabataCompletedView(tabata: tabata, tabataTimeline: tabataTimeline)
-                    //.environmentObject(vm)
-                
+                WorkoutCompletedView(workout: workout, workoutTimeline: workoutTimeline)
+                  .environmentObject(vm)
             } else {
                 VStack {
                     if tabataFinished {
-                        //TabataCompletedView(tabata: tabata, tabataTimeline: tabataTimeline)
-                        //  .environmentObject(vm)
+                        WorkoutCompletedView(workout: workout, workoutTimeline: workoutTimeline)
+                          .environmentObject(vm)
                     } else {
-                        ForEach(workoutTimeline) { timeline in
-                            Text(timeline.title)
-                        }
                         Spacer()
                         runningActivity
                         nextActivity
                             .padding(.top)
+                        Text("\(activityCount)")
+                        Text("\(workoutTimeline.count)")
                         Spacer()
                         progressCircle
                             .frame(width: UIScreen.screenWidth * 0.8, height: UIScreen.screenWidth * 0.8)
@@ -128,13 +125,14 @@ struct WorkoutActiveView: View {
         .onReceive(timer) { time in
         
             if !tabataFinished {
-                
+                print ("\(currentActivityTimeLeft)")
                 if currentActivityTimeLeft < 0 {
                     // check if it was last activity
                     if activityCount == workoutTimeline.count - 2 {
                         // if yes end
                         isRunning = false
                         tabataFinished = true
+                        print ("\(tabataFinished)")
                         self.timer.upstream.connect().cancel()
                     } else {
                         // if no set up next one
@@ -154,7 +152,7 @@ struct WorkoutActiveView: View {
                     withAnimation() {
                         circleProgress = (currentActivityDurationDone) / (currentActivityDuration)
                         //barProgress = (totalWorkoutTime - workoutTimeLeft) / (totalWorkoutTime)
-                        barProgress = totalWorkoutTime
+                        barProgress = (workout.duration - workoutTimeLeft) / workout.duration
                     }
                 }
                                 
@@ -298,7 +296,6 @@ extension WorkoutActiveView {
             .foregroundColor(isRestActivity ? mainColor : accentColor)
                 
             Spacer()
-            Text("\(barProgress)")
             HStack {
                 if paused {
                     endButton

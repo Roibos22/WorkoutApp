@@ -14,6 +14,8 @@
 		352A62ED2ACDD47300CAC187 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62EC2ACDD47300CAC187 /* Double.swift */; };
 		352A62F22ACDD8F800CAC187 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62F12ACDD8F800CAC187 /* WorkoutModel.swift */; };
 		352A62F42ACDD91900CAC187 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */; };
+		3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582F8382B31F8A000AC6C53 /* WorkoutCompletedView.swift */; };
+		3582F83C2B31FA0B00AC6C53 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3582F83B2B31FA0B00AC6C53 /* ConfettiSwiftUI */; };
 		358EE3C62ACFECFA00F04CFC /* WorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EE3C52ACFECFA00F04CFC /* WorkoutListView.swift */; };
 		358EE3C92ACFED5F00F04CFC /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EE3C82ACFED5F00F04CFC /* WorkoutDetailView.swift */; };
 		358EE3CB2ACFF4F100F04CFC /* WorkoutSettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EE3CA2ACFF4F100F04CFC /* WorkoutSettingsSectionView.swift */; };
@@ -35,6 +37,7 @@
 		352A62EC2ACDD47300CAC187 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		352A62F12ACDD8F800CAC187 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
+		3582F8382B31F8A000AC6C53 /* WorkoutCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCompletedView.swift; sourceTree = "<group>"; };
 		358EE3C52ACFECFA00F04CFC /* WorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListView.swift; sourceTree = "<group>"; };
 		358EE3C82ACFED5F00F04CFC /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
 		358EE3CA2ACFF4F100F04CFC /* WorkoutSettingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSettingsSectionView.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3582F83C2B31FA0B00AC6C53 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				35E3FA492AD71BDC0039A0E6 /* WorkoutActiveView.swift */,
+				3582F8382B31F8A000AC6C53 /* WorkoutCompletedView.swift */,
 			);
 			path = WorkoutActiveView;
 			sourceTree = "<group>";
@@ -201,6 +206,9 @@
 			dependencies = (
 			);
 			name = WorkoutApp;
+			packageProductDependencies = (
+				3582F83B2B31FA0B00AC6C53 /* ConfettiSwiftUI */,
+			);
 			productName = WorkoutApp;
 			productReference = 352A62D42ACDC85000CAC187 /* WorkoutApp.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +237,9 @@
 				Base,
 			);
 			mainGroup = 352A62CB2ACDC85000CAC187;
+			packageReferences = (
+				3582F83A2B31FA0B00AC6C53 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = 352A62D52ACDC85000CAC187 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +272,7 @@
 				35E3FA4F2AD7DB1D0039A0E6 /* FileManager.swift in Sources */,
 				35E3FA432AD691440039A0E6 /* WorkoutDetailViewExercisesSection.swift in Sources */,
 				358EE3CB2ACFF4F100F04CFC /* WorkoutSettingsSectionView.swift in Sources */,
+				3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */,
 				358EE3C62ACFECFA00F04CFC /* WorkoutListView.swift in Sources */,
 				35E3FA4D2AD7DAAF0039A0E6 /* ViewModel.swift in Sources */,
 				352A62F42ACDD91900CAC187 /* WorkoutCardView.swift in Sources */,
@@ -488,6 +500,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3582F83A2B31FA0B00AC6C53 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3582F83B2B31FA0B00AC6C53 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3582F83A2B31FA0B00AC6C53 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 352A62CC2ACDC85000CAC187 /* Project object */;
 }
