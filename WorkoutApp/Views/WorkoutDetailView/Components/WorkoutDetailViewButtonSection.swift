@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkoutDetailViewButtonSection: View {
     
     let workout: Workout
+    @State var completions: Int = 0
     @EnvironmentObject var vm: ViewModel
     
     var activitiesTimeline: [Activity] {
@@ -37,7 +38,8 @@ struct WorkoutDetailViewButtonSection: View {
             }
             // Completions and History
             NavigationLink {
-                // open History
+                WorkoutHistoryView(titleForFilter: workout.title)
+                    .environmentObject(vm)
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -45,7 +47,7 @@ struct WorkoutDetailViewButtonSection: View {
                         .foregroundColor(Color.blue)
                     HStack {
                         Image(systemName: "clock.arrow.circlepath")
-                        Text("\(workout.completions)x")
+                        Text("\(completions)x")
                     }
                     .font(.title3)
                     .bold()
@@ -68,11 +70,24 @@ struct WorkoutDetailViewButtonSection: View {
                 }
             }
         }
+        .onAppear {
+            getWorkoutCompletions(workoutTitle: workout.title)
+        }
+    }
+    
+    func getWorkoutCompletions(workoutTitle: String?) {
+        guard let workoutTitle = workoutTitle else {
+            completions = vm.completedWorkouts.count
+            return
+        }
+        completions = vm.completedWorkouts.filter { $0.workout.title == workoutTitle }.count
     }
 }
 
 struct WorkoutDetailViewButtonSection_Previews: PreviewProvider {
+    static let myEnvObject = ViewModel()
     static var previews: some View {
         WorkoutDetailViewButtonSection(workout: Workout.sampleWorkouts[0])
+            .environmentObject(myEnvObject)
     }
 }

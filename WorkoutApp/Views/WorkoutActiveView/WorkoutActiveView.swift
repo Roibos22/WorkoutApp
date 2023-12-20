@@ -88,6 +88,7 @@ private extension WorkoutActiveView {
                 isRunning = false
                 tabataFinished = true
                 self.timer.upstream.connect().cancel()
+                vm.addCompletedWorkout(workout: workout)
             } else {
                 activityCount += 1
                 currentActivityTimeLeft = currentActivity.duration
@@ -307,6 +308,7 @@ private extension WorkoutActiveView {
                 isRunning = false
                 tabataFinished = true
                 self.timer.upstream.connect().cancel()
+                vm.addCompletedWorkout(workout: workout)
             }
             workoutTimeLeft -= currentActivityTimeLeft
             activityCount += 1

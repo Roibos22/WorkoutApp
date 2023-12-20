@@ -41,8 +41,9 @@ struct WorkoutListView: View {
                     }
                 }
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                    Button {
-                        // open history view
+                    NavigationLink {
+                        WorkoutHistoryView(titleForFilter: nil)
+                            .environmentObject(vm)
                     } label: {
                         Image(systemName: "clock.arrow.circlepath")
                             .foregroundColor(.black)
@@ -71,20 +72,11 @@ struct WorkoutListView: View {
 }
 
 struct WorkoutListView_Previews: PreviewProvider {
+    static let myEnvObject = ViewModel()
     static var previews: some View {
         WorkoutListView()
+            .environmentObject(myEnvObject)
     }
 }
 
-/*
-struct TabataDetailView3_Previews: PreviewProvider {
-    static let myEnvObject = ViewModel()
-    static var previews: some View {
-        NavigationView {
-            TabataDetailView(tabata: dev.tabataOne)
-                .environmentObject(myEnvObject)
-                .environment(\.locale, .init(identifier: "de"))
-        }
-    }
-}
-*/
+

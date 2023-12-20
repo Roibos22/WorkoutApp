@@ -46,63 +46,64 @@ struct WorkoutDetailView: View {
     @State var workoutTitle: String
     
     var body: some View {
-
-            ScrollView {
-                VStack {
-                    // Button Section
-                    WorkoutDetailViewButtonSection(workout: workout)
-                        .environmentObject(vm)
-
-                    // Workout Settings
-                    WorkoutSettingsSection()
-                    
-                    // Exercises
-                    WorkoutDetailViewExercisesSection(workout: workout)
-                    
-                    WorkoutRemoveCard(workout: workout)
-                        .onTapGesture {
-                            showDeleteWorkoutAlert.toggle()
-                        }
-                    Spacer()
-                }
-                .padding(.horizontal)
-                Spacer()
-
-            }
-            .confirmationDialog(
-                Text("Delete Workout?"),
-                isPresented: $showDeleteWorkoutAlert,
-                titleVisibility: .visible
-            ) {
-                Button(role: .destructive) {
-                    withAnimation {
-                        vm.delete(workout: workout)
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
-                } label: {
-                    Text("Delete")
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                        TextField("Workout Title", text: $workoutTitle)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .font(.title)
-                            .bold()
-                            .onSubmit {
-                                vm.updateWorkoutTitle(workout: workout, title: workoutTitle)
-                            }
-                }
-            }
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    if createNew == true {
-                        vm.addWorkout(workout: workout)
-                    }
-                }
+        
+        ScrollView {
+            VStack {
+                // Button Section
+                WorkoutDetailViewButtonSection(workout: workout)
+                    .environmentObject(vm)
                 
+                // Workout Settings
+                WorkoutSettingsSection()
+                
+                // Exercises
+                WorkoutDetailViewExercisesSection(workout: workout)
+                
+                WorkoutRemoveCard(workout: workout)
+                    .onTapGesture {
+                        showDeleteWorkoutAlert.toggle()
+                    }
+                Spacer()
+            }
+            .padding(.horizontal)
+            Spacer()
+            
+        }
+        .confirmationDialog(
+            Text("Delete Workout?"),
+            isPresented: $showDeleteWorkoutAlert,
+            titleVisibility: .visible
+        ) {
+            Button(role: .destructive) {
+                withAnimation {
+                    vm.delete(workout: workout)
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+            } label: {
+                Text("Delete")
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                TextField("Workout Title", text: $workoutTitle)
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .font(.title)
+                    .bold()
+                    .onSubmit {
+                        vm.updateWorkoutTitle(workout: workout, title: workoutTitle)
+                        
+                    }
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                if createNew == true {
+                    vm.addWorkout(workout: workout)
+                }
+            }
+            
+        }
+    }
 }
 
 struct WorkoutDetailView_Previews: PreviewProvider {

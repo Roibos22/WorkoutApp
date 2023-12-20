@@ -40,6 +40,20 @@ struct Activity: Hashable, Identifiable {
     }
 }
 
+struct CompletedWorkout: Identifiable, Codable {
+    var id = UUID()
+    var workout: Workout
+    var ts: Date
+}
+
+struct Cycle: Hashable {
+    var title: String
+    var duration: Double
+    var startingTime: Double
+    var activities: [Activity]
+    var cycleNumber: Int
+}
+
 struct Workout: Identifiable, Codable {
     var id = UUID()
     var title: String
