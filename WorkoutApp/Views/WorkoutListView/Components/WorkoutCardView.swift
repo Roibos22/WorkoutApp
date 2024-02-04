@@ -43,19 +43,19 @@ struct WorkoutCardView: View {
                     HStack {
                         Image(systemName: "dumbbell.fill")
                             .frame(width: 50)
-                        Text("Exercises: \(workout.exercises.count)")
+                        Text("\(workout.exercises.count) Exercises")
                     }
                     .padding(1)
                     HStack {
                         Image(systemName: "repeat.circle.fill")
                             .frame(width: 50)
-                        Text("Cycles: \(workout.cycles)")
+                        Text("\(workout.cycles) Cycles")
                     }
                     .padding(1)
                     HStack {
                         Image(systemName: "clock.fill")
                             .frame(width: 50)
-                        Text("Duration: \(workout.duration.asDigitalMinutes())")
+                        Text("\(workout.duration.asMinutes())")
                     }
                 }
                 .padding(.horizontal)
