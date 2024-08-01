@@ -8,13 +8,13 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-    @Published private(set) var workouts: [Workout]
+    //@Published private(set) var workouts: [Workout]
     
-    @Published private(set) var completedWorkouts: [CompletedWorkout]
-    @Published var completedWorkoutsFiltered: [CompletedWorkout]
+   // @Published private(set) var completedWorkouts: [CompletedWorkout]
+    //@Published var completedWorkoutsFiltered: [CompletedWorkout]
 
    // @Published var selectedDataModel: DataModel?
-    @Published var soundsEnabled: Bool = true
+   // @Published var soundsEnabled: Bool = true
     
 //    let savePathWorkouts = FileManager.documentsDirectory.appendingPathComponent("Workouts")
 //    let savePathCompletedWorkouts = FileManager.documentsDirectory.appendingPathComponent("CompletedWorkouts")
@@ -25,7 +25,7 @@ class ViewModel: ObservableObject {
 //            Exercise(title: "Exercise", duration: 20, rest: 10)
 //        ], completions: 0)
     
-    init() {
+   // init() {
 //        do {
 //            let workoutsData = try Data(contentsOf: savePathWorkouts)
 //            workouts = try JSONDecoder().decode([Workout].self, from: workoutsData)
@@ -49,7 +49,7 @@ class ViewModel: ObservableObject {
 //                CompletedWorkout(workout: Workout.sampleWorkouts[1], timestamp: Date().addingTimeInterval(-86400))
 //            ]
 //        }
-    }
+   // }
     
     func filterWorkoutsForHistory(workoutTitle: String?) {
         guard let workoutTitle = workoutTitle else {
@@ -76,22 +76,22 @@ class ViewModel: ObservableObject {
     func addCompletedWorkout(workout: Workout) {
         let newCompletedWorkout = CompletedWorkout(workout: workout, timestamp: Date.now)
         completedWorkouts.append(newCompletedWorkout)
-        save()
+        //save()
     }
     
     // MARK: CRUD FUNCTIONS WORKOUTS
     
-    func addWorkout(workout: Workout) {
-        workouts.append(workout)
-        save()
-    }
+//    func addWorkout(workout: Workout) {
+//        workouts.append(workout)
+//        save()
+//    }
     
-    func updateData(workout: Workout, title: String) {
-        if let index = workouts.firstIndex(where: {$0.id == workout.id}) {
-            workouts[index] = workout.updateCompletion()
-        }
-        save()
-    }
+//    func updateData(workout: Workout, title: String) {
+//        if let index = workouts.firstIndex(where: {$0.id == workout.id}) {
+//            workouts[index] = workout.updateCompletion()
+//        }
+//        save()
+//    }
     
     func updateWorkoutTitle(workout: Workout, title: String) {
         for index in completedWorkouts.indices where completedWorkouts[index].workout.title == workout.title {
@@ -100,20 +100,20 @@ class ViewModel: ObservableObject {
         if let index = workouts.firstIndex(where: {$0.id == workout.id}) {
             workouts[index].title = title
         }
-        save()
+        //save()
     }
 
-    func moveData(at offsets: IndexSet, to int: Int) -> Void {
-        workouts.move(fromOffsets: offsets, toOffset: int)
-        save()
-    }
+//    func moveData(at offsets: IndexSet, to int: Int) -> Void {
+//        workouts.move(fromOffsets: offsets, toOffset: int)
+//        save()
+//    }
     
-    func delete(workout: Workout) {
-        if let index = workouts.firstIndex(where: {$0.id == workout.id}) {
-            workouts.remove(at: index)
-        }
-        save()
-    }
+//    func delete(workout: Workout) {
+//        if let index = workouts.firstIndex(where: {$0.id == workout.id}) {
+//            workouts.remove(at: index)
+//        }
+//        save()
+//    }
     
     func getWorkoutTimeline(workout: Workout) -> [Activity] {
         var res: [Activity] = []

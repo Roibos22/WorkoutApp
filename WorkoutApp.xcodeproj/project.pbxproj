@@ -20,6 +20,7 @@
 		354EE6312C5C285100C97F99 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EE6302C5C285100C97F99 /* Workout.swift */; };
 		354EE6352C5C416900C97F99 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EE6342C5C416900C97F99 /* AppState.swift */; };
 		354EE6372C5C430000C97F99 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EE6362C5C430000C97F99 /* DataManager.swift */; };
+		354EE6392C5C477600C97F99 /* WorkoutListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EE6382C5C477600C97F99 /* WorkoutListViewModel.swift */; };
 		358113B42B323012003325C0 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358113B32B323012003325C0 /* Screen.swift */; };
 		358113C42B32512C003325C0 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358113C32B32512C003325C0 /* SoundManager.swift */; };
 		358113C82B325192003325C0 /* jubilant.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 358113C52B325192003325C0 /* jubilant.mp3 */; };
@@ -55,6 +56,7 @@
 		354EE6302C5C285100C97F99 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		354EE6342C5C416900C97F99 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		354EE6362C5C430000C97F99 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		354EE6382C5C477600C97F99 /* WorkoutListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewModel.swift; sourceTree = "<group>"; };
 		358113B32B323012003325C0 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		358113C32B32512C003325C0 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		358113C52B325192003325C0 /* jubilant.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jubilant.mp3; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				354EE6342C5C416900C97F99 /* AppState.swift */,
+				354EE6382C5C477600C97F99 /* WorkoutListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				352A62ED2ACDD47300CAC187 /* Double.swift in Sources */,
 				354EE62D2C5C281300C97F99 /* CompletedWorkout.swift in Sources */,
 				35E3FA4A2AD71BDC0039A0E6 /* WorkoutActiveView.swift in Sources */,
+				354EE6392C5C477600C97F99 /* WorkoutListViewModel.swift in Sources */,
 				354EE6352C5C416900C97F99 /* AppState.swift in Sources */,
 				358113CC2B331D00003325C0 /* WorkoutHistoryView.swift in Sources */,
 				35E3FA462AD692190039A0E6 /* ExerciseDetailView.swift in Sources */,
