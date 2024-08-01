@@ -78,9 +78,9 @@
 		352A62CB2ACDC85000CAC187 = {
 			isa = PBXGroup;
 			children = (
-				358113CD2B33448D003325C0 /* WorkoutPreviewView.swift */,
-				358EE3CA2ACFF4F100F04CFC /* WorkoutSettingsSectionView.swift */,
-				352A62D62ACDC85000CAC187 /* WorkoutApp */,
+				352A62D72ACDC85000CAC187 /* WorkoutAppApp.swift */,
+				352A62D62ACDC85000CAC187 /* WorkoutAppOld */,
+				354EE6212C5C240500C97F99 /* WorkoutApp */,
 				352A62D52ACDC85000CAC187 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,10 +93,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		352A62D62ACDC85000CAC187 /* WorkoutApp */ = {
+		352A62D62ACDC85000CAC187 /* WorkoutAppOld */ = {
 			isa = PBXGroup;
 			children = (
-				352A62D72ACDC85000CAC187 /* WorkoutAppApp.swift */,
+				358EE3CA2ACFF4F100F04CFC /* WorkoutSettingsSectionView.swift */,
+				358113CD2B33448D003325C0 /* WorkoutPreviewView.swift */,
 				358113C22B325118003325C0 /* SoundManager */,
 				352A62F02ACDD8E500CAC187 /* Models */,
 				352A62EE2ACDD8AE00CAC187 /* Extensions */,
@@ -106,7 +107,7 @@
 				352A62DD2ACDC85200CAC187 /* WorkoutApp.entitlements */,
 				352A62DE2ACDC85200CAC187 /* Preview Content */,
 			);
-			path = WorkoutApp;
+			path = WorkoutAppOld;
 			sourceTree = "<group>";
 		};
 		352A62DE2ACDC85200CAC187 /* Preview Content */ = {
@@ -144,6 +145,13 @@
 				352A62F12ACDD8F800CAC187 /* WorkoutModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		354EE6212C5C240500C97F99 /* WorkoutApp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WorkoutApp;
 			sourceTree = "<group>";
 		};
 		358113C22B325118003325C0 /* SoundManager */ = {
