@@ -9,7 +9,7 @@ import Foundation
 
 struct CompletedWorkout: Identifiable, Codable {
     let id: UUID
-    let workout: Workout
+    var workout: Workout
     let timestamp: Date
     
     init(id: UUID = UUID(), workout: Workout, timestamp: Date = Date()) {

@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct WorkoutAppApp: App {
     
-    @StateObject private var vm: ViewModel = ViewModel()
+   // @StateObject private var vm: ViewModel = ViewModel()
     
     var body: some Scene {
         WindowGroup {
-            WorkoutListView()
-                .environmentObject(vm)
+            //WorkoutListView()
+              //  .environmentObject(vm)
         }
     }
 }

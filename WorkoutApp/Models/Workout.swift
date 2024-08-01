@@ -31,11 +31,10 @@ struct Workout: Identifiable, Codable {
         self.completions = completions
     }
     
-    func incrementCompletion() -> Workout {
-        var updatedWorkout = self
-        updatedWorkout.completions += 1
-        return updatedWorkout
+    func updateCompletion() -> Workout {
+        return Workout(title: title, cycles: cycles, cycleRestTime: cycleRestTime, exercises: exercises, completions: completions)
     }
+
 }
 
 // MARK: - Sample Data

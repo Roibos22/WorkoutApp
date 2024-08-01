@@ -42,8 +42,8 @@ struct WorkoutListView: View {
                 }
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
                     NavigationLink {
-                        WorkoutHistoryView(titleForFilter: nil)
-                            .environmentObject(vm)
+                       // WorkoutHistoryView(titleForFilter: nil)
+                            //.environmentObject(vm)
                     } label: {
                         Image(systemName: "clock.arrow.circlepath")
                             .foregroundColor(.black)

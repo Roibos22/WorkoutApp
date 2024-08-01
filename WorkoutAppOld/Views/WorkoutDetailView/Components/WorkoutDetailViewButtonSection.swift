@@ -38,8 +38,8 @@ struct WorkoutDetailViewButtonSection: View {
             }
             // Completions and History
             NavigationLink {
-                WorkoutHistoryView(titleForFilter: workout.title)
-                    .environmentObject(vm)
+               // WorkoutHistoryView(titleForFilter: workout.title)
+                  //  .environmentObject(vm)
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)

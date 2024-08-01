@@ -16,39 +16,39 @@ class ViewModel: ObservableObject {
    // @Published var selectedDataModel: DataModel?
     @Published var soundsEnabled: Bool = true
     
-    let savePathWorkouts = FileManager.documentsDirectory.appendingPathComponent("Workouts")
-    let savePathCompletedWorkouts = FileManager.documentsDirectory.appendingPathComponent("CompletedWorkouts")
-
-    var placeholderWorkout = Workout(title: "Workout", cycles: 1, cycleRestTime: 60, exercises: [
-            Exercise(title: "Push ups", duration: 20, rest: 10),
-            Exercise(title: "Crunches", duration: 20, rest: 10),
-            Exercise(title: "Exercise", duration: 20, rest: 10)
-        ], completions: 0)
+//    let savePathWorkouts = FileManager.documentsDirectory.appendingPathComponent("Workouts")
+//    let savePathCompletedWorkouts = FileManager.documentsDirectory.appendingPathComponent("CompletedWorkouts")
+//
+//    var placeholderWorkout = Workout(title: "Workout", cycles: 1, cycleRestTime: 60, exercises: [
+//            Exercise(title: "Push ups", duration: 20, rest: 10),
+//            Exercise(title: "Crunches", duration: 20, rest: 10),
+//            Exercise(title: "Exercise", duration: 20, rest: 10)
+//        ], completions: 0)
     
     init() {
-        do {
-            let workoutsData = try Data(contentsOf: savePathWorkouts)
-            workouts = try JSONDecoder().decode([Workout].self, from: workoutsData)
-            let completedWorkoutsData = try Data(contentsOf: savePathCompletedWorkouts)
-            completedWorkouts = try JSONDecoder().decode([CompletedWorkout].self, from: completedWorkoutsData)
-            completedWorkoutsFiltered = try JSONDecoder().decode([CompletedWorkout].self, from: completedWorkoutsData)
-        } catch {
-            workouts = [
-                Workout(title: "Workout", cycles: 2, cycleRestTime: 60, exercises: [
-                    Exercise(title: "Push ups", duration: 20, rest: 10),
-                    Exercise(title: "Crunches", duration: 20, rest: 10),
-                    Exercise(title: "Exercise", duration: 20, rest: 10)
-                ], completions: 0)
-            ]
-            completedWorkouts = [
-                CompletedWorkout(workout: Workout.sampleWorkouts[0], ts: Date.now),
-                CompletedWorkout(workout: Workout.sampleWorkouts[1], ts: Date().addingTimeInterval(-86400))
-            ]
-            completedWorkoutsFiltered = [
-                CompletedWorkout(workout: Workout.sampleWorkouts[0], ts: Date.now),
-                CompletedWorkout(workout: Workout.sampleWorkouts[1], ts: Date().addingTimeInterval(-86400))
-            ]
-        }
+//        do {
+//            let workoutsData = try Data(contentsOf: savePathWorkouts)
+//            workouts = try JSONDecoder().decode([Workout].self, from: workoutsData)
+//            let completedWorkoutsData = try Data(contentsOf: savePathCompletedWorkouts)
+//            completedWorkouts = try JSONDecoder().decode([CompletedWorkout].self, from: completedWorkoutsData)
+//            completedWorkoutsFiltered = try JSONDecoder().decode([CompletedWorkout].self, from: completedWorkoutsData)
+//        } catch {
+//            workouts = [
+//                Workout(title: "Workout", cycles: 2, cycleRestTime: 60, exercises: [
+//                    Exercise(title: "Push ups", duration: 20, rest: 10),
+//                    Exercise(title: "Crunches", duration: 20, rest: 10),
+//                    Exercise(title: "Exercise", duration: 20, rest: 10)
+//                ], completions: 0)
+//            ]
+//            completedWorkouts = [
+//                CompletedWorkout(workout: Workout.sampleWorkouts[0], timestamp: Date.now),
+//                CompletedWorkout(workout: Workout.sampleWorkouts[1], timestamp: Date().addingTimeInterval(-86400))
+//            ]
+//            completedWorkoutsFiltered = [
+//                CompletedWorkout(workout: Workout.sampleWorkouts[0], timestamp: Date.now),
+//                CompletedWorkout(workout: Workout.sampleWorkouts[1], timestamp: Date().addingTimeInterval(-86400))
+//            ]
+//        }
     }
     
     func filterWorkoutsForHistory(workoutTitle: String?) {
@@ -60,21 +60,21 @@ class ViewModel: ObservableObject {
     }
 
         
-    func save() {
-        do {
-            let workoutsData = try JSONEncoder().encode(workouts)
-            let completedWorkoutsData = try JSONEncoder().encode(completedWorkouts)
-            try workoutsData.write(to: savePathWorkouts, options: [.atomicWrite, .completeFileProtection])
-            try completedWorkoutsData.write(to: savePathCompletedWorkouts, options: [.atomicWrite, .completeFileProtection])
-        } catch {
-            print("Unable to save data.")
-        }
-    }
+//    func save() {
+//        do {
+//            let workoutsData = try JSONEncoder().encode(workouts)
+//            let completedWorkoutsData = try JSONEncoder().encode(completedWorkouts)
+//            try workoutsData.write(to: savePathWorkouts, options: [.atomicWrite, .completeFileProtection])
+//            try completedWorkoutsData.write(to: savePathCompletedWorkouts, options: [.atomicWrite, .completeFileProtection])
+//        } catch {
+//            print("Unable to save data.")
+//        }
+//    }
     
     // MARK: CRUD FUNCTIONS COMPLETED WORKOUTS
 
     func addCompletedWorkout(workout: Workout) {
-        let newCompletedWorkout = CompletedWorkout(workout: workout, ts: Date.now)
+        let newCompletedWorkout = CompletedWorkout(workout: workout, timestamp: Date.now)
         completedWorkouts.append(newCompletedWorkout)
         save()
     }
