@@ -23,25 +23,18 @@ class WorkoutListViewModel: ObservableObject {
     }
     
     func addWorkout(_ workout: Workout) {
-        appState.workouts.append(workout)
-        appState.saveData()
+        appState.saveWorkout(workout)
     }
     
     func updateWorkout(_ workout: Workout) {
-        if let index = appState.workouts.firstIndex(where: { $0.id == workout.id }) {
-            // possible need to remove updateCompletion
-            appState.workouts[index] = workout.updateCompletion()
-            appState.saveData()
-        }
+        appState.saveWorkout(workout)
     }
     
     func deleteWorkout(_ workout: Workout) {
-        appState.workouts.removeAll { $0.id == workout.id }
-        appState.saveData()
+        appState.deleteWorkout(workout)
     }
     
-    func moveWorkout(at offsets: IndexSet, to int: Int) -> Void {
-        appState.workouts.move(fromOffsets: offsets, toOffset: int)
-        appState.saveData()
+    func moveWorkout(at offsets: IndexSet, to destination: Int) {
+        appState.moveWorkout(at: offsets, to: destination)
     }
 }
