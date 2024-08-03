@@ -40,19 +40,21 @@ class AppState: ObservableObject {
         loadData()  // Reload data to reflect changes
     }
     
+//    func addWorkout(_ workout: Workout) {
+//        workouts.append(workout)
+//        workoutService.saveWorkout(workout)
+//    }
+//
+//    func updateWorkout(_ workout: Workout) {
+//        if let index = workouts.firstIndex(where: { $0.id == workout.id }) {
+//            workouts[index] = workout
+//            workoutService.saveWorkout(workout)
+//        }
+//    }
+    
     func deleteWorkout(_ workout: Workout) {
-        print("AppState: Before deletion:")
-        printWorkouts()
-        
         workoutService.deleteWorkout(workout)
-        
-        print("AppState: After deletion, before loadData:")
-        printWorkouts()
-        
         loadData()  // Reload data to reflect changes
-        
-        print("AppState: After loadData:")
-        printWorkouts()
     }
     
     func moveWorkout(at offsets: IndexSet, to destination: Int) {

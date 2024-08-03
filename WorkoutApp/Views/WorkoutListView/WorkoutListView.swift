@@ -27,10 +27,6 @@ struct WorkoutListView: View {
                     }
                 }
             }
-            //.id(UUID()) // Force view to update when workouts change
-//            .onAppear {
-//                print("WorkoutListView appeared: \(viewModel.workouts.count) workouts")
-//            }
             .navigationTitle("Your Workouts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -66,7 +62,7 @@ struct WorkoutListView: View {
     
     private var addWorkoutButton: some View {
         NavigationLink(destination: WorkoutDetailView(
-            viewModel: WorkoutDetailViewModel(appState: appState)
+            viewModel: WorkoutDetailViewModel(workout: nil, appState: appState)
         )) {
             Image(systemName: "plus.circle.fill")
                 .foregroundColor(.primary)
