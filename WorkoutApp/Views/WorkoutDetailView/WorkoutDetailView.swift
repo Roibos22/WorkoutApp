@@ -40,6 +40,7 @@ struct WorkoutDetailView: View {
         }
         .navigationTitle(viewModel.workout.title)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 TextField("Workout Title", text: $viewModel.workout.title)
@@ -57,9 +58,6 @@ struct WorkoutDetailView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             }
-        }
-        .onDisappear() {
-            viewModel.saveWorkout()
         }
         .confirmationDialog(
             Text("Delete Workout?"),

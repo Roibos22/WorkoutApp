@@ -10,6 +10,7 @@ import SwiftUI
 struct ExerciseDetailView: View {
     
     @Binding var exercise: Exercise
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         ScrollView {
@@ -24,7 +25,24 @@ struct ExerciseDetailView: View {
                     .padding(.bottom, 5)
             }
             .padding()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .navigationTitle(exercise.title)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("\(exercise.title)")
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .font(.title)
+                        .bold()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Save") {
+                        print("call saveWorkout VM from Save Button in View")
+                        //viewModel.saveWorkout()
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }
         }
     }
 }
