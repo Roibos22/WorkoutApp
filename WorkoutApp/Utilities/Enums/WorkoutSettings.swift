@@ -12,7 +12,7 @@ enum WorkoutSettingsCardFormats {
     case asNumber
 }
 
-enum WorkoutSettingType {
+enum WorkoutSettingsType {
     case exerciseDuration
     case exerciseRest
     case cycles
