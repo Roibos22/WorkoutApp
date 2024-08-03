@@ -58,6 +58,9 @@ struct WorkoutDetailView: View {
                 }
             }
         }
+        .onDisappear() {
+            viewModel.saveWorkout()
+        }
         .confirmationDialog(
             Text("Delete Workout?"),
             isPresented: $showDeleteWorkoutAlert,
