@@ -29,7 +29,7 @@ struct WorkoutSettingsSectionValueSheet: View {
             
             pickerView
             
-            Button("Done") {
+            Button("Save") {
                 updateValue()
                 dismiss()
             }

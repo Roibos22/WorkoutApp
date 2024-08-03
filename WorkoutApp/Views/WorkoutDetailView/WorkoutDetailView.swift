@@ -18,16 +18,20 @@ struct WorkoutDetailView: View {
             VStack {
                 // Button Section
                 WorkoutDetailViewButtonSection(viewModel: viewModel)
-               // WorkoutDetailViewButtonSection(workout: viewModel.workout)
-                
-                // Workout Settings
-                WorkoutSettingsSection(workout: $viewModel.workout)
+                    .padding(.vertical, 5)
+                    .padding(.top, 10)
                 
                 // Exercises
                 WorkoutDetailViewExercisesSection(workout: $viewModel.workout)
-                
+                    .padding(.vertical, 5)
+
+                // Workout Settings
+                WorkoutSettingsSection(workout: $viewModel.workout)
+                    .padding(.vertical, 5)
+
                 if !viewModel.isNewWorkout {
                    deleteWorkoutButton
+                        .padding(.vertical, 15)
                 }
                 
                 Spacer()
@@ -66,24 +70,24 @@ struct WorkoutDetailView: View {
                 }
             }
         }
-//        .onDisappear {
-//            viewModel.saveWorkout()
-//        }
+
     }
     
     private var deleteWorkoutButton: some View {
-        Button(action: {
-            showDeleteWorkoutAlert.toggle()
-        }) {
+        ZStack {
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.red)
+                .frame(height: 50)
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(Color.black, lineWidth: 2)
+                .frame(height: 50)
             Text("Delete Workout")
-                .foregroundColor(.white)
-                .bold()
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.red)
-                .cornerRadius(10)
+                .font(.title2)
+                .fontWeight(.bold)
         }
-        .padding(.top)
+        .onTapGesture {
+            showDeleteWorkoutAlert.toggle()
+        }
     }
 }
 

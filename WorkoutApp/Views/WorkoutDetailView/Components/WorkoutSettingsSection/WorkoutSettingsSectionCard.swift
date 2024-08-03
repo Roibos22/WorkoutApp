@@ -21,10 +21,11 @@ struct WorkoutSettingsSectionCard: View {
                 .foregroundColor(.gray)
                 .font(.subheadline)
                 .fontWeight(.semibold)
+                .padding(.leading, 7)
             
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.gray.opacity(0.3), lineWidth: 1)
-                .frame(height: 60)
+                .stroke(Color.black, lineWidth: 2)
+                .frame(height: 50)
                 .overlay(
                     HStack {
                         Image(systemName: icon)
@@ -32,7 +33,7 @@ struct WorkoutSettingsSectionCard: View {
                         valueText
                     }
                     .padding(.horizontal)
-                    .font(.title3)
+                    .font(.title2)
                     .fontWeight(.bold)
                 )
         }
@@ -70,6 +71,44 @@ struct WorkoutSettingsSectionCard: View {
     }
 }
 
-//#Preview {
-//    WorkoutSettingsSectionCard()
-//}
+struct WorkoutSettingsSectionCard_Previews: PreviewProvider {
+    static var previews: some View {
+        // Create a sample workout
+        @State var sampleWorkout = Workout.sampleWorkouts[0]
+        
+        return Group {
+            // Preview for Exercise Duration
+            WorkoutSettingsSectionCard(
+                title: "Exercise Duration",
+                icon: "stopwatch",
+                workout: $sampleWorkout,
+                settingType: .exerciseDuration
+            )
+            .previewLayout(.sizeThatFits)
+            .padding()
+            .frame(width: 200)
+            
+            // Preview for Cycles
+            WorkoutSettingsSectionCard(
+                title: "Cycles",
+                icon: "repeat",
+                workout: $sampleWorkout,
+                settingType: .cycles
+            )
+            .previewLayout(.sizeThatFits)
+            .padding()
+            .frame(width: 200)
+            
+            // Preview for Cycle Rest
+            WorkoutSettingsSectionCard(
+                title: "Cycle Rest",
+                icon: "hourglass",
+                workout: $sampleWorkout,
+                settingType: .cycleRest
+            )
+            .previewLayout(.sizeThatFits)
+            .padding()
+            .frame(width: 200)
+        }
+    }
+}
