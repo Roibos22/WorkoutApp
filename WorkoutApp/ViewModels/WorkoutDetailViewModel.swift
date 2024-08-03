@@ -16,7 +16,7 @@ class WorkoutDetailViewModel: ObservableObject {
     init(workout: Workout? = nil, appState: AppState) {
         self.appState = appState
         self.isNewWorkout = workout == nil
-        self.workout = workout ?? Workout(id: UUID(), title: "New Workout", cycles: 1, cycleRestTime: 60, exercises: [])
+        self.workout = workout ?? appState.generateNewWorkout()
         updateCompletions()
     }
     
