@@ -27,6 +27,10 @@ struct WorkoutListView: View {
                     }
                 }
             }
+            //.id(UUID()) // Force view to update when workouts change
+//            .onAppear {
+//                print("WorkoutListView appeared: \(viewModel.workouts.count) workouts")
+//            }
             .navigationTitle("Your Workouts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

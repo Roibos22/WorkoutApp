@@ -35,18 +35,37 @@ class AppState: ObservableObject {
 //    }
     
     func saveWorkout(_ workout: Workout) {
+        print("call saveWorkout WDS from saveWorkout AS")
         workoutService.saveWorkout(workout)
         loadData()  // Reload data to reflect changes
     }
     
     func deleteWorkout(_ workout: Workout) {
+        print("AppState: Before deletion:")
+        printWorkouts()
+        
         workoutService.deleteWorkout(workout)
+        
+        print("AppState: After deletion, before loadData:")
+        printWorkouts()
+        
         loadData()  // Reload data to reflect changes
+        
+        print("AppState: After loadData:")
+        printWorkouts()
     }
     
     func moveWorkout(at offsets: IndexSet, to destination: Int) {
         workoutService.moveWorkout(at: offsets, to: destination)
         loadData()  // Reload data to reflect changes
+    }
+    
+    private func printWorkouts() {
+        for (index, workout) in workouts.enumerated() {
+            print("Workout \(index): ID = \(workout.id), Title = \(workout.title)")
+        }
+        print("Total workouts: \(workouts.count)")
+        print("-------------------")
     }
 
 }

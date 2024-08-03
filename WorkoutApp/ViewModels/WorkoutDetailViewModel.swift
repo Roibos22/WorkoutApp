@@ -25,6 +25,7 @@ class WorkoutDetailViewModel: ObservableObject {
     }
 
     func saveWorkout() {
+        print("call saveWorkout AS from saveWorkout VM")
         appState.saveWorkout(workout)
         if isNewWorkout {
             //appState.addWorkout(workout)
@@ -39,6 +40,7 @@ class WorkoutDetailViewModel: ObservableObject {
 
     func updateTitle(_ title: String) {
         workout.title = title
+        print("call saveWorkout VM from updateTitle in View")
         saveWorkout()
     }
 }

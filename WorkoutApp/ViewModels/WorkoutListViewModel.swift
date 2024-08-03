@@ -16,11 +16,16 @@ class WorkoutListViewModel: ObservableObject {
     
     init(appState: AppState) {
         self.appState = appState
-        
+            
         appState.$workouts
-            .assign(to: \.workouts, on: self)
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] workouts in
+                self?.workouts = workouts
+                print("WorkoutListViewModel updated: \(workouts.count) workouts")
+            }
             .store(in: &cancellables)
-    }
+        }
     
     func addWorkout(_ workout: Workout) {
         appState.saveWorkout(workout)

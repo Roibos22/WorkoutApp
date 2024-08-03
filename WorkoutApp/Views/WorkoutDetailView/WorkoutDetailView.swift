@@ -48,6 +48,7 @@ struct WorkoutDetailView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Save") {
+                    print("call saveWorkout VM from Save Button in View")
                     viewModel.saveWorkout()
                     presentationMode.wrappedValue.dismiss()
                 }
@@ -60,12 +61,14 @@ struct WorkoutDetailView: View {
         ) {
             Button("Delete", role: .destructive) {
                 viewModel.deleteWorkout()
-                presentationMode.wrappedValue.dismiss()
+                DispatchQueue.main.async {
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
         }
-        .onDisappear {
-            viewModel.saveWorkout()
-        }
+//        .onDisappear {
+//            viewModel.saveWorkout()
+//        }
     }
     
     private var deleteWorkoutButton: some View {
