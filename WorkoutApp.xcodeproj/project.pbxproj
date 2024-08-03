@@ -36,7 +36,6 @@
 		358113CC2B331D00003325C0 /* WorkoutHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358113CB2B331D00003325C0 /* WorkoutHistoryView.swift */; };
 		358113CE2B33448D003325C0 /* WorkoutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358113CD2B33448D003325C0 /* WorkoutPreviewView.swift */; };
 		3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582F8382B31F8A000AC6C53 /* WorkoutCompletedView.swift */; };
-		3582F83C2B31FA0B00AC6C53 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3582F83B2B31FA0B00AC6C53 /* ConfettiSwiftUI */; };
 		358EE3C62ACFECFA00F04CFC /* WorkoutListViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EE3C52ACFECFA00F04CFC /* WorkoutListViewOld.swift */; };
 		358EE3C92ACFED5F00F04CFC /* WorkoutDetailViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EE3C82ACFED5F00F04CFC /* WorkoutDetailViewOld.swift */; };
 		35CE057B2C5E94DB006188AB /* WorkoutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE057A2C5E94DB006188AB /* WorkoutSettings.swift */; };
@@ -100,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3582F83C2B31FA0B00AC6C53 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +378,6 @@
 			);
 			name = WorkoutApp;
 			packageProductDependencies = (
-				3582F83B2B31FA0B00AC6C53 /* ConfettiSwiftUI */,
 			);
 			productName = WorkoutApp;
 			productReference = 352A62D42ACDC85000CAC187 /* WorkoutApp.app */;
@@ -713,14 +710,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3582F83B2B31FA0B00AC6C53 /* ConfettiSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3582F83A2B31FA0B00AC6C53 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
-			productName = ConfettiSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 352A62CC2ACDC85000CAC187 /* Project object */;
 }

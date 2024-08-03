@@ -20,12 +20,13 @@ struct WorkoutListView: View {
                             viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
                         )) {
                             WorkoutCardView(workout: workout)
-                                .padding(.vertical, 10)
-                                .padding(.horizontal)
+                                .contentShape(Rectangle())
                         }
                         .buttonStyle(PlainButtonStyle())
+                        .padding(.vertical, 10)
                     }
                 }
+                .padding(.horizontal)
             }
             .navigationTitle("Your Workouts")
             .toolbar {
