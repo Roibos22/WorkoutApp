@@ -16,9 +16,9 @@ struct ExerciseDetailView: View {
             VStack {
                 ExerciseSettingsTitleCard(exercise: $exercise)
                     .padding(.bottom, 5)
-                ExerciseSettingsValueCard(exercise: $exercise, value: $exercise.duration, title: "Exercise Duration", icon: "stopwatch")
+                ExerciseSettingsValueCard(exercise: $exercise, value: $exercise.duration, type: .exerciseDuration)
                     .padding(.bottom, 5)
-                ExerciseSettingsValueCard(exercise: $exercise, value: $exercise.rest, title: "Exercise Rest", icon: "hourglass")
+                ExerciseSettingsValueCard(exercise: $exercise, value: $exercise.rest, type: .exerciseRest)
                     .padding(.bottom, 15)
                 ExerciseSettingsRemoveCard(exercise: exercise)
                     .padding(.bottom, 5)
@@ -55,16 +55,17 @@ struct ExerciseSettingsTitleCard: View {
 }
 
 struct ExerciseSettingsValueCard: View {
-    
+    //@Binding var workout: Workout
     @Binding var exercise: Exercise
     @Binding var value: Double
-    let title: String
-    let icon: String
+    let type: ExerciseSettingsType
     
+    @State private var isSheetPresented = false
+
     var body: some View {
         
         VStack(alignment: .leading) {
-            Text(title)
+            Text(type.rawValue)
                 .foregroundColor(.gray)
                 .font(.subheadline)
                 .fontWeight(.semibold)
@@ -75,7 +76,7 @@ struct ExerciseSettingsValueCard: View {
                     .frame(height: 60)
                     .foregroundColor(.white)
                 HStack {
-                    Image(systemName: icon)
+                    Image(systemName: type.icon)
                     Spacer()
                     Text(value.asDigitalMinutes())
                 }
@@ -83,6 +84,13 @@ struct ExerciseSettingsValueCard: View {
                 .font(.title)
                 .bold()
             }
+        }
+        .onTapGesture {
+            isSheetPresented.toggle()
+        }
+        .sheet(isPresented: $isSheetPresented) {
+            ExerciseSettingsValueSheet(value: $value, settingType: type)
+                .presentationDetents([.fraction(0.4)])
         }
     }
 }
@@ -92,30 +100,88 @@ struct ExerciseSettingsRemoveCard: View {
     let exercise: Exercise
 
     var body: some View {
-        ZStack(alignment: .leading) {
-            Text("")
-                .offset(x: 15, y: -43)
-                .foregroundColor(.gray)
-                .bold()
-                .font(.subheadline)
+        VStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(Color.red)
                 .frame(height: 60)
                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black, lineWidth: 2))
-            HStack {
-                Spacer()
-                Text("Delete Exercise")
-                Spacer()
-            }
-            .padding()
-            .font(.title2)
-            .bold()
+                .overlay(
+                    HStack {
+                        Spacer()
+                        Text("Delete Exercise")
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    .font(.title2)
+                    .bold()
+                )
+        }
+        .onTapGesture {
+            // delete exercise
         }
         .padding(.vertical, 10)
     }
 }
 
+struct ExerciseSettingsValueSheet: View {
+    @Binding var value: Double
+    let settingType: ExerciseSettingsType
+    @Environment(\.dismiss) private var dismiss
 
+    @State private var minutesSelection = 0
+    @State private var secondsSelection = 0
+    
+    let minutesOptions = Array(0...59)
+    let secondsOptions = Array(0...59)
+
+    var body: some View {
+        VStack {
+            Text("\(settingType.changeValueString)")
+                .bold()
+                .font(.title3)
+                .padding(.top, 25)
+            
+            pickerView
+            
+            Button("Save") {
+                updateValue()
+                dismiss()
+            }
+            .font(.title3)
+            .foregroundColor(.blue)
+            .cornerRadius(10)
+        }
+        .onAppear(perform: initializeSelections)
+    }
+    
+    private var pickerView: some View {
+        Group {
+            HStack {
+                Picker("Minutes", selection: $minutesSelection) {
+                    ForEach(minutesOptions, id: \.self) { Text("\($0) min").tag($0) }
+                }
+                .pickerStyle(WheelPickerStyle())
+                    
+                Picker("Seconds", selection: $secondsSelection) {
+                    ForEach(secondsOptions, id: \.self) { Text("\($0) sec").tag($0) }
+                }
+                .pickerStyle(WheelPickerStyle())
+            }
+        }
+        .padding(.horizontal)
+    }
+    
+    private func initializeSelections() {
+        let totalSeconds = Int(value)
+        minutesSelection = totalSeconds / 60
+        secondsSelection = totalSeconds % 60
+    }
+    
+    private func updateValue() {
+        let newValue = Double(minutesSelection * 60 + secondsSelection)
+        value = newValue
+    }
+}
 
 
 

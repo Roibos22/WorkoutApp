@@ -21,7 +21,7 @@ enum WorkoutSettingsType: String {
     var changeValueString: String {
         switch self {
         case .exerciseDuration:
-            return "Edit duration of all exercises"
+            return "Edit duration for all exercises"
         case .exerciseRest:
             return "Edit rest time for all exercises"
         case .cycles:
