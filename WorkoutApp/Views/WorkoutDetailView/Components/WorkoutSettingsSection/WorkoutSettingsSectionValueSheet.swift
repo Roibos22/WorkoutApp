@@ -18,13 +18,13 @@ struct WorkoutSettingsSectionValueSheet: View {
     
     let minutesOptions = Array(0...59)
     let secondsOptions = Array(0...59)
-    let numberOptions = Array(0...99)
+    let numberOptions = Array(1...99)
 
     var body: some View {
         VStack {
-            Text("Change \(settingType.rawValue)")
+            Text("\(settingType.changeValueString)")
                 .bold()
-                .font(.title2)
+                .font(.title3)
                 .padding(.top, 25)
             
             pickerView
@@ -49,13 +49,11 @@ struct WorkoutSettingsSectionValueSheet: View {
                         ForEach(minutesOptions, id: \.self) { Text("\($0) min").tag($0) }
                     }
                     .pickerStyle(WheelPickerStyle())
-                    //.frame(width: 150)
                     
                     Picker("Seconds", selection: $secondsSelection) {
                         ForEach(secondsOptions, id: \.self) { Text("\($0) sec").tag($0) }
                     }
                     .pickerStyle(WheelPickerStyle())
-                    //.frame(width: 150)
                 }
             } else {
                 Picker("Number", selection: $numberSelection) {
@@ -89,18 +87,12 @@ struct WorkoutSettingsSectionValueSheet: View {
         
         switch settingType {
         case .exerciseDuration:
-            if var firstExercise = workout.exercises.first {
-                firstExercise.duration = newValue
-                workout.exercises[0] = firstExercise
-            } else {
-                workout.exercises.append(Exercise(title: "New Exercise", duration: newValue, rest: 0))
+            workout.exercises.forEach { exercise in
+                workout.exercises[workout.exercises.firstIndex(of: exercise)!].duration = newValue
             }
         case .exerciseRest:
-            if var firstExercise = workout.exercises.first {
-                firstExercise.rest = newValue
-                workout.exercises[0] = firstExercise
-            } else {
-                workout.exercises.append(Exercise(title: "New Exercise", duration: 0, rest: newValue))
+            workout.exercises.forEach { exercise in
+                    workout.exercises[workout.exercises.firstIndex(of: exercise)!].rest = newValue
             }
         case .cycles:
             workout.cycles = Int(newValue)

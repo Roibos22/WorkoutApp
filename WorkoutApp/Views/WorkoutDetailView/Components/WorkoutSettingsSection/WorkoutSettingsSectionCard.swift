@@ -17,11 +17,11 @@ struct WorkoutSettingsSectionCard: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(title)
-                .foregroundColor(.gray)
-                .font(.subheadline)
-                .fontWeight(.semibold)
-                .padding(.leading, 7)
+//            Text(title)
+//                .foregroundColor(.gray)
+//                .font(.subheadline)
+//                .fontWeight(.semibold)
+//                .padding(.leading, 7)
             
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color.black, lineWidth: 2)

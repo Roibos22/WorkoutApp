@@ -11,14 +11,29 @@ struct WorkoutSettingsSection: View {
     @Binding var workout: Workout
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(alignment: .leading) {
             sectionHeader
+                .padding(.bottom, 10)
             
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 15) {
-                settingsCard(title: "Cycles", icon: "repeat", settingType: .cycles)
-                settingsCard(title: "Cycle Rest", icon: "hourglass.circle", settingType: .cycleRest)
-                settingsCard(title: "Exercise Duration", icon: "stopwatch", settingType: .exerciseDuration)
-                settingsCard(title: "Exercise Rest", icon: "hourglass.circle", settingType: .exerciseRest)
+            VStack(alignment: .leading) {
+                Text("Edit Cycle Settings")
+                    .bold()
+                    .padding(.bottom, 1)
+                HStack {
+                    settingsCard(title: "Cycles", icon: "repeat", settingType: .cycles)
+                    settingsCard(title: "Cycle Rest", icon: "hourglass.circle", settingType: .cycleRest)
+                }
+            }
+            .padding(.bottom, 10)
+            
+            VStack(alignment: .leading) {
+                Text("Edit Duration for all Exercises")
+                    .bold()
+                    .padding(.bottom, 1)
+                HStack {
+                    settingsCard(title: "Exercise Duration", icon: "stopwatch", settingType: .exerciseDuration)
+                    settingsCard(title: "Exercise Rest", icon: "hourglass.circle", settingType: .exerciseRest)
+                }
             }
         }
         //.padding()
@@ -41,27 +56,11 @@ struct WorkoutSettingsSection: View {
 
 struct WorkoutSettingsSection_Previews: PreviewProvider {
     static var previews: some View {
-        // Create a sample workout
-        @State static var sampleWorkout = Workout.sampleWorkouts[0]
+        @State var sampleWorkout = Workout.sampleWorkouts[0]
         
-        return Group {
-            // Light mode preview
-            WorkoutSettingsSection(workout: $sampleWorkout)
-                .previewLayout(.sizeThatFits)
-                .padding()
-                .previewDisplayName("Light Mode")
-            
-            // Dark mode preview
-            WorkoutSettingsSection(workout: $sampleWorkout)
-                .previewLayout(.sizeThatFits)
-                .padding()
-                .preferredColorScheme(.dark)
-                .previewDisplayName("Dark Mode")
-            
-            // iPhone SE preview for smaller screens
-            WorkoutSettingsSection(workout: $sampleWorkout)
-                .previewDevice("iPhone SE (3rd generation)")
-                .previewDisplayName("iPhone SE")
-        }
+        WorkoutSettingsSection(workout: $sampleWorkout)
+            .previewLayout(.sizeThatFits)
+            .padding()
+            .previewDisplayName("Light Mode")
     }
 }
