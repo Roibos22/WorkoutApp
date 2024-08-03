@@ -74,7 +74,7 @@ struct ExerciseCardView: View {
             Spacer()
             HStack {
                 Image(systemName: "hourglass")
-                Text(exercise.duration.asDigitalMinutes())
+                Text(exercise.rest.asDigitalMinutes())
             }
 
         }
