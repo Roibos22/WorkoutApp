@@ -10,7 +10,7 @@ import SwiftUI
 struct ExerciseSettingsRemoveCard: View {
     
     let exercise: Exercise
-    
+
     var body: some View {
         ZStack(alignment: .leading) {
             Text("")
@@ -95,8 +95,8 @@ struct ExerciseSettingsValueCard: View {
 
 struct ExerciseDetailView: View {
     
-    let exercise: Exercise
-    
+    @Binding var exercise: Exercise
+
     var body: some View {
         ScrollView {
             VStack {
@@ -113,6 +113,14 @@ struct ExerciseDetailView: View {
 
 struct ExerciseDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseDetailView(exercise: Workout.sampleWorkouts[0].exercises[0])
+        @State var sampleExercise = Exercise(
+            title: "Push-ups",
+            duration: 30,
+            rest: 15
+        )
+        
+        NavigationView {
+            ExerciseDetailView(exercise: $sampleExercise)
+        }
     }
 }

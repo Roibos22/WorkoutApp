@@ -15,9 +15,9 @@ struct WorkoutDetailViewExercisesSection: View {
             sectionHeader
             
             ForEach($workout.exercises) { $exercise in
-                //NavigationLink(destination: ExerciseDetailView(exercise: $exercise)) {
+                NavigationLink(destination: ExerciseDetailView(exercise: $exercise)) {
                     ExerciseCardView(exercise: exercise)
-                //}
+                }
             }
         }
         .foregroundColor(.primary)
@@ -55,32 +55,42 @@ struct ExerciseCardView: View {
             .font(.title3)
             .fontWeight(.bold)
             .foregroundColor(.white)
-            .frame(maxWidth: .infinity, minHeight: 50)
+            .frame(maxWidth: .infinity, minHeight: 40)
             .background(Color.blue)
             .clipShape(RoundedRectangle(cornerRadius: 20))
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.black, lineWidth: 2)
+            )
     }
     
     private var exerciseInfo: some View {
         HStack {
-            infoItem(icon: "stopwatch", value: exercise.rest.asDigitalMinutes())
+            HStack {
+                Image(systemName: "stopwatch")
+                Text(exercise.duration.asDigitalMinutes())
+            }
+            
             Spacer()
-            infoItem(icon: "hourglass", value: exercise.duration.asDigitalMinutes())
+            HStack {
+                Image(systemName: "hourglass")
+                Text(exercise.duration.asDigitalMinutes())
+            }
+
         }
-        .padding()
+        .padding(.vertical, 10)
+        .padding(.horizontal, 50)
         .foregroundColor(.primary)
+        .font(.title3)
+        .bold()
     }
     
-    private func infoItem(icon: String, value: String) -> some View {
-        HStack {
-            Image(systemName: icon)
-            Text(value)
-        }
-        .font(.headline)
-    }
+
 }
 
 struct WorkoutDetailViewExercisesSection_Previews: PreviewProvider {
     static var previews: some View {
         WorkoutDetailViewExercisesSection(workout: .constant(Workout.sampleWorkouts[0]))
+            .padding()
     }
 }

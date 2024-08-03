@@ -158,7 +158,6 @@
 				358EE3CC2ACFF4FF00F04CFC /* WorkoutListView */,
 				358EE3CD2ACFF50B00F04CFC /* WorkoutDetailView */,
 				35E3FA482AD71BB30039A0E6 /* WorkoutActiveView */,
-				35E3FA442AD691E30039A0E6 /* ExerciseDetailView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +205,7 @@
 			children = (
 				354EE6492C5DAC9500C97F99 /* WorkoutListView */,
 				354EE6482C5DAC8000C97F99 /* WorkoutDetailView */,
+				35E3FA442AD691E30039A0E6 /* ExerciseDetailView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,12 +309,28 @@
 			path = WorkoutSettingsSection;
 			sourceTree = "<group>";
 		};
+		35CE05842C5EABA0006188AB /* WorkoutExercisesSection */ = {
+			isa = PBXGroup;
+			children = (
+				35E3FA422AD691440039A0E6 /* WorkoutDetailViewExercisesSection.swift */,
+			);
+			path = WorkoutExercisesSection;
+			sourceTree = "<group>";
+		};
+		35CE05852C5EAC14006188AB /* WorkoutButtonsSection */ = {
+			isa = PBXGroup;
+			children = (
+				35E3FA402AD691140039A0E6 /* WorkoutDetailViewButtonSection.swift */,
+			);
+			path = WorkoutButtonsSection;
+			sourceTree = "<group>";
+		};
 		35E3FA3F2AD690C20039A0E6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				35CE05852C5EAC14006188AB /* WorkoutButtonsSection */,
+				35CE05842C5EABA0006188AB /* WorkoutExercisesSection */,
 				35CE05822C5E96E4006188AB /* WorkoutSettingsSection */,
-				35E3FA402AD691140039A0E6 /* WorkoutDetailViewButtonSection.swift */,
-				35E3FA422AD691440039A0E6 /* WorkoutDetailViewExercisesSection.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
