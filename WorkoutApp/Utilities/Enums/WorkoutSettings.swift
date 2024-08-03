@@ -12,9 +12,9 @@ enum WorkoutSettingsCardFormats {
     case asNumber
 }
 
-enum WorkoutSettingsType {
-    case exerciseDuration
-    case exerciseRest
-    case cycles
-    case cycleRest
+enum WorkoutSettingsType: String {
+    case exerciseDuration = "Exercise Duration"
+    case exerciseRest = "Exercise Rest"
+    case cycles = "Cycles"
+    case cycleRest = "Cycle Rest"
 }

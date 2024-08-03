@@ -41,7 +41,7 @@ struct WorkoutSettingsSectionCard: View {
         }
         .sheet(isPresented: $isSheetPresented) {
             WorkoutSettingsSectionValueSheet(workout: $workout, settingType: settingType)
-                .presentationDetents([.fraction(0.3)])
+                .presentationDetents([.fraction(0.4)])
         }
     }
     

@@ -22,9 +22,10 @@ struct WorkoutSettingsSectionValueSheet: View {
 
     var body: some View {
         VStack {
-            Text("Change Value")
-                .font(.title)
-                .padding()
+            Text("Change \(settingType.rawValue)")
+                .bold()
+                .font(.title2)
+                .padding(.top, 25)
             
             pickerView
             
@@ -32,9 +33,9 @@ struct WorkoutSettingsSectionValueSheet: View {
                 updateValue()
                 dismiss()
             }
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
+            //.padding()
+            .font(.title3)
+            .foregroundColor(.blue)
             .cornerRadius(10)
         }
         .onAppear(perform: initializeSelections)
@@ -45,16 +46,16 @@ struct WorkoutSettingsSectionValueSheet: View {
             if settingType != .cycles {
                 HStack {
                     Picker("Minutes", selection: $minutesSelection) {
-                        ForEach(minutesOptions, id: \.self) { Text("\($0)").tag($0) }
+                        ForEach(minutesOptions, id: \.self) { Text("\($0) min").tag($0) }
                     }
                     .pickerStyle(WheelPickerStyle())
-                    .frame(width: 100)
+                    //.frame(width: 150)
                     
                     Picker("Seconds", selection: $secondsSelection) {
-                        ForEach(secondsOptions, id: \.self) { Text("\($0)").tag($0) }
+                        ForEach(secondsOptions, id: \.self) { Text("\($0) sec").tag($0) }
                     }
                     .pickerStyle(WheelPickerStyle())
-                    .frame(width: 100)
+                    //.frame(width: 150)
                 }
             } else {
                 Picker("Number", selection: $numberSelection) {
@@ -64,6 +65,7 @@ struct WorkoutSettingsSectionValueSheet: View {
                 .frame(width: 100)
             }
         }
+        .padding(.horizontal)
     }
     
     private func initializeSelections() {
@@ -121,6 +123,11 @@ struct WorkoutSettingsSectionValueSheet: View {
     }
 }
 
-//#Preview {
-//    WorkoutSettingsSectionValueSheet()
-//}
+#Preview {
+    @State var sampleWorkout = Workout.sampleWorkouts[0]
+    
+    return WorkoutSettingsSectionValueSheet(
+        workout: $sampleWorkout,
+        settingType: .exerciseDuration
+    )
+}
