@@ -51,6 +51,7 @@ struct WorkoutSettingsSection: View {
     
     private func settingsCard(title: String, icon: String, settingType: WorkoutSettingsType) -> some View {
         WorkoutSettingsSectionCard(title: title, icon: icon, workout: $workout, settingType: settingType)
+            .contentShape(Rectangle())
     }
 }
 

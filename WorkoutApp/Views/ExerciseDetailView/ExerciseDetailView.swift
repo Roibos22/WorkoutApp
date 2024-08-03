@@ -147,6 +147,7 @@ struct ExerciseSettingsValueSheet: View {
                 updateValue()
                 dismiss()
             }
+            .padding(.bottom)
             .font(.title3)
             .foregroundColor(.blue)
             .cornerRadius(10)
