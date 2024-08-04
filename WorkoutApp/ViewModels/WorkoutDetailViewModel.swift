@@ -33,6 +33,12 @@ class WorkoutDetailViewModel: ObservableObject {
 //            //appState.updateWorkout(workout)
 //        }
     }
+    
+    func deleteExercise(_ exercise: Exercise) {
+        workout.exercises.removeAll { $0.id == exercise.id }
+        saveWorkout()
+        objectWillChange.send()
+    }
 
     func deleteWorkout() {
         appState.deleteWorkout(workout)

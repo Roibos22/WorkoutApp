@@ -9,28 +9,30 @@ import SwiftUI
 
 struct WorkoutDetailViewExercisesSection: View {
     @Binding var workout: Workout
-    
+    @ObservedObject var viewModel: WorkoutDetailViewModel
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
-            sectionHeader
+        VStack(alignment: .leading) {
+            Text("Exercises")
+                .font(.headline)
+                .padding(.bottom, 5)
             
             ForEach($workout.exercises) { $exercise in
-                NavigationLink(destination: ExerciseDetailView(exercise: $exercise)) {
+                NavigationLink(destination: ExerciseDetailView(viewModel: ExerciseDetailViewModel(exercise: exercise, workoutViewModel: viewModel) {
+                    // This closure will be called when the exercise is deleted
+                    viewModel.objectWillChange.send()
+                })) {
                     ExerciseCardView(exercise: exercise)
                 }
             }
+            
+//            Button(action: {
+//                workout.exercises.append(Exercise())
+//            }) {
+//                Label("Add Exercise", systemImage: "plus.circle")
+//            }
+//            .padding(.top, 10)
         }
-        .foregroundColor(.primary)
-    }
-    
-    private var sectionHeader: some View {
-        HStack {
-            Image(systemName: "dumbbell.fill")
-            Text("Exercises")
-            Spacer()
-        }
-        .font(.title2)
-        .fontWeight(.bold)
     }
 }
 
@@ -88,9 +90,9 @@ struct ExerciseCardView: View {
 
 }
 
-struct WorkoutDetailViewExercisesSection_Previews: PreviewProvider {
-    static var previews: some View {
-        WorkoutDetailViewExercisesSection(workout: .constant(Workout.sampleWorkouts[0]))
-            .padding()
-    }
-}
+//struct WorkoutDetailViewExercisesSection_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WorkoutDetailViewExercisesSection(workout: .constant(Workout.sampleWorkouts[0]))
+//            .padding()
+//    }
+//}

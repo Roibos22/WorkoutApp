@@ -47,6 +47,7 @@
 		35E3FA462AD692190039A0E6 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3FA452AD692190039A0E6 /* ExerciseDetailView.swift */; };
 		35E3FA4A2AD71BDC0039A0E6 /* WorkoutActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3FA492AD71BDC0039A0E6 /* WorkoutActiveView.swift */; };
 		35E3FA4D2AD7DAAF0039A0E6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3FA4C2AD7DAAF0039A0E6 /* ViewModel.swift */; };
+		35E4D4132C601FB5001B00B1 /* ExerciseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D4122C601FB5001B00B1 /* ExerciseDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		35E3FA452AD692190039A0E6 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		35E3FA492AD71BDC0039A0E6 /* WorkoutActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutActiveView.swift; sourceTree = "<group>"; };
 		35E3FA4C2AD7DAAF0039A0E6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		35E4D4122C601FB5001B00B1 /* ExerciseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				354EE6342C5C416900C97F99 /* AppState.swift */,
 				354EE6382C5C477600C97F99 /* WorkoutListViewModel.swift */,
 				354EE6462C5DA96000C97F99 /* WorkoutDetailViewModel.swift */,
+				35E4D4122C601FB5001B00B1 /* ExerciseDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				354EE63B2C5D938500C97F99 /* WorkoutDataService.swift in Sources */,
 				35CE057F2C5E957D006188AB /* WorkoutSettingsSectionCard.swift in Sources */,
 				3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */,
+				35E4D4132C601FB5001B00B1 /* ExerciseDetailViewModel.swift in Sources */,
 				354EE63F2C5D94EF00C97F99 /* WorkoutTimelineService.swift in Sources */,
 				354EE6412C5DA28F00C97F99 /* FileManager.swift in Sources */,
 				354EE62B2C5C27C200C97F99 /* Activity.swift in Sources */,

@@ -22,7 +22,7 @@ struct WorkoutDetailView: View {
                     .padding(.top, 10)
                 
                 // Exercises
-                WorkoutDetailViewExercisesSection(workout: $viewModel.workout)
+                WorkoutDetailViewExercisesSection(workout: $viewModel.workout, viewModel: viewModel)
                     .padding(.vertical, 5)
 
                 // Workout Settings

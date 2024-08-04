@@ -8,41 +8,66 @@
 import SwiftUI
 
 struct ExerciseDetailView: View {
-    
-    @Binding var exercise: Exercise
+    @ObservedObject var viewModel: ExerciseDetailViewModel
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
+    @State private var showDeleteConfirmation = false
 
     var body: some View {
         ScrollView {
             VStack {
-                ExerciseSettingsTitleCard(exercise: $exercise)
+                ExerciseSettingsTitleCard(exercise: $viewModel.exercise)
                     .padding(.bottom, 5)
-                ExerciseSettingsValueCard(exercise: $exercise, value: $exercise.duration, type: .exerciseDuration)
+                ExerciseSettingsValueCard(exercise: $viewModel.exercise, value: $viewModel.exercise.duration, type: .exerciseDuration)
                     .padding(.bottom, 5)
-                ExerciseSettingsValueCard(exercise: $exercise, value: $exercise.rest, type: .exerciseRest)
+                ExerciseSettingsValueCard(exercise: $viewModel.exercise, value: $viewModel.exercise.rest, type: .exerciseRest)
                     .padding(.bottom, 15)
-                ExerciseSettingsRemoveCard(exercise: exercise)
-                    .padding(.bottom, 5)
+                
+                Spacer()
+                
+                deleteExerciseButton
+                    .padding(.bottom, 20)
             }
             .padding()
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .navigationTitle(exercise.title)
+            .navigationTitle(viewModel.exercise.title)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("\(exercise.title)")
+                    Text("\(viewModel.exercise.title)")
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.title)
                         .bold()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        print("call saveWorkout VM from Save Button in View")
-                        //viewModel.saveWorkout()
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
             }
+        }
+        .confirmationDialog(
+            "Delete Exercise?",
+            isPresented: $showDeleteConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Delete", role: .destructive) {
+                viewModel.deleteExercise()
+                dismiss()
+            }
+        }
+    }
+    
+    private var deleteExerciseButton: some View {
+        Button(action: {
+            showDeleteConfirmation = true
+        }) {
+            Text("Delete Exercise")
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.red)
+                .cornerRadius(10)
         }
     }
 }
@@ -206,16 +231,16 @@ struct ExerciseSettingsValueSheet: View {
 
 
 
-struct ExerciseDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        @State var sampleExercise = Exercise(
-            title: "Push-ups",
-            duration: 30,
-            rest: 15
-        )
-        
-        NavigationView {
-            ExerciseDetailView(exercise: $sampleExercise)
-        }
-    }
-}
+//struct ExerciseDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        @State var sampleExercise = Exercise(
+//            title: "Push-ups",
+//            duration: 30,
+//            rest: 15
+//        )
+//        
+//        NavigationView {
+//            ExerciseDetailView(exercise: $sampleExercise)
+//        }
+//    }
+//}
