@@ -25,7 +25,9 @@ class ExerciseDetailViewModel: ObservableObject {
     }
     
     func updateExercise() {
-        
+        if let index = workoutViewModel.workout.exercises.firstIndex(where: { $0.id == exercise.id }) {
+            workoutViewModel.workout.exercises[index] = exercise
+        }
     }
     
     func saveExercise() {
