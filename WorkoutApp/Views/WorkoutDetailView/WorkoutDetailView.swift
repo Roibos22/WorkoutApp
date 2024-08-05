@@ -29,10 +29,10 @@ struct WorkoutDetailView: View {
                 WorkoutSettingsSection(workout: $viewModel.workout)
                     .padding(.vertical, 5)
 
-                if !viewModel.isNewWorkout {
+//                if !viewModel.isNewWorkout {
                    deleteWorkoutButton
                         .padding(.vertical, 15)
-                }
+//                }
                 
                 Spacer()
             }
@@ -82,20 +82,12 @@ struct WorkoutDetailView: View {
     }
     
     private var deleteWorkoutButton: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.red)
-                .frame(height: 50)
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.black, lineWidth: 2)
-                .frame(height: 50)
-            Text("Delete Workout")
-                .font(.title2)
-                .fontWeight(.bold)
-        }
-        .onTapGesture {
-            showDeleteWorkoutAlert.toggle()
-        }
+        Image(systemName: "trash")
+            .foregroundColor(Color.red)
+            .font(.title)
+            .onTapGesture {
+                showDeleteWorkoutAlert.toggle()
+            }
     }
 }
 

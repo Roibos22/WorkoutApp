@@ -15,8 +15,6 @@ struct ExerciseDetailView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ExerciseSettingsTitleCard(exercise: $viewModel.exercise)
-                    .padding(.bottom, 5)
                 ExerciseSettingsValueCard(exercise: $viewModel.exercise, value: $viewModel.exercise.duration, type: .exerciseDuration)
                     .padding(.bottom, 5)
                 ExerciseSettingsValueCard(exercise: $viewModel.exercise, value: $viewModel.exercise.rest, type: .exerciseRest)
@@ -67,44 +65,19 @@ struct ExerciseDetailView: View {
     }
     
     private var deleteExerciseButton: some View {
-        Button(action: {
-            showDeleteConfirmation = true
-        }) {
-            Text("Delete Exercise")
-                .font(.headline)
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.red)
-                .cornerRadius(10)
-        }
+        Image(systemName: "trash")
+            .foregroundColor(Color.red)
+            .font(.title)
+        
+            .onTapGesture {
+                showDeleteConfirmation = true
+            }
+            .padding(.vertical, 10)
     }
+
 }
 
-struct ExerciseSettingsTitleCard: View {
-    
-    @Binding var exercise: Exercise
 
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("Exercise Title")
-                .foregroundColor(.gray)
-                .font(.subheadline)
-                .fontWeight(.semibold)
-                .padding(.leading, 7)
-            
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.black, lineWidth: 2)
-                .frame(height: 60)
-                .overlay(
-                    TextField("Exercise Title", text: $exercise.title)
-                        .padding(.horizontal)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                )
-        }
-    }
-}
 
 struct ExerciseSettingsValueCard: View {
     //@Binding var workout: Workout
@@ -169,7 +142,7 @@ struct ExerciseSettingsRemoveCard: View {
                 )
         }
         .onTapGesture {
-            // delete exercise
+
         }
         .padding(.vertical, 10)
     }
@@ -240,16 +213,42 @@ struct ExerciseSettingsValueSheet: View {
 
 
 
-//struct ExerciseDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        @State var sampleExercise = Exercise(
-//            title: "Push-ups",
-//            duration: 30,
-//            rest: 15
-//        )
-//        
-//        NavigationView {
-//            ExerciseDetailView(exercise: $sampleExercise)
+struct ExerciseDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        @State var sampleExercise = Exercise(
+            title: "Push-ups",
+            duration: 30,
+            rest: 15
+        )
+        
+        NavigationView {
+            ExerciseDetailView(viewModel: ExerciseDetailViewModel(workoutViewModel: WorkoutDetailViewModel(appState: AppState())))
+        }
+    }
+}
+
+
+//struct ExerciseSettingsTitleCard: View {
+//    
+//    @Binding var exercise: Exercise
+//
+//    var body: some View {
+//        VStack(alignment: .leading) {
+//            Text("Exercise Title")
+//                .foregroundColor(.gray)
+//                .font(.subheadline)
+//                .fontWeight(.semibold)
+//                .padding(.leading, 7)
+//            
+//            RoundedRectangle(cornerRadius: 20)
+//                .stroke(Color.black, lineWidth: 2)
+//                .frame(height: 60)
+//                .overlay(
+//                    TextField("Exercise Title", text: $exercise.title)
+//                        .padding(.horizontal)
+//                        .font(.title2)
+//                        .fontWeight(.bold)
+//                )
 //        }
 //    }
 //}
