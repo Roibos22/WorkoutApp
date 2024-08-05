@@ -30,18 +30,27 @@ struct ExerciseDetailView: View {
             .padding()
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(viewModel.exercise.title)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        viewModel.saveExercise()
+                        dismiss()
+                    }) {
+                        HStack {
+                            Image(systemName: "chevron.left")
+                                .bold()
+                        }
+                    }
+                }
                 ToolbarItem(placement: .principal) {
-                    Text("\(viewModel.exercise.title)")
+                    TextField("Exercise Title", text: $viewModel.exercise.title)
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.title)
                         .bold()
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Save") {
-                        viewModel.saveExercise()
-                        dismiss()
-                    }
+                        .onSubmit {
+                            //viewModel.updateTitle(viewModel.workout.title)
+                        }
                 }
             }
         }

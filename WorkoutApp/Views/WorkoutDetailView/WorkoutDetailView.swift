@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkoutDetailView: View {
     @ObservedObject var viewModel: WorkoutDetailViewModel
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
 
     @State private var showDeleteWorkoutAlert: Bool = false
 
@@ -45,6 +45,17 @@ struct WorkoutDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    viewModel.saveWorkout(notifyObservers: true)
+                    dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .bold()
+                    }
+                }
+            }
             ToolbarItem(placement: .principal) {
                 TextField("Workout Title", text: $viewModel.workout.title)
                     .textFieldStyle(PlainTextFieldStyle())
@@ -53,13 +64,6 @@ struct WorkoutDetailView: View {
                     .onSubmit {
                         viewModel.updateTitle(viewModel.workout.title)
                     }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Save") {
-                    print("call saveWorkout VM from Save Button in View")
-                    viewModel.saveWorkout(notifyObservers: true)
-                    presentationMode.wrappedValue.dismiss()
-                }
             }
         }
         .confirmationDialog(
@@ -70,7 +74,7 @@ struct WorkoutDetailView: View {
             Button("Delete", role: .destructive) {
                 viewModel.deleteWorkout()
                 DispatchQueue.main.async {
-                    presentationMode.wrappedValue.dismiss()
+                    dismiss()
                 }
             }
         }
