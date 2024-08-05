@@ -102,7 +102,3 @@ struct WorkoutDetailView_Previews: PreviewProvider {
         }
     }
 }
-
-//#Preview {
-//    WorkoutDetailView()
-//}

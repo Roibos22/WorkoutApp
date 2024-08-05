@@ -13,10 +13,8 @@ struct WorkoutDetailViewExercisesSection: View {
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Exercises")
-                .font(.headline)
-                .padding(.bottom, 5)
+        VStack(alignment: .leading, spacing: 15) {
+            sectionHeader
             
             ForEach($workout.exercises) { $exercise in
                 NavigationLink(destination: ExerciseDetailView(viewModel: ExerciseDetailViewModel(exercise: exercise,workoutViewModel: viewModel))) {
@@ -31,6 +29,16 @@ struct WorkoutDetailViewExercisesSection: View {
 //            }
 //            .padding(.top, 10)
         }
+    }
+    
+    private var sectionHeader: some View {
+        HStack {
+            Image(systemName: "dumbbell.fill")
+            Text("Exercises")
+            Spacer()
+        }
+        .font(.title2)
+        .fontWeight(.bold)
     }
 }
 
@@ -88,9 +96,9 @@ struct ExerciseCardView: View {
 
 }
 
-//struct WorkoutDetailViewExercisesSection_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WorkoutDetailViewExercisesSection(workout: .constant(Workout.sampleWorkouts[0]))
-//            .padding()
-//    }
-//}
+struct WorkoutDetailViewExercisesSection_Previews: PreviewProvider {
+    static var previews: some View {
+        WorkoutDetailViewExercisesSection(workout: .constant(Workout.sampleWorkouts[0]), viewModel: WorkoutDetailViewModel(appState: AppState()))
+            .padding()
+    }
+}
