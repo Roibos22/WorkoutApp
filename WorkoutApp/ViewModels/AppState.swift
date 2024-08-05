@@ -20,7 +20,7 @@ class AppState: ObservableObject {
     init() {
         workoutService = WorkoutDataService(dataManager: dataManager)
         historyService = HistoryDataService(dataManager: dataManager)
-        timelineService = WorkoutTimelineService(dataManager: dataManager)
+        timelineService = WorkoutTimelineService()
         loadData()
     }
     
@@ -58,6 +58,10 @@ class AppState: ObservableObject {
         }
         print("Total workouts: \(workouts.count)")
         print("-------------------")
+    }
+    
+    func createWorkoutTimeline(workout: Workout) -> [Activity] {
+        return timelineService.createWorkoutTimeline(workout: workout)
     }
 
 }

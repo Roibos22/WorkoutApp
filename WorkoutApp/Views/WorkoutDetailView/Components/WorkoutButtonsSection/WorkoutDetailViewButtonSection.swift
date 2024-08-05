@@ -35,12 +35,7 @@ struct WorkoutDetailViewButtonSection: View {
             
             // Start Workout
             NavigationLink {
-//                WorkoutActiveView(
-//                    workout: viewModel.workout,
-//                    workoutTimeline: activitiesTimeline,
-//                    workoutTimeLeft: viewModel.workout.duration,
-//                    currentActivityTimeLeft: activitiesTimeline.first?.duration ?? 0
-//                )
+                WorkoutActiveView(workout: viewModel.workout, workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout))
             } label: {
                 buttonLabel(text: "GO!")
             }
@@ -53,8 +48,12 @@ struct WorkoutDetailViewButtonSection: View {
     private func buttonLabel(icon: String? = nil, text: String) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.black, lineWidth: 2)
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.blue)
+                )
                 .frame(height: 60)
-                .foregroundColor(Color.blue)
             HStack {
                 if let icon = icon {
                     Image(systemName: icon)
