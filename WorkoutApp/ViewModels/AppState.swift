@@ -38,10 +38,12 @@ class AppState: ObservableObject {
 //        dataManager.saveCompletedWorkouts(completedWorkouts)
 //    }
     
-    func saveWorkout(_ workout: Workout) {
+    func saveWorkout(_ workout: Workout, notifyObservers: Bool = false) {
         print("call saveWorkout WDS from saveWorkout AS")
-        workoutService.saveWorkout(workout)
-        loadData()  // Reload data to reflect changes
+        workoutService.saveWorkout(workout, notifyObservers: notifyObservers)
+        if notifyObservers {
+           loadData()  // Reload data to reflect changes
+        }
     }
     
 //    func addWorkout(_ workout: Workout) {
@@ -54,6 +56,9 @@ class AppState: ObservableObject {
 //            workouts[index] = workout
 //            workoutService.saveWorkout(workout)
 //        }
+//    }
+//    func saveWorkout(_ workout: Workout) {
+//           workoutService.saveWorkout(workout)
 //    }
     
     func deleteWorkout(_ workout: Workout) {

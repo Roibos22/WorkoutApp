@@ -24,22 +24,32 @@ class WorkoutDetailViewModel: ObservableObject {
         completions = appState.completedWorkouts.filter { $0.workout.title == workout.title }.count
     }
 
-    func saveWorkout() {
+    func saveWorkout(notifyObservers: Bool = false) {
         print("call saveWorkout AS from saveWorkout VM")
-        appState.saveWorkout(workout)
-//        if isNewWorkout {
-//            //appState.addWorkout(workout)
-//        } else {
-//            //appState.updateWorkout(workout)
-//        }
+        appState.saveWorkout(workout, notifyObservers: notifyObservers)
     }
     
+//    func saveWorkoutLocally() {
+//        print("SavingLocally")
+//        appState.saveWorkout(workout)
+//    }
+//
+//    func finalSaveWorkout() {
+//        print("SavingFinal")
+//        appState.saveWorkout(workout)
+//    }
+//    
+//    func deleteExercise(_ exercise: Exercise) {
+//        workout.exercises.removeAll { $0.id == exercise.id }
+//        saveWorkout()
+//        objectWillChange.send()
+//    }
+
     func deleteExercise(_ exercise: Exercise) {
         workout.exercises.removeAll { $0.id == exercise.id }
-        saveWorkout()
-        objectWillChange.send()
+        saveWorkout(notifyObservers: false)
     }
-
+    
     func deleteWorkout() {
         appState.deleteWorkout(workout)
     }

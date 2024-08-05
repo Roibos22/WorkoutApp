@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ExerciseDetailView: View {
     @ObservedObject var viewModel: ExerciseDetailViewModel
-    @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
     @State private var showDeleteConfirmation = false
 
@@ -40,7 +39,7 @@ struct ExerciseDetailView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        presentationMode.wrappedValue.dismiss()
+                        dismiss()
                     }
                 }
             }

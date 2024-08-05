@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkoutDetailViewExercisesSection: View {
     @Binding var workout: Workout
     @ObservedObject var viewModel: WorkoutDetailViewModel
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -18,12 +19,18 @@ struct WorkoutDetailViewExercisesSection: View {
                 .padding(.bottom, 5)
             
             ForEach($workout.exercises) { $exercise in
-                NavigationLink(destination: ExerciseDetailView(viewModel: ExerciseDetailViewModel(exercise: exercise, workoutViewModel: viewModel) {
-                    // This closure will be called when the exercise is deleted
-                    viewModel.objectWillChange.send()
-                })) {
-                    ExerciseCardView(exercise: exercise)
-                }
+                NavigationLink(destination: ExerciseDetailView(viewModel: ExerciseDetailViewModel(
+                        exercise: exercise,
+                        workoutViewModel: viewModel,
+                        onDelete: {
+                            // This will be called after successful deletion
+//                            DispatchQueue.main.async {
+//                                self.presentationMode.wrappedValue.dismiss()
+//                            }
+                            }
+                    ))) {
+                        ExerciseCardView(exercise: exercise)
+                    }
             }
             
 //            Button(action: {

@@ -30,7 +30,7 @@ class WorkoutDataService {
         workoutsSubject.send(workouts)
     }
     
-    func saveWorkout(_ workout: Workout) {
+    func saveWorkout(_ workout: Workout, notifyObservers: Bool = false) {
         print("saveWorkout in WDS")
         var workouts = dataManager.loadWorkouts()
         if let index = workouts.firstIndex(where: { $0.id == workout.id }) {
@@ -39,7 +39,9 @@ class WorkoutDataService {
             workouts.append(workout)
         }
         dataManager.saveWorkouts(workouts)
-        workoutsSubject.send(workouts)
+        if notifyObservers {
+            workoutsSubject.send(workouts)
+        }
     }
     
     func deleteWorkout(_ workout: Workout) {

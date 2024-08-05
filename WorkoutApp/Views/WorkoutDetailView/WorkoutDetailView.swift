@@ -38,6 +38,9 @@ struct WorkoutDetailView: View {
             }
             .padding(.horizontal)
         }
+        .onChange(of: viewModel.workout) { _ in
+            viewModel.saveWorkout()
+        }
         .navigationTitle(viewModel.workout.title)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -54,7 +57,7 @@ struct WorkoutDetailView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Save") {
                     print("call saveWorkout VM from Save Button in View")
-                    viewModel.saveWorkout()
+                    viewModel.saveWorkout(notifyObservers: true)
                     presentationMode.wrappedValue.dismiss()
                 }
             }
