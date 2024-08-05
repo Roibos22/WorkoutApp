@@ -19,18 +19,9 @@ struct WorkoutDetailViewExercisesSection: View {
                 .padding(.bottom, 5)
             
             ForEach($workout.exercises) { $exercise in
-                NavigationLink(destination: ExerciseDetailView(viewModel: ExerciseDetailViewModel(
-                        exercise: exercise,
-                        workoutViewModel: viewModel,
-                        onDelete: {
-                            // This will be called after successful deletion
-//                            DispatchQueue.main.async {
-//                                self.presentationMode.wrappedValue.dismiss()
-//                            }
-                            }
-                    ))) {
-                        ExerciseCardView(exercise: exercise)
-                    }
+                NavigationLink(destination: ExerciseDetailView(viewModel: ExerciseDetailViewModel(exercise: exercise,workoutViewModel: viewModel))) {
+                    ExerciseCardView(exercise: exercise)
+                }
             }
             
 //            Button(action: {

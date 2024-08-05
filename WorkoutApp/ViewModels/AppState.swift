@@ -33,11 +33,6 @@ class AppState: ObservableObject {
         return workoutService.generateNewWorkout()
     }
     
-//    func saveData() {
-//        dataManager.saveWorkouts(workouts)
-//        dataManager.saveCompletedWorkouts(completedWorkouts)
-//    }
-    
     func saveWorkout(_ workout: Workout, notifyObservers: Bool = false) {
         print("call saveWorkout WDS from saveWorkout AS")
         workoutService.saveWorkout(workout, notifyObservers: notifyObservers)
@@ -45,21 +40,6 @@ class AppState: ObservableObject {
            loadData()  // Reload data to reflect changes
         }
     }
-    
-//    func addWorkout(_ workout: Workout) {
-//        workouts.append(workout)
-//        workoutService.saveWorkout(workout)
-//    }
-//
-//    func updateWorkout(_ workout: Workout) {
-//        if let index = workouts.firstIndex(where: { $0.id == workout.id }) {
-//            workouts[index] = workout
-//            workoutService.saveWorkout(workout)
-//        }
-//    }
-//    func saveWorkout(_ workout: Workout) {
-//           workoutService.saveWorkout(workout)
-//    }
     
     func deleteWorkout(_ workout: Workout) {
         workoutService.deleteWorkout(workout)
@@ -70,6 +50,7 @@ class AppState: ObservableObject {
         workoutService.moveWorkout(at: offsets, to: destination)
         loadData()  // Reload data to reflect changes
     }
+    
     
     private func printWorkouts() {
         for (index, workout) in workouts.enumerated() {

@@ -29,22 +29,6 @@ class WorkoutDetailViewModel: ObservableObject {
         appState.saveWorkout(workout, notifyObservers: notifyObservers)
     }
     
-//    func saveWorkoutLocally() {
-//        print("SavingLocally")
-//        appState.saveWorkout(workout)
-//    }
-//
-//    func finalSaveWorkout() {
-//        print("SavingFinal")
-//        appState.saveWorkout(workout)
-//    }
-//    
-//    func deleteExercise(_ exercise: Exercise) {
-//        workout.exercises.removeAll { $0.id == exercise.id }
-//        saveWorkout()
-//        objectWillChange.send()
-//    }
-
     func deleteExercise(_ exercise: Exercise) {
         workout.exercises.removeAll { $0.id == exercise.id }
         saveWorkout(notifyObservers: false)

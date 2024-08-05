@@ -10,16 +10,13 @@ import Foundation
 class ExerciseDetailViewModel: ObservableObject {
     @Published var exercise: Exercise
     private let workoutViewModel: WorkoutDetailViewModel
-    var onDelete: () -> Void
     
-    init(exercise: Exercise, workoutViewModel: WorkoutDetailViewModel, onDelete: @escaping () -> Void) {
+    init(exercise: Exercise, workoutViewModel: WorkoutDetailViewModel) {
         self.exercise = exercise
         self.workoutViewModel = workoutViewModel
-        self.onDelete = onDelete
     }
     
     func deleteExercise() {
         workoutViewModel.deleteExercise(exercise)
-        onDelete()
     }
 }
