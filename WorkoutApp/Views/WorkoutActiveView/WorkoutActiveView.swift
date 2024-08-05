@@ -22,19 +22,22 @@ struct WorkoutActiveView: View {
             
             VStack {
                 if viewModel.isFinished {
-                    //WorkoutCompletedView(workout: viewModel.workout, workoutTimeline: viewModel.workoutTimeline)
+                    WorkoutCompletedView(workout: viewModel.workout, workoutTimeline: viewModel.workoutTimeline)
                 } else {
-                    Spacer()
-                    ActivityDisplayView(viewModel: viewModel)
-                    Spacer()
-                    ProgressCircleView(viewModel: viewModel)
-                    Spacer()
-                    ProgressBarView(viewModel: viewModel)
-                    ControlButtonsView(viewModel: viewModel, showEndAlert: $showEndAlert)
-                    Spacer()
+                    VStack {
+                        Spacer()
+                        ActivityDisplayView(viewModel: viewModel)
+                        Spacer()
+                        ProgressCircleView(viewModel: viewModel)
+                        Spacer()
+                        ProgressBarView(viewModel: viewModel)
+                        ControlButtonsView(viewModel: viewModel, showEndAlert: $showEndAlert)
+                        Spacer()
+                    }
+                    .padding()
+                    
                 }
             }
-            .padding()
         }
         .ignoresSafeArea()
         .navigationBarHidden(true)
