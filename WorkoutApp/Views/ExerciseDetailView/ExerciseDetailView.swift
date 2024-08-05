@@ -39,6 +39,7 @@ struct ExerciseDetailView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
+                        viewModel.saveExercise()
                         dismiss()
                     }
                 }

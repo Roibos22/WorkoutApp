@@ -21,13 +21,6 @@ struct WorkoutDetailViewExercisesSection: View {
                     ExerciseCardView(exercise: exercise)
                 }
             }
-            
-//            Button(action: {
-//                workout.exercises.append(Exercise())
-//            }) {
-//                Label("Add Exercise", systemImage: "plus.circle")
-//            }
-//            .padding(.top, 10)
         }
     }
     
@@ -36,9 +29,18 @@ struct WorkoutDetailViewExercisesSection: View {
             Image(systemName: "dumbbell.fill")
             Text("Exercises")
             Spacer()
+            addExerciseButton
         }
         .font(.title2)
         .fontWeight(.bold)
+    }
+    
+    private var addExerciseButton: some View {
+        NavigationLink(destination: ExerciseDetailView(viewModel: ExerciseDetailViewModel(exercise: nil, workoutViewModel: viewModel))) {
+            Image(systemName: "plus.circle.fill")
+                .foregroundColor(.primary)
+                .font(.title2)
+        }
     }
 }
 

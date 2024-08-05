@@ -34,6 +34,13 @@ class WorkoutDetailViewModel: ObservableObject {
         saveWorkout(notifyObservers: false)
     }
     
+    func addExercise(_ exercise: Exercise) {
+//        var exercise = Exercise(title: "New", duration: 20, rest: 10)
+        //workout.exercises.removeAll { $0.id == exercise.id }
+        workout.exercises.append(exercise)
+        saveWorkout(notifyObservers: false)
+    }
+    
     func deleteWorkout() {
         appState.deleteWorkout(workout)
     }
