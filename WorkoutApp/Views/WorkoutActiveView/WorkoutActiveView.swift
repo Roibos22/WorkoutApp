@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct WorkoutActiveView: View {
-    @StateObject private var viewModel: WorkoutActiveViewModel
+    @ObservedObject var viewModel: WorkoutActiveViewModel
     @Environment(\.dismiss) private var dismiss
     @State private var showEndAlert = false
-
-    init(workout: Workout, workoutTimeline: [Activity]) {
-        _viewModel = StateObject(wrappedValue: WorkoutActiveViewModel(workout: workout, workoutTimeline: workoutTimeline))
-    }
 
     var body: some View {
         ZStack {
@@ -22,7 +18,7 @@ struct WorkoutActiveView: View {
             
             VStack {
                 if viewModel.isFinished {
-                    WorkoutCompletedView(workout: viewModel.workout, workoutTimeline: viewModel.workoutTimeline)
+                    WorkoutCompletedView(viewModel: viewModel, workout: viewModel.workout, workoutTimeline: viewModel.workoutTimeline)
                 } else {
                     VStack {
                         Spacer()
@@ -52,7 +48,7 @@ struct WorkoutActiveView: View {
 
 struct WorkoutActiveView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutActiveView(workout: sampleWorkout, workoutTimeline: sampleWorkoutTimeline)
+        WorkoutActiveView(viewModel: WorkoutActiveViewModel(workout: sampleWorkout, workoutTimeline: sampleWorkoutTimeline, appState: AppState()))
     }
     
     // Sample data for preview

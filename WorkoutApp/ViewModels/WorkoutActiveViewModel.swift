@@ -24,12 +24,17 @@ class WorkoutActiveViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
     private let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+    private var countdownPlayed = false
+    private var currentActivityDurationDone = 0.0
+    private var workoutDurationDone = 0.0
+    private let appState: AppState
 
-    init(workout: Workout, workoutTimeline: [Activity]) {
+    init(workout: Workout, workoutTimeline: [Activity], appState: AppState) {
         self.workout = workout
         self.workoutTimeline = workoutTimeline
         self.workoutTimeLeft = workout.duration
         self.currentActivityTimeLeft = workoutTimeline[0].duration
+        self.appState = appState
 
         setupTimerSubscription()
     }
@@ -40,6 +45,10 @@ class WorkoutActiveViewModel: ObservableObject {
         guard activityIndex + 1 < workoutTimeline.count else { return nil }
         return workoutTimeline[activityIndex + 1]
     }
+    
+    func getSoundsEnabled() -> Bool {
+        return appState.soundsEnabled
+    }
 
     func skipActivity() {
         if activityIndex == workoutTimeline.count - 2 {
@@ -48,6 +57,7 @@ class WorkoutActiveViewModel: ObservableObject {
             workoutTimeLeft -= currentActivityTimeLeft
             activityIndex += 1
             currentActivityTimeLeft = currentActivity.duration
+            currentActivityDurationDone = 0.0
             showSkipped = true
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -80,6 +90,15 @@ class WorkoutActiveViewModel: ObservableObject {
     private func updateTimers() {
         currentActivityTimeLeft -= 0.01
         workoutTimeLeft -= 0.01
+        currentActivityDurationDone += 0.01
+        
+        // Add this block for the countdown sound
+        if appState.soundsEnabled && currentActivityTimeLeft < 3 && !countdownPlayed {
+            DispatchQueue.main.async {
+                SoundManager.instance.playSound(sound: .countdown)
+            }
+            countdownPlayed = true
+        }
     }
 
     private func checkActivityCompletion() {

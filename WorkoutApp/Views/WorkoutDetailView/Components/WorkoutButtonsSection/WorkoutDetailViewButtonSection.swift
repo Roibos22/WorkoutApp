@@ -35,7 +35,7 @@ struct WorkoutDetailViewButtonSection: View {
             
             // Start Workout
             NavigationLink {
-                WorkoutActiveView(workout: viewModel.workout, workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout))
+                WorkoutActiveView(viewModel: WorkoutActiveViewModel(workout: viewModel.workout, workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout), appState: appState))
             } label: {
                 buttonLabel(text: "GO!")
             }

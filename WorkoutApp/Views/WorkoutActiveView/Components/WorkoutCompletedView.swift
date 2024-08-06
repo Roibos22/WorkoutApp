@@ -10,8 +10,8 @@ import ConfettiSwiftUI
 
 struct WorkoutCompletedView: View {
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var vm: ViewModel
-    
+    @ObservedObject var viewModel: WorkoutActiveViewModel
+
     let workout: Workout
     let workoutTimeline: [Activity]
     
@@ -122,11 +122,10 @@ struct WorkoutCompletedView: View {
     
     private func startConfetti() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            // Uncomment these lines when you're ready to use them
-            // if vm.soundsEnabled {
-            //     SoundManager.instance.playSound(sound: .jubilant)
-            // }
-            // self.counter += 1
+            if viewModel.getSoundsEnabled() {
+                 SoundManager.instance.playSound(sound: .jubilant)
+             }
+             self.counter += 1
         }
         
         // Start color switching

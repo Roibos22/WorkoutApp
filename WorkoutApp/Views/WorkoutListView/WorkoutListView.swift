@@ -25,6 +25,7 @@ struct WorkoutListView: View {
                         .buttonStyle(PlainButtonStyle())
                         .padding(.vertical, 10)
                     }
+                    .onMove(perform: moveWorkout)
                 }
                 .padding(.horizontal)
             }
@@ -41,6 +42,10 @@ struct WorkoutListView: View {
                 }
             }
         }
+    }
+    
+    private func moveWorkout(from source: IndexSet, to destination: Int) {
+        viewModel.moveWorkout(at: source, to: destination)
     }
     
     private var settingsButton: some View {
