@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkoutDetailViewButtonSection: View {
     @ObservedObject var viewModel: WorkoutDetailViewModel
     @EnvironmentObject var appState: AppState
+    @State private var workoutActiveViewModel: WorkoutActiveViewModel?
     
 //    var activitiesTimeline: [Activity] {
 //        appState.timelineService.createWorkoutTimeline(workout: viewModel.workout)
@@ -35,10 +36,24 @@ struct WorkoutDetailViewButtonSection: View {
             
             // Start Workout
             NavigationLink {
-                WorkoutActiveView(viewModel: WorkoutActiveViewModel(workout: viewModel.workout, workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout), appState: appState))
+                if let workoutActiveViewModel = workoutActiveViewModel {
+                    WorkoutActiveView(viewModel: workoutActiveViewModel)
+                } else {
+                    Text("Loading...")
+                }
             } label: {
                 buttonLabel(text: "GO!")
             }
+            .simultaneousGesture(TapGesture().onEnded {
+                if workoutActiveViewModel == nil {
+                    workoutActiveViewModel = WorkoutActiveViewModel(
+                        workout: viewModel.workout,
+                        workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout),
+                        appState: appState
+                    )
+                }
+                workoutActiveViewModel?.isRunning = true
+            })
         }
         .onAppear {
             viewModel.updateCompletions()

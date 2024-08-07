@@ -25,7 +25,7 @@ class WorkoutActiveViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     private var countdownPlayed = false
-    private var currentActivityDurationDone = 0.0
+    var currentActivityDurationDone = 0.0
     private var workoutDurationDone = 0.0
     private let appState: AppState
 
@@ -48,6 +48,14 @@ class WorkoutActiveViewModel: ObservableObject {
     
     func getSoundsEnabled() -> Bool {
         return appState.soundsEnabled
+    }
+    
+    func resetWorkout() {
+        isRunning = false
+        workoutTimeLeft = workout.duration
+        activityIndex = 0
+        currentActivityTimeLeft = currentActivity.duration
+        currentActivityDurationDone = 0.0
     }
 
     func skipActivity() {

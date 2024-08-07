@@ -38,7 +38,10 @@ struct WorkoutActiveView: View {
         .ignoresSafeArea()
         .navigationBarHidden(true)
         .alert("End Workout", isPresented: $showEndAlert) {
-            Button("End Workout") { dismiss() }
+            Button("End Workout") {
+                viewModel.resetWorkout()
+                dismiss()
+            }
             Button("Cancel", role: .cancel) { }
         } message: {
             Text("Are you sure you want to end your workout?")
