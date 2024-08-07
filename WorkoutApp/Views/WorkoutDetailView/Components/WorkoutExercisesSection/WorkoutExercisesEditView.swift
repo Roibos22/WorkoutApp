@@ -37,7 +37,7 @@ struct WorkoutExercisesEditView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    viewModel.saveWorkout(notifyObservers: true)
+                    //viewModel.saveWorkout(notifyObservers: true)
                     dismiss()
                 }) {
                     HStack {
