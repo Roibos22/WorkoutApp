@@ -21,7 +21,7 @@ struct WorkoutDetailViewButtonSection: View {
             // Preview
             NavigationLink {
                 // TODO: Implement Preview View
-                Text("Preview View")
+                WorkoutPreviewView(vm: viewModel)
             } label: {
                 buttonLabel(icon: "clock.fill", text: viewModel.workout.duration.asDigitalMinutes())
             }

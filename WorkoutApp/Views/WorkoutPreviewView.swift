@@ -10,14 +10,18 @@ import SwiftUI
 import SwiftUI
 
 struct WorkoutPreviewView: View {
-    @EnvironmentObject var vm: WorkoutDetailViewModel
+    @EnvironmentObject var vm2: WorkoutDetailViewModel
     @Environment(\.dismiss) private var dismiss
-
+    
+    let vm: WorkoutDetailViewModel
     let workout: Workout
     let cycleTimeline: [Cycle]
     
-    var mainColor: Color { .blue }
-    var accentColor: Color { .black }
+    init(vm: WorkoutDetailViewModel) {
+        self.vm = vm
+        self.workout = vm.workout
+        self.cycleTimeline = vm.createCycleTimeline()
+    }
     
     var body: some View {
         NavigationView {
@@ -29,12 +33,12 @@ struct WorkoutPreviewView: View {
                 }
                 .bold()
                 .padding(.horizontal, 20)
-                .padding(.vertical, 10)
                 
                 Divider()
                 
-                TimelineListView(cycleTimeline: cycleTimeline, mainColor: mainColor, accentColor: accentColor)
+                TimelineListView(cycleTimeline: cycleTimeline)
             }
+            .padding(.vertical, 10)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .toolbar {
@@ -63,9 +67,7 @@ struct WorkoutPreviewView: View {
 
 struct TimelineListView: View {
     let cycleTimeline: [Cycle]
-    let mainColor: Color
-    let accentColor: Color
-    
+
     var body: some View {
         List {
             ForEach(cycleTimeline, id: \.self) { cycle in
@@ -73,15 +75,13 @@ struct TimelineListView: View {
                     ForEach(cycle.activities, id: \.self) { activity in
                         ActivityRow(activity: activity)
                     }
-                    //.padding(.horizontal)
                 } header: {
-                    CycleHeader(cycle: cycle, accentColor: accentColor)
+                    CycleHeader(cycle: cycle)
                 }
                 .listRowSeparator(.hidden)
             }
-            //.padding(.top)
         }
-        .listStyle(PlainListStyle())
+        .listStyle(.plain)
         .scrollContentBackground(.hidden)
     }
 }
@@ -91,8 +91,11 @@ struct ActivityRow: View {
     
     var body: some View {
         HStack {
-            Image(systemName: activity.type == .exercise ? "dumbbell.fill" : "hourglass")
-                .frame(width: 20)
+            HStack {
+                Image(systemName: activity.type == .exercise ? "dumbbell.fill" : "hourglass")
+                Spacer()
+            }
+            .frame(width: 30)
             Text(activity.title)
             Spacer()
             Text("\(activity.duration.asSeconds()) (\(activity.startingTime.asDigitalMinutes()))")
@@ -102,7 +105,6 @@ struct ActivityRow: View {
 
 struct CycleHeader: View {
     let cycle: Cycle
-    let accentColor: Color
     
     var body: some View {
         if cycle.cycleNumber >= 1 {
@@ -113,8 +115,6 @@ struct CycleHeader: View {
                     .bold()
                 Spacer()
             }
-            .foregroundColor(accentColor)
-            //.padding(.top, 10)
         }
     }
 }
@@ -123,7 +123,9 @@ struct WorkoutPreviewView_Previews: PreviewProvider {
     static let appState = AppState()
     static let vm = WorkoutDetailViewModel(appState: appState)
     static var previews: some View {
-        WorkoutPreviewView(workout: Workout.sampleWorkouts[0], cycleTimeline: appState.createCycleimeline(workout: Workout.sampleWorkouts[0]))
-            .environmentObject(vm)
+        //NavigationView {
+            WorkoutPreviewView(vm: vm)
+                .environmentObject(vm)
+        //}
     }
 }

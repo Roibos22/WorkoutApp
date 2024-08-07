@@ -61,4 +61,8 @@ class WorkoutDetailViewModel: ObservableObject {
         print("call saveWorkout VM from updateTitle in View")
         saveWorkout()
     }
+    
+    func createCycleTimeline() -> [Cycle] {
+        return appState.createCycleimeline(workout: workout)
+    }
 }
