@@ -53,9 +53,10 @@ class WorkoutDataService {
     
     
     func moveWorkout(at offsets: IndexSet, to destination: Int) {
-        var workouts = dataManager.loadWorkouts()
+        var workouts: [Workout] = dataManager.loadWorkouts()
         workouts.move(fromOffsets: offsets, toOffset: destination)
         dataManager.saveWorkouts(workouts)
+        workoutsSubject.send(workouts)
     }
     
     func generateNewWorkout() -> Workout {

@@ -13,22 +13,24 @@ struct WorkoutListView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack {
-                    ForEach(viewModel.workouts) { workout in
+            List {
+                ForEach(viewModel.workouts) { workout in
+                    ZStack {
                         NavigationLink(destination: WorkoutDetailView(
                             viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
                         )) {
-                            WorkoutCardView(workout: workout)
-                                .contentShape(Rectangle())
+                            EmptyView()
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        .padding(.vertical, 10)
+                        .opacity(0)
+                        WorkoutCardView(workout: workout)
+                            .contentShape(Rectangle())
                     }
-                    .onMove(perform: moveWorkout)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
                 }
-                .padding(.horizontal)
+                .onMove(perform: viewModel.moveWorkout)
             }
+            .listStyle(.plain)
             .navigationTitle("Your Workouts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -42,10 +44,6 @@ struct WorkoutListView: View {
                 }
             }
         }
-    }
-    
-    private func moveWorkout(from source: IndexSet, to destination: Int) {
-        viewModel.moveWorkout(at: source, to: destination)
     }
     
     private var settingsButton: some View {
