@@ -68,5 +68,9 @@ class AppState: ObservableObject {
     func createWorkoutTimeline(workout: Workout) -> [Activity] {
         return timelineService.createWorkoutTimeline(workout: workout)
     }
+    
+    func createCycleimeline(workout: Workout) -> [Cycle] {
+        return timelineService.createCycleTimeline(workout: workout)
+    }
 
 }
