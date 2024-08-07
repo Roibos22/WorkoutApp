@@ -43,12 +43,31 @@ extension Double {
     
     // 00:00
     func asDigitalMinutes() -> String {
-        let number = NSNumber(value: self)
-        let minuteValue = Int(truncating: number) / 60
-        let secondsValue = Int(truncating: number) % 60
-        let formattedMinuteString: String = (minuteValue >= 10 ? "\(minuteValue)" : "0" + "\(minuteValue)")
-        let formattedSecondsString: String = (secondsValue >= 10 ? "\(secondsValue)" : "0" + "\(secondsValue)")
-        let formattedNumber = formattedMinuteString + ":" + formattedSecondsString
-        return formattedNumber
+        let totalSeconds = self
+        
+        var minutes: Int
+        var seconds: Int
+        
+        if totalSeconds > 1 {
+            minutes = Int(floor(totalSeconds / 60))
+            seconds = Int(ceil(totalSeconds.truncatingRemainder(dividingBy: 60)))
+            
+            // Adjust for the case where seconds round up to 60
+            if seconds == 60 {
+                minutes += 1
+                seconds = 0
+            }
+        } else if totalSeconds > 0 {
+            minutes = 0
+            seconds = 1
+        } else {
+            minutes = 0
+            seconds = 0
+        }
+        
+        let formattedMinuteString = String(format: "%02d", minutes)
+        let formattedSecondsString = String(format: "%02d", seconds)
+        
+        return "\(formattedMinuteString):\(formattedSecondsString)"
     }
 }

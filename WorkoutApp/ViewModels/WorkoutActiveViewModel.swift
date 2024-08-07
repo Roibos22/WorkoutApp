@@ -14,7 +14,7 @@ class WorkoutActiveViewModel: ObservableObject {
     @Published var workoutTimeline: [Activity]
     @Published var workoutTimeLeft: Double
     @Published var currentActivityTimeLeft: Double
-    @Published var isRunning = true
+    @Published var isRunning = false
     @Published var isFinished = false
     @Published var isPaused = false
     @Published var showSkipped = false
@@ -59,6 +59,7 @@ class WorkoutActiveViewModel: ObservableObject {
             currentActivityTimeLeft = currentActivity.duration
             currentActivityDurationDone = 0.0
             showSkipped = true
+            SoundManager.instance.stopSound()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.showSkipped = false
@@ -69,6 +70,11 @@ class WorkoutActiveViewModel: ObservableObject {
     func togglePause() {
         isPaused.toggle()
         isRunning = !isPaused
+        if isPaused == true {
+            SoundManager.instance.pauseSound()
+        } else {
+            SoundManager.instance.resumeSound()
+        }
     }
 
     func finishWorkout() {
@@ -91,7 +97,10 @@ class WorkoutActiveViewModel: ObservableObject {
         currentActivityTimeLeft -= 0.01
         workoutTimeLeft -= 0.01
         currentActivityDurationDone += 0.01
-        
+        print("TIMER UPODATED:")
+        print("currentActivityTimeLeft: \(currentActivityTimeLeft)")
+        print("workoutTimeLeft: \(workoutTimeLeft)")
+        print("currentActivityDurationDone: \(currentActivityDurationDone)")
         // Add this block for the countdown sound
         if appState.soundsEnabled && currentActivityTimeLeft < 3 && !countdownPlayed {
             DispatchQueue.main.async {
@@ -108,6 +117,7 @@ class WorkoutActiveViewModel: ObservableObject {
             } else {
                 activityIndex += 1
                 currentActivityTimeLeft = currentActivity.duration
+                countdownPlayed = false
             }
         }
     }

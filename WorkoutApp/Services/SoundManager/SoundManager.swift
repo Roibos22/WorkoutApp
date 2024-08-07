@@ -19,8 +19,7 @@ class SoundManager {
     }
     
     func playSound(sound: SoundOption) {
-        
-        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: "mp3") else {return}
+        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: "mp3") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, options: AVAudioSession.CategoryOptions.mixWithOthers)
@@ -34,7 +33,18 @@ class SoundManager {
         } catch {
             print("Error playing sound... \(error.localizedDescription)")
         }
-        
     }
     
+    func pauseSound() {
+        player?.pause()
+    }
+    
+    func stopSound() {
+        player?.stop()
+        player?.currentTime = 0
+    }
+    
+    func resumeSound() {
+        player?.play()
+    }
 }
