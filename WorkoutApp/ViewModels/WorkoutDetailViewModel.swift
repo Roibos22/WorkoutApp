@@ -34,10 +34,21 @@ class WorkoutDetailViewModel: ObservableObject {
         saveWorkout(notifyObservers: false)
     }
     
+    func deleteExerciseIndexSet(at offsets: IndexSet) {
+        workout.exercises.remove(atOffsets: offsets)
+        saveWorkout(notifyObservers: false)
+    }
+    
     func addExercise(_ exercise: Exercise) {
 //        var exercise = Exercise(title: "New", duration: 20, rest: 10)
         //workout.exercises.removeAll { $0.id == exercise.id }
         workout.exercises.append(exercise)
+        saveWorkout(notifyObservers: false)
+    }
+    
+    func moveExercise(at offsets: IndexSet, to destination: Int) {
+        //appState.moveExercise(workout: workout, at: offsets, to: destination)
+        workout.exercises.move(fromOffsets: offsets, toOffset: destination)
         saveWorkout(notifyObservers: false)
     }
     

@@ -29,6 +29,7 @@ struct WorkoutDetailViewExercisesSection: View {
             Image(systemName: "dumbbell.fill")
             Text("Exercises")
             Spacer()
+            editExercisesButton
             addExerciseButton
         }
         .font(.title2)
@@ -38,6 +39,14 @@ struct WorkoutDetailViewExercisesSection: View {
     private var addExerciseButton: some View {
         NavigationLink(destination: ExerciseDetailView(viewModel: ExerciseDetailViewModel(exercise: nil, workoutViewModel: viewModel))) {
             Image(systemName: "plus.circle.fill")
+                .foregroundColor(.primary)
+                .font(.title2)
+        }
+    }
+    
+    private var editExercisesButton: some View {
+        NavigationLink(destination: WorkoutExercisesEditView(workout: $workout, viewModel: viewModel)) {
+            Image(systemName: "arrow.up.arrow.down")
                 .foregroundColor(.primary)
                 .font(.title2)
         }

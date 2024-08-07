@@ -35,6 +35,7 @@
 		3571C0D72C6173D400BA0BB6 /* ControlButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3571C0D62C6173D400BA0BB6 /* ControlButtonsView.swift */; };
 		3571C0D92C6173E800BA0BB6 /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3571C0D82C6173E800BA0BB6 /* TimeFormatting.swift */; };
 		3571C0DB2C61835500BA0BB6 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3571C0DA2C61835500BA0BB6 /* ConfettiSwiftUI */; };
+		3571C0DD2C641FCF00BA0BB6 /* WorkoutExercisesEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3571C0DC2C641FCF00BA0BB6 /* WorkoutExercisesEditView.swift */; };
 		358113B42B323012003325C0 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358113B32B323012003325C0 /* Screen.swift */; };
 		358113C42B32512C003325C0 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358113C32B32512C003325C0 /* SoundManager.swift */; };
 		358113C82B325192003325C0 /* jubilant.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 358113C52B325192003325C0 /* jubilant.mp3 */; };
@@ -84,6 +85,7 @@
 		3571C0D42C6173C200BA0BB6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		3571C0D62C6173D400BA0BB6 /* ControlButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonsView.swift; sourceTree = "<group>"; };
 		3571C0D82C6173E800BA0BB6 /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
+		3571C0DC2C641FCF00BA0BB6 /* WorkoutExercisesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExercisesEditView.swift; sourceTree = "<group>"; };
 		358113B32B323012003325C0 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		358113C32B32512C003325C0 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		358113C52B325192003325C0 /* jubilant.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jubilant.mp3; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				35E3FA422AD691440039A0E6 /* WorkoutDetailViewExercisesSection.swift */,
+				3571C0DC2C641FCF00BA0BB6 /* WorkoutExercisesEditView.swift */,
 			);
 			path = WorkoutExercisesSection;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				354EE62B2C5C27C200C97F99 /* Activity.swift in Sources */,
 				358113B42B323012003325C0 /* Screen.swift in Sources */,
 				354EE6472C5DA96000C97F99 /* WorkoutDetailViewModel.swift in Sources */,
+				3571C0DD2C641FCF00BA0BB6 /* WorkoutExercisesEditView.swift in Sources */,
 				354EE6312C5C285100C97F99 /* Workout.swift in Sources */,
 				354EE62F2C5C283400C97F99 /* Cycle.swift in Sources */,
 				3571C0D92C6173E800BA0BB6 /* TimeFormatting.swift in Sources */,

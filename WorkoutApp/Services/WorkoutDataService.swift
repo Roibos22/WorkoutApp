@@ -59,6 +59,19 @@ class WorkoutDataService {
         workoutsSubject.send(workouts)
     }
     
+    func moveExercise(workout: Workout, at offsets: IndexSet, to destination: Int) {
+        var workouts: [Workout] = dataManager.loadWorkouts()
+        
+        if let workoutIndex = workouts.firstIndex(where: { $0.id == workout.id }) {
+            var updatedWorkout = workouts[workoutIndex]
+            updatedWorkout.exercises.move(fromOffsets: offsets, toOffset: destination)
+            workouts[workoutIndex] = updatedWorkout
+            
+            dataManager.saveWorkouts(workouts)
+            //workoutsSubject.send(workouts)
+        }
+    }
+    
     func generateNewWorkout() -> Workout {
         return Workout(id: UUID(), title: "New Workout", cycles: 3, cycleRestTime: 60,
             exercises: [

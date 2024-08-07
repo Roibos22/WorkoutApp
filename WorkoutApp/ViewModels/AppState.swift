@@ -51,6 +51,11 @@ class AppState: ObservableObject {
         loadData()  // Reload data to reflect changes
     }
     
+    func moveExercise(workout: Workout, at offsets: IndexSet, to destination: Int) {
+        workoutService.moveExercise(workout: workout, at: offsets, to: destination)
+        //loadData()  // Reload data to reflect changes
+    }
+    
     
     private func printWorkouts() {
         for (index, workout) in workouts.enumerated() {
