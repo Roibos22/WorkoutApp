@@ -32,7 +32,7 @@ struct WorkoutHistoryView: View {
     
     var body: some View {
         Group {
-            if workoutsHistory.isEmpty {
+            if workoutsHistory.isEmpty || selectedWorkouts.isEmpty {
                 ScrollView {
                     EmptyWorkoutHistoryView()
                 }
@@ -65,10 +65,7 @@ struct WorkoutHistoryView: View {
     }
     
     private func groupedWorkoutsByDate() -> [WorkoutGroup] {
-        let filteredWorkouts = selectedWorkouts.isEmpty
-            ? workoutsHistory
-            : workoutsHistory.filter { selectedWorkouts.contains($0.workout) }
-        
+        let filteredWorkouts = workoutsHistory.filter { selectedWorkouts.contains($0.workout) }
         let groupedDictionary = Dictionary(grouping: filteredWorkouts) { workout in
             Calendar.current.startOfDay(for: workout.timestamp)
         }
