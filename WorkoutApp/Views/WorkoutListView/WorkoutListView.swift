@@ -57,11 +57,11 @@ struct WorkoutListView: View {
     }
     
     private var historyButton: some View {
-        //NavigationLink(destination: WorkoutHistoryView()) {
+        NavigationLink(destination: WorkoutHistoryView(appState: appState)) {
             Image(systemName: "clock.arrow.circlepath")
                 .foregroundColor(.primary)
                 .font(.title2)
-       // }
+        }
     }
     
     private var addWorkoutButton: some View {

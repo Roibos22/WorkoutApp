@@ -88,6 +88,7 @@ class WorkoutActiveViewModel: ObservableObject {
     func finishWorkout() {
         isRunning = false
         isFinished = true
+        appState.saveCompletedWorkoutSession(workout)
         // Add to completed workouts (you'll need to implement this)
     }
 

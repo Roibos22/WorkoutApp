@@ -42,7 +42,7 @@ struct WorkoutDetailViewButtonSection: View {
                     Text("Loading...")
                 }
             } label: {
-                buttonLabel(text: "GO!")
+                buttonLabel(color: .green, text: "GO!")
             }
             .simultaneousGesture(TapGesture().onEnded {
                 if workoutActiveViewModel == nil {
@@ -60,13 +60,13 @@ struct WorkoutDetailViewButtonSection: View {
         }
     }
     
-    private func buttonLabel(icon: String? = nil, text: String) -> some View {
+    private func buttonLabel(icon: String? = nil, color: Color = .blue, text: String) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(Color.black, lineWidth: 2)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.blue)
+                        .fill(color)
                 )
                 .frame(height: 60)
             HStack {

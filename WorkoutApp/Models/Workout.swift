@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Workout: Identifiable, Codable, Equatable {
+struct Workout: Identifiable, Codable, Equatable, Hashable {
     let id: UUID
     var title: String
     var cycles: Int
@@ -33,6 +33,10 @@ struct Workout: Identifiable, Codable, Equatable {
     
     func updateCompletion() -> Workout {
         return Workout(title: title, cycles: cycles, cycleRestTime: cycleRestTime, exercises: exercises, completions: completions)
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 
 }

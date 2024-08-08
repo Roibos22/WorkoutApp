@@ -7,18 +7,15 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct WorkoutPreviewView: View {
-    @EnvironmentObject var vm2: WorkoutDetailViewModel
+    @ObservedObject var viewModel: WorkoutDetailViewModel
     @Environment(\.dismiss) private var dismiss
     
-    let vm: WorkoutDetailViewModel
     let workout: Workout
     let cycleTimeline: [Cycle]
     
     init(vm: WorkoutDetailViewModel) {
-        self.vm = vm
+        self.viewModel = vm
         self.workout = vm.workout
         self.cycleTimeline = vm.createCycleTimeline()
     }

@@ -34,7 +34,6 @@ class AppState: ObservableObject {
     }
     
     func saveWorkout(_ workout: Workout, notifyObservers: Bool = false) {
-        print("call saveWorkout WDS from saveWorkout AS")
         workoutService.saveWorkout(workout, notifyObservers: notifyObservers)
         if notifyObservers {
            loadData()  // Reload data to reflect changes
@@ -71,6 +70,15 @@ class AppState: ObservableObject {
     
     func createCycleimeline(workout: Workout) -> [Cycle] {
         return timelineService.createCycleTimeline(workout: workout)
+    }
+    
+    func getWorkoutsHistory() -> [CompletedWorkout] {
+        historyService.fetchWorkoutHistory()
+    }
+    
+    func saveCompletedWorkoutSession(_ workout: Workout) {
+        var session = CompletedWorkout(workout: workout, timestamp: Date())
+        historyService.saveCompletedWorkoutSession(session)
     }
 
 }
