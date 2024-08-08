@@ -23,6 +23,7 @@ class WorkoutActiveViewModel: ObservableObject {
     @Published var barProgress = 0.0
     @Published var activityIndex = 0
 
+    private let workoutViewModel: WorkoutDetailViewModel
     private var cancellables = Set<AnyCancellable>()
     private let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     private var countdownPlayed = false
@@ -30,7 +31,8 @@ class WorkoutActiveViewModel: ObservableObject {
     private var workoutDurationDone = 0.0
     private let appState: AppState
 
-    init(workout: Workout, workoutTimeline: [Activity], appState: AppState) {
+    init(workoutViewModel: WorkoutDetailViewModel,workout: Workout, workoutTimeline: [Activity], appState: AppState) {
+        self.workoutViewModel = workoutViewModel
         self.workout = workout
         self.workoutTimeline = workoutTimeline
         self.workoutTimeLeft = workout.duration
@@ -91,6 +93,8 @@ class WorkoutActiveViewModel: ObservableObject {
         isRunning = false
         isFinished = true
         appState.saveCompletedWorkoutSession(workout)
+        workoutViewModel.updateCompletions()
+        workoutViewModel.saveWorkout(notifyObservers: true)
         // Add to completed workouts (you'll need to implement this)
     }
 

@@ -45,6 +45,7 @@ struct WorkoutDetailViewButtonSection: View {
             .simultaneousGesture(TapGesture().onEnded {
                 if workoutActiveViewModel == nil {
                     workoutActiveViewModel = WorkoutActiveViewModel(
+                        workoutViewModel: viewModel,
                         workout: viewModel.workout,
                         workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout),
                         appState: appState
