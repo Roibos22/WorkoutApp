@@ -52,13 +52,10 @@ class DataManager {
         var completedWorkouts: [CompletedWorkout]
         
         do {
-            let data = try Data(contentsOf: savePathWorkouts)
+            let data = try Data(contentsOf: savePathCompletedWorkouts)
             completedWorkouts  = try JSONDecoder().decode([CompletedWorkout].self, from: data)
         } catch {
-            completedWorkouts = [
-                CompletedWorkout(workout: Workout.sampleWorkouts[0], timestamp: Date.now),
-                CompletedWorkout(workout: Workout.sampleWorkouts[1], timestamp: Date().addingTimeInterval(-86400))
-            ]
+            completedWorkouts = []
         }
         return completedWorkouts
     }
