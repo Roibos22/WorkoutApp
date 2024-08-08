@@ -20,7 +20,6 @@ struct WorkoutDetailViewButtonSection: View {
         HStack {
             // Preview
             NavigationLink {
-                // TODO: Implement Preview View
                 WorkoutPreviewView(vm: viewModel)
             } label: {
                 buttonLabel(icon: "clock.fill", text: viewModel.workout.duration.asDigitalMinutes())
@@ -28,8 +27,7 @@ struct WorkoutDetailViewButtonSection: View {
             
             // Completions and History
             NavigationLink {
-                // TODO: Implement WorkoutHistoryView
-                Text("Workout History")
+                WorkoutHistoryView(appState: appState, preSelectedWorkout: viewModel.workout)
             } label: {
                 buttonLabel(icon: "clock.arrow.circlepath", text: "\(viewModel.completions)x")
             }

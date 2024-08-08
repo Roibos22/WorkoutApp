@@ -21,7 +21,7 @@ class WorkoutDetailViewModel: ObservableObject {
     }
     
     func updateCompletions() {
-        completions = appState.completedWorkouts.filter { $0.workout.title == workout.title }.count
+        completions = appState.completedWorkouts.filter { $0.workout.id == workout.id }.count
     }
 
     func saveWorkout(notifyObservers: Bool = false) {
