@@ -31,11 +31,19 @@ struct WorkoutHistoryView: View {
     }
     
     var body: some View {
-        List {
-            ForEach(groupedWorkoutsByDate(), id: \.date) { group in
-                Section(header: Text(group.date.formatted(.dateTime.month().day().year()))) {
-                    ForEach(group.workouts) { workout in
-                        WorkoutRow(workout: workout)
+        Group {
+            if workoutsHistory.isEmpty {
+                ScrollView {
+                    EmptyWorkoutHistoryView()
+                }
+            } else {
+                List {
+                    ForEach(groupedWorkoutsByDate(), id: \.date) { group in
+                        Section(header: Text(group.date.formatted(.dateTime.month().day().year()))) {
+                            ForEach(group.workouts) { workout in
+                                WorkoutRow(workout: workout)
+                            }
+                        }
                     }
                 }
             }
@@ -72,6 +80,29 @@ struct WorkoutHistoryView: View {
     
     private func availableWorkouts() -> [Workout] {
         Array(Set(workoutsHistory.map { $0.workout })).sorted(by: { $0.title < $1.title })
+    }
+}
+
+struct EmptyWorkoutHistoryView: View {
+    var body: some View {
+        VStack(spacing: 20) {
+            Image(systemName: "clipboard")
+                .font(.system(size: 50))
+                .foregroundColor(.gray)
+            
+            Text("No Workouts Found")
+                .font(.title2)
+                .fontWeight(.bold)
+            
+            Text("Adjust your filters or complete a workout to see your history!")
+                .multilineTextAlignment(.center)
+                .foregroundColor(.gray)
+                .padding(.horizontal)
+            
+            Spacer()
+        }
+        .padding(20)
+        .padding(.top, 40)
     }
 }
 
