@@ -24,41 +24,39 @@ struct WorkoutPreviewView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 0) {
-                HStack {
-                    Text("Activity")
-                    Spacer()
-                    Text("Duration (Start Time)")
-                }
-                .bold()
-                .padding(.horizontal, 20)
-                
-                Divider()
-                
-                TimelineListView(cycleTimeline: cycleTimeline)
+        VStack(spacing: 0) {
+            HStack {
+                Text("Activity")
+                Spacer()
+                Text("Duration (Start Time)")
             }
-            .padding(.vertical, 10)
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "chevron.left")
-                                .bold()
-                        }
+            .bold()
+            .padding(.horizontal, 20)
+            
+            Divider()
+            
+            TimelineListView(cycleTimeline: cycleTimeline)
+        }
+        .padding(.vertical, 10)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .bold()
                     }
                 }
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text("Preview")
-                            .font(.title)
-                            .bold()
-                        Spacer()
-                    }
+            }
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Text("Preview")
+                        .font(.title)
+                        .bold()
+                    Spacer()
                 }
             }
         }
