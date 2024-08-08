@@ -19,13 +19,14 @@ struct WorkoutHistoryView: View {
     init(appState: AppState, preSelectedWorkout: Workout? = nil) {
         self.appState = appState
         self.workoutsHistory = appState.getWorkoutsHistory()
-//         [  CompletedWorkout(workout: Workout.sampleWorkouts[0]),
-//            CompletedWorkout(workout: Workout.sampleWorkouts[1], timestamp: Date() - 86400),
-//            CompletedWorkout(workout: Workout.sampleWorkouts[2], timestamp: Date() - 172800) ]
+        
+        let allWorkouts = Set(self.workoutsHistory.map { $0.workout })
         
         if let preSelectedWorkout = preSelectedWorkout,
-           self.workoutsHistory.contains(where: { $0.workout.id == preSelectedWorkout.id }) {
-            _selectedWorkouts = State(initialValue: [preSelectedWorkout])
+           allWorkouts.contains(where: { $0.id == preSelectedWorkout.id }) {
+            _selectedWorkouts = State(initialValue: Set([preSelectedWorkout]))
+        } else {
+            _selectedWorkouts = State(initialValue: allWorkouts)
         }
     }
     
