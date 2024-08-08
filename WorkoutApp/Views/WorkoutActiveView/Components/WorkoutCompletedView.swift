@@ -122,8 +122,9 @@ struct WorkoutCompletedView: View {
     
     private func startConfetti() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            if viewModel.getSoundsEnabled() {
-                 SoundManager.instance.playSound(sound: .jubilant)
+            if viewModel.getSoundsEnabled() && !viewModel.celebrationSoundPlayed {
+                SoundManager.instance.playSound(sound: .jubilant)
+                viewModel.celebrationSoundPlayed = true
              }
              self.counter += 1
         }

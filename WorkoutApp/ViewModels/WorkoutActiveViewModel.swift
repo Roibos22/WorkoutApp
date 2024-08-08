@@ -18,6 +18,7 @@ class WorkoutActiveViewModel: ObservableObject {
     @Published var isFinished = false
     @Published var isPaused = false
     @Published var showSkipped = false
+    @Published var celebrationSoundPlayed = false
     @Published var circleProgress = 0.0
     @Published var barProgress = 0.0
     @Published var activityIndex = 0
@@ -56,6 +57,7 @@ class WorkoutActiveViewModel: ObservableObject {
         activityIndex = 0
         currentActivityTimeLeft = currentActivity.duration
         currentActivityDurationDone = 0.0
+        celebrationSoundPlayed = false
     }
 
     func skipActivity() {
