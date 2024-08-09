@@ -26,12 +26,12 @@ struct WorkoutActiveView: View {
                         Spacer()
                         ProgressCircleView(viewModel: viewModel)
                         Spacer()
-                        ProgressBarView(viewModel: viewModel)
                         ControlButtonsView(viewModel: viewModel, showEndAlert: $showEndAlert)
+                            .padding(.horizontal, 7)
+                        ProgressBarView(viewModel: viewModel)
                         Spacer()
                     }
-                    .padding()
-                    
+                    .padding(.horizontal, 20)
                 }
             }
         }
@@ -49,13 +49,13 @@ struct WorkoutActiveView: View {
     }
 }
 
-//struct WorkoutActiveView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WorkoutActiveView(viewModel: WorkoutActiveViewModel(workout: sampleWorkout, workoutTimeline: sampleWorkoutTimeline, appState: AppState()))
-//    }
-//    
-//    // Sample data for preview
-//    static var sampleWorkout: Workout = Workout.sampleWorkouts[0]
-//    static var timelineService = WorkoutTimelineService()
-//    static var sampleWorkoutTimeline: [Activity] = timelineService.createWorkoutTimeline(workout: sampleWorkout)
-//}
+struct WorkoutActiveView_Previews: PreviewProvider {
+    static var previews: some View {
+        WorkoutActiveView(viewModel: WorkoutActiveViewModel(workoutViewModel: WorkoutDetailViewModel(appState: AppState()), workout: sampleWorkout, workoutTimeline: sampleWorkoutTimeline, appState: AppState()))
+    }
+    
+    // Sample data for preview
+    static var sampleWorkout: Workout = Workout.sampleWorkouts[0]
+    static var timelineService = WorkoutTimelineService()
+    static var sampleWorkoutTimeline: [Activity] = timelineService.createWorkoutTimeline(workout: sampleWorkout)
+}

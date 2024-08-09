@@ -12,28 +12,38 @@ struct ControlButtonsView: View {
     @Binding var showEndAlert: Bool
 
     var body: some View {
-        HStack(spacing: 40) {
-            controlButton(systemName: "stop.circle.fill") {
-                showEndAlert = true
+        ZStack {
+            HStack {
+                if viewModel.isPaused {
+                    Button("", systemImage: "stop.circle.fill") {
+                        showEndAlert = true
+                    }
+                    Button("", systemImage: "play.circle.fill") {
+                        viewModel.togglePause()
+                    }
+                } else {
+                    Button("", systemImage: "chevron.right.circle.fill") {
+                        viewModel.skipActivity()
+                    }
+                    Button("", systemImage: "pause.circle.fill") {
+                        viewModel.togglePause()
+                    }
+                }
             }
-
-            controlButton(systemName: viewModel.isPaused ? "play.circle.fill" : "pause.circle.fill") {
-                viewModel.togglePause()
-            }
-
-            controlButton(systemName: "forward.fill") {
-                viewModel.skipActivity()
+            .font(.title)
+            HStack {
+                Image(systemName: "repeat")
+                Text("\(viewModel.currentActivity.cycleNo)/\(viewModel.workout.cycles)")
+                Spacer()
+                Image(systemName: "dumbbell.fill")
+                Text("\(viewModel.currentActivity.activityNo)/\(viewModel.workout.exercises.count)")
             }
         }
-        .font(.system(size: 40))
         .foregroundColor(viewModel.isRestActivity ? .blue : .black)
+        .font(.title2)
+        .bold()
     }
 
-    private func controlButton(systemName: String, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Image(systemName: systemName)
-        }
-    }
 }
 
 //#Preview {

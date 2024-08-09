@@ -17,7 +17,6 @@ class WorkoutActiveViewModel: ObservableObject {
     @Published var isRunning = false
     @Published var showCompletedView = false
     @Published var isPaused = false
-    @Published var showSkipped = false
     @Published var celebrationSoundPlayed = false
     @Published var circleProgress = 0.0
     @Published var barProgress = 0.0
@@ -56,6 +55,7 @@ class WorkoutActiveViewModel: ObservableObject {
     func resetWorkout() {
         print("Workout reseted")
         isRunning = false
+        isPaused = false
         activityIndex = 0
         workoutTimeLeft = workout.duration
         currentActivityTimeLeft = currentActivity.duration
@@ -71,12 +71,7 @@ class WorkoutActiveViewModel: ObservableObject {
             activityIndex += 1
             currentActivityTimeLeft = currentActivity.duration
             currentActivityDurationDone = 0.0
-            showSkipped = true
             SoundManager.instance.stopSound()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.showSkipped = false
-            }
         }
     }
 

@@ -11,11 +11,11 @@ struct ActivityDisplayView: View {
     @ObservedObject var viewModel: WorkoutActiveViewModel
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 15) {
             Text(viewModel.currentActivity.title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding()
+                .padding(10)
                 .frame(maxWidth: .infinity)
                 .background(
                     RoundedRectangle(cornerRadius: 15)
@@ -28,14 +28,18 @@ struct ActivityDisplayView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
-        .padding(.horizontal)
         .frame(maxWidth: .infinity)
         .foregroundColor(viewModel.isRestActivity ? .blue : .black)
     }
 }
 
-
-//
-//#Preview {
-//    ActivityDisplayView()
-//}
+struct ActivityDisplayView_Previews: PreviewProvider {
+    static var previews: some View {
+        WorkoutActiveView(viewModel: WorkoutActiveViewModel(workoutViewModel: WorkoutDetailViewModel(appState: AppState()), workout: sampleWorkout, workoutTimeline: sampleWorkoutTimeline, appState: AppState()))
+    }
+    
+    // Sample data for preview
+    static var sampleWorkout: Workout = Workout.sampleWorkouts[0]
+    static var timelineService = WorkoutTimelineService()
+    static var sampleWorkoutTimeline: [Activity] = timelineService.createWorkoutTimeline(workout: sampleWorkout)
+}
