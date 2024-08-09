@@ -72,8 +72,27 @@ struct WorkoutHistoryView: View {
         .onChange(of: refreshToggle) { _ in
             print("View refreshed due to refreshToggle change")
         }
-        .navigationTitle("History")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .bold()
+                    }
+                }
+            }
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Text("History")
+                        .font(.title)
+                        .bold()
+                    Spacer()
+                }
+            }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: { showFilterSheet = true }) {
                     Image(systemName: "line.3.horizontal.decrease.circle")
