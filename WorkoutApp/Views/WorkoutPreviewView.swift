@@ -28,8 +28,11 @@ struct WorkoutPreviewView: View {
                 Text("Duration (Start Time)")
             }
             .bold()
-            .padding(.horizontal, 20)
-            
+            .padding(.horizontal, 25)
+            .padding(.bottom, 5)
+
+            Divider()
+            Divider()
             Divider()
             
             TimelineListView(cycleTimeline: cycleTimeline)
@@ -57,6 +60,8 @@ struct WorkoutPreviewView: View {
                 }
             }
         }
+        .background(Color(UIColor.systemGray6))
+
     }
 }
 
@@ -70,14 +75,15 @@ struct TimelineListView: View {
                     ForEach(cycle.activities, id: \.self) { activity in
                         ActivityRow(activity: activity)
                     }
+                    //.listRowSeparator(.visible)
                 } header: {
                     CycleHeader(cycle: cycle)
                 }
                 .listRowSeparator(.hidden)
             }
         }
-        .listStyle(.plain)
-        .scrollContentBackground(.hidden)
+        //.listStyle(.plain)
+        //.scrollContentBackground(.hidden)
     }
 }
 
@@ -118,9 +124,9 @@ struct WorkoutPreviewView_Previews: PreviewProvider {
     static let appState = AppState()
     static let vm = WorkoutDetailViewModel(appState: appState)
     static var previews: some View {
-        //NavigationView {
+        NavigationView {
             WorkoutPreviewView(vm: vm)
                 .environmentObject(vm)
-        //}
+        }
     }
 }
