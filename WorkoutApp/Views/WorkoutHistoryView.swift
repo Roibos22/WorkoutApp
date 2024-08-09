@@ -12,26 +12,37 @@ struct WorkoutHistoryView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State var workoutsHistory: [CompletedWorkout]
-    
     @State private var selectedWorkouts: Set<Workout> = []
     @State private var showFilterSheet = false
-    
+    @State private var refreshToggle = false  // Add this line
+
     init(appState: AppState, preSelectedWorkout: Workout? = nil) {
         self.appState = appState
-        self.workoutsHistory = appState.getWorkoutsHistory()
+        self._workoutsHistory = State(initialValue: appState.getWorkoutsHistory())
         let allWorkouts = Set(self.workoutsHistory.map { $0.workout })
         
-        if preSelectedWorkout == nil {
-            _selectedWorkouts = State(initialValue: allWorkouts)
-        } else {
-            if workoutsHistory.contains(where: { $0.id == preSelectedWorkout?.id}) {
-                _selectedWorkouts = State(initialValue: Set([preSelectedWorkout!]))
+        print("Init: workoutsHistory count: \(self.workoutsHistory.count)")
+        print("Init: allWorkouts count: \(allWorkouts.count)")
+        
+        if let preSelectedWorkout = preSelectedWorkout {
+            print("\nPre-selected workout ID: \(preSelectedWorkout.id)")
+            if allWorkouts.contains(where: { $0.id == preSelectedWorkout.id }) {
+                print("Initializing with pre-selected workout: \(preSelectedWorkout.title)")
+                self._selectedWorkouts = State(initialValue: Set([preSelectedWorkout]))
+            } else {
+                print("Pre-selected workout not found, initializing with all workouts")
+                self._selectedWorkouts = State(initialValue: allWorkouts)
             }
+        } else {
+            print("No pre-selected workout, initializing with all workouts")
+            self._selectedWorkouts = State(initialValue: allWorkouts)
         }
     }
     
     func updateHistory() {
         workoutsHistory = appState.getWorkoutsHistory()
+        print("updateHistory: New workoutsHistory count: \(workoutsHistory.count)")
+        refreshToggle.toggle()  // Force view to refresh
     }
     
     var body: some View {
@@ -52,6 +63,15 @@ struct WorkoutHistoryView: View {
                 }
             }
         }
+        .onAppear {
+            print("onAppear: workoutsHistory count: \(workoutsHistory.count)")
+            print("onAppear: selectedWorkouts count: \(selectedWorkouts.count)")
+            selectedWorkouts.forEach { print("onAppear: Selected workout ID: \($0.id)") }
+            updateHistory()
+        }
+        .onChange(of: refreshToggle) { _ in
+            print("View refreshed due to refreshToggle change")
+        }
         .navigationTitle("History")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -66,24 +86,62 @@ struct WorkoutHistoryView: View {
                 selectedWorkouts: $selectedWorkouts
             )
         }
-        .onAppear {
-            updateHistory()
-        }
     }
     
     private func groupedWorkoutsByDate() -> [WorkoutGroup] {
-        let filteredWorkouts = workoutsHistory.filter { selectedWorkouts.contains($0.workout) }
+        print("groupedWorkoutsByDate called")
+        print("workoutsHistory count: \(workoutsHistory.count)")
+        print("selectedWorkouts count: \(selectedWorkouts.count)")
+        
+        // Debug: Print details of workouts in history
+        for (index, completedWorkout) in workoutsHistory.enumerated() {
+            print("History Workout \(index):")
+            print("  ID: \(completedWorkout.workout.id)")
+            print("  Title: \(completedWorkout.workout.title)")
+            // Print other relevant properties
+        }
+        
+        // Debug: Print details of selected workouts
+        for (index, workout) in selectedWorkouts.enumerated() {
+            print("Selected Workout \(index):")
+            print("  ID: \(workout.id)")
+            print("  Title: \(workout.title)")
+            // Print other relevant properties
+        }
+        
+        let filteredWorkouts = workoutsHistory.filter { completedWorkout in
+            let contains = selectedWorkouts.contains(completedWorkout.workout)
+            print("Checking workout: \(completedWorkout.workout.id) - Contains: \(contains)")
+            return contains
+        }
+        print("filteredWorkouts count: \(filteredWorkouts.count)")
+        
         let groupedDictionary = Dictionary(grouping: filteredWorkouts) { workout in
             Calendar.current.startOfDay(for: workout.timestamp)
         }
         
-        return groupedDictionary.map { (key, value) in
+        let result = groupedDictionary.map { (key, value) in
             WorkoutGroup(date: key, workouts: value.sorted(by: { $0.timestamp > $1.timestamp }))
         }.sorted(by: { $0.date > $1.date })
+        
+        print("groupedWorkoutsByDate result count: \(result.count)")
+        return result
     }
     
     private func availableWorkouts() -> [Workout] {
-        Array(Set(workoutsHistory.map { $0.workout })).sorted(by: { $0.title < $1.title })
+        let result = Array(Set(workoutsHistory.map { $0.workout })).sorted(by: { $0.title < $1.title })
+        print("availableWorkouts count: \(result.count)")
+        return result
+    }
+}
+
+extension Workout: Hashable {
+    static func == (lhs: Workout, rhs: Workout) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
