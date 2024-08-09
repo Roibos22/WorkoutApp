@@ -18,3 +18,9 @@ struct CompletedWorkout: Identifiable, Codable {
         self.timestamp = timestamp
     }
 }
+
+struct WorkoutGroup: Identifiable {
+    let id = UUID()
+    let date: Date
+    let workouts: [CompletedWorkout]
+}
