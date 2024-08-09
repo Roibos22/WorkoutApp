@@ -73,7 +73,17 @@ class WorkoutDataService {
     }
     
     func generateNewWorkout() -> Workout {
-        return Workout(id: UUID(), title: "New Workout", cycles: 3, cycleRestTime: 60,
+        var title: String = "Workout"
+        var tmp: String = title
+        var counter: Int = 1
+        
+        while dataManager.loadWorkouts().contains(where: { $0.title == tmp }) {
+            counter += 1
+            tmp = "\(title) \(counter)"
+        }
+        title = tmp
+        
+        return Workout(id: UUID(), title: title, cycles: 3, cycleRestTime: 60,
             exercises: [
                 Exercise(title: "Exercise 1", duration: 20, rest: 10),
                 Exercise(title: "Exercise 2", duration: 20, rest: 10),
