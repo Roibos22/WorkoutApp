@@ -31,12 +31,13 @@ class WorkoutDataService {
     }
     
     func saveWorkout(_ workout: Workout, notifyObservers: Bool = false) {
-        print("saveWorkout in WDS")
         var workouts = dataManager.loadWorkouts()
         if let index = workouts.firstIndex(where: { $0.id == workout.id }) {
             workouts[index] = workout
+            print("WDS: workout updated")
         } else {
             workouts.append(workout)
+            print("WDS: workout added")
         }
         dataManager.saveWorkouts(workouts)
         if notifyObservers {

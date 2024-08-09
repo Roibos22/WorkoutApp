@@ -44,6 +44,7 @@ class DataManager {
                     Exercise(title: "Exercise", duration: 20, rest: 10)
                 ], completions: 0)
             ]
+            saveWorkouts(workouts)
         }
         return workouts
     }
