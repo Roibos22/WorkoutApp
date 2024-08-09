@@ -17,7 +17,7 @@ struct WorkoutActiveView: View {
             viewModel.isRestActivity ? Color.black : Color.blue
             
             VStack {
-                if viewModel.isFinished {
+                if viewModel.showCompletedView {
                     WorkoutCompletedView(viewModel: viewModel, workout: viewModel.workout, workoutTimeline: viewModel.workoutTimeline)
                 } else {
                     VStack {

@@ -15,7 +15,7 @@ class WorkoutActiveViewModel: ObservableObject {
     @Published var workoutTimeLeft: Double
     @Published var currentActivityTimeLeft: Double
     @Published var isRunning = false
-    @Published var isFinished = false
+    @Published var showCompletedView = false
     @Published var isPaused = false
     @Published var showSkipped = false
     @Published var celebrationSoundPlayed = false
@@ -23,7 +23,7 @@ class WorkoutActiveViewModel: ObservableObject {
     @Published var barProgress = 0.0
     @Published var activityIndex = 0
 
-    private let workoutViewModel: WorkoutDetailViewModel
+    let workoutViewModel: WorkoutDetailViewModel
     private var cancellables = Set<AnyCancellable>()
     private let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     private var countdownPlayed = false
@@ -64,7 +64,7 @@ class WorkoutActiveViewModel: ObservableObject {
 
     func skipActivity() {
         if activityIndex == workoutTimeline.count - 2 {
-            finishWorkout()
+            finishWorkoutToCompletedView()
         } else {
             workoutTimeLeft -= currentActivityTimeLeft
             activityIndex += 1
@@ -89,14 +89,24 @@ class WorkoutActiveViewModel: ObservableObject {
         }
     }
 
-    func finishWorkout() {
+    func finishWorkoutToCompletedView() {
         isRunning = false
-        isFinished = true
-        appState.saveCompletedWorkoutSession(workout)
-        workoutViewModel.updateCompletions()
-        workoutViewModel.saveWorkout(notifyObservers: true)
+        showCompletedView = true
+        //workoutViewModel.updateCompletions()
+        //workoutViewModel.saveWorkout(notifyObservers: true)
         // Add to completed workouts (you'll need to implement this)
     }
+    
+    func finishWorkoutFinal() {
+        showCompletedView = false
+        appState.saveCompletedWorkoutSession(workout)
+        workoutViewModel.workout.completions += 1
+        //appState.loadCompletedWorkout()
+        //workoutViewModel.updateCompletions()
+        workoutViewModel.saveWorkout()
+    }
+    
+    
 
     private func setupTimerSubscription() {
         timer.sink { [weak self] _ in
@@ -112,10 +122,10 @@ class WorkoutActiveViewModel: ObservableObject {
         currentActivityTimeLeft -= 0.01
         workoutTimeLeft -= 0.01
         currentActivityDurationDone += 0.01
-        print("TIMER UPODATED:")
-        print("currentActivityTimeLeft: \(currentActivityTimeLeft)")
-        print("workoutTimeLeft: \(workoutTimeLeft)")
-        print("currentActivityDurationDone: \(currentActivityDurationDone)")
+        //print("TIMER UPODATED:")
+        //print("currentActivityTimeLeft: \(currentActivityTimeLeft)")
+        //print("workoutTimeLeft: \(workoutTimeLeft)")
+        //print("currentActivityDurationDone: \(currentActivityDurationDone)")
         // Add this block for the countdown sound
         if appState.soundsEnabled && currentActivityTimeLeft < 3 && !countdownPlayed {
             DispatchQueue.main.async {
@@ -128,7 +138,7 @@ class WorkoutActiveViewModel: ObservableObject {
     private func checkActivityCompletion() {
         if currentActivityTimeLeft <= 0 {
             if activityIndex == workoutTimeline.count - 2 {
-                finishWorkout()
+                finishWorkoutToCompletedView()
             } else {
                 activityIndex += 1
                 currentActivityTimeLeft = currentActivity.duration

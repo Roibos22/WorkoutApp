@@ -29,6 +29,10 @@ class AppState: ObservableObject {
         completedWorkouts = historyService.fetchWorkoutHistory()
     }
     
+    func loadCompletedWorkout() {
+        completedWorkouts = historyService.fetchWorkoutHistory()
+    }
+    
     func generateNewWorkout() -> Workout {
         return workoutService.generateNewWorkout()
     }

@@ -17,13 +17,8 @@ class WorkoutDetailViewModel: ObservableObject {
         self.appState = appState
         self.isNewWorkout = workout == nil
         self.workout = workout ?? appState.generateNewWorkout()
-        updateCompletions()
     }
     
-    func updateCompletions() {
-        completions = appState.completedWorkouts.filter { $0.workout.id == workout.id }.count
-    }
-
     func saveWorkout(notifyObservers: Bool = false) {
         print("call saveWorkout AS from saveWorkout VM")
         appState.saveWorkout(workout, notifyObservers: notifyObservers)

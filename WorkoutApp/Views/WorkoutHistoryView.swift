@@ -11,7 +11,7 @@ struct WorkoutHistoryView: View {
     @ObservedObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
     
-    let workoutsHistory: [CompletedWorkout]
+    @State var workoutsHistory: [CompletedWorkout]
     
     @State private var selectedWorkouts: Set<Workout> = []
     @State private var showFilterSheet = false
@@ -19,15 +19,19 @@ struct WorkoutHistoryView: View {
     init(appState: AppState, preSelectedWorkout: Workout? = nil) {
         self.appState = appState
         self.workoutsHistory = appState.getWorkoutsHistory()
-        
         let allWorkouts = Set(self.workoutsHistory.map { $0.workout })
         
-        if let preSelectedWorkout = preSelectedWorkout,
-           allWorkouts.contains(where: { $0.id == preSelectedWorkout.id }) {
-            _selectedWorkouts = State(initialValue: Set([preSelectedWorkout]))
-        } else {
+        if preSelectedWorkout == nil {
             _selectedWorkouts = State(initialValue: allWorkouts)
+        } else {
+            if workoutsHistory.contains(where: { $0.id == preSelectedWorkout?.id}) {
+                _selectedWorkouts = State(initialValue: Set([preSelectedWorkout!]))
+            }
         }
+    }
+    
+    func updateHistory() {
+        workoutsHistory = appState.getWorkoutsHistory()
     }
     
     var body: some View {
@@ -61,6 +65,9 @@ struct WorkoutHistoryView: View {
                 workouts: availableWorkouts(),
                 selectedWorkouts: $selectedWorkouts
             )
+        }
+        .onAppear {
+            updateHistory()
         }
     }
     

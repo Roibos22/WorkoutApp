@@ -29,7 +29,7 @@ struct WorkoutDetailViewButtonSection: View {
             NavigationLink {
                 WorkoutHistoryView(appState: appState, preSelectedWorkout: viewModel.workout)
             } label: {
-                buttonLabel(icon: "clock.arrow.circlepath", text: "\(viewModel.completions)x")
+                buttonLabel(icon: "clock.arrow.circlepath", text: "\(viewModel.workout.completions)x")
             }
             
             // Start Workout
@@ -55,7 +55,7 @@ struct WorkoutDetailViewButtonSection: View {
             })
         }
         .onAppear {
-            viewModel.updateCompletions()
+            //viewModel.updateCompletions()
         }
     }
     

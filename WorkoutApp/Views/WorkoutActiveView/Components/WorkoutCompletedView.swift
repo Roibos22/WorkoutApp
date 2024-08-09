@@ -106,6 +106,7 @@ struct WorkoutCompletedView: View {
     
     private var endWorkoutButton: some View {
         Button {
+            viewModel.finishWorkoutFinal()
             dismiss()
         } label: {
             ZStack {
