@@ -54,9 +54,10 @@ class WorkoutActiveViewModel: ObservableObject {
     }
     
     func resetWorkout() {
+        print("Workout reseted")
         isRunning = false
-        workoutTimeLeft = workout.duration
         activityIndex = 0
+        workoutTimeLeft = workout.duration
         currentActivityTimeLeft = currentActivity.duration
         currentActivityDurationDone = 0.0
         celebrationSoundPlayed = false
@@ -92,17 +93,13 @@ class WorkoutActiveViewModel: ObservableObject {
     func finishWorkoutToCompletedView() {
         isRunning = false
         showCompletedView = true
-        //workoutViewModel.updateCompletions()
-        //workoutViewModel.saveWorkout(notifyObservers: true)
-        // Add to completed workouts (you'll need to implement this)
     }
     
     func finishWorkoutFinal() {
+        resetWorkout()
         showCompletedView = false
         appState.saveCompletedWorkoutSession(workout)
         workoutViewModel.workout.completions += 1
-        //appState.loadCompletedWorkout()
-        //workoutViewModel.updateCompletions()
         workoutViewModel.saveWorkout()
     }
     
