@@ -52,8 +52,15 @@ class WorkoutDetailViewModel: ObservableObject {
     }
 
     func updateTitle(_ title: String) {
-        workout.title = title
-        print("call saveWorkout VM from updateTitle in View")
+        var newTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        var counter = 1
+        
+        while appState.workouts.contains(where: { $0.id != workout.id && $0.title == newTitle }) {
+            counter += 1
+            newTitle = "\(title) \(counter)"
+        }
+        
+        workout.title = newTitle
         saveWorkout()
     }
     
