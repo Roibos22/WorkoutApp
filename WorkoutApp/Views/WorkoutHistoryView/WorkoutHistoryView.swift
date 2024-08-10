@@ -19,12 +19,12 @@ struct WorkoutHistoryView: View {
         self.appState = appState
         self._workoutsHistory = State(initialValue: appState.getWorkoutsHistory())
         let allWorkouts = Set(self.workoutsHistory.map { $0.workout })
-                
+        
         if let preSelectedWorkout = preSelectedWorkout {
             if allWorkouts.contains(where: { $0.id == preSelectedWorkout.id }) {
                 self._selectedWorkouts = State(initialValue: Set([preSelectedWorkout]))
             } else {
-                self._selectedWorkouts = State(initialValue: allWorkouts)
+                self._selectedWorkouts = State(initialValue: Set([]))
             }
         } else {
             self._selectedWorkouts = State(initialValue: allWorkouts)
@@ -96,11 +96,13 @@ struct WorkoutHistoryView: View {
     }
     
     private func groupedWorkoutsByDate() -> [WorkoutGroup] {
+        let selectedIDs = Set(selectedWorkouts.map { $0.id })
+        
         let filteredWorkouts = workoutsHistory.filter { completedWorkout in
-            let contains = selectedWorkouts.contains(completedWorkout.workout)
+            let contains = selectedIDs.contains(completedWorkout.workout.id)
             return contains
         }
-        
+                
         let groupedDictionary = Dictionary(grouping: filteredWorkouts) { workout in
             Calendar.current.startOfDay(for: workout.timestamp)
         }
@@ -108,7 +110,7 @@ struct WorkoutHistoryView: View {
         let result = groupedDictionary.map { (key, value) in
             WorkoutGroup(date: key, workouts: value.sorted(by: { $0.timestamp > $1.timestamp }))
         }.sorted(by: { $0.date > $1.date })
-        
+                
         return result
     }
     

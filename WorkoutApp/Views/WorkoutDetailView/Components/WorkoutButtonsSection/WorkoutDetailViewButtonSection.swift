@@ -12,10 +12,6 @@ struct WorkoutDetailViewButtonSection: View {
     @EnvironmentObject var appState: AppState
     @State private var workoutActiveViewModel: WorkoutActiveViewModel?
     
-//    var activitiesTimeline: [Activity] {
-//        appState.timelineService.createWorkoutTimeline(workout: viewModel.workout)
-//    }
-    
     var body: some View {
         HStack {
             // Preview

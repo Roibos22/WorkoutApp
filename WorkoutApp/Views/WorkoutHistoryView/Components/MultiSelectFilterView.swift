@@ -22,7 +22,7 @@ struct MultiSelectFilterView: View {
                 ForEach(workouts) { workout in
                     WorkoutToggle(
                         workout: workout,
-                        isSelected: selectedWorkouts.contains(workout)
+                        isSelected: selectedWorkouts.contains(where: { $0.id == workout.id })
                     ) { isOn in
                         if isOn {
                             selectedWorkouts.insert(workout)
