@@ -38,9 +38,6 @@ struct WorkoutDetailView: View {
             }
             .padding(.horizontal)
         }
-        .onChange(of: viewModel.workout) { _ in
-            viewModel.saveWorkout()
-        }
         .navigationTitle(viewModel.workout.title)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)

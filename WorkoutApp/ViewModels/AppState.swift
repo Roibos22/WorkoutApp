@@ -40,7 +40,8 @@ class AppState: ObservableObject {
     func saveWorkout(_ workout: Workout, notifyObservers: Bool = false) {
         workoutService.saveWorkout(workout, notifyObservers: notifyObservers)
         if notifyObservers {
-           loadData()  // Reload data to reflect changes
+            self.workouts = workoutService.fetchWorkouts()
+            print("workouts loaded")
         }
     }
     

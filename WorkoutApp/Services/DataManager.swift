@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class DataManager {
     let savePathWorkouts = FileManager.documentsDirectory.appendingPathComponent("Workouts")
@@ -15,7 +16,9 @@ class DataManager {
         do {
             let data = try JSONEncoder().encode(workouts)
             try data.write(to: savePathWorkouts, options: [.atomicWrite, .completeFileProtection])
-
+            for workout in workouts {
+                print("saved \(workout.title)")
+            }
         } catch {
             print("Failed to save workouts: \(error.localizedDescription)")
         }
@@ -36,6 +39,9 @@ class DataManager {
         do {
             let data = try Data(contentsOf: savePathWorkouts)
             workouts  = try JSONDecoder().decode([Workout].self, from: data)
+            for workout in workouts {
+                //print("loaded \(workout.title)")
+            }
         } catch {
             workouts = [
                 Workout(title: "Workout", cycles: 2, cycleRestTime: 60, exercises: [

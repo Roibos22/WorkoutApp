@@ -21,11 +21,15 @@ class WorkoutListViewModel: ObservableObject {
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] workouts in
+                //print("WorkoutListViewModel received update: \(workouts.count) workouts")
                 self?.workouts = workouts
-                print("WorkoutListViewModel updated: \(workouts.count) workouts")
+                //print("WorkoutListViewModel updated: \(self?.workouts.count ?? 0) workouts")
+                for workout in workouts {
+                    //print("loaded 2: \(workout.title)")
+                }
             }
             .store(in: &cancellables)
-        }
+    }
     
     func addWorkout(_ workout: Workout) {
         appState.saveWorkout(workout)
@@ -42,4 +46,5 @@ class WorkoutListViewModel: ObservableObject {
     func moveWorkout(at offsets: IndexSet, to destination: Int) {
         appState.moveWorkout(at: offsets, to: destination)
     }
+    
 }

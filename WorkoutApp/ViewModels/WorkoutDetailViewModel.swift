@@ -20,7 +20,6 @@ class WorkoutDetailViewModel: ObservableObject {
     }
     
     func saveWorkout(notifyObservers: Bool = false) {
-        print("call saveWorkout AS from saveWorkout VM")
         appState.saveWorkout(workout, notifyObservers: notifyObservers)
     }
     

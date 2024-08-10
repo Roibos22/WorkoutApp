@@ -31,12 +31,13 @@ struct Workout: Identifiable, Codable, Equatable, Hashable {
         self.completions = completions
     }
     
-    func updateCompletion() -> Workout {
-        return Workout(title: title, cycles: cycles, cycleRestTime: cycleRestTime, exercises: exercises, completions: completions)
-    }
-    
     static func == (lhs: Workout, rhs: Workout) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.id == rhs.id &&
+        lhs.title == rhs.title &&
+        lhs.cycles == rhs.cycles &&
+        lhs.cycleRestTime == rhs.cycleRestTime &&
+        lhs.exercises == rhs.exercises &&
+        lhs.completions == rhs.completions
     }
     
     func hash(into hasher: inout Hasher) {
