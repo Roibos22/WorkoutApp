@@ -32,20 +32,22 @@ struct WorkoutHistoryView: View {
     }
     
     var body: some View {
-        Group {
-            if workoutsHistory.isEmpty || selectedWorkouts.isEmpty {
-                ScrollView {
-                    EmptyWorkoutHistoryView()
-                }
-            } else {
-                List {
-                    ForEach(groupedWorkoutsByDate(), id: \.date) { group in
-                        Section(header: Text(group.date.formatted(.dateTime.month().day().year()))) {
-                            ForEach(group.workouts) { workout in
-                                HStack {
-                                    Text(workout.workout.title)
-                                    Spacer()
-                                    Text(workout.timestamp, style: .time)
+        VStack {
+            Group {
+                if workoutsHistory.isEmpty || selectedWorkouts.isEmpty {
+                    ScrollView {
+                        EmptyWorkoutHistoryView()
+                    }
+                } else {
+                    List {
+                        ForEach(groupedWorkoutsByDate(), id: \.date) { group in
+                            Section(header: Text(group.date.formatted(.dateTime.month().day().year()))) {
+                                ForEach(group.workouts) { workout in
+                                    HStack {
+                                        Text(workout.workout.title)
+                                        Spacer()
+                                        Text(workout.timestamp, style: .time)
+                                    }
                                 }
                             }
                         }
