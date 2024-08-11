@@ -24,7 +24,7 @@ struct WorkoutSettingsSectionCard: View {
 //                .padding(.leading, 7)
             
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.black, lineWidth: 3)
                 .frame(height: 50)
                 .overlay(
                     HStack {

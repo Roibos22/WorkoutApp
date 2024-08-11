@@ -58,7 +58,7 @@ struct WorkoutDetailViewButtonSection: View {
     private func buttonLabel(icon: String? = nil, color: Color = .blue, text: String) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.black, lineWidth: 3)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
                         .fill(color)

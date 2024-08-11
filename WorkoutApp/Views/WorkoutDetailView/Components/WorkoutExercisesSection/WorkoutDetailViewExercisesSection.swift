@@ -41,6 +41,7 @@ struct WorkoutDetailViewExercisesSection: View {
             Image(systemName: "plus.circle.fill")
                 .foregroundColor(.primary)
                 .font(.title2)
+                .bold()
         }
     }
     
@@ -49,6 +50,7 @@ struct WorkoutDetailViewExercisesSection: View {
             Image(systemName: "arrow.up.arrow.down")
                 .foregroundColor(.primary)
                 .font(.title2)
+                .bold()
         }
     }
 }
@@ -65,7 +67,7 @@ struct ExerciseCardView: View {
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.black, lineWidth: 3)
         )
     }
     
@@ -79,7 +81,7 @@ struct ExerciseCardView: View {
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.black, lineWidth: 2)
+                    .stroke(Color.black, lineWidth: 3)
             )
     }
     

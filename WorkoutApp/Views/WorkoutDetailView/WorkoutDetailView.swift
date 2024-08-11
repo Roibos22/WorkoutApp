@@ -16,26 +16,21 @@ struct WorkoutDetailView: View {
     var body: some View {
         ScrollView {
             VStack {
-                // Button Section
                 WorkoutDetailViewButtonSection(viewModel: viewModel)
-                    .padding(.vertical, 5)
-                    .padding(.top, 10)
+                    .padding(.vertical, 10)
                 
-                // Exercises
                 WorkoutDetailViewExercisesSection(workout: $viewModel.workout, viewModel: viewModel)
-                    .padding(.vertical, 5)
+                    .padding(.vertical, 10)
 
-                // Workout Settings
                 WorkoutSettingsSection(workout: $viewModel.workout)
-                    .padding(.vertical, 5)
+                    .padding(.vertical, 10)
 
-//                if !viewModel.isNewWorkout {
-                   deleteWorkoutButton
-                        .padding(.vertical, 15)
-//                }
-                
+                deleteWorkoutButton
+                    .padding(.vertical, 10)
+
                 Spacer()
             }
+            //.padding(.vertical)
             .padding(.horizontal)
         }
         .navigationTitle(viewModel.workout.title)

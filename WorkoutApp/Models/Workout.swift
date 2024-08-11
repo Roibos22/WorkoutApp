@@ -61,25 +61,24 @@ extension Workout {
     )
     
     static let sampleWorkouts: [Workout] = [
-        Workout(title: "Tabata", cycles: 2, cycleRestTime: 60, exercises: [
-            Exercise(title: "Push ups", duration: 20, rest: 20),
-            Exercise(title: "Crunches", duration: 20, rest: 20),
-            Exercise(title: "Plank", duration: 30, rest: 20)
-        ], completions: 24),
-        Workout(title: "Kegel", cycles: 3, cycleRestTime: 60, exercises: [
-            Exercise(title: "Push ups", duration: 20, rest: 20),
-            Exercise(title: "Crunches", duration: 20, rest: 20),
-            Exercise(title: "Plank", duration: 30, rest: 20)
-        ], completions: 133),
-        Workout(title: "Full Body", cycles: 17, cycleRestTime: 60, exercises: [
-            Exercise(title: "Push ups", duration: 20, rest: 20),
-            Exercise(title: "Crunches", duration: 20, rest: 20),
-            Exercise(title: "Plank", duration: 30, rest: 20)
-        ], completions: 2),
-        Workout(title: "Body Core", cycles: 4, cycleRestTime: 60, exercises: [
-            Exercise(title: "Push ups", duration: 20, rest: 20),
-            Exercise(title: "Crunches", duration: 20, rest: 20),
-            Exercise(title: "Plank", duration: 30, rest: 20)
-        ], completions: 4)
+        Workout(title: "HIIT Cardio", cycles: 3, cycleRestTime: 60, exercises: [
+            Exercise(title: "High Knees", duration: 30, rest: 15),
+            Exercise(title: "Burpees", duration: 30, rest: 15),
+            Exercise(title: "Mountain Climbers", duration: 30, rest: 15),
+            Exercise(title: "Jump Squats", duration: 30, rest: 15)
+        ], completions: 0),
+        Workout(title: "Body Core Crusher", cycles: 4, cycleRestTime: 60, exercises: [
+            Exercise(title: "Crunches", duration: 40, rest: 20),
+            Exercise(title: "Push-ups", duration: 40, rest: 20),
+            Exercise(title: "Twists", duration: 40, rest: 20),
+            Exercise(title: "Leg Raises", duration: 40, rest: 20),
+            Exercise(title: "Plank Hold", duration: 40, rest: 20)
+        ], completions: 0),
+        Workout(title: "Tabata Challenge", cycles: 8, cycleRestTime: 20, exercises: [
+            Exercise(title: "Squat Jumps", duration: 20, rest: 10),
+            Exercise(title: "Push-ups", duration: 20, rest: 10),
+            Exercise(title: "Mountain Climbers", duration: 20, rest: 10),
+            Exercise(title: "Plank Jacks", duration: 20, rest: 10)
+        ], completions: 0)
     ]
 }

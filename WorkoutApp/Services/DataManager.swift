@@ -39,17 +39,8 @@ class DataManager {
         do {
             let data = try Data(contentsOf: savePathWorkouts)
             workouts  = try JSONDecoder().decode([Workout].self, from: data)
-            for workout in workouts {
-                //print("loaded \(workout.title)")
-            }
         } catch {
-            workouts = [
-                Workout(title: "Workout", cycles: 2, cycleRestTime: 60, exercises: [
-                    Exercise(title: "Push ups", duration: 20, rest: 10),
-                    Exercise(title: "Crunches", duration: 20, rest: 10),
-                    Exercise(title: "Exercise", duration: 20, rest: 10)
-                ], completions: 0)
-            ]
+            workouts = Workout.sampleWorkouts
             saveWorkouts(workouts)
         }
         return workouts
