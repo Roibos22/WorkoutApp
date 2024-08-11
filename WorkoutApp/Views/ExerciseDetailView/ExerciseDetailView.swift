@@ -11,6 +11,7 @@ struct ExerciseDetailView: View {
     @ObservedObject var viewModel: ExerciseDetailViewModel
     @Environment(\.dismiss) var dismiss
     @State private var showDeleteConfirmation = false
+    @State private var showDeleteNotPossibleAlert = false
 
     var body: some View {
         ScrollView {
@@ -52,14 +53,25 @@ struct ExerciseDetailView: View {
                 }
             }
         }
+        .alert(isPresented: $showDeleteNotPossibleAlert) {
+            Alert(
+                title: Text("Deletion not possible"),
+                message: Text("You need to have at least one Exercise in your workout."),
+                dismissButton: .default(Text("OK")) { }
+            )
+        }
         .confirmationDialog(
             "Delete Exercise?",
             isPresented: $showDeleteConfirmation,
             titleVisibility: .visible
         ) {
             Button("Delete", role: .destructive) {
-                viewModel.deleteExercise()
-                dismiss()
+                if viewModel.getExercisesCount() == 1 {
+                    showDeleteNotPossibleAlert = true
+                } else {
+                    viewModel.deleteExercise()
+                    dismiss()
+                }
             }
         }
     }

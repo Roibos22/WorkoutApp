@@ -38,4 +38,8 @@ class ExerciseDetailViewModel: ObservableObject {
         }
     }
     
+    func getExercisesCount() -> Int {
+        return workoutViewModel.workout.exercises.count
+    }
+    
 }
