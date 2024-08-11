@@ -51,6 +51,7 @@ struct WorkoutListView: View {
             Image(systemName: "gearshape.fill")
                 .foregroundColor(.primary)
                 .font(.title2)
+                .bold()
         }
     }
     
@@ -59,6 +60,7 @@ struct WorkoutListView: View {
             Image(systemName: "clock.arrow.circlepath")
                 .foregroundColor(.primary)
                 .font(.title2)
+                .bold()
         }
     }
     
@@ -69,6 +71,7 @@ struct WorkoutListView: View {
             Image(systemName: "plus.circle.fill")
                 .foregroundColor(.primary)
                 .font(.title2)
+                .bold()
         }
     }
 }

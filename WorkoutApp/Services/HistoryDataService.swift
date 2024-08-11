@@ -18,6 +18,10 @@ class HistoryDataService {
         return dataManager.loadCompletedWorkouts()
     }
     
+    func saveWorkoutHistory(workouts: [CompletedWorkout]) {
+        return dataManager.saveCompletedWorkouts(workouts)
+    }
+    
     func saveCompletedWorkoutSession(_ session: CompletedWorkout) {
         var history = dataManager.loadCompletedWorkouts()
         history.append(session)

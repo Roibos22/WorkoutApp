@@ -60,15 +60,6 @@ class AppState: ObservableObject {
         //loadData()  // Reload data to reflect changes
     }
     
-    
-    private func printWorkouts() {
-        for (index, workout) in workouts.enumerated() {
-            print("Workout \(index): ID = \(workout.id), Title = \(workout.title)")
-        }
-        print("Total workouts: \(workouts.count)")
-        print("-------------------")
-    }
-    
     func createWorkoutTimeline(workout: Workout) -> [Activity] {
         return timelineService.createWorkoutTimeline(workout: workout)
     }
@@ -82,8 +73,29 @@ class AppState: ObservableObject {
     }
     
     func saveCompletedWorkoutSession(_ workout: Workout) {
-        var session = CompletedWorkout(workout: workout, timestamp: Date())
+        let session = CompletedWorkout(workout: workout, timestamp: Date())
         historyService.saveCompletedWorkoutSession(session)
+    }
+    
+    func updateTitleCompletedWorkouts(workout: Workout, title: String) {
+        var completedWorkouts = getWorkoutsHistory()
+        var updatedCompletedWorkouts: [CompletedWorkout] = []
+        
+        for completedWorkout in completedWorkouts {
+            if completedWorkout.workout.id == workout.id {
+                let updatedCompletedWorkout = CompletedWorkout(
+                    id: completedWorkout.id,
+                    workout: Workout(id: workout.id, title: title, cycles: workout.cycles, cycleRestTime: workout.cycleRestTime, exercises: workout.exercises),
+                    timestamp: completedWorkout.timestamp
+                )
+                updatedCompletedWorkouts.append(updatedCompletedWorkout)
+            } else {
+                updatedCompletedWorkouts.append(completedWorkout)
+            }
+        }
+        
+       // completedWorkouts = updatedCompletedWorkouts
+        historyService.saveWorkoutHistory(workouts: updatedCompletedWorkouts)
     }
 
 }

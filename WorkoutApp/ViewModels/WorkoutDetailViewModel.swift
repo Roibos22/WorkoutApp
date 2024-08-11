@@ -64,6 +64,8 @@ class WorkoutDetailViewModel: ObservableObject {
             newTitle = "\(title) \(counter)"
         }
         
+        appState.updateTitleCompletedWorkouts(workout: workout, title: workout.title)
+        
         workout.title = newTitle
         saveWorkout()
     }
