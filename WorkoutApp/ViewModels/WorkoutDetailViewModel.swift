@@ -10,6 +10,7 @@ import Foundation
 class WorkoutDetailViewModel: ObservableObject {
     @Published var workout: Workout
     @Published var completions: Int = 0
+    @Published var showDeleteNotPossibleAlert = false
     private let appState: AppState
     let isNewWorkout: Bool
 
@@ -29,8 +30,12 @@ class WorkoutDetailViewModel: ObservableObject {
     }
     
     func deleteExerciseIndexSet(at offsets: IndexSet) {
-        workout.exercises.remove(atOffsets: offsets)
-        saveWorkout(notifyObservers: false)
+        if workout.exercises.count == 1 {
+            showDeleteNotPossibleAlert = true
+        } else {
+            workout.exercises.remove(atOffsets: offsets)
+            saveWorkout(notifyObservers: false)
+        }
     }
     
     func addExercise(_ exercise: Exercise) {

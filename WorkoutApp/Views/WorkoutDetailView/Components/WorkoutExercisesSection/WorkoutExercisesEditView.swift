@@ -56,6 +56,13 @@ struct WorkoutExercisesEditView: View {
 
             }
         }
+        .alert(isPresented: $viewModel.showDeleteNotPossibleAlert) {
+            Alert(
+                title: Text("Deletion not possible"),
+                message: Text("You need to have at least one Exercise in your workout."),
+                dismissButton: .default(Text("OK")) { }
+            )
+        }
     }
 }
 
