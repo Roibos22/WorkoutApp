@@ -81,4 +81,49 @@ extension Workout {
             Exercise(title: "Plank Jacks", duration: 20, rest: 10)
         ], completions: 0)
     ]
+    
+    static let sampleWorkoutHistory: [CompletedWorkout] = [
+        // 1 day ago
+        CompletedWorkout(
+            workout: sampleWorkouts[2],
+            timestamp: Date().addingTimeInterval(-1 * 24 * 60 * 60 - (12 * 60 * 50))
+        ),
+        CompletedWorkout(
+            workout: sampleWorkouts[0],
+            timestamp: Date().addingTimeInterval(-1 * 24 * 60 * 60 - (12 * 60 * 60))
+        ),
+        
+        // 2 day ago
+        CompletedWorkout(
+            workout: sampleWorkouts[2],
+            timestamp: Date().addingTimeInterval(-2 * 24 * 60 * 60 - (12 * 60 * 50))
+        ),
+        
+        // 3 day ago
+        CompletedWorkout(
+            workout: sampleWorkouts[2],
+            timestamp: Date().addingTimeInterval(-3 * 24 * 60 * 60 - (12 * 60 * 50))
+        ),
+        CompletedWorkout(
+            workout: sampleWorkouts[1],
+            timestamp: Date().addingTimeInterval(-3 * 24 * 60 * 60 - (12 * 60 * 60))
+        ),
+        
+        // 4 day ago
+        CompletedWorkout(
+            workout: sampleWorkouts[2],
+            timestamp: Date().addingTimeInterval(-4 * 24 * 60 * 60 - (12 * 60 * 50))
+        ),
+        
+        // 5 day ago
+        CompletedWorkout(
+            workout: sampleWorkouts[2],
+            timestamp: Date().addingTimeInterval(-5 * 24 * 60 * 60 - (12 * 60 * 50))
+        ),
+        CompletedWorkout(
+            workout: sampleWorkouts[0],
+            timestamp: Date().addingTimeInterval(-5 * 24 * 60 * 60 - (12 * 60 * 60))
+        )
+
+    ]
 }
