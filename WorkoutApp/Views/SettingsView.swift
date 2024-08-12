@@ -65,7 +65,7 @@ struct SettingsView: View {
             rateApp()
         } label: {
             HStack {
-                Text("Rate WorkoutApp")
+                Text("Rate WorkoutPulse")
                     .multilineTextAlignment(.leading)
                 Spacer()
                 Image(systemName: "chevron.right")
@@ -100,7 +100,7 @@ struct SettingsView: View {
     }
     
     private func rateApp() {
-        let appReviewURL = "itms-apps://itunes.apple.com/app/idid6497484745?action=write-review&mt=8"
+        let appReviewURL = "itms-apps://itunes.apple.com/app/idid6444348524?action=write-review&mt=8"
         print(appReviewURL)
         UIApplication.shared.open(URL(string:appReviewURL)!, options: [:])
     }
