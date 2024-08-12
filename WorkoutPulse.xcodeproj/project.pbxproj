@@ -61,7 +61,7 @@
 
 /* Begin PBXFileReference section */
 		351DFCA72ACFF5ED0093E2DE /* WorkoutSettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSettingsSection.swift; sourceTree = "<group>"; };
-		352A62D42ACDC85000CAC187 /* WorkoutApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		352A62D42ACDC85000CAC187 /* WorkoutPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		352A62D72ACDC85000CAC187 /* WorkoutAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutAppApp.swift; sourceTree = "<group>"; };
 		352A62DB2ACDC85200CAC187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		352A62DD2ACDC85200CAC187 /* WorkoutApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkoutApp.entitlements; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		352A62D52ACDC85000CAC187 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				352A62D42ACDC85000CAC187 /* WorkoutApp.app */,
+				352A62D42ACDC85000CAC187 /* WorkoutPulse.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -377,9 +377,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		352A62D32ACDC85000CAC187 /* WorkoutApp */ = {
+		352A62D32ACDC85000CAC187 /* WorkoutPulse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 352A62E32ACDC85200CAC187 /* Build configuration list for PBXNativeTarget "WorkoutApp" */;
+			buildConfigurationList = 352A62E32ACDC85200CAC187 /* Build configuration list for PBXNativeTarget "WorkoutPulse" */;
 			buildPhases = (
 				352A62D02ACDC85000CAC187 /* Sources */,
 				352A62D12ACDC85000CAC187 /* Frameworks */,
@@ -389,12 +389,12 @@
 			);
 			dependencies = (
 			);
-			name = WorkoutApp;
+			name = WorkoutPulse;
 			packageProductDependencies = (
 				3571C0DA2C61835500BA0BB6 /* ConfettiSwiftUI */,
 			);
 			productName = WorkoutApp;
-			productReference = 352A62D42ACDC85000CAC187 /* WorkoutApp.app */;
+			productReference = 352A62D42ACDC85000CAC187 /* WorkoutPulse.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -412,7 +412,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 352A62CF2ACDC85000CAC187 /* Build configuration list for PBXProject "WorkoutApp" */;
+			buildConfigurationList = 352A62CF2ACDC85000CAC187 /* Build configuration list for PBXProject "WorkoutPulse" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -428,7 +428,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				352A62D32ACDC85000CAC187 /* WorkoutApp */,
+				352A62D32ACDC85000CAC187 /* WorkoutPulse */,
 			);
 		};
 /* End PBXProject section */
@@ -703,7 +703,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		352A62CF2ACDC85000CAC187 /* Build configuration list for PBXProject "WorkoutApp" */ = {
+		352A62CF2ACDC85000CAC187 /* Build configuration list for PBXProject "WorkoutPulse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				352A62E12ACDC85200CAC187 /* Debug */,
@@ -712,7 +712,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		352A62E32ACDC85200CAC187 /* Build configuration list for PBXNativeTarget "WorkoutApp" */ = {
+		352A62E32ACDC85200CAC187 /* Build configuration list for PBXNativeTarget "WorkoutPulse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				352A62E42ACDC85200CAC187 /* Debug */,
