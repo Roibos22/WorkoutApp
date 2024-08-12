@@ -30,8 +30,10 @@ struct MultiSelectFilterView: View {
                             selectedWorkouts.remove(workout)
                         }
                     }
+                    .listRowBackground(Color(UIColor.systemGray6))
                 }
             }
+            .scrollContentBackground(.hidden)
             .navigationTitle("Filter Workouts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

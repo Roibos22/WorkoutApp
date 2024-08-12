@@ -37,7 +37,7 @@ struct WorkoutPreviewView: View {
             
             TimelineListView(cycleTimeline: cycleTimeline)
         }
-        .padding(.vertical, 10)
+        .padding(.top, 10)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -48,20 +48,15 @@ struct WorkoutPreviewView: View {
                     HStack {
                         Image(systemName: "chevron.left")
                             .bold()
+                        Text("Preview")
+                            .font(.title)
+                            .bold()
+                            .foregroundStyle(.black)
+                        Spacer()
                     }
                 }
             }
-            ToolbarItem(placement: .principal) {
-                HStack {
-                    Text("Preview")
-                        .font(.title)
-                        .bold()
-                    Spacer()
-                }
-            }
         }
-        .background(Color(UIColor.systemGray6))
-
     }
 }
 
@@ -75,15 +70,14 @@ struct TimelineListView: View {
                     ForEach(cycle.activities, id: \.self) { activity in
                         ActivityRow(activity: activity)
                     }
-                    //.listRowSeparator(.visible)
+                    .listRowBackground(Color(UIColor.systemGray6))
                 } header: {
                     CycleHeader(cycle: cycle)
                 }
                 .listRowSeparator(.hidden)
             }
         }
-        //.listStyle(.plain)
-        //.scrollContentBackground(.hidden)
+        .scrollContentBackground(.hidden)
     }
 }
 
@@ -113,6 +107,7 @@ struct CycleHeader: View {
                 Spacer()
                 Text("\(cycle.cycleNumber). Cycle")
                     .font(.title3)
+                    .foregroundColor(.black)
                     .bold()
                 Spacer()
             }

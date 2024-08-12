@@ -49,9 +49,11 @@ struct WorkoutHistoryView: View {
                                         Text(workout.timestamp, style: .time)
                                     }
                                 }
+                                .listRowBackground(Color(UIColor.systemGray6))
                             }
                         }
                     }
+                    .scrollContentBackground(.hidden)
                 }
             }
         }
@@ -68,15 +70,12 @@ struct WorkoutHistoryView: View {
                     HStack {
                         Image(systemName: "chevron.left")
                             .bold()
+                        Text("History")
+                            .font(.title)
+                            .foregroundColor(.black)
+                            .bold()
+                        Spacer()
                     }
-                }
-            }
-            ToolbarItem(placement: .principal) {
-                HStack {
-                    Text("History")
-                        .font(.title)
-                        .bold()
-                    Spacer()
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
