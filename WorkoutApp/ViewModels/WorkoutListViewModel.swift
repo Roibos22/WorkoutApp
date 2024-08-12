@@ -24,9 +24,6 @@ class WorkoutListViewModel: ObservableObject {
                 //print("WorkoutListViewModel received update: \(workouts.count) workouts")
                 self?.workouts = workouts
                 //print("WorkoutListViewModel updated: \(self?.workouts.count ?? 0) workouts")
-                for workout in workouts {
-                    //print("loaded 2: \(workout.title)")
-                }
             }
             .store(in: &cancellables)
     }

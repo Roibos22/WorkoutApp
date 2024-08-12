@@ -78,7 +78,7 @@ class AppState: ObservableObject {
     }
     
     func updateTitleCompletedWorkouts(workout: Workout, title: String) {
-        var completedWorkouts = getWorkoutsHistory()
+        let completedWorkouts = getWorkoutsHistory()
         var updatedCompletedWorkouts: [CompletedWorkout] = []
         
         for completedWorkout in completedWorkouts {
