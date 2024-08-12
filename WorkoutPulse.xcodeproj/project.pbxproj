@@ -13,6 +13,8 @@
 		352A62E02ACDC85200CAC187 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352A62DF2ACDC85200CAC187 /* Preview Assets.xcassets */; };
 		352A62ED2ACDD47300CAC187 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62EC2ACDD47300CAC187 /* Double.swift */; };
 		352A62F42ACDD91900CAC187 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */; };
+		35484E3C2C6A12D9004B2E7B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35484E3B2C6A12D9004B2E7B /* Launch Screen.storyboard */; };
+		35484E3E2C6A1304004B2E7B /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 35484E3D2C6A1304004B2E7B /* Logo.png */; };
 		354EE6292C5C274800C97F99 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EE6282C5C274800C97F99 /* Exercise.swift */; };
 		354EE62B2C5C27C200C97F99 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EE62A2C5C27C200C97F99 /* Activity.swift */; };
 		354EE62D2C5C281300C97F99 /* CompletedWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EE62C2C5C281300C97F99 /* CompletedWorkout.swift */; };
@@ -68,6 +70,8 @@
 		352A62DF2ACDC85200CAC187 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		352A62EC2ACDD47300CAC187 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
+		35484E3B2C6A12D9004B2E7B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		35484E3D2C6A1304004B2E7B /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = ../../../Logo.png; sourceTree = "<group>"; };
 		354EE6282C5C274800C97F99 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		354EE62A2C5C27C200C97F99 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		354EE62C2C5C281300C97F99 /* CompletedWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedWorkout.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		352A62CB2ACDC85000CAC187 = {
 			isa = PBXGroup;
 			children = (
+				35484E3B2C6A12D9004B2E7B /* Launch Screen.storyboard */,
 				352A62D72ACDC85000CAC187 /* WorkoutAppApp.swift */,
 				354EE6212C5C240500C97F99 /* WorkoutApp */,
 				352A62D52ACDC85000CAC187 /* Products */,
@@ -240,6 +245,7 @@
 		354EE6272C5C250200C97F99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				35484E3D2C6A1304004B2E7B /* Logo.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -438,6 +444,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35484E3C2C6A12D9004B2E7B /* Launch Screen.storyboard in Resources */,
+				35484E3E2C6A1304004B2E7B /* Logo.png in Resources */,
 				358113C92B325192003325C0 /* countdown.mp3 in Resources */,
 				358113C82B325192003325C0 /* jubilant.mp3 in Resources */,
 				352A62E02ACDC85200CAC187 /* Preview Assets.xcassets in Resources */,
@@ -630,12 +638,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WorkoutPulse;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -645,8 +656,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lmg.WorkoutApp;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lmg.JustTabata;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -672,12 +683,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WorkoutPulse;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -687,8 +701,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lmg.WorkoutApp;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lmg.JustTabata;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
