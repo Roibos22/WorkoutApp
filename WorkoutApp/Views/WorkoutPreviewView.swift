@@ -39,7 +39,7 @@ struct WorkoutPreviewView: View {
         }
         .padding(.top, 10)
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
+        .scrollIndicators(.hidden)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {

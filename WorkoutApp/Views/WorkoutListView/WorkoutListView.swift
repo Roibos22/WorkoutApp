@@ -31,6 +31,8 @@ struct WorkoutListView: View {
                 .onMove(perform: viewModel.moveWorkout)
             }
             .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .scrollIndicators(.hidden)
             .navigationTitle("Your Workouts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -54,6 +54,7 @@ struct WorkoutHistoryView: View {
                         }
                     }
                     .scrollContentBackground(.hidden)
+                    .scrollIndicators(.hidden)
                 }
             }
         }

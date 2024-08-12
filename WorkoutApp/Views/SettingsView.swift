@@ -19,6 +19,7 @@ struct SettingsView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .scrollContentBackground(.hidden)
+            .scrollIndicators(.hidden)
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
