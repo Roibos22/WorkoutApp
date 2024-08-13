@@ -49,9 +49,10 @@ struct WorkoutHistoryView: View {
                                         Text(workout.timestamp, style: .time)
                                     }
                                 }
-                                .listRowBackground(Color(UIColor.systemGray6))
                             }
                         }
+                        .listRowBackground(Color(UIColor.systemGray5))
+                        .listRowSeparator(.hidden)
                     }
                     .scrollContentBackground(.hidden)
                     .scrollIndicators(.hidden)

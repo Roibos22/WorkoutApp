@@ -44,4 +44,12 @@ class WorkoutListViewModel: ObservableObject {
         appState.moveWorkout(at: offsets, to: destination)
     }
     
+    func getCurrentStreak() -> Int {
+        appState.getCurrentStreak()
+    }
+    
+    func getAppState() -> AppState {
+        return appState
+    }
+    
 }

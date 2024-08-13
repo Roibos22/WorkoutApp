@@ -58,6 +58,7 @@
 		35E3FA462AD692190039A0E6 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3FA452AD692190039A0E6 /* ExerciseDetailView.swift */; };
 		35E3FA4A2AD71BDC0039A0E6 /* WorkoutActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3FA492AD71BDC0039A0E6 /* WorkoutActiveView.swift */; };
 		35E4D4132C601FB5001B00B1 /* ExerciseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4D4122C601FB5001B00B1 /* ExerciseDetailViewModel.swift */; };
+		35F164DF2C6AC44800D81865 /* StreaksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F164DE2C6AC44800D81865 /* StreaksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,7 @@
 		35E3FA452AD692190039A0E6 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		35E3FA492AD71BDC0039A0E6 /* WorkoutActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutActiveView.swift; sourceTree = "<group>"; };
 		35E4D4122C601FB5001B00B1 /* ExerciseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewModel.swift; sourceTree = "<group>"; };
+		35F164DE2C6AC44800D81865 /* StreaksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreaksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				3571C0CC2C6172ED00BA0BB6 /* WorkoutActiveView */,
 				3586C39B2C69360C000C18AC /* SettingsView.swift */,
 				358113CD2B33448D003325C0 /* WorkoutPreviewView.swift */,
+				35F164DE2C6AC44800D81865 /* StreaksView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */,
 				35E4D4132C601FB5001B00B1 /* ExerciseDetailViewModel.swift in Sources */,
 				354EE63F2C5D94EF00C97F99 /* WorkoutTimelineService.swift in Sources */,
+				35F164DF2C6AC44800D81865 /* StreaksView.swift in Sources */,
 				3586C39C2C69360C000C18AC /* SettingsView.swift in Sources */,
 				354EE6412C5DA28F00C97F99 /* FileManager.swift in Sources */,
 				354EE62B2C5C27C200C97F99 /* Activity.swift in Sources */,

@@ -44,6 +44,7 @@ struct SettingsView: View {
         .bold()
         .foregroundColor(Color(.label))
         .listRowBackground(Color(.systemGray5))
+        .listRowSeparator(.hidden)
     }
     
     private var backButton: some View {

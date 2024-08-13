@@ -42,6 +42,9 @@ struct WorkoutListView: View {
                     historyButton
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
+                    streaksButton
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
                     addWorkoutButton
                 }
             }
@@ -63,6 +66,19 @@ struct WorkoutListView: View {
                 .foregroundColor(.primary)
                 .font(.title2)
                 .bold()
+        }
+    }
+    
+    private var streaksButton: some View {
+        NavigationLink(destination: StreaksView(appState: viewModel.getAppState())) {
+            HStack {
+                Image(systemName: "flame.fill")
+                    .foregroundColor(.red)
+                Text("\(viewModel.getCurrentStreak())")
+            }
+            .foregroundColor(.primary)
+            .font(.title2)
+            .bold()
         }
     }
     

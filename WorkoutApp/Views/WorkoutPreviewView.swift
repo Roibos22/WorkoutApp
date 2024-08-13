@@ -21,7 +21,7 @@ struct WorkoutPreviewView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             HStack {
                 Text("Activity")
                 Spacer()
@@ -32,12 +32,11 @@ struct WorkoutPreviewView: View {
             .padding(.bottom, 5)
 
             Divider()
-            Divider()
-            Divider()
             
             TimelineListView(cycleTimeline: cycleTimeline)
         }
         .padding(.top, 10)
+        .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .scrollIndicators(.hidden)
         .toolbar {
@@ -70,12 +69,12 @@ struct TimelineListView: View {
                     ForEach(cycle.activities, id: \.self) { activity in
                         ActivityRow(activity: activity)
                     }
-                    .listRowBackground(Color(UIColor.systemGray6))
                 } header: {
                     CycleHeader(cycle: cycle)
                 }
-                .listRowSeparator(.hidden)
             }
+            .listRowBackground(Color(UIColor.systemGray5))
+            .listRowSeparator(.hidden)
         }
         .scrollContentBackground(.hidden)
     }
