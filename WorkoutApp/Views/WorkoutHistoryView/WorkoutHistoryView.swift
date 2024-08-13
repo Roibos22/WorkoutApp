@@ -118,7 +118,15 @@ struct WorkoutHistoryView: View {
     }
     
     private func availableWorkouts() -> [Workout] {
-        let result = Array(Set(workoutsHistory.map { $0.workout })).sorted(by: { $0.title < $1.title })
+        let result = Dictionary(grouping: workoutsHistory, by: { $0.workout.id })
+            .values
+            .compactMap { $0.last?.workout }
+            .sorted(by: { $0.title < $1.title })
+        
+//        for workout in result {
+//            print("\(workout.title): \(workout.id)")
+//        }
+        
         return result
     }
 }

@@ -22,14 +22,9 @@ struct MultiSelectFilterView: View {
                 ForEach(workouts) { workout in
                     WorkoutToggle(
                         workout: workout,
-                        isSelected: selectedWorkouts.contains(where: { $0.id == workout.id })
-                    ) { isOn in
-                        if isOn {
-                            selectedWorkouts.insert(workout)
-                        } else {
-                            selectedWorkouts.remove(workout)
-                        }
-                    }
+                        selectedWorkouts: $selectedWorkouts,
+                        isSelected:  selectedWorkouts.contains(where: { $0.id == workout.id })
+                    )
                 }
                 .listRowBackground(Color(UIColor.systemGray5))
                 .listRowSeparator(.hidden)
@@ -60,13 +55,18 @@ struct MultiSelectFilterView: View {
 
 struct WorkoutToggle: View {
     let workout: Workout
-    let isSelected: Bool
-    let onToggle: (Bool) -> Void
+    @Binding var selectedWorkouts: Set<Workout>
+    @State var isSelected: Bool
     
     var body: some View {
-        Button(action: {
-            onToggle(!isSelected)
-        }) {
+        Button {
+            if let index = selectedWorkouts.firstIndex(where: { $0.id == workout.id }) {
+                selectedWorkouts.remove(at: index)
+            } else {
+                selectedWorkouts.insert(workout)
+            }
+            isSelected.toggle()
+        } label: {
             HStack {
                 Text(workout.title)
                     .foregroundColor(.black)
