@@ -27,7 +27,7 @@ struct WorkoutHistoryView: View {
                 self._selectedWorkouts = State(initialValue: Set([]))
             }
         } else {
-            self._selectedWorkouts = State(initialValue: allWorkouts)
+            self._selectedWorkouts = State(initialValue: Set(Dictionary(grouping: allWorkouts, by: { $0.id }).values.map { $0.first! }))
         }
     }
     

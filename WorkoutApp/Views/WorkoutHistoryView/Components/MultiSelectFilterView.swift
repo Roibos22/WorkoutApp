@@ -7,24 +7,21 @@
 
 import SwiftUI
 
+
 struct MultiSelectFilterView: View {
     let workouts: [Workout]
     @Binding var selectedWorkouts: Set<Workout>
     @Environment(\.dismiss) private var dismiss
     
     private var allSelected: Bool {
-        selectedWorkouts.count == workouts.count
+        return selectedWorkouts.count == workouts.count
     }
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(workouts) { workout in
-                    WorkoutToggle(
-                        workout: workout,
-                        selectedWorkouts: $selectedWorkouts,
-                        isSelected:  selectedWorkouts.contains(where: { $0.id == workout.id })
-                    )
+                    workoutToggleView(for: workout)
                 }
                 .listRowBackground(Color(UIColor.systemGray5))
                 .listRowSeparator(.hidden)
@@ -33,15 +30,7 @@ struct MultiSelectFilterView: View {
             .navigationTitle("Filter Workouts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        if allSelected {
-                            selectedWorkouts.removeAll()
-                        } else {
-                            selectedWorkouts = Set(workouts)
-                        }
-                    } label: {
-                        Text(allSelected ? "Deselect All" : "Select All")
-                    }
+                    selectDeselectAllButton
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") {
@@ -51,21 +40,46 @@ struct MultiSelectFilterView: View {
             }
         }
     }
+    
+    private func workoutToggleView(for workout: Workout) -> some View {
+        WorkoutToggle(
+            workout: workout,
+            isSelected: selectedWorkouts.contains(where: { $0.id == workout.id }),
+            onToggle: { isSelected in
+                if isSelected {
+                    selectedWorkouts.insert(workout)
+                } else {
+                    if let index = selectedWorkouts.firstIndex(where: { $0.id == workout.id }) {
+                        selectedWorkouts.remove(at: index)
+                    }
+                }
+            }
+        )
+    }
+    
+    private var selectDeselectAllButton: some View {
+        Button {
+            if allSelected {
+                selectedWorkouts.removeAll()
+            } else {
+                selectedWorkouts = Set(workouts)
+            }
+        } label: {
+            Text(allSelected ? "Deselect All" : "Select All")
+        }
+    }
+    
 }
+
 
 struct WorkoutToggle: View {
     let workout: Workout
-    @Binding var selectedWorkouts: Set<Workout>
-    @State var isSelected: Bool
+    let isSelected: Bool
+    let onToggle: (Bool) -> Void
     
     var body: some View {
         Button {
-            if let index = selectedWorkouts.firstIndex(where: { $0.id == workout.id }) {
-                selectedWorkouts.remove(at: index)
-            } else {
-                selectedWorkouts.insert(workout)
-            }
-            isSelected.toggle()
+            onToggle(!isSelected)
         } label: {
             HStack {
                 Text(workout.title)
