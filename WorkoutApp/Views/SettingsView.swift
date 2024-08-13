@@ -109,9 +109,9 @@ struct SettingsView: View {
 }
 
 struct URLs {
-    let websiteURL = URL(string: "https://leongrimmeisen.de/projects/JustTabata/index.html")!
-    let privacyPolicyURL = URL(string: "https://leongrimmeisen.de/projects/JustTabata/privacy-policy.html")!
-    let termsAndConditionsURL = URL(string: "https://leongrimmeisen.de/projects/JustTabata/terms-and-conditions.html")!
+    let websiteURL = URL(string: "https://leongrimmeisen.de/projects/WorkoutPulse/index.html")!
+    let privacyPolicyURL = URL(string: "https://leongrimmeisen.de/projects/WorkoutPulse/privacy-policy.html")!
+    let termsAndConditionsURL = URL(string: "https://leongrimmeisen.de/projects/WorkoutPulse/terms-and-conditions.html")!
     let twitterURL = URL(string: "https://twitter.com/LofiLeon")!
 }
 
