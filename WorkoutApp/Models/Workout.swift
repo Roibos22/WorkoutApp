@@ -73,7 +73,7 @@ extension Workout {
             Exercise(title: "Twists", duration: 40, rest: 20),
             Exercise(title: "Leg Raises", duration: 40, rest: 20),
             Exercise(title: "Plank Hold", duration: 40, rest: 20)
-        ], completions: 0)
+        ], completions: 0),
 //        Workout(title: "Tabata Challenge", cycles: 8, cycleRestTime: 20, exercises: [
 //            Exercise(title: "Squat Jumps", duration: 20, rest: 10),
 //            Exercise(title: "Push-ups", duration: 20, rest: 10),

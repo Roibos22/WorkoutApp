@@ -41,9 +41,9 @@ struct WorkoutListView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     historyButton
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    streaksButton
-                }
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    streaksButton
+//                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     addWorkoutButton
                 }
