@@ -39,19 +39,14 @@ struct WorkoutDetailViewButtonSection: View {
                 buttonLabel(color: .green, text: "GO!")
             }
             .simultaneousGesture(TapGesture().onEnded {
-                if workoutActiveViewModel == nil {
-                    workoutActiveViewModel = WorkoutActiveViewModel(
-                        workoutViewModel: viewModel,
-                        workout: viewModel.workout,
-                        workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout),
-                        appState: appState
-                    )
-                }
+                workoutActiveViewModel = WorkoutActiveViewModel(
+                    workoutViewModel: viewModel,
+                    workout: viewModel.workout,
+                    workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout),
+                    appState: appState
+                )
                 workoutActiveViewModel?.isRunning = true
             })
-        }
-        .onAppear {
-            //viewModel.updateCompletions()
         }
     }
     
