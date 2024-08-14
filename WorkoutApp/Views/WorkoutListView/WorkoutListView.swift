@@ -14,21 +14,20 @@ struct WorkoutListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.workouts) { workout in
-                    ZStack {
-                        NavigationLink(destination: WorkoutDetailView(
-                            viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
-                        )) {
-                            EmptyView()
+                Section {
+                    ForEach(viewModel.workouts) { workout in
+                        ZStack {
+                            NavigationLink(destination: WorkoutDetailView(
+                                viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
+                            )) { EmptyView() }.opacity(0)
+                            WorkoutCardView(workout: workout)
+                                .contentShape(Rectangle())
                         }
-                        .opacity(0)
-                        WorkoutCardView(workout: workout)
-                            .contentShape(Rectangle())
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                     }
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
+                    .onMove(perform: viewModel.moveWorkout)
                 }
-                .onMove(perform: viewModel.moveWorkout)
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
