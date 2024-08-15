@@ -31,7 +31,8 @@ struct WorkoutListView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
             }
-            .navigationTitle("Your Workouts")
+            //.navigationBarTitleDisplayMode(.large)
+            //.navigationTitle("Your Workouts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     settingsButton
@@ -51,14 +52,22 @@ struct WorkoutListView: View {
     }
     
     private var workoutsList: some View {
-        ForEach(viewModel.workouts) { workout in
-            ZStack {
-                NavigationLink(destination: WorkoutDetailView(
-                    viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
-                )) {
-                    WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout)
-                        .foregroundColor(.black)
-                        .contentShape(Rectangle())
+        VStack(spacing: 20) {
+            HStack {
+                Text("Your Workouts")
+                    .font(.title)
+                    .bold()
+                Spacer()
+            }
+            ForEach(viewModel.workouts) { workout in
+                ZStack {
+                    NavigationLink(destination: WorkoutDetailView(
+                        viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
+                    )) {
+                        WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout)
+                            .foregroundColor(.black)
+                            .contentShape(Rectangle())
+                    }
                 }
             }
         }
