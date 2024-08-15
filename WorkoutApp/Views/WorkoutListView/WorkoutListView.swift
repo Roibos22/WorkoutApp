@@ -45,7 +45,7 @@ struct WorkoutListView: View {
                 NavigationLink(destination: WorkoutDetailView(
                     viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
                 )) {
-                    WorkoutCardView(workout: workout)
+                    WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout)
                         .foregroundColor(.black)
                         .contentShape(Rectangle())
                 }
