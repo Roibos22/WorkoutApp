@@ -13,20 +13,33 @@ struct WorkoutListView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                Section {
+            ScrollView {
+                VStack {
+                    ZStack {
+                        NavigationLink(destination: WorkoutDetailView(
+                            viewModel: WorkoutDetailViewModel(workout: nil, appState: appState)
+                        )) {
+                            Text("Hi")
+                        }
+                        
+                    }
+                    
                     ForEach(viewModel.workouts) { workout in
                         ZStack {
                             NavigationLink(destination: WorkoutDetailView(
                                 viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
-                            )) { EmptyView() }.opacity(0)
-                            WorkoutCardView(workout: workout)
-                                .contentShape(Rectangle())
+                            )) {
+                                WorkoutCardView(workout: workout)
+                                    .foregroundColor(.black)
+                                    .contentShape(Rectangle())
+                            }
                         }
                         .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
                     }
                     .onMove(perform: viewModel.moveWorkout)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
                 }
             }
             .listStyle(.plain)
