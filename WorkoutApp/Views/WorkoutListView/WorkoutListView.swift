@@ -42,9 +42,9 @@ struct WorkoutListView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     editWorkoutsButton
                 }
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    streaksButton
-//                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    streaksButton
+                }
 
             }
         }
