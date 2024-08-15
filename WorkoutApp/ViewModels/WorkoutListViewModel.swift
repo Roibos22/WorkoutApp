@@ -44,6 +44,14 @@ class WorkoutListViewModel: ObservableObject {
         appState.moveWorkout(at: offsets, to: destination)
     }
     
+    func deleteWorkoutIndexSet(at offsets: IndexSet) {
+        let workoutsToDelete = offsets.map { workouts[$0] }
+        if let workout = workoutsToDelete.first {
+            appState.deleteWorkout(workout)
+        }
+
+    }
+    
     func getCurrentStreak() -> Int {
         appState.getCurrentStreak()
     }

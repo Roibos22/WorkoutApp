@@ -17,6 +17,16 @@ struct WorkoutListView: View {
                 VStack(spacing: 20) {
                     workoutsList
                     addWorkoutButton
+                        .padding(.bottom)
+                    
+//                    VStack {
+//                        Text("Discover Workouts                      ")
+//                            .font(.title)
+//                            .bold()
+//                    }
+                    
+                   // workoutsList
+                    
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
@@ -29,12 +39,13 @@ struct WorkoutListView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     historyButton
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    editWorkoutsButton
+                }
 //                ToolbarItem(placement: .navigationBarTrailing) {
 //                    streaksButton
 //                }
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    addWorkoutButton
-//                }
+
             }
         }
     }
@@ -50,6 +61,15 @@ struct WorkoutListView: View {
                         .contentShape(Rectangle())
                 }
             }
+        }
+    }
+    
+    private var editWorkoutsButton: some View {
+        NavigationLink(destination: EditWorkoutsView(viewModel: viewModel)) {
+            Image(systemName: "arrow.up.arrow.down")
+                .foregroundColor(.primary)
+                .font(.title2)
+                .bold()
         }
     }
     
