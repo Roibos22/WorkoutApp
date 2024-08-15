@@ -14,37 +14,13 @@ struct WorkoutListView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack {
-                    ZStack {
-                        NavigationLink(destination: WorkoutDetailView(
-                            viewModel: WorkoutDetailViewModel(workout: nil, appState: appState)
-                        )) {
-                            Text("Hi")
-                        }
-                        
-                    }
-                    
-                    ForEach(viewModel.workouts) { workout in
-                        ZStack {
-                            NavigationLink(destination: WorkoutDetailView(
-                                viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
-                            )) {
-                                WorkoutCardView(workout: workout)
-                                    .foregroundColor(.black)
-                                    .contentShape(Rectangle())
-                            }
-                        }
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
-                    }
-                    .onMove(perform: viewModel.moveWorkout)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 10)
+                VStack(spacing: 20) {
+                    workoutsList
+                    addWorkoutButton
                 }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
-            .scrollIndicators(.hidden)
             .navigationTitle("Your Workouts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -56,8 +32,22 @@ struct WorkoutListView: View {
 //                ToolbarItem(placement: .navigationBarTrailing) {
 //                    streaksButton
 //                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    addWorkoutButton
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    addWorkoutButton
+//                }
+            }
+        }
+    }
+    
+    private var workoutsList: some View {
+        ForEach(viewModel.workouts) { workout in
+            ZStack {
+                NavigationLink(destination: WorkoutDetailView(
+                    viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
+                )) {
+                    WorkoutCardView(workout: workout)
+                        .foregroundColor(.black)
+                        .contentShape(Rectangle())
                 }
             }
         }
@@ -98,10 +88,21 @@ struct WorkoutListView: View {
         NavigationLink(destination: WorkoutDetailView(
             viewModel: WorkoutDetailViewModel(workout: nil, appState: appState)
         )) {
-            Image(systemName: "plus.circle.fill")
-                .foregroundColor(.primary)
-                .font(.title2)
-                .bold()
+            ZStack {
+                RoundedRectangle(cornerRadius: 50)
+                    .frame(width: 130, height: 50)
+                    .foregroundColor(Color.blue)
+                HStack {
+                    Text("+")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .offset(CGSize(width: 0, height: -1))
+                    Text("New")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                }
+                
+            }
         }
     }
 }
