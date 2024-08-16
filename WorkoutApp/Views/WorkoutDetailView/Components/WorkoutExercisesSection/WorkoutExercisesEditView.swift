@@ -69,7 +69,7 @@ struct WorkoutExercisesEditView: View {
 struct WorkoutExercisesEditView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WorkoutExercisesEditView(workout: .constant(Workout.sampleWorkouts[0]), viewModel: WorkoutDetailViewModel(appState: AppState()))
+            WorkoutExercisesEditView(workout: .constant(Workout.defaultWorkouts[0]), viewModel: WorkoutDetailViewModel(appState: AppState()))
                 .padding()
         }
     }

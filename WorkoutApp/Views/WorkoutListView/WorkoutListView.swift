@@ -17,7 +17,7 @@ struct WorkoutListView: View {
                 VStack(spacing: 20) {
                     workoutsList
                     addWorkoutButton
-                        .padding(.bottom)
+                        .padding(.bottom, 25)
                     
 //                    VStack {
 //                        Text("Discover Workouts                      ")
@@ -25,12 +25,29 @@ struct WorkoutListView: View {
 //                            .bold()
 //                    }
                     
-                   // workoutsList
+                    HStack {
+                        Text("Discover Workouts")
+                            .font(.title)
+                            .bold()
+                        Spacer()
+                    }
+                    ForEach(Workout.sampleWorkouts) { workout in
+                        ZStack {
+                            NavigationLink(destination: WorkoutDetailView(
+                                viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
+                            )) {
+                                WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout)
+                                    .foregroundColor(.black)
+                                    .contentShape(Rectangle())
+                            }
+                        }
+                    }
                     
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
             }
+            .scrollIndicators(.hidden)
             //.navigationBarTitleDisplayMode(.large)
             //.navigationTitle("Your Workouts")
             .toolbar {

@@ -36,7 +36,7 @@ struct WorkoutCardView: View {
     private var cardBackground: some View {
         RoundedRectangle(cornerRadius: 20)
             .stroke(Color.black, lineWidth: 4)
-            .frame(height: 172)
+            .frame(height: 175)
             .foregroundColor(.white)
     }
     
@@ -55,7 +55,7 @@ struct WorkoutCardView: View {
     
     private var workoutInfo: some View {
         VStack(alignment: .leading) {
-            infoRow(icon: "dumbbell", text: "\(workout.exercises.count) Exercises")
+            infoRow(icon: "dumbbell.fill", text: "\(workout.exercises.count) Exercises")
             infoRow(icon: "repeat", text: "\(workout.cycles) Cycles")
             infoRow(icon: "stopwatch", text: "\(workout.duration.asMinutes())")
         }
@@ -103,14 +103,14 @@ struct WorkoutCardView: View {
                 })
             }
         }
-        .frame(width: 100, height: 100)
+        .frame(width: 80, height: 100)
         .padding(.horizontal)
     }
 }
 
 struct WorkoutCardView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutCardView(viewModel: WorkoutDetailViewModel(appState: AppState()), workout: Workout.sampleWorkouts[0])
+        WorkoutCardView(viewModel: WorkoutDetailViewModel(appState: AppState()), workout: Workout.defaultWorkouts[0])
             .environmentObject(AppState())
     }
 }

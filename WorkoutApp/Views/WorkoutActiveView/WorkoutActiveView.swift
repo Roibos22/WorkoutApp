@@ -55,7 +55,7 @@ struct WorkoutActiveView_Previews: PreviewProvider {
     }
     
     // Sample data for preview
-    static var sampleWorkout: Workout = Workout.sampleWorkouts[0]
+    static var sampleWorkout: Workout = Workout.defaultWorkouts[0]
     static var timelineService = WorkoutTimelineService()
     static var sampleWorkoutTimeline: [Activity] = timelineService.createWorkoutTimeline(workout: sampleWorkout)
 }

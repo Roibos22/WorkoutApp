@@ -57,7 +57,7 @@ struct WorkoutSettingsSection: View {
 
 struct WorkoutSettingsSection_Previews: PreviewProvider {
     static var previews: some View {
-        @State var sampleWorkout = Workout.sampleWorkouts[0]
+        @State var sampleWorkout = Workout.defaultWorkouts[0]
         
         WorkoutSettingsSection(workout: $sampleWorkout)
             .previewLayout(.sizeThatFits)

@@ -116,7 +116,7 @@ struct WorkoutSettingsSectionValueSheet: View {
 }
 
 #Preview {
-    @State var sampleWorkout = Workout.sampleWorkouts[0]
+    @State var sampleWorkout = Workout.defaultWorkouts[0]
     
     return WorkoutSettingsSectionValueSheet(
         workout: $sampleWorkout,

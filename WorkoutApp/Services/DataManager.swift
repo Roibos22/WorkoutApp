@@ -40,7 +40,7 @@ class DataManager {
             let data = try Data(contentsOf: savePathWorkouts)
             workouts  = try JSONDecoder().decode([Workout].self, from: data)
         } catch {
-            workouts = Workout.sampleWorkouts
+            workouts = Workout.defaultWorkouts
             saveWorkouts(workouts)
         }
         return workouts

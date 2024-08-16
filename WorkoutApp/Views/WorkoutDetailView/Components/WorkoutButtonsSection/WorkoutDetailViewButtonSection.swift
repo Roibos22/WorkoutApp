@@ -76,7 +76,7 @@ struct WorkoutDetailViewButtonSection: View {
 struct WorkoutDetailViewButtonSection_Previews: PreviewProvider {
     static var previews: some View {
         let appState = AppState()
-        let workout = Workout.sampleWorkouts[0]
+        let workout = Workout.defaultWorkouts[0]
         let viewModel = WorkoutDetailViewModel(workout: workout, appState: appState)
         return WorkoutDetailViewButtonSection(viewModel: viewModel)
             .environmentObject(appState)

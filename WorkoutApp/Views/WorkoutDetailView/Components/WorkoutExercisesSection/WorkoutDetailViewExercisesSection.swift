@@ -110,7 +110,7 @@ struct ExerciseCardView: View {
 
 struct WorkoutDetailViewExercisesSection_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutDetailViewExercisesSection(workout: .constant(Workout.sampleWorkouts[0]), viewModel: WorkoutDetailViewModel(appState: AppState()))
+        WorkoutDetailViewExercisesSection(workout: .constant(Workout.defaultWorkouts[0]), viewModel: WorkoutDetailViewModel(appState: AppState()))
             .padding()
     }
 }

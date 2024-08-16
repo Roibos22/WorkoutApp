@@ -68,7 +68,7 @@ struct WorkoutSettingsSectionCard: View {
 struct WorkoutSettingsSectionCard_Previews: PreviewProvider {
     static var previews: some View {
         // Create a sample workout
-        @State var sampleWorkout = Workout.sampleWorkouts[0]
+        @State var sampleWorkout = Workout.defaultWorkouts[0]
         
         return Group {
             // Preview for Exercise Duration
