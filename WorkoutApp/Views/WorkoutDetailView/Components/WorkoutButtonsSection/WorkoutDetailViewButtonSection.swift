@@ -12,8 +12,13 @@ struct WorkoutDetailViewButtonSection: View {
     @EnvironmentObject var appState: AppState
     @State private var workoutActiveViewModel: WorkoutActiveViewModel?
     
+    @Environment(\.dismiss) var dismiss
+    
+    let workoutType: WorkoutType
+    
     var body: some View {
         HStack {
+            
             // Preview
             NavigationLink {
                 WorkoutPreviewView(vm: viewModel)
@@ -29,24 +34,12 @@ struct WorkoutDetailViewButtonSection: View {
             }
             
             // Start Workout
-            NavigationLink {
-                if let workoutActiveViewModel = workoutActiveViewModel {
-                    WorkoutActiveView(viewModel: workoutActiveViewModel)
-                } else {
-                    Text("Loading...")
-                }
-            } label: {
-                buttonLabel(icon: "play.fill", color: .green, text: nil)
+            if workoutType == .custom {
+                startWorkoutButton
+            } else if workoutType == .preset {
+                addWorkoutButton
             }
-            .simultaneousGesture(TapGesture().onEnded {
-                workoutActiveViewModel = WorkoutActiveViewModel(
-                    workoutViewModel: viewModel,
-                    workout: viewModel.workout,
-                    workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout),
-                    appState: appState
-                )
-                workoutActiveViewModel?.isRunning = true
-            })
+            
         }
     }
     
@@ -71,6 +64,37 @@ struct WorkoutDetailViewButtonSection: View {
         }
         .frame(height: 60)
     }
+    
+    private var startWorkoutButton: some View {
+        NavigationLink {
+            if let workoutActiveViewModel = workoutActiveViewModel {
+                WorkoutActiveView(viewModel: workoutActiveViewModel)
+            } else {
+                Text("Loading...")
+            }
+        } label: {
+            buttonLabel(icon: "play.fill", color: .green, text: nil)
+        }
+        .simultaneousGesture(TapGesture().onEnded {
+            workoutActiveViewModel = WorkoutActiveViewModel(
+                workoutViewModel: viewModel,
+                workout: viewModel.workout,
+                workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout),
+                appState: appState
+            )
+            workoutActiveViewModel?.isRunning = true
+        })
+    }
+    
+    private var addWorkoutButton: some View {
+        Button {
+            viewModel.savePresetWorkout()
+            dismiss()
+        } label: {
+            buttonLabel(icon: "square.and.arrow.down", color: .green, text: nil)
+        }
+    }
+    
 }
 
 struct WorkoutDetailViewButtonSection_Previews: PreviewProvider {
@@ -78,7 +102,7 @@ struct WorkoutDetailViewButtonSection_Previews: PreviewProvider {
         let appState = AppState()
         let workout = Workout.defaultWorkouts[0]
         let viewModel = WorkoutDetailViewModel(workout: workout, appState: appState)
-        return WorkoutDetailViewButtonSection(viewModel: viewModel)
+        return WorkoutDetailViewButtonSection(viewModel: viewModel, workoutType: .preset)
             .environmentObject(appState)
     }
 }

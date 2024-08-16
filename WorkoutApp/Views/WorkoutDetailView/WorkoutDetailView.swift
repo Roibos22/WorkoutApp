@@ -12,11 +12,13 @@ struct WorkoutDetailView: View {
     @Environment(\.dismiss) var dismiss
 
     @State private var showDeleteWorkoutAlert: Bool = false
+    
+    let workoutType: WorkoutType
 
     var body: some View {
         ScrollView {
             VStack {
-                WorkoutDetailViewButtonSection(viewModel: viewModel)
+                WorkoutDetailViewButtonSection(viewModel: viewModel, workoutType: workoutType)
                     .padding(.vertical, 10)
                 
                 WorkoutDetailViewExercisesSection(workout: $viewModel.workout, viewModel: viewModel)
@@ -24,13 +26,14 @@ struct WorkoutDetailView: View {
 
                 WorkoutSettingsSection(workout: $viewModel.workout)
                     .padding(.vertical, 10)
-
-                deleteWorkoutButton
-                    .padding(.vertical, 10)
-
+                
+                if workoutType == .custom {
+                    deleteWorkoutButton
+                        .padding(.vertical, 10)
+                }
+                
                 Spacer()
             }
-            //.padding(.vertical)
             .padding(.horizontal)
         }
         .navigationTitle(viewModel.workout.title)
@@ -39,7 +42,9 @@ struct WorkoutDetailView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    viewModel.saveWorkout(notifyObservers: true)
+                    if workoutType == .custom {
+                        viewModel.saveWorkout(notifyObservers: true)
+                    }
                     dismiss()
                 }) {
                     HStack {
@@ -86,7 +91,7 @@ struct WorkoutDetailView: View {
 struct WorkoutDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WorkoutDetailView(viewModel: WorkoutDetailViewModel(workout: Workout.defaultWorkouts[0], appState: AppState()))
+            WorkoutDetailView(viewModel: WorkoutDetailViewModel(workout: Workout.defaultWorkouts[0], appState: AppState()), workoutType: .custom)
                 .environmentObject(AppState())
         }
     }

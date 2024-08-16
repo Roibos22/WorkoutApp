@@ -34,7 +34,8 @@ struct WorkoutListView: View {
                     ForEach(Workout.sampleWorkouts) { workout in
                         ZStack {
                             NavigationLink(destination: WorkoutDetailView(
-                                viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
+                                viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), 
+                                workoutType: .preset
                             )) {
                                 WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout, workoutType: .preset)
                                     .foregroundColor(.black)
@@ -79,7 +80,7 @@ struct WorkoutListView: View {
             ForEach(viewModel.workouts) { workout in
                 ZStack {
                     NavigationLink(destination: WorkoutDetailView(
-                        viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
+                        viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workoutType: .custom
                     )) {
                         WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout, workoutType: .custom)
                             .foregroundColor(.black)
@@ -132,7 +133,7 @@ struct WorkoutListView: View {
     
     private var addWorkoutButton: some View {
         NavigationLink(destination: WorkoutDetailView(
-            viewModel: WorkoutDetailViewModel(workout: nil, appState: appState)
+            viewModel: WorkoutDetailViewModel(workout: nil, appState: appState), workoutType: .custom
         )) {
             ZStack {
                 RoundedRectangle(cornerRadius: 50)
