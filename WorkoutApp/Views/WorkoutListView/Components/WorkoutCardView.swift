@@ -73,37 +73,44 @@ struct WorkoutCardView: View {
     }
     
     private var playButton: some View {
-        NavigationLink {
-            if let workoutActiveViewModel = workoutActiveViewModel {
-                WorkoutActiveView(viewModel: workoutActiveViewModel)
-            } else {
-                Text("Loading...")
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                NavigationLink {
+                    if let workoutActiveViewModel = workoutActiveViewModel {
+                        WorkoutActiveView(viewModel: workoutActiveViewModel)
+                    } else {
+                        Text("Loading...")
+                    }
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 50)
+                            .frame(width: 80, height: 40)
+                            .foregroundColor(.green)
+                        Image(systemName: "play.fill")
+                            .foregroundColor(.white)
+                    }
+                }
+                .simultaneousGesture(TapGesture().onEnded {
+                    workoutActiveViewModel = WorkoutActiveViewModel(
+                        workoutViewModel: viewModel,
+                        workout: viewModel.workout,
+                        workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout),
+                        appState: appState
+                    )
+                    workoutActiveViewModel?.isRunning = true
+                })
             }
-        } label: {
-            ZStack {
-                RoundedRectangle(cornerRadius: 50)
-                    .frame(width: 80, height: 40)
-                    .foregroundColor(.green)
-                Image(systemName: "play.fill")
-                    .foregroundColor(.white)
-            }
-            .padding(.top, 60)
-            .padding(.trailing, 15)
         }
-        .simultaneousGesture(TapGesture().onEnded {
-            workoutActiveViewModel = WorkoutActiveViewModel(
-                workoutViewModel: viewModel,
-                workout: viewModel.workout,
-                workoutTimeline: appState.createWorkoutTimeline(workout: viewModel.workout),
-                appState: appState
-            )
-            workoutActiveViewModel?.isRunning = true
-        })
+        .frame(width: 100, height: 100)
+        .padding(.horizontal)
     }
 }
 
 struct WorkoutCardView_Previews: PreviewProvider {
     static var previews: some View {
         WorkoutCardView(viewModel: WorkoutDetailViewModel(appState: AppState()), workout: Workout.sampleWorkouts[0])
+            .environmentObject(AppState())
     }
 }
