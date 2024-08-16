@@ -36,7 +36,7 @@ struct WorkoutListView: View {
                             NavigationLink(destination: WorkoutDetailView(
                                 viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
                             )) {
-                                WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout)
+                                WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout, workoutType: .preset)
                                     .foregroundColor(.black)
                                     .contentShape(Rectangle())
                             }
@@ -81,7 +81,7 @@ struct WorkoutListView: View {
                     NavigationLink(destination: WorkoutDetailView(
                         viewModel: WorkoutDetailViewModel(workout: workout, appState: appState)
                     )) {
-                        WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout)
+                        WorkoutCardView(viewModel: WorkoutDetailViewModel(workout: workout, appState: appState), workout: workout, workoutType: .custom)
                             .foregroundColor(.black)
                             .contentShape(Rectangle())
                     }

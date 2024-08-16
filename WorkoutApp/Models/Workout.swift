@@ -40,6 +40,10 @@ struct Workout: Identifiable, Codable, Equatable, Hashable {
         lhs.completions == rhs.completions
     }
     
+    func duplicatWithNewId() -> Workout {
+        return Workout(id: UUID(), title: self.title, cycles: self.cycles, cycleRestTime: self.cycleRestTime, exercises: self.exercises)
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

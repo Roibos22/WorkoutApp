@@ -11,6 +11,9 @@ import SwiftUI
 // Card: 170
 // Title: 45
 
+enum WorkoutType {
+    case custom, preset
+}
 
 struct WorkoutCardView: View {
     @ObservedObject var viewModel: WorkoutDetailViewModel
@@ -18,6 +21,7 @@ struct WorkoutCardView: View {
     @State private var workoutActiveViewModel: WorkoutActiveViewModel?
     
     let workout: Workout
+    let workoutType: WorkoutType
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -27,7 +31,11 @@ struct WorkoutCardView: View {
                 HStack {
                     workoutInfo
                     Spacer()
-                    playButton
+                    if workoutType == .custom {
+                        playButton
+                    } else if workoutType == .preset {
+                        addButton
+                    }
                 }
             }
         }
@@ -106,11 +114,35 @@ struct WorkoutCardView: View {
         .frame(width: 80, height: 100)
         .padding(.horizontal)
     }
+    
+    private var addButton: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Button {
+                    viewModel.savePresetWorkout(notifyObservers: true)
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 50)
+                            .frame(width: 80, height: 40)
+                            .foregroundColor(.green)
+                        Image(systemName: "square.and.arrow.down")
+                            .foregroundColor(.white)
+                            .font(.title3)
+                            .bold()
+                    }
+                }
+            }
+        }
+        .frame(width: 80, height: 100)
+        .padding(.horizontal)
+    }
 }
 
 struct WorkoutCardView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutCardView(viewModel: WorkoutDetailViewModel(appState: AppState()), workout: Workout.defaultWorkouts[0])
+        WorkoutCardView(viewModel: WorkoutDetailViewModel(appState: AppState()), workout: Workout.defaultWorkouts[0], workoutType: .preset)
             .environmentObject(AppState())
     }
 }

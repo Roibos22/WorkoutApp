@@ -24,6 +24,20 @@ class WorkoutDetailViewModel: ObservableObject {
         appState.saveWorkout(workout, notifyObservers: notifyObservers)
     }
     
+    func savePresetWorkout(notifyObservers: Bool = false) {
+        var newWorkout = workout.duplicatWithNewId()
+    
+        var newTitle = newWorkout.title
+        var counter = 1
+        while appState.workouts.contains(where: { $0.id != workout.id && $0.title == newTitle }) {
+            counter += 1
+            newTitle = "\(newWorkout.title) \(counter)"
+        }
+        newWorkout.title = newTitle
+        
+        appState.saveWorkout(newWorkout, notifyObservers: notifyObservers)
+    }
+    
     func deleteExercise(_ exercise: Exercise) {
         workout.exercises.removeAll { $0.id == exercise.id }
         saveWorkout(notifyObservers: false)

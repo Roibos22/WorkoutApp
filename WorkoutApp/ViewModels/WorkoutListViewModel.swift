@@ -49,7 +49,6 @@ class WorkoutListViewModel: ObservableObject {
         if let workout = workoutsToDelete.first {
             appState.deleteWorkout(workout)
         }
-
     }
     
     func getCurrentStreak() -> Int {
