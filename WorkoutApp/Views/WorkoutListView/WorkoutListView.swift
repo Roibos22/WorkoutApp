@@ -19,12 +19,6 @@ struct WorkoutListView: View {
                     addWorkoutButton
                         .padding(.bottom, 25)
                     
-//                    VStack {
-//                        Text("Discover Workouts                      ")
-//                            .font(.title)
-//                            .bold()
-//                    }
-                    
                     HStack {
                         Text("Discover Workouts")
                             .font(.title)
