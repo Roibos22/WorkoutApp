@@ -64,27 +64,61 @@ struct StreaksView: View {
         ScrollView {
             VStack {
                 
-                ZStack {
-                    VStack {
-                        HStack {
-                            Image(systemName: "flame.fill")
-                            Text("\(appState.getCurrentStreak())")
-                                .foregroundColor(.black)
-                        }
-                        .foregroundColor(.red)
-                        .bold()
-                        .font(.system(size: 35))
-                        .padding()
-
-                        Text("Current Streak")
-                            .font(.callout)
+                HStack(spacing: 20) {
+                    ZStack {
+                        VStack {
+                            HStack {
+                                Image(systemName: "flame.fill")
+                                Text("\(appState.getCurrentStreak())")
+                                    .foregroundColor(.black)
+                            }
+                            .foregroundColor(.red)
                             .bold()
+                            .font(.system(size: 40))
+                            .padding()
+
+                            Text("Current Streak")
+                                .font(.callout)
+                                .bold()
+                            Text("12. Aug. '24")
+                                .font(.callout)
+                        }
                     }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 160)
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(15)
+                    
+                    ZStack {
+                        VStack {
+                            HStack {
+                                Image(systemName: "flame.fill")
+                                Text("\(appState.getCurrentStreak())")
+                                    .foregroundColor(.black)
+                            }
+                            .foregroundColor(.orange)
+                            .bold()
+                            .font(.system(size: 40))
+                            .padding()
+
+                            Text("Longest Streak")
+                                .font(.callout)
+                                .bold()
+                            Text("12. Aug. '24")
+                                .font(.callout)
+                        }
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 160)
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(15)
                 }
-                .frame(width: 160, height: 160)
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(15)
                 .padding()
+
+                
+
 
 //                HStack {
 //                    Text("Awards")
