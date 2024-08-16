@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-// TODOs:
-// dynamically fit the contents of the rectangle
+// Heights:
+// Card: 170
+// Title: 45
+
 
 struct WorkoutCardView: View {
     @ObservedObject var viewModel: WorkoutDetailViewModel
@@ -34,7 +36,7 @@ struct WorkoutCardView: View {
     private var cardBackground: some View {
         RoundedRectangle(cornerRadius: 20)
             .stroke(Color.black, lineWidth: 4)
-            .frame(height: 175)
+            .frame(height: 172)
             .foregroundColor(.white)
     }
     
@@ -66,9 +68,8 @@ struct WorkoutCardView: View {
             Image(systemName: icon)
                 .frame(width: 50)
             Text(text)
-                //.bold()
         }
-        .padding(1)
+        .padding(.vertical, 1)
     }
     
     private var playButton: some View {
