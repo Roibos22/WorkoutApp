@@ -33,7 +33,7 @@ struct WorkoutDetailViewExercisesSection: View {
             addExerciseButton
         }
         .font(.title2)
-        .fontWeight(.bold)
+        .bold()
     }
     
     private var addExerciseButton: some View {
@@ -100,10 +100,9 @@ struct ExerciseCardView: View {
 
         }
         .padding(.vertical, 10)
-        .padding(.horizontal, 50)
+        .padding(.horizontal, 60)
         .foregroundColor(.primary)
         .font(.title3)
-        .bold()
     }
     
 

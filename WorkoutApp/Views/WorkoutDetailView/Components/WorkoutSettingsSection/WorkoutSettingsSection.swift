@@ -21,7 +21,7 @@ struct WorkoutSettingsSection: View {
                     .padding(.bottom, 1)
                 HStack {
                     settingsCard(title: "Cycles", icon: "repeat", settingType: .cycles)
-                    settingsCard(title: "Cycle Rest", icon: "hourglass.circle", settingType: .cycleRest)
+                    settingsCard(title: "Cycle Rest", icon: "hourglass", settingType: .cycleRest)
                 }
             }
             .padding(.bottom, 10)
@@ -32,7 +32,7 @@ struct WorkoutSettingsSection: View {
                     .padding(.bottom, 1)
                 HStack {
                     settingsCard(title: "Exercise Duration", icon: "stopwatch", settingType: .exerciseDuration)
-                    settingsCard(title: "Exercise Rest", icon: "hourglass.circle", settingType: .exerciseRest)
+                    settingsCard(title: "Exercise Rest", icon: "hourglass", settingType: .exerciseRest)
                 }
             }
         }

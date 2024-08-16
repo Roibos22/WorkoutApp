@@ -18,7 +18,7 @@ struct WorkoutDetailViewButtonSection: View {
             NavigationLink {
                 WorkoutPreviewView(vm: viewModel)
             } label: {
-                buttonLabel(icon: "clock.fill", text: viewModel.workout.duration.asDigitalMinutes())
+                buttonLabel(icon: "stopwatch", text: viewModel.workout.duration.asDigitalMinutes())
             }
             
             // Completions and History
@@ -36,7 +36,7 @@ struct WorkoutDetailViewButtonSection: View {
                     Text("Loading...")
                 }
             } label: {
-                buttonLabel(color: .green, text: "GO!")
+                buttonLabel(icon: "play.fill", color: .green, text: nil)
             }
             .simultaneousGesture(TapGesture().onEnded {
                 workoutActiveViewModel = WorkoutActiveViewModel(
@@ -50,7 +50,7 @@ struct WorkoutDetailViewButtonSection: View {
         }
     }
     
-    private func buttonLabel(icon: String? = nil, color: Color = .blue, text: String) -> some View {
+    private func buttonLabel(icon: String? = nil, color: Color = .blue, text: String?) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(Color.black, lineWidth: 3)
@@ -58,17 +58,18 @@ struct WorkoutDetailViewButtonSection: View {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(color)
                 )
-                .frame(height: 60)
             HStack {
                 if let icon = icon {
                     Image(systemName: icon)
                 }
-                Text(text)
+                if let text = text {
+                    Text(text)
+                }
             }
             .font(.title3)
-            .bold()
             .foregroundColor(.white)
         }
+        .frame(height: 60)
     }
 }
 

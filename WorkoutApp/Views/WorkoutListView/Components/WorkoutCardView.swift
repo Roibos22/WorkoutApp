@@ -55,9 +55,9 @@ struct WorkoutCardView: View {
     
     private var workoutInfo: some View {
         VStack(alignment: .leading) {
-            infoRow(icon: "dumbbell.fill", text: "\(workout.exercises.count) Exercises")
+            infoRow(icon: "dumbbell", text: "\(workout.exercises.count) Exercises")
             infoRow(icon: "repeat", text: "\(workout.cycles) Cycles")
-            infoRow(icon: "clock.fill", text: "\(workout.duration.asMinutes())")
+            infoRow(icon: "stopwatch", text: "\(workout.duration.asMinutes())")
         }
         .padding(.horizontal)
         .font(.title2)

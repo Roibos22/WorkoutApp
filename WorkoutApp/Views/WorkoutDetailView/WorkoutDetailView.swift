@@ -87,6 +87,7 @@ struct WorkoutDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             WorkoutDetailView(viewModel: WorkoutDetailViewModel(workout: Workout.sampleWorkouts[0], appState: AppState()))
+                .environmentObject(AppState())
         }
     }
 }

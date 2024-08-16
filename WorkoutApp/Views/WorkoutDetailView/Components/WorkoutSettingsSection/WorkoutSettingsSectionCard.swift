@@ -17,12 +17,6 @@ struct WorkoutSettingsSectionCard: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-//            Text(title)
-//                .foregroundColor(.gray)
-//                .font(.subheadline)
-//                .fontWeight(.semibold)
-//                .padding(.leading, 7)
-            
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color.black, lineWidth: 3)
                 .frame(height: 50)
@@ -34,7 +28,7 @@ struct WorkoutSettingsSectionCard: View {
                     }
                     .padding(.horizontal)
                     .font(.title2)
-                    .fontWeight(.bold)
+                   // .fontWeight(.bold)
                 )
         }
         .onTapGesture {
