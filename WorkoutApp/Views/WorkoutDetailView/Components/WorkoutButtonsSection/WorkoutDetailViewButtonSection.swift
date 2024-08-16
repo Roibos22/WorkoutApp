@@ -88,7 +88,7 @@ struct WorkoutDetailViewButtonSection: View {
     
     private var addWorkoutButton: some View {
         Button {
-            viewModel.savePresetWorkout()
+            viewModel.savePresetWorkout(notifyObservers: true)
             dismiss()
         } label: {
             buttonLabel(icon: "square.and.arrow.down", color: .green, text: nil)

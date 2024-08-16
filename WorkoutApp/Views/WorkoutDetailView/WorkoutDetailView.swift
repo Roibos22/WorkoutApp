@@ -21,10 +21,10 @@ struct WorkoutDetailView: View {
                 WorkoutDetailViewButtonSection(viewModel: viewModel, workoutType: workoutType)
                     .padding(.vertical, 10)
                 
-                WorkoutDetailViewExercisesSection(workout: $viewModel.workout, viewModel: viewModel)
+                WorkoutDetailViewExercisesSection(workout: $viewModel.workout, viewModel: viewModel, workoutType: workoutType)
                     .padding(.vertical, 10)
-
-                WorkoutSettingsSection(workout: $viewModel.workout)
+                
+                WorkoutSettingsSection(workout: $viewModel.workout, workoutType: workoutType)
                     .padding(.vertical, 10)
                 
                 if workoutType == .custom {
@@ -54,13 +54,24 @@ struct WorkoutDetailView: View {
                 }
             }
             ToolbarItem(placement: .principal) {
-                TextField("Workout Title", text: $viewModel.workout.title)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .font(.title)
-                    .bold()
-                    .onSubmit {
-                        viewModel.updateTitle(viewModel.workout.title)
+                if workoutType == .custom {
+                    TextField("Workout Title", text: $viewModel.workout.title)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .font(.title)
+                        .bold()
+                        .onSubmit {
+                            viewModel.updateTitle(viewModel.workout.title)
+                        }
+                } else if workoutType == .preset {
+                    HStack {
+                        Text(viewModel.workout.title)
+                            .font(.title)
+                            .bold()
+                        Spacer()
                     }
+                    
+                }
+                
             }
         }
         .confirmationDialog(

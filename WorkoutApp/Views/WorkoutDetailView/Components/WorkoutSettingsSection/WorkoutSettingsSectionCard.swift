@@ -12,6 +12,7 @@ struct WorkoutSettingsSectionCard: View {
     let icon: String
     @Binding var workout: Workout
     let settingType: WorkoutSettingsType
+    let workoutType: WorkoutType
     
     @State private var isSheetPresented = false
     
@@ -28,11 +29,12 @@ struct WorkoutSettingsSectionCard: View {
                     }
                     .padding(.horizontal)
                     .font(.title2)
-                   // .fontWeight(.bold)
                 )
         }
         .onTapGesture {
-            isSheetPresented.toggle()
+            if workoutType == .custom {
+                isSheetPresented.toggle()
+            }
         }
         .sheet(isPresented: $isSheetPresented) {
             WorkoutSettingsSectionValueSheet(workout: $workout, settingType: settingType)
@@ -65,44 +67,44 @@ struct WorkoutSettingsSectionCard: View {
     }
 }
 
-struct WorkoutSettingsSectionCard_Previews: PreviewProvider {
-    static var previews: some View {
-        // Create a sample workout
-        @State var sampleWorkout = Workout.defaultWorkouts[0]
-        
-        return Group {
-            // Preview for Exercise Duration
-            WorkoutSettingsSectionCard(
-                title: "Exercise Duration",
-                icon: "stopwatch",
-                workout: $sampleWorkout,
-                settingType: .exerciseDuration
-            )
-            .previewLayout(.sizeThatFits)
-            .padding()
-            .frame(width: 200)
-            
-            // Preview for Cycles
-            WorkoutSettingsSectionCard(
-                title: "Cycles",
-                icon: "repeat",
-                workout: $sampleWorkout,
-                settingType: .cycles
-            )
-            .previewLayout(.sizeThatFits)
-            .padding()
-            .frame(width: 200)
-            
-            // Preview for Cycle Rest
-            WorkoutSettingsSectionCard(
-                title: "Cycle Rest",
-                icon: "hourglass",
-                workout: $sampleWorkout,
-                settingType: .cycleRest
-            )
-            .previewLayout(.sizeThatFits)
-            .padding()
-            .frame(width: 200)
-        }
-    }
-}
+//struct WorkoutSettingsSectionCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        // Create a sample workout
+//        @State var sampleWorkout = Workout.defaultWorkouts[0]
+//        
+//        return Group {
+//            // Preview for Exercise Duration
+//            WorkoutSettingsSectionCard(
+//                title: "Exercise Duration",
+//                icon: "stopwatch",
+//                workout: $sampleWorkout,
+//                settingType: .exerciseDuration, workoutType: .custom
+//            )
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//            .frame(width: 200)
+//            
+//            // Preview for Cycles
+//            WorkoutSettingsSectionCard(
+//                title: "Cycles",
+//                icon: "repeat",
+//                workout: $sampleWorkout,
+//                settingType: .cycles
+//            )
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//            .frame(width: 200)
+//            
+//            // Preview for Cycle Rest
+//            WorkoutSettingsSectionCard(
+//                title: "Cycle Rest",
+//                icon: "hourglass",
+//                workout: $sampleWorkout,
+//                settingType: .cycleRest
+//            )
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//            .frame(width: 200)
+//        }
+//    }
+//}

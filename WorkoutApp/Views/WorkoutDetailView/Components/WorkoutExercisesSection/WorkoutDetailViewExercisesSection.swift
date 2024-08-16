@@ -11,6 +11,8 @@ struct WorkoutDetailViewExercisesSection: View {
     @Binding var workout: Workout
     @ObservedObject var viewModel: WorkoutDetailViewModel
     @Environment(\.presentationMode) var presentationMode
+    
+    let workoutType: WorkoutType
 
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -20,6 +22,7 @@ struct WorkoutDetailViewExercisesSection: View {
                 NavigationLink(destination: ExerciseDetailView(viewModel: ExerciseDetailViewModel(exercise: exercise,workoutViewModel: viewModel))) {
                     ExerciseCardView(exercise: exercise)
                 }
+                .disabled(workoutType == .preset)
             }
         }
     }
@@ -29,8 +32,10 @@ struct WorkoutDetailViewExercisesSection: View {
             Image(systemName: "dumbbell.fill")
             Text("Exercises")
             Spacer()
-            editExercisesButton
-            addExerciseButton
+            if workoutType == .custom {
+                editExercisesButton
+                addExerciseButton
+            }
         }
         .font(.title2)
         .bold()
@@ -110,7 +115,7 @@ struct ExerciseCardView: View {
 
 struct WorkoutDetailViewExercisesSection_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutDetailViewExercisesSection(workout: .constant(Workout.defaultWorkouts[0]), viewModel: WorkoutDetailViewModel(appState: AppState()))
+        WorkoutDetailViewExercisesSection(workout: .constant(Workout.defaultWorkouts[0]), viewModel: WorkoutDetailViewModel(appState: AppState()), workoutType: .custom)
             .padding()
     }
 }
