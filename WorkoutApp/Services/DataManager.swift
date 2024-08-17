@@ -11,7 +11,8 @@ import SwiftUI
 class DataManager {
     let savePathWorkouts = FileManager.documentsDirectory.appendingPathComponent("Workouts")
     let savePathCompletedWorkouts = FileManager.documentsDirectory.appendingPathComponent("CompletedWorkouts")
-    
+    let savePathAchievements = FileManager.documentsDirectory.appendingPathComponent("Achievements")
+
     func saveWorkouts(_ workouts: [Workout]) {
         do {
             let data = try JSONEncoder().encode(workouts)
@@ -31,6 +32,28 @@ class DataManager {
         } catch {
             print("Failed to save completed workouts: \(error.localizedDescription)")
         }
+    }
+    
+    func saveAchievements(_ achievements: [AchievementGroup]) {
+        do {
+            let data = try JSONEncoder().encode(achievements)
+            try data.write(to: savePathAchievements, options: [.atomicWrite, .completeFileProtection])
+        } catch {
+            print("Failed to save completed workouts: \(error.localizedDescription)")
+        }
+    }
+    
+    func loadAchievements() -> [AchievementGroup] {
+        var achievements: [AchievementGroup]
+        
+        do {
+            let data = try Data(contentsOf: savePathAchievements)
+            achievements  = try JSONDecoder().decode([AchievementGroup].self, from: data)
+        } catch {
+            achievements = Achievement.achievements
+            saveAchievements(achievements)
+        }
+        return achievements
     }
     
     func loadWorkouts() -> [Workout] {

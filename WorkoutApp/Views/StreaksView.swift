@@ -7,53 +7,6 @@
 
 import SwiftUI
 
-
-struct Achievement: Identifiable {
-    var id = UUID()
-    var title: String
-    var caption: String
-    var icon: String
-    var iconColor: Color
-    var achieved: Bool
-    
-    static let streakAchievements = [
-        Achievement(title: "Newbie", caption: "Work out for 1 day", icon: "figure.walk", iconColor: .blue, achieved: true),
-        Achievement(title: "Starter", caption: "3-day workout streak", icon: "stopwatch.fill", iconColor: .cyan, achieved: false),
-        Achievement(title: "Weekly", caption: "7-day workout streak", icon: "calendar", iconColor: .teal, achieved: true),
-        Achievement(title: "Fortnight", caption: "14-day workout streak", icon: "flame.fill", iconColor: .green, achieved: true),
-        Achievement(title: "Monthly", caption: "30-day workout streak", icon: "moon.stars.fill", iconColor: .yellow, achieved: true),
-        Achievement(title: "Champion", caption: "90-day workout streak", icon: "trophy.fill", iconColor: .orange, achieved: true)
-    ]
-
-    static let completionAchievements = [
-        Achievement(title: "Newbie", caption: "Complete 1 workout", icon: "leaf.fill", iconColor: .blue, achieved: true),
-        Achievement(title: "Starter", caption: "Complete 5 workouts", icon: "checkmark.circle.fill", iconColor: .cyan, achieved: true),
-        Achievement(title: "Consistent", caption: "Complete 15 workouts", icon: "figure.walk", iconColor: .teal, achieved: true),
-        Achievement(title: "Dedicated", caption: "Complete 30 workouts", icon: "dumbbell.fill", iconColor: .green, achieved: true),
-        Achievement(title: "Warrior", caption: "Complete 50 workouts", icon: "shield.fill", iconColor: .yellow, achieved: true),
-        Achievement(title: "Champion", caption: "Complete 100 workouts", icon: "trophy.fill", iconColor: .orange, achieved: true)
-    ]
-
-    static let durationAchievements = [
-        Achievement(title: "Tester", caption: "1 hour total workout time", icon: "clock.fill", iconColor: .blue, achieved: true),
-        Achievement(title: "Beginner", caption: "5 hours total workout time", icon: "hourglass", iconColor: .cyan, achieved: true),
-        Achievement(title: "Regular", caption: "10 hours total workout time", icon: "hourglass.bottomhalf.filled", iconColor: .teal, achieved: true),
-        Achievement(title: "Committed", caption: "24 hours total workout time", icon: "figure.walk.", iconColor: .green, achieved: true),
-        Achievement(title: "Devoted", caption: "48 hours total workout time", icon: "figure.run", iconColor: .yellow, achieved: true),
-        Achievement(title: "Expert", caption: "100 hours total workout time", icon: "flame.fill", iconColor: .orange, achieved: true)
-    ]
-
-    static let miscAchievements = [
-        Achievement(title: "Curious", caption: "Try 3 different workouts", icon: "eye.fill", iconColor: .blue, achieved: true),
-        Achievement(title: "Explorer", caption: "Try 5 different workouts", icon: "map.fill", iconColor: .cyan, achieved: true),
-        Achievement(title: "Adventurer", caption: "Try 10 different workouts", icon: "globe", iconColor: .teal, achieved: true),
-        Achievement(title: "Creator", caption: "Created first custom workout", icon: "pencil", iconColor: .green, achieved: true),
-        Achievement(title: "Scheduler", caption: "Saved a template workout", icon: "calendar", iconColor: .yellow, achieved: true),
-        Achievement(title: "Early Bird", caption: "Completed a workout before 6 AM", icon: "sunrise.fill", iconColor: .orange, achieved: true)
-    ]
-}
-
-
 struct StreaksView: View {
     @ObservedObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
