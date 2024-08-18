@@ -28,6 +28,7 @@ class AchievementsService {
     func updateAchievements() {
         updateStreaksAchievements()
         updateCompletionsAchievements()
+        updateDurationsAchievements()
     }
     
     func updateStreaksAchievements() {
@@ -93,7 +94,37 @@ class AchievementsService {
         dataManager.saveAchievements(achievements)
     }
 
-    //func updateDurationsAchievements()
+    func updateDurationsAchievements() {
+        let completedWorkouts = dataManager.loadCompletedWorkouts()
+        var achievements = dataManager.loadAchievements()
+        var durationAchievements = achievements[2].achievements  // Assuming duration achievements are the third group
+        
+        // Calculate total workout duration in hours
+        let totalDurationHours = completedWorkouts.reduce(0.0) { total, workout in
+            total + (workout.workout.duration / 3600.0)  // Convert seconds to hours
+        }
+        
+        print(totalDurationHours)
+        
+        // Update achievements based on total duration
+        for i in 0..<durationAchievements.count {
+            switch i {
+            case 0: durationAchievements[i].achieved = totalDurationHours >= 1
+            case 1: durationAchievements[i].achieved = totalDurationHours >= 5
+            case 2: durationAchievements[i].achieved = totalDurationHours >= 10
+            case 3: durationAchievements[i].achieved = totalDurationHours >= 24
+            case 4: durationAchievements[i].achieved = totalDurationHours >= 48
+            case 5: durationAchievements[i].achieved = totalDurationHours >= 100
+            default: break
+            }
+        }
+        
+        // Update the achievements in the main array
+        achievements[2].achievements = durationAchievements
+        
+        // Save updated achievements
+        dataManager.saveAchievements(achievements)
+    }
     //func updateMiscAchievements()
 
 
