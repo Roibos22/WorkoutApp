@@ -10,8 +10,12 @@ import SwiftUI
 struct StreaksView: View {
     @ObservedObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
+    let achievements: [AchievementGroup] = []
     
-    let achievements: [Achievement] = Achievement.streakAchievements
+    init(appState: AppState) {
+        self.appState = appState
+        let achievements: [AchievementGroup] = appState.getAchievements()
+    }
     
     var body: some View {
         ScrollView {
@@ -80,12 +84,11 @@ struct StreaksView: View {
 //                    Spacer()
 //                }
                 
+                achievementsScrollView(title: "Streaks", achievements: achievements[0].achievements)
                 achievementsScrollView(title: "Streaks", achievements: Achievement.streakAchievements)
                 achievementsScrollView(title: "Completions", achievements: Achievement.completionAchievements)
                 achievementsScrollView(title: "More", achievements: Achievement.durationAchievements)
                 achievementsScrollView(title: "More", achievements: Achievement.miscAchievements)
-
-
                 
             }
         }
@@ -148,44 +151,11 @@ struct AchievementView: View {
     var body: some View {
         ZStack {
             VStack {
-
-                
-                ZStack {
-                    VStack {
-                        HStack {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.green)
-                                .opacity(achievement.achieved ? 1 : 0)
-                                .bold()
-                            Spacer()
-                            Button {
-                                withAnimation { showingInfo.toggle() }
-                            } label: {
-                                Image(systemName: "info.circle")
-                                    .foregroundColor(.blue)
-                                    .bold()
-                            }
-                            //.padding()
-                        }
-                        .padding(10)
-                        Spacer()
-                    }
-                    
-                    Image(systemName: achievement.achieved ? achievement.icon : "questionmark.circle.fill")
-                        .font(.system(size: 70))
-                        .foregroundColor(achievement.achieved ? achievement.iconColor : .gray)
-                        .frame(width: 150, height: 60)
-                        .padding(.top, 15)
-                   
-                }
-                
+                achievementCard
                 Text(achievement.title)
                     .font(.title3)
                     .bold()
                     .padding(.bottom)
-                
-
-                
             }
             .overlay(
                 Group {
@@ -194,6 +164,33 @@ struct AchievementView: View {
                     }
                 }
             )
+        }
+    }
+    
+    private var achievementCard: some View {
+        ZStack {
+            VStack {
+                HStack {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(.green)
+                        .opacity(achievement.achieved ? 1 : 0)
+                        .bold()
+                    Spacer()
+                    Button {
+                        withAnimation { showingInfo.toggle() }
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .foregroundColor(.blue)
+                            .bold()
+                    }
+                }
+                Spacer()
+            }
+            Image(systemName: achievement.achieved ? achievement.icon : "questionmark.circle.fill")
+                .font(.system(size: 70))
+                //.foregroundColor(achievement.achieved ? achievement.iconColor : .gray)
+                .frame(width: 150, height: 60)
+                .padding(.top, 15)
         }
     }
     
