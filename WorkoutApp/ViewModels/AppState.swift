@@ -10,17 +10,20 @@ import Foundation
 class AppState: ObservableObject {
     @Published var workouts: [Workout] = []
     @Published var completedWorkouts: [CompletedWorkout] = []
+    @Published var achievements: [AchievementGroup] = []
     @Published var soundsEnabled: Bool = true
     
     private let dataManager = DataManager()
     private let workoutService: WorkoutDataService
     private let historyService: HistoryDataService
     private let timelineService: WorkoutTimelineService
+    private let achievemetnsService: AchievementsService
 
     init() {
         workoutService = WorkoutDataService(dataManager: dataManager)
         historyService = HistoryDataService(dataManager: dataManager)
         timelineService = WorkoutTimelineService()
+        achievemetnsService = AchievementsService(dataManager: dataManager)
         loadData()
     }
     
@@ -119,6 +122,14 @@ class AppState: ObservableObject {
         }
 
         return streak
+    }
+    
+    func getAchievements() -> [AchievementGroup] {
+        var achievements = achievemetnsService.fetchAchievements()
+//        for a in achievements {
+//            print(a.achievements[0].title)
+//        }
+        return achievements
     }
 
 }

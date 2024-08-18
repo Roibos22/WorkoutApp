@@ -10,11 +10,18 @@ import SwiftUI
 struct StreaksView: View {
     @ObservedObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
-    let achievements: [AchievementGroup] = []
+    let streakAchievements: AchievementGroup
+    let completionAchievements: AchievementGroup
+    let durationAchievements: AchievementGroup
+    let miscAchievements: AchievementGroup
+
     
     init(appState: AppState) {
         self.appState = appState
-        let achievements: [AchievementGroup] = appState.getAchievements()
+        streakAchievements = appState.getAchievements()[0]
+        completionAchievements = appState.getAchievements()[1]
+        durationAchievements = appState.getAchievements()[2]
+        miscAchievements = appState.getAchievements()[3]
     }
     
     var body: some View {
@@ -75,20 +82,10 @@ struct StreaksView: View {
                 .padding()
 
                 
-
-
-//                HStack {
-//                    Text("Awards")
-//                        .font(.title)
-//                        .bold()
-//                    Spacer()
-//                }
-                
-                achievementsScrollView(title: "Streaks", achievements: achievements[0].achievements)
-                achievementsScrollView(title: "Streaks", achievements: Achievement.streakAchievements)
-                achievementsScrollView(title: "Completions", achievements: Achievement.completionAchievements)
-                achievementsScrollView(title: "More", achievements: Achievement.durationAchievements)
-                achievementsScrollView(title: "More", achievements: Achievement.miscAchievements)
+                achievementsScrollView(title: "Streaks", achievements: streakAchievements.achievements)
+                achievementsScrollView(title: "Completions", achievements: completionAchievements.achievements)
+                achievementsScrollView(title: "Duration", achievements: durationAchievements.achievements)
+                achievementsScrollView(title: "More", achievements: miscAchievements.achievements)
                 
             }
         }
@@ -184,11 +181,12 @@ struct AchievementView: View {
                             .bold()
                     }
                 }
+                .padding(10)
                 Spacer()
             }
             Image(systemName: achievement.achieved ? achievement.icon : "questionmark.circle.fill")
                 .font(.system(size: 70))
-                //.foregroundColor(achievement.achieved ? achievement.iconColor : .gray)
+                .foregroundColor(achievement.achieved ? achievement.color : .gray)
                 .frame(width: 150, height: 60)
                 .padding(.top, 15)
         }
