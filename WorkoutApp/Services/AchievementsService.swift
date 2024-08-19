@@ -177,11 +177,11 @@ class AchievementsService {
         let completedWorkouts = dataManager.loadCompletedWorkouts()
         let uniqueWorkoutsCount = Set(completedWorkouts.map { $0.workout.id }).count
         
-        miscAchievements[0].achieved = uniqueWorkoutsCount >= miscAchievements[0].value
-        miscAchievements[1].achieved = uniqueWorkoutsCount >= miscAchievements[1].value
+        miscAchievements[0].achieved = UserDefaults.standard.hasCreatedCustomWorkout
+        miscAchievements[1].achieved = UserDefaults.standard.hasSavedTemplateWorkout
         miscAchievements[2].achieved = uniqueWorkoutsCount >= miscAchievements[2].value
-        miscAchievements[3].achieved = UserDefaults.standard.hasCreatedCustomWorkout
-        miscAchievements[4].achieved = UserDefaults.standard.hasSavedTemplateWorkout
+        miscAchievements[3].achieved = uniqueWorkoutsCount >= miscAchievements[3].value
+        miscAchievements[4].achieved = uniqueWorkoutsCount >= miscAchievements[4].value
         miscAchievements[5].achieved = checkEarlyBirdAchievement(completedWorkouts: completedWorkouts)
 
         achievements[3].achievements = miscAchievements
@@ -215,9 +215,3 @@ extension UserDefaults {
         set { set(newValue, forKey: Keys.hasSavedTemplateWorkout) }
     }
 }
-
-
-func onCustomWorkoutCreated() {
-    UserDefaults.standard.hasCreatedCustomWorkout = true
-}
-
