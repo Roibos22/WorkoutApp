@@ -57,12 +57,12 @@ class AchievementsService {
         print("Longest streak in days: \(longestStreak)")
         for i in 0..<streakAchievements.count {
             switch i {
-                case 0: streakAchievements[i].achieved = longestStreak >= 1
-                case 1: streakAchievements[i].achieved = longestStreak >= 3
-                case 2: streakAchievements[i].achieved = longestStreak >= 7
-                case 3: streakAchievements[i].achieved = longestStreak >= 14
-                case 4: streakAchievements[i].achieved = longestStreak >= 30
-                case 5: streakAchievements[i].achieved = longestStreak >= 90
+                case 0: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
+                case 1: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
+                case 2: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
+                case 3: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
+                case 4: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
+                case 5: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
                 default: break
             }
         }
@@ -80,12 +80,12 @@ class AchievementsService {
         
         for i in 0..<completionAchievements.count {
             switch i {
-            case 0: completionAchievements[i].achieved = totalWorkouts >= 1
-            case 1: completionAchievements[i].achieved = totalWorkouts >= 5
-            case 2: completionAchievements[i].achieved = totalWorkouts >= 15
-            case 3: completionAchievements[i].achieved = totalWorkouts >= 30
-            case 4: completionAchievements[i].achieved = totalWorkouts >= 50
-            case 5: completionAchievements[i].achieved = totalWorkouts >= 100
+            case 0: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
+            case 1: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
+            case 2: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
+            case 3: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
+            case 4: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
+            case 5: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
             default: break
             }
         }
@@ -97,7 +97,7 @@ class AchievementsService {
     func updateDurationsAchievements() {
         let completedWorkouts = dataManager.loadCompletedWorkouts()
         var achievements = dataManager.loadAchievements()
-        var durationAchievements = achievements[2].achievements  // Assuming duration achievements are the third group
+        var durationAchievements = achievements[2].achievements
         
         // Calculate total workout duration in hours
         let totalDurationHours = completedWorkouts.reduce(0.0) { total, workout in
@@ -109,23 +109,44 @@ class AchievementsService {
         // Update achievements based on total duration
         for i in 0..<durationAchievements.count {
             switch i {
-            case 0: durationAchievements[i].achieved = totalDurationHours >= 1
-            case 1: durationAchievements[i].achieved = totalDurationHours >= 5
-            case 2: durationAchievements[i].achieved = totalDurationHours >= 10
-            case 3: durationAchievements[i].achieved = totalDurationHours >= 24
-            case 4: durationAchievements[i].achieved = totalDurationHours >= 48
-            case 5: durationAchievements[i].achieved = totalDurationHours >= 100
+            case 0: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
+            case 1: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
+            case 2: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
+            case 3: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
+            case 4: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
+            case 5: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
             default: break
             }
         }
         
-        // Update the achievements in the main array
         achievements[2].achievements = durationAchievements
-        
-        // Save updated achievements
         dataManager.saveAchievements(achievements)
     }
-    //func updateMiscAchievements()
+    
+    func updateMiscAchievements() {
+        var achievements = dataManager.loadAchievements()
+        var miscAchievements = achievements[3].achievements
+        
+        let completedWorkouts = dataManager.loadCompletedWorkouts()
+        let uniqueWorkoutsCount = Set(completedWorkouts.map { $0.workout.id }).count
+        
+        miscAchievements[0].achieved = uniqueWorkoutsCount >= miscAchievements[0].value
+        miscAchievements[1].achieved = uniqueWorkoutsCount >= miscAchievements[1].value
+        miscAchievements[2].achieved = uniqueWorkoutsCount >= miscAchievements[2].value
+        //miscAchievements[3].achieved = !customWorkouts.isEmpty // Creator
+        //miscAchievements[4].achieved = !savedTemplates.isEmpty // Scheduler
+        miscAchievements[5].achieved = checkEarlyBirdAchievement(completedWorkouts: completedWorkouts)
+
+        achievements[2].achievements = miscAchievements
+        dataManager.saveAchievements(achievements)
+    }
+    
+    func checkEarlyBirdAchievement(completedWorkouts: [CompletedWorkout]) -> Bool {
+        let earlyMorningCutoff = Calendar.current.date(bySettingHour: 6, minute: 0, second: 0, of: Date())!
+        return completedWorkouts.contains { workout in
+            Calendar.current.compare(workout.timestamp, to: earlyMorningCutoff, toGranularity: .hour) == .orderedAscending
+        }
+    }
 
 
 }

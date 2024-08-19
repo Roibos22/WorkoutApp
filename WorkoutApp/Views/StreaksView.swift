@@ -186,7 +186,7 @@ struct AchievementView: View {
             }
             Image(systemName: achievement.achieved ? achievement.icon : "questionmark.circle.fill")
                 .font(.system(size: 70))
-                .foregroundColor(achievement.achieved ? achievement.color : .gray)
+                .foregroundColor(achievement.achieved ? achievement.iconColor : .gray)
                 .frame(width: 150, height: 60)
                 .padding(.top, 15)
         }

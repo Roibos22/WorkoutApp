@@ -15,6 +15,7 @@
 		352A62F42ACDD91900CAC187 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */; };
 		353C1DC12C70F95700DB6458 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353C1DC02C70F95700DB6458 /* Achievement.swift */; };
 		353C1DC52C72ACF700DB6458 /* AchievementsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353C1DC42C72ACF700DB6458 /* AchievementsService.swift */; };
+		353C1DC72C735E7A00DB6458 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353C1DC62C735E7A00DB6458 /* Color.swift */; };
 		35484E3C2C6A12D9004B2E7B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35484E3B2C6A12D9004B2E7B /* Launch Screen.storyboard */; };
 		354EE6292C5C274800C97F99 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EE6282C5C274800C97F99 /* Exercise.swift */; };
 		354EE62B2C5C27C200C97F99 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354EE62A2C5C27C200C97F99 /* Activity.swift */; };
@@ -75,6 +76,7 @@
 		352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
 		353C1DC02C70F95700DB6458 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		353C1DC42C72ACF700DB6458 /* AchievementsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsService.swift; sourceTree = "<group>"; };
+		353C1DC62C735E7A00DB6458 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		35484E3B2C6A12D9004B2E7B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		354EE6282C5C274800C97F99 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		354EE62A2C5C27C200C97F99 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				354EE6402C5DA28F00C97F99 /* FileManager.swift */,
 				3571C0D82C6173E800BA0BB6 /* TimeFormatting.swift */,
 				35DE36F52C66379800482050 /* Date.swift */,
+				353C1DC62C735E7A00DB6458 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */,
 				35E4D4132C601FB5001B00B1 /* ExerciseDetailViewModel.swift in Sources */,
 				354EE63F2C5D94EF00C97F99 /* WorkoutTimelineService.swift in Sources */,
+				353C1DC72C735E7A00DB6458 /* Color.swift in Sources */,
 				35F164DF2C6AC44800D81865 /* StreaksView.swift in Sources */,
 				3586C39C2C69360C000C18AC /* SettingsView.swift in Sources */,
 				354EE6412C5DA28F00C97F99 /* FileManager.swift in Sources */,
