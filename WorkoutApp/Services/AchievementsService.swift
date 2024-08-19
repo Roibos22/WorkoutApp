@@ -86,10 +86,10 @@ class AchievementsService {
     }
     
     func updateAchievements() {
-        updateStreaksAchievements()
-        updateCompletionsAchievements()
-        updateDurationsAchievements()
-        updateMiscAchievements()
+//        updateStreaksAchievements()
+//        updateCompletionsAchievements()
+//        updateDurationsAchievements()
+//        updateMiscAchievements()
         print("Achievements updated")
     }
     
