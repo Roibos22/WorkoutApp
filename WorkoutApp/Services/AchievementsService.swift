@@ -29,6 +29,8 @@ class AchievementsService {
         updateStreaksAchievements()
         updateCompletionsAchievements()
         updateDurationsAchievements()
+        updateMiscAchievements()
+        print("Achievements updated")
     }
     
     func updateStreaksAchievements() {
@@ -54,7 +56,7 @@ class AchievementsService {
             currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
         }
         
-        print("Longest streak in days: \(longestStreak)")
+        //print("Longest streak in days: \(longestStreak)")
         for i in 0..<streakAchievements.count {
             switch i {
                 case 0: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
@@ -99,14 +101,12 @@ class AchievementsService {
         var achievements = dataManager.loadAchievements()
         var durationAchievements = achievements[2].achievements
         
-        // Calculate total workout duration in hours
         let totalDurationHours = completedWorkouts.reduce(0.0) { total, workout in
             total + (workout.workout.duration / 3600.0)  // Convert seconds to hours
         }
         
-        print(totalDurationHours)
+        //print(totalDurationHours)
         
-        // Update achievements based on total duration
         for i in 0..<durationAchievements.count {
             switch i {
             case 0: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
@@ -137,7 +137,7 @@ class AchievementsService {
         miscAchievements[4].achieved = UserDefaults.standard.hasSavedTemplateWorkout
         miscAchievements[5].achieved = checkEarlyBirdAchievement(completedWorkouts: completedWorkouts)
 
-        achievements[2].achievements = miscAchievements
+        achievements[3].achievements = miscAchievements
         dataManager.saveAchievements(achievements)
     }
     
@@ -167,5 +167,10 @@ extension UserDefaults {
         get { bool(forKey: Keys.hasSavedTemplateWorkout) }
         set { set(newValue, forKey: Keys.hasSavedTemplateWorkout) }
     }
+}
+
+
+func onCustomWorkoutCreated() {
+    UserDefaults.standard.hasCreatedCustomWorkout = true
 }
 

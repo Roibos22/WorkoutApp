@@ -28,13 +28,13 @@ class WorkoutListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func addWorkout(_ workout: Workout) {
-        appState.saveWorkout(workout)
-    }
-    
-    func updateWorkout(_ workout: Workout) {
-        appState.saveWorkout(workout)
-    }
+//    func addWorkout(_ workout: Workout) {
+//        appState.saveWorkout(workout, type: <#WorkoutType#>)
+//    }
+//    
+//    func updateWorkout(_ workout: Workout) {
+//        appState.saveWorkout(workout, type: <#WorkoutType#>)
+//    }
     
     func deleteWorkout(_ workout: Workout) {
         appState.deleteWorkout(workout)

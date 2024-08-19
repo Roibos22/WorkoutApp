@@ -40,8 +40,8 @@ class AppState: ObservableObject {
         return workoutService.generateNewWorkout()
     }
     
-    func saveWorkout(_ workout: Workout, notifyObservers: Bool = false) {
-        workoutService.saveWorkout(workout, notifyObservers: notifyObservers)
+    func saveWorkout(_ workout: Workout, notifyObservers: Bool = false, type: WorkoutType) {
+        workoutService.saveWorkout(workout, notifyObservers: notifyObservers, type: type)
         if notifyObservers {
             self.workouts = workoutService.fetchWorkouts()
             print("workouts loaded")
@@ -125,11 +125,11 @@ class AppState: ObservableObject {
     }
     
     func getAchievements() -> [AchievementGroup] {
-        var achievements = achievemetnsService.fetchAchievements()
-//        for a in achievements {
-//            print(a.achievements[0].title)
-//        }
-        return achievements
+        return achievemetnsService.fetchAchievements()
+    }
+    
+    func updateAchievements() {
+        achievemetnsService.updateAchievements()
     }
 
 }

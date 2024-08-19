@@ -30,13 +30,18 @@ class WorkoutDataService {
         workoutsSubject.send(workouts)
     }
     
-    func saveWorkout(_ workout: Workout, notifyObservers: Bool = false) {
+    func saveWorkout(_ workout: Workout, notifyObservers: Bool = false, type: WorkoutType) {
         var workouts = dataManager.loadWorkouts()
         if let index = workouts.firstIndex(where: { $0.id == workout.id }) {
             workouts[index] = workout
             //print("WDS: workout updated")
         } else {
             workouts.append(workout)
+            if type == .custom {
+                UserDefaults.standard.hasCreatedCustomWorkout = true
+            } else if type == .preset {
+                UserDefaults.standard.hasSavedTemplateWorkout = true
+            }
             //print("WDS: workout added")
         }
         dataManager.saveWorkouts(workouts)

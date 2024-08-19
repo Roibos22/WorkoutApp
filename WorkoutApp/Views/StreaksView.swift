@@ -10,14 +10,20 @@ import SwiftUI
 struct StreaksView: View {
     @ObservedObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
-    let streakAchievements: AchievementGroup
-    let completionAchievements: AchievementGroup
-    let durationAchievements: AchievementGroup
-    let miscAchievements: AchievementGroup
+    @State private var streakAchievements: AchievementGroup
+    @State private var completionAchievements: AchievementGroup
+    @State private var durationAchievements: AchievementGroup
+    @State private var miscAchievements: AchievementGroup
 
-    
     init(appState: AppState) {
         self.appState = appState
+        streakAchievements = appState.getAchievements()[0]
+        completionAchievements = appState.getAchievements()[1]
+        durationAchievements = appState.getAchievements()[2]
+        miscAchievements = appState.getAchievements()[3]
+    }
+    
+    func loadAchievements() {
         streakAchievements = appState.getAchievements()[0]
         completionAchievements = appState.getAchievements()[1]
         durationAchievements = appState.getAchievements()[2]
@@ -93,6 +99,10 @@ struct StreaksView: View {
         //.padding(.horizontal, 20)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
+        .onAppear {
+            appState.updateAchievements()
+            loadAchievements()
+        }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
@@ -111,6 +121,7 @@ struct StreaksView: View {
             }
         }
     }
+
     
 }
 

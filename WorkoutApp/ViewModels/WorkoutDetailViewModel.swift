@@ -21,7 +21,7 @@ class WorkoutDetailViewModel: ObservableObject {
     }
     
     func saveWorkout(notifyObservers: Bool = false) {
-        appState.saveWorkout(workout, notifyObservers: notifyObservers)
+        appState.saveWorkout(workout, notifyObservers: notifyObservers, type: .custom)
     }
     
     func savePresetWorkout(notifyObservers: Bool = false) {
@@ -34,8 +34,8 @@ class WorkoutDetailViewModel: ObservableObject {
             newTitle = "\(newWorkout.title) \(counter)"
         }
         newWorkout.title = newTitle
-        
-        appState.saveWorkout(newWorkout, notifyObservers: notifyObservers)
+        print("Saved Preset Workout")
+        appState.saveWorkout(newWorkout, notifyObservers: notifyObservers, type: .preset)
     }
     
     func deleteExercise(_ exercise: Exercise) {
@@ -53,14 +53,11 @@ class WorkoutDetailViewModel: ObservableObject {
     }
     
     func addExercise(_ exercise: Exercise) {
-//        var exercise = Exercise(title: "New", duration: 20, rest: 10)
-        //workout.exercises.removeAll { $0.id == exercise.id }
         workout.exercises.append(exercise)
         saveWorkout(notifyObservers: false)
     }
     
     func moveExercise(at offsets: IndexSet, to destination: Int) {
-        //appState.moveExercise(workout: workout, at: offsets, to: destination)
         workout.exercises.move(fromOffsets: offsets, toOffset: destination)
         saveWorkout(notifyObservers: false)
     }
