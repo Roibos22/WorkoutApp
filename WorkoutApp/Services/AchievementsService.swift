@@ -133,8 +133,8 @@ class AchievementsService {
         miscAchievements[0].achieved = uniqueWorkoutsCount >= miscAchievements[0].value
         miscAchievements[1].achieved = uniqueWorkoutsCount >= miscAchievements[1].value
         miscAchievements[2].achieved = uniqueWorkoutsCount >= miscAchievements[2].value
-        //miscAchievements[3].achieved = !customWorkouts.isEmpty // Creator
-        //miscAchievements[4].achieved = !savedTemplates.isEmpty // Scheduler
+        miscAchievements[3].achieved = UserDefaults.standard.hasCreatedCustomWorkout
+        miscAchievements[4].achieved = UserDefaults.standard.hasSavedTemplateWorkout
         miscAchievements[5].achieved = checkEarlyBirdAchievement(completedWorkouts: completedWorkouts)
 
         achievements[2].achievements = miscAchievements
@@ -149,5 +149,23 @@ class AchievementsService {
     }
 
 
+}
+
+
+extension UserDefaults {
+    private enum Keys {
+        static let hasCreatedCustomWorkout = "hasCreatedCustomWorkout"
+        static let hasSavedTemplateWorkout = "hasSavedTemplateWorkout"
+    }
+    
+    var hasCreatedCustomWorkout: Bool {
+        get { bool(forKey: Keys.hasCreatedCustomWorkout) }
+        set { set(newValue, forKey: Keys.hasCreatedCustomWorkout) }
+    }
+    
+    var hasSavedTemplateWorkout: Bool {
+        get { bool(forKey: Keys.hasSavedTemplateWorkout) }
+        set { set(newValue, forKey: Keys.hasSavedTemplateWorkout) }
+    }
 }
 

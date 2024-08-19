@@ -27,7 +27,7 @@ struct Achievement: Identifiable, Codable {
         Color(hex: iconColorHex)
     }
     
-    init(id: UUID = UUID(), title: String, caption: String, icon: String, iconColor: Color, achieved: Bool, value: Double) {
+    init(id: UUID = UUID(), title: String, caption: String, icon: String, iconColor: Color, achieved: Bool, value: Int) {
         self.id = id
         self.title = title
         self.caption = caption
