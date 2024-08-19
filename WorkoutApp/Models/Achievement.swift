@@ -75,11 +75,11 @@ extension Achievement {
     ]
 
     static let miscAchievements = [
-        Achievement(title: "Curious", caption: "Try 3 different workouts", icon: "eye.fill", iconColor: .blue, achieved: false, value: 3),
-        Achievement(title: "Explorer", caption: "Try 5 different workouts", icon: "map.fill", iconColor: .cyan, achieved: false, value: 5),
-        Achievement(title: "Adventurer", caption: "Try 10 different workouts", icon: "globe", iconColor: .teal, achieved: false, value: 10),
-        Achievement(title: "Creator", caption: "Created first custom workout", icon: "pencil", iconColor: .green, achieved: false, value: 0),
-        Achievement(title: "Scheduler", caption: "Saved a template workout", icon: "calendar", iconColor: .yellow, achieved: false, value: 0),
+        Achievement(title: "Creator", caption: "Created first custom workout", icon: "pencil", iconColor: .blue, achieved: false, value: 0),
+        Achievement(title: "Scheduler", caption: "Saved a template workout", icon: "calendar", iconColor: .cyan, achieved: false, value: 0),
+        Achievement(title: "Curious", caption: "Try 3 different workouts", icon: "eye.fill", iconColor: .teal, achieved: false, value: 3),
+        Achievement(title: "Explorer", caption: "Try 5 different workouts", icon: "map.fill", iconColor: .green, achieved: false, value: 5),
+        Achievement(title: "Adventurer", caption: "Try 10 different workouts", icon: "globe", iconColor: .yellow, achieved: false, value: 10),
         Achievement(title: "Early Bird", caption: "Completed a workout before 6 AM", icon: "sunrise.fill", iconColor: .orange, achieved: false, value: 0)
     ]
 }

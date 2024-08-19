@@ -117,7 +117,7 @@ struct WorkoutListView: View {
             HStack {
                 Image(systemName: "flame.fill")
                     .foregroundColor(.red)
-                Text("\(viewModel.getCurrentStreak())")
+                //Text("\(viewModel.getCurrentStreak())")
             }
             .foregroundColor(.primary)
             .font(.title2)

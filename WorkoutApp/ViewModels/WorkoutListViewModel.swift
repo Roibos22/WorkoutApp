@@ -51,10 +51,6 @@ class WorkoutListViewModel: ObservableObject {
         }
     }
     
-    func getCurrentStreak() -> Int {
-        appState.getCurrentStreak()
-    }
-    
     func getAppState() -> AppState {
         return appState
     }

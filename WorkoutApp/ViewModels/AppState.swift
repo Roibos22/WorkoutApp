@@ -101,27 +101,12 @@ class AppState: ObservableObject {
         historyService.saveWorkoutHistory(workouts: updatedCompletedWorkouts)
     }
     
-    func getCurrentStreak() -> Int {
-        let sortedWorkouts = completedWorkouts.sorted { $0.timestamp > $1.timestamp }
-        guard !sortedWorkouts.isEmpty else { return 0 }
-
-        let calendar = Calendar.current
-        var streak = 1
-        var lastWorkoutDate = calendar.startOfDay(for: sortedWorkouts[0].timestamp)
-
-        for i in 1..<sortedWorkouts.count {
-            let currentWorkoutDate = calendar.startOfDay(for: sortedWorkouts[i].timestamp)
-            let daysBetween = calendar.dateComponents([.day], from: currentWorkoutDate, to: lastWorkoutDate).day ?? 0
-
-            if daysBetween == 1 {
-                streak += 1
-                lastWorkoutDate = currentWorkoutDate
-            } else if daysBetween > 1 {
-                break
-            }
-        }
-
-        return streak
+    func getCurrentStreak() -> (length: Int, startDate: Date) {
+        return achievemetnsService.getCurrentStreak()
+    }
+    
+    func getLongestStreak() -> (length: Int, startDate: Date) {
+        return achievemetnsService.getLongestStreak()
     }
     
     func getAchievements() -> [AchievementGroup] {

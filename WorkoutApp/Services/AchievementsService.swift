@@ -25,6 +25,53 @@ class AchievementsService {
         return dataManager.saveAchievements(achievements)
     }
     
+    func getCurrentStreak() -> (length: Int, startDate: Date) {
+        let completedWorkouts = dataManager.loadCompletedWorkouts()
+        let workoutDates = Set(completedWorkouts.map { Calendar.current.startOfDay(for: $0.timestamp) })
+        guard var latestDate = workoutDates.max() else { return (0, Date()) }
+        var currentStreak = 0
+        
+        while workoutDates.contains(latestDate) {
+            currentStreak += 1
+            guard let previousDate = Calendar.current.date(byAdding: .day, value: -1, to: latestDate) else { break }
+            latestDate = previousDate
+        }
+        let streakStartDate = Calendar.current.date(byAdding: .day, value: -(currentStreak - 2), to: latestDate) ?? latestDate
+        
+        return (currentStreak, streakStartDate)
+    }
+
+    func getLongestStreak() -> (length: Int, startDate: Date) {
+        let completedWorkouts = dataManager.loadCompletedWorkouts()
+        let calendar = Calendar.current
+        let workoutDates = Set(completedWorkouts.map { calendar.startOfDay(for: $0.timestamp) }).sorted()
+        
+        var longestStreak = 0
+        var currentStreak = 0
+        var longestStreakStartDate = workoutDates.first ?? Date()
+        var streakStartDate = longestStreakStartDate
+        
+        for (index, date) in workoutDates.enumerated() {
+            if index > 0 && calendar.dateComponents([.day], from: workoutDates[index - 1], to: date).day == 1 {
+                currentStreak += 1
+            } else {
+                if currentStreak > longestStreak {
+                    longestStreak = currentStreak
+                    longestStreakStartDate = streakStartDate
+                }
+                currentStreak = 1
+                streakStartDate = date
+            }
+        }
+        
+        if currentStreak > longestStreak {
+            longestStreak = currentStreak
+            longestStreakStartDate = streakStartDate
+        }
+        
+        return (longestStreak, longestStreakStartDate)
+    }
+    
     func updateAchievements() {
         updateStreaksAchievements()
         updateCompletionsAchievements()

@@ -32,19 +32,20 @@ struct StreaksView: View {
                         VStack {
                             HStack {
                                 Image(systemName: "flame.fill")
-                                Text("\(appState.getCurrentStreak())")
+                                Text("\(appState.getCurrentStreak().length)")
                                     .foregroundColor(.black)
                             }
                             .foregroundColor(.red)
                             .bold()
                             .font(.system(size: 40))
                             .padding()
-                            
-                            Text("Current Streak")
-                                .font(.callout)
-                                .bold()
-                            Text("12. Aug. '24")
-                                .font(.callout)
+                                Text("Current Streak")
+                                    .font(.callout)
+                                    .bold()
+                            if appState.getCurrentStreak().length > 0 {
+                                Text("\(appState.getCurrentStreak().startDate.formatDDMMMYYYY())")
+                                    .font(.callout)
+                            }
                         }
                     }
                     .padding()
@@ -57,7 +58,7 @@ struct StreaksView: View {
                         VStack {
                             HStack {
                                 Image(systemName: "flame.fill")
-                                Text("\(appState.getCurrentStreak())")
+                                Text("\(appState.getLongestStreak().length)")
                                     .foregroundColor(.black)
                             }
                             .foregroundColor(.orange)
@@ -68,8 +69,10 @@ struct StreaksView: View {
                             Text("Longest Streak")
                                 .font(.callout)
                                 .bold()
-                            Text("12. Aug. '24")
-                                .font(.callout)
+                            if appState.getCurrentStreak().length > 0 {
+                                Text("\(appState.getLongestStreak().startDate.formatDDMMMYYYY())")
+                                    .font(.callout)
+                            }
                         }
                     }
                     .padding()
@@ -87,7 +90,7 @@ struct StreaksView: View {
                 achievementsScrollView(title: "More", achievements: miscAchievements.achievements)
                 
             }
-            .padding(.vertical, 40)
+            .padding(.bottom, 40)
         }
         .scrollIndicators(.hidden)
         .navigationBarTitleDisplayMode(.inline)
