@@ -115,11 +115,17 @@ func generateStreakTestData() -> [CompletedWorkout] {
     for day in 70...99 {
         addWorkout(daysAgo: day)
     }
-
-    // Test case 6: 90-day streak (Eternity)
-    for day in 150...239 {
+    for day in 70...99 {
         addWorkout(daysAgo: day)
     }
+    for day in 70...99 {
+        addWorkout(daysAgo: day)
+    }
+
+    // Test case 6: 90-day streak (Eternity)
+//    for day in 150...239 {
+//        addWorkout(daysAgo: day)
+//    }
 
     // Test case 7: Broken streaks
     addWorkout(daysAgo: 300)
