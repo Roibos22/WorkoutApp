@@ -76,7 +76,7 @@ class DataManager {
             let data = try Data(contentsOf: savePathCompletedWorkouts)
             completedWorkouts  = try JSONDecoder().decode([CompletedWorkout].self, from: data)
         } catch {
-            completedWorkouts = [ ] // Workout.sampleWorkoutHistory
+            completedWorkouts = [ ]
         }
         return completedWorkouts
     }

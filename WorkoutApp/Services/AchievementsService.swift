@@ -80,17 +80,16 @@ class AchievementsService {
     func getTotalDuration() -> Double {
         let completedWorkouts = dataManager.loadCompletedWorkouts()
         let totalDurationSeconds = completedWorkouts.reduce(0.0) { total, workout in
-            total + (workout.workout.duration)  // Convert seconds to hours
+            total + (workout.workout.duration)
         }
         return totalDurationSeconds
     }
     
     func updateAchievements() {
-//        updateStreaksAchievements()
-//        updateCompletionsAchievements()
-//        updateDurationsAchievements()
-//        updateMiscAchievements()
-        print("Achievements updated")
+        updateStreaksAchievements()
+        updateCompletionsAchievements()
+        updateDurationsAchievements()
+        updateMiscAchievements()
     }
     
     func updateStreaksAchievements() {
@@ -138,14 +137,13 @@ class AchievementsService {
     }
 
     func updateDurationsAchievements() {
-        let completedWorkouts = dataManager.loadCompletedWorkouts()
         var achievements = dataManager.loadAchievements()
         var durationAchievements = achievements[2].achievements
-        
-        let totalDurationHours = getTotalDuration()
-                
-        if let index = achievements.firstIndex(where: { $0.type == .duration }) {
-            achievements[index].achievements = durationAchievements
+        let totalDurationHours = getTotalDuration() / 3600
+        print("Duration Hours:")
+        print(totalDurationHours)
+        for i in 0..<durationAchievements.count {
+            durationAchievements[i].achieved = Int(totalDurationHours) >= durationAchievements[i].value
         }
         
         achievements[2].achievements = durationAchievements
