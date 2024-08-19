@@ -79,10 +79,10 @@ class AchievementsService {
     
     func getTotalDuration() -> Double {
         let completedWorkouts = dataManager.loadCompletedWorkouts()
-        let totalDurationHours = completedWorkouts.reduce(0.0) { total, workout in
-            total + (workout.workout.duration / 3600.0)  // Convert seconds to hours
+        let totalDurationSeconds = completedWorkouts.reduce(0.0) { total, workout in
+            total + (workout.workout.duration)  // Convert seconds to hours
         }
-        return totalDurationHours
+        return totalDurationSeconds
     }
     
     func updateAchievements() {
