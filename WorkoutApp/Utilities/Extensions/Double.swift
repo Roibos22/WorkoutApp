@@ -41,6 +41,21 @@ extension Double {
         return formattedNumber
     }
     
+    // 0h 0m 0s
+    func asHoursMinutesSeconds() -> String {
+            let totalSeconds = Int(self)
+            let hours = totalSeconds / 3600
+            let minutes = (totalSeconds % 3600) / 60
+            let seconds = totalSeconds % 60
+            
+            var parts: [String] = []
+            parts.append("\(hours)h")
+            parts.append("\(minutes)m")
+            parts.append("\(seconds)s")
+            
+            return parts.joined(separator: " ")
+        }
+    
     // 00:00
     func asDigitalMinutes() -> String {
         let totalSeconds = self

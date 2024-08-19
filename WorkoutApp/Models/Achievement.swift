@@ -8,10 +8,25 @@
 import Foundation
 import SwiftUI
 
+enum AchievementGroupType: String, Codable {
+    case streaks = "Streaks"
+    case completions = "Completions"
+    case duration = "Duration"
+    case misc = "Miscellaneous"
+}
+
 struct AchievementGroup: Identifiable, Codable {
     var id = UUID()
     var title: String
+    var type: AchievementGroupType
     var achievements: [Achievement]
+    
+    init(id: UUID = UUID(), title: String, type: AchievementGroupType, achievements: [Achievement]) {
+        self.id = id
+        self.title = title
+        self.type = type
+        self.achievements = achievements
+    }
 }
 
 struct Achievement: Identifiable, Codable {
@@ -41,10 +56,10 @@ struct Achievement: Identifiable, Codable {
 extension Achievement {
     
     static let achievements: [AchievementGroup] = [
-        AchievementGroup(title: "Streaks", achievements: streakAchievements),
-        AchievementGroup(title: "Completions", achievements: completionAchievements),
-        AchievementGroup(title: "Duration", achievements: durationAchievements),
-        AchievementGroup(title: "More", achievements: miscAchievements)
+        AchievementGroup(title: "Streaks", type: .streaks, achievements: streakAchievements),
+        AchievementGroup(title: "Completions", type: .completions, achievements: completionAchievements),
+        AchievementGroup(title: "Duration", type: .duration, achievements: durationAchievements),
+        AchievementGroup(title: "More", type: .misc, achievements: miscAchievements)
     ]
     
     static let streakAchievements = [

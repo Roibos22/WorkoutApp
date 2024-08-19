@@ -84,10 +84,10 @@ struct StreaksView: View {
                 .padding()
                 
                 
-                achievementsScrollView(title: "Streaks", achievements: streakAchievements.achievements)
-                achievementsScrollView(title: "Completions", achievements: completionAchievements.achievements)
-                achievementsScrollView(title: "Duration", achievements: durationAchievements.achievements)
-                achievementsScrollView(title: "More", achievements: miscAchievements.achievements)
+                achievementsScrollView(appState: appState, title: "Streaks", achievements: streakAchievements)
+                achievementsScrollView(appState: appState, title: "Completions", achievements: completionAchievements)
+                achievementsScrollView(appState: appState, title: "Duration", achievements: durationAchievements)
+                achievementsScrollView(appState: appState, title: "More", achievements: miscAchievements)
                 
             }
             .padding(.bottom, 40)
@@ -127,29 +127,46 @@ struct StreaksView: View {
 }
 
 struct achievementsScrollView: View {
+    @ObservedObject var appState: AppState
     let title: String
-    let achievements: [Achievement]
+    let achievements: AchievementGroup
+    
+    var totalAchievements: Int {
+        achievements.achievements.count
+    }
+    
+    var achievedCount: Int {
+        achievements.achievements.filter { $0.achieved }.count
+    }
     
     var body: some View {
-        HStack {
-            Text(title)
+        VStack(alignment: .leading) {
+            Text("\(title) (\(achievedCount)/\(totalAchievements))")
                 .font(.title2)
                 .bold()
-                .padding(.horizontal, 20)
-            Spacer()
-        }
-        ScrollView(.horizontal) {
-            HStack(spacing: 15) {
-                ForEach(achievements) { achievement in
-                    AchievementView(achievement: achievement)
-                        .frame(width: 150, height: 150)
-                        .background(achievement.achieved ? Color.gray.opacity(0.15) : Color.gray.opacity(0.2))
-                        .cornerRadius(10)
+            if achievements.type == .completions {
+                if appState.getTotalCompletionsString() == 1 {
+                    Text("\(appState.getTotalCompletionsString()) completed workout")
+                } else {
+                    Text("\(appState.getTotalCompletionsString()) completed workouts")
                 }
             }
-            .padding(.horizontal, 20)
+            if achievements.type == .duration {
+                Text("\(appState.getTotalDurationString().asHoursMinutesSeconds()) worked out")
+            }
+            ScrollView(.horizontal) {
+                HStack(spacing: 15) {
+                    ForEach(achievements.achievements) { achievement in
+                        AchievementView(achievement: achievement)
+                            .frame(width: 150, height: 150)
+                            .background(achievement.achieved ? Color.gray.opacity(0.15) : Color.gray.opacity(0.2))
+                            .cornerRadius(10)
+                    }
+                }
+            }
+            .scrollIndicators(.hidden)
         }
-        .scrollIndicators(.hidden)
+        .padding(.horizontal, 20)
     }
 }
 

@@ -72,6 +72,19 @@ class AchievementsService {
         return (longestStreak, longestStreakStartDate)
     }
     
+    func getTotalCompletions() -> Int {
+        let completedWorkouts = dataManager.loadCompletedWorkouts()
+        return completedWorkouts.count
+    }
+    
+    func getTotalDuration() -> Double {
+        let completedWorkouts = dataManager.loadCompletedWorkouts()
+        let totalDurationHours = completedWorkouts.reduce(0.0) { total, workout in
+            total + (workout.workout.duration / 3600.0)  // Convert seconds to hours
+        }
+        return totalDurationHours
+    }
+    
     func updateAchievements() {
         updateStreaksAchievements()
         updateCompletionsAchievements()
@@ -103,17 +116,8 @@ class AchievementsService {
             currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
         }
         
-        //print("Longest streak in days: \(longestStreak)")
         for i in 0..<streakAchievements.count {
-            switch i {
-                case 0: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
-                case 1: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
-                case 2: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
-                case 3: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
-                case 4: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
-                case 5: streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
-                default: break
-            }
+            streakAchievements[i].achieved = longestStreak >= streakAchievements[i].value
         }
         
         achievements[0].achievements = streakAchievements
@@ -123,20 +127,10 @@ class AchievementsService {
     func updateCompletionsAchievements() {
         var achievements = dataManager.loadAchievements()
         var completionAchievements = achievements[1].achievements
-        
-        let completedWorkouts = dataManager.loadCompletedWorkouts()
-        let totalWorkouts = completedWorkouts.count
+        let totalWorkouts = getTotalCompletions()
         
         for i in 0..<completionAchievements.count {
-            switch i {
-            case 0: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
-            case 1: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
-            case 2: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
-            case 3: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
-            case 4: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
-            case 5: completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
-            default: break
-            }
+            completionAchievements[i].achieved = totalWorkouts >= completionAchievements[i].value
         }
         
         achievements[1].achievements = completionAchievements
@@ -148,22 +142,10 @@ class AchievementsService {
         var achievements = dataManager.loadAchievements()
         var durationAchievements = achievements[2].achievements
         
-        let totalDurationHours = completedWorkouts.reduce(0.0) { total, workout in
-            total + (workout.workout.duration / 3600.0)  // Convert seconds to hours
-        }
-        
-        //print(totalDurationHours)
-        
-        for i in 0..<durationAchievements.count {
-            switch i {
-            case 0: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
-            case 1: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
-            case 2: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
-            case 3: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
-            case 4: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
-            case 5: durationAchievements[i].achieved = totalDurationHours >= Double(durationAchievements[i].value)
-            default: break
-            }
+        let totalDurationHours = getTotalDuration()
+                
+        if let index = achievements.firstIndex(where: { $0.type == .duration }) {
+            achievements[index].achievements = durationAchievements
         }
         
         achievements[2].achievements = durationAchievements

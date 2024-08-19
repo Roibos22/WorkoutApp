@@ -117,4 +117,11 @@ class AppState: ObservableObject {
         achievemetnsService.updateAchievements()
     }
 
+    func getTotalDurationString() -> Double {
+        return achievemetnsService.getTotalDuration()
+    }
+    
+    func getTotalCompletionsString() -> Int {
+        return achievemetnsService.getTotalCompletions()
+    }
 }
