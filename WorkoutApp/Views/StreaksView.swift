@@ -14,16 +14,9 @@ struct StreaksView: View {
     @State private var completionAchievements: AchievementGroup
     @State private var durationAchievements: AchievementGroup
     @State private var miscAchievements: AchievementGroup
-
+    
     init(appState: AppState) {
         self.appState = appState
-        streakAchievements = appState.getAchievements()[0]
-        completionAchievements = appState.getAchievements()[1]
-        durationAchievements = appState.getAchievements()[2]
-        miscAchievements = appState.getAchievements()[3]
-    }
-    
-    func loadAchievements() {
         streakAchievements = appState.getAchievements()[0]
         completionAchievements = appState.getAchievements()[1]
         durationAchievements = appState.getAchievements()[2]
@@ -46,7 +39,7 @@ struct StreaksView: View {
                             .bold()
                             .font(.system(size: 40))
                             .padding()
-
+                            
                             Text("Current Streak")
                                 .font(.callout)
                                 .bold()
@@ -71,7 +64,7 @@ struct StreaksView: View {
                             .bold()
                             .font(.system(size: 40))
                             .padding()
-
+                            
                             Text("Longest Streak")
                                 .font(.callout)
                                 .bold()
@@ -86,7 +79,7 @@ struct StreaksView: View {
                     .cornerRadius(15)
                 }
                 .padding()
-
+                
                 
                 achievementsScrollView(title: "Streaks", achievements: streakAchievements.achievements)
                 achievementsScrollView(title: "Completions", achievements: completionAchievements.achievements)
@@ -94,9 +87,9 @@ struct StreaksView: View {
                 achievementsScrollView(title: "More", achievements: miscAchievements.achievements)
                 
             }
+            .padding(.vertical, 40)
         }
         .scrollIndicators(.hidden)
-        //.padding(.horizontal, 20)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .onAppear {
@@ -121,8 +114,13 @@ struct StreaksView: View {
             }
         }
     }
-
     
+    func loadAchievements() {
+        streakAchievements = appState.getAchievements()[0]
+        completionAchievements = appState.getAchievements()[1]
+        durationAchievements = appState.getAchievements()[2]
+        miscAchievements = appState.getAchievements()[3]
+    }
 }
 
 struct achievementsScrollView: View {
