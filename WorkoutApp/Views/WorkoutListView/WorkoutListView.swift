@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkoutListView: View {
     @ObservedObject var viewModel: WorkoutListViewModel
     @EnvironmentObject var appState: AppState
+    @State private var currentStreak: Int = 0
     
     var body: some View {
         NavigationView {
@@ -42,9 +43,10 @@ struct WorkoutListView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
             }
+            .onAppear {
+                currentStreak = viewModel.getCurrentStreak()
+            }
             .scrollIndicators(.hidden)
-            //.navigationBarTitleDisplayMode(.large)
-            //.navigationTitle("Your Workouts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     settingsButton
@@ -117,7 +119,7 @@ struct WorkoutListView: View {
             HStack {
                 Image(systemName: "flame.fill")
                     .foregroundColor(.red)
-                //Text("\(viewModel.getCurrentStreak())")
+                Text("\(currentStreak)")
             }
             .foregroundColor(.primary)
             .font(.title2)

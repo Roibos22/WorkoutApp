@@ -11,7 +11,6 @@ import Combine
 class WorkoutListViewModel: ObservableObject {
     @Published var workouts: [Workout] = []
     private var cancellables = Set<AnyCancellable>()
-
     private let appState: AppState
     
     init(appState: AppState) {
@@ -28,14 +27,6 @@ class WorkoutListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-//    func addWorkout(_ workout: Workout) {
-//        appState.saveWorkout(workout, type: <#WorkoutType#>)
-//    }
-//    
-//    func updateWorkout(_ workout: Workout) {
-//        appState.saveWorkout(workout, type: <#WorkoutType#>)
-//    }
-    
     func deleteWorkout(_ workout: Workout) {
         appState.deleteWorkout(workout)
     }
@@ -49,6 +40,10 @@ class WorkoutListViewModel: ObservableObject {
         if let workout = workoutsToDelete.first {
             appState.deleteWorkout(workout)
         }
+    }
+    
+    func getCurrentStreak() -> Int {
+        return appState.getCurrentStreak().length
     }
     
     func getAppState() -> AppState {
