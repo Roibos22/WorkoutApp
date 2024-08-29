@@ -12,24 +12,28 @@ class AppState: ObservableObject {
     @Published var completedWorkouts: [CompletedWorkout] = []
     @Published var achievements: [AchievementGroup] = []
     @Published var soundsEnabled: Bool = true
+    @Published var locale: Locale = Locale(identifier: "EN")
     
     private let dataManager = DataManager()
     private let workoutService: WorkoutDataService
     private let historyService: HistoryDataService
     private let timelineService: WorkoutTimelineService
     private let achievemetnsService: AchievementsService
+    private let localizationService: LocalizationManager
 
     init() {
         workoutService = WorkoutDataService(dataManager: dataManager)
         historyService = HistoryDataService(dataManager: dataManager)
         timelineService = WorkoutTimelineService()
         achievemetnsService = AchievementsService(dataManager: dataManager)
+        localizationService = LocalizationManager(dataManager: dataManager)
         loadData()
     }
     
     func loadData() {
         workouts = workoutService.fetchWorkouts()
         completedWorkouts = historyService.fetchWorkoutHistory()
+        locale = localizationService.loadLocale()
     }
     
     func loadCompletedWorkout() {
@@ -123,5 +127,13 @@ class AppState: ObservableObject {
     
     func getTotalCompletionsString() -> Int {
         return achievemetnsService.getTotalCompletions()
+    }
+    
+    func getLocale() -> Locale {
+        return localizationService.loadLocale()
+    }
+    
+    func saveLocale(locale: Locale) {
+        localizationService.saveLocale(locale: locale)
     }
 }

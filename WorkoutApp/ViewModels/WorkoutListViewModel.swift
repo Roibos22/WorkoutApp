@@ -50,4 +50,12 @@ class WorkoutListViewModel: ObservableObject {
         return appState
     }
     
+    func getLocale() -> Locale {
+        return appState.getLocale()
+    }
+    
+    func saveLocale(locale: Locale) {
+        appState.saveLocale(locale: locale)
+    }
+    
 }

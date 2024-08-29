@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject var viewModel: WorkoutListViewModel
     @Environment(\.dismiss) private var dismiss
+    @State private var selectedLocale: Locale
     
+    init(viewModel: WorkoutListViewModel) {
+        self.viewModel = viewModel
+        self.selectedLocale = viewModel.getLocale()
+    }
+
     private let urls = URLs()
     
     var body: some View {
         VStack {
             List {
+                languageSection
                 contactSection
             }
             .listStyle(InsetGroupedListStyle())
@@ -91,6 +99,25 @@ struct SettingsView: View {
         }
     }
     
+    private var languageSection: some View {
+        Section {
+            Picker("Language", selection: $selectedLocale) {
+                ForEach(Locales.allCases) { appLocale in
+                    Text(appLocale.displayName).tag(appLocale)
+                }
+            }
+            .onChange(of: selectedLocale) { newAppLocale in
+                viewModel.saveLocale(locale: newAppLocale)
+            }
+        } header: {
+            Text("Language")
+        }
+        .bold()
+        .foregroundColor(Color(.label))
+        .listRowBackground(Color(.systemGray5))
+        .listRowSeparator(.hidden)
+    }
+    
     private func linkItem(_ title: LocalizedStringResource, url: URL) -> some View {
         HStack {
             Link(String(localized: title), destination: url)
@@ -160,6 +187,6 @@ struct LegalNoticeView: View {
 
 #Preview {
     NavigationView {
-        SettingsView()
+        SettingsView(viewModel: WorkoutListViewModel(appState: AppState()))
     }
 }

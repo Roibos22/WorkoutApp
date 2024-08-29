@@ -97,7 +97,7 @@ struct WorkoutListView: View {
     }
     
     private var settingsButton: some View {
-        NavigationLink(destination: SettingsView()) {
+        NavigationLink(destination: SettingsView(viewModel: viewModel)) {
             Image(systemName: "gearshape.fill")
                 .foregroundColor(.primary)
                 .font(.title2)

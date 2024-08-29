@@ -13,6 +13,7 @@
 		352A62E02ACDC85200CAC187 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352A62DF2ACDC85200CAC187 /* Preview Assets.xcassets */; };
 		352A62ED2ACDD47300CAC187 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62EC2ACDD47300CAC187 /* Double.swift */; };
 		352A62F42ACDD91900CAC187 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */; };
+		352EC6602C80F3C7002B8B34 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352EC65F2C80F3C7002B8B34 /* LocalizationManager.swift */; };
 		353C1DC12C70F95700DB6458 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353C1DC02C70F95700DB6458 /* Achievement.swift */; };
 		353C1DC52C72ACF700DB6458 /* AchievementsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353C1DC42C72ACF700DB6458 /* AchievementsService.swift */; };
 		353C1DC72C735E7A00DB6458 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353C1DC62C735E7A00DB6458 /* Color.swift */; };
@@ -77,6 +78,7 @@
 		352A62DF2ACDC85200CAC187 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		352A62EC2ACDD47300CAC187 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
+		352EC65F2C80F3C7002B8B34 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		353C1DC02C70F95700DB6458 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		353C1DC42C72ACF700DB6458 /* AchievementsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsService.swift; sourceTree = "<group>"; };
 		353C1DC62C735E7A00DB6458 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			children = (
 				358113C22B325118003325C0 /* SoundManager */,
 				354EE6362C5C430000C97F99 /* DataManager.swift */,
+				352EC65F2C80F3C7002B8B34 /* LocalizationManager.swift */,
 				354EE63A2C5D938500C97F99 /* WorkoutDataService.swift */,
 				354EE63C2C5D93AD00C97F99 /* HistoryDataService.swift */,
 				354EE63E2C5D94EF00C97F99 /* WorkoutTimelineService.swift */,
@@ -455,6 +458,12 @@
 				en,
 				Base,
 				de,
+				it,
+				"pt-BR",
+				"pt-PT",
+				es,
+				fr,
+				"en-GB",
 			);
 			mainGroup = 352A62CB2ACDC85000CAC187;
 			packageReferences = (
@@ -491,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				352EC6602C80F3C7002B8B34 /* LocalizationManager.swift in Sources */,
 				351DFCA82ACFF5EE0093E2DE /* WorkoutSettingsSection.swift in Sources */,
 				354EE6452C5DA91000C97F99 /* WorkoutDetailView.swift in Sources */,
 				35CE05812C5E95D3006188AB /* WorkoutSettingsSectionValueSheet.swift in Sources */,

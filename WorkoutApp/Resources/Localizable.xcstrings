@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%@" : {
       "localizations" : {
@@ -16,6 +23,12 @@
     },
     "%@ (%@)" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ (%2$@)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -26,6 +39,12 @@
     },
     "%@ (%lld/%lld)" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ (%2$lld/%3$lld)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -36,6 +55,12 @@
     },
     "%@ %lld" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$lld"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -45,17 +70,31 @@
       }
     },
     "%@ worked out" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ trainiert"
+          }
+        }
+      }
     },
     "%lld" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
     },
     "%lld completed workout" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld Workout abgeschlossen"
+            "value" : "%lld abgeschlossenes Workout"
           }
         }
       }
@@ -71,17 +110,31 @@
       }
     },
     "%lld Cycles" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Durchgänge"
+          }
+        }
+      }
     },
     "%lld Exercises" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Übungen"
+          }
+        }
+      }
     },
     "%lld min" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld min"
+            "value" : "%lld Min."
           }
         }
       }
@@ -91,16 +144,29 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld sek"
+            "value" : "%lld Sek."
           }
         }
       }
     },
     "%lld. Cycle" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld. Durchgang"
+          }
+        }
+      }
     },
     "%lld/%lld" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld/%2$lld"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -120,37 +186,114 @@
       }
     },
     "1 hour total workout time" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 Stunde Gesamttrainingszeit"
+          }
+        }
+      }
     },
     "3-day workout streak" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3-Tage-Trainingssträhne"
+          }
+        }
+      }
     },
     "5 hours total workout time" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 Stunden Gesamttrainingszeit"
+          }
+        }
+      }
     },
     "7-day workout streak" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7-Tage-Trainingssträhne"
+          }
+        }
+      }
     },
     "10 hours total workout time" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 Stunden Gesamttrainingszeit"
+          }
+        }
+      }
     },
     "14-day workout streak" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "14-Tage-Trainingssträhne"
+          }
+        }
+      }
     },
     "24 hours total workout time" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "24 Stunden Gesamttrainingszeit"
+          }
+        }
+      }
     },
     "30-day workout streak" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "30-Tage-Trainingssträhne"
+          }
+        }
+      }
     },
     "48 hours total workout time" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "48 Stunden Gesamttrainingszeit"
+          }
+        }
+      }
     },
     "90-day workout streak" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "90-Tage-Trainingssträhne"
+          }
+        }
+      }
     },
     "100 hours total workout time" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "100 Stunden Gesamttrainingszeit"
+          }
+        }
+      }
     },
     "Achievements" : {
       "localizations" : {
@@ -167,220 +310,710 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Übung"
+            "value" : "Aktivität"
           }
         }
       }
     },
     "Adjust your filters or complete a workout to see your history!" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passe deine Filter an oder schließe ein Workout ab, um deinen Verlauf zu sehen!"
+          }
+        }
+      }
     },
     "Adventurer" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abenteurer"
+          }
+        }
+      }
     },
     "Angaben gemäß § 5 TMG" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angaben gemäß § 5 TMG"
+          }
+        }
+      }
     },
     "Are you sure you want to end your workout?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bist du sicher, dass du dein Workout beenden möchtest?"
+          }
+        }
+      }
     },
     "Arm Circles" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Armkreisen"
+          }
+        }
+      }
     },
     "Bicycle Crunches" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fahrrad-Crunches"
+          }
+        }
+      }
     },
     "Bird Dog" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vierfüßlerstand"
+          }
+        }
+      }
     },
     "Bodyweight Bootcamp" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Körpergewicht-Bootcamp"
+          }
+        }
+      }
     },
     "Box Jumps" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kastensprünge"
+          }
+        }
+      }
     },
     "Burpee" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Burpee"
+          }
+        }
+      }
     },
     "Burpees" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Burpees"
+          }
+        }
+      }
     },
     "Butt Kicks" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fersenlauf"
+          }
+        }
+      }
     },
     "Calf Raises" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wadenheben"
+          }
+        }
+      }
     },
     "Cancel" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        }
+      }
     },
     "Cardio Kickstart" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cardio-Kickstart"
+          }
+        }
+      }
     },
     "Cardio-Strength Fusion" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cardio-Kraft-Fusion"
+          }
+        }
+      }
     },
     "Cat-Cow Stretch" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katze-Kuh-Dehnung"
+          }
+        }
+      }
     },
     "Centurion" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zenturio"
+          }
+        }
+      }
     },
     "Chair Pose" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stuhlhaltung"
+          }
+        }
+      }
     },
     "Champion" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Champion"
+          }
+        }
+      }
     },
     "Classic Tabata" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klassisches Tabata"
+          }
+        }
+      }
     },
     "Committed" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Engagiert"
+          }
+        }
+      }
     },
     "Complete 1 workout" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 Workout abschließen"
+          }
+        }
+      }
     },
     "Complete 5 workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 Workouts abschließen"
+          }
+        }
+      }
     },
     "Complete 15 workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "15 Workouts abschließen"
+          }
+        }
+      }
     },
     "Complete 30 workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "30 Workouts abschließen"
+          }
+        }
+      }
     },
     "Complete 50 workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "50 Workouts abschließen"
+          }
+        }
+      }
     },
     "Complete 100 workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "100 Workouts abschließen"
+          }
+        }
+      }
     },
     "Complete a workout before 6 AM" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein Workout vor 6 Uhr morgens abschließen"
+          }
+        }
+      }
     },
     "Completions" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abschlüsse"
+          }
+        }
+      }
     },
     "Congratulations!" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glückwunsch!"
+          }
+        }
+      }
     },
     "Consistent" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beständig"
+          }
+        }
+      }
     },
     "Core Crusher" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kernmuskel-Crusher"
+          }
+        }
+      }
     },
     "Core Stability Flow" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kernstabilitäts-Flow"
+          }
+        }
+      }
     },
     "Core Strength" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kernkraft"
+          }
+        }
+      }
     },
     "Create first custom workout" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstes angepasstes Workout erstellen"
+          }
+        }
+      }
     },
     "Criss-Cross" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criss-Cross"
+          }
+        }
+      }
     },
     "Curious" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neugierig"
+          }
+        }
+      }
     },
     "Current Streak" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktuelle Serie"
+          }
+        }
+      }
     },
     "Cycle Rest" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zyklus-Pause"
+          }
+        }
+      }
     },
     "Cycle Settings" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zyklus-Einstellungen"
+          }
+        }
+      }
     },
     "Cycles" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zyklen"
+          }
+        }
+      }
     },
     "Dedicated" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Engagiert"
+          }
+        }
+      }
     },
     "Delete" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        }
+      }
     },
     "Delete Exercise" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übung löschen"
+          }
+        }
+      }
     },
     "Delete Exercise?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übung löschen?"
+          }
+        }
+      }
     },
     "Delete Workout?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workout löschen?"
+          }
+        }
+      }
     },
     "Deletion not possible" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen nicht möglich"
+          }
+        }
+      }
     },
     "Deselect All" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle abwählen"
+          }
+        }
+      }
     },
     "Designer" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Designer"
+          }
+        }
+      }
     },
     "Diamond Push-ups" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diamant-Liegestütze"
+          }
+        }
+      }
     },
     "Dips" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dips"
+          }
+        }
+      }
     },
     "Discover Workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workouts entdecken"
+          }
+        }
+      }
     },
     "Done" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
+        }
+      }
     },
     "Double Leg Stretch" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doppelte Beindehnung"
+          }
+        }
+      }
     },
     "Downward Dog" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Herabschauender Hund"
+          }
+        }
+      }
     },
     "Dumbbell Chest Press" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurzhantel-Brustpresse"
+          }
+        }
+      }
     },
     "Dumbbell Lunges" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurzhantel-Ausfallschritte"
+          }
+        }
+      }
     },
     "Dumbbell Rows" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurzhantel-Rudern"
+          }
+        }
+      }
     },
     "Dumbbell Shoulder Press" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurzhantel-Schulterpresse"
+          }
+        }
+      }
     },
     "Dumbbell Squats" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurzhantel-Kniebeugen"
+          }
+        }
+      }
     },
     "Dumbbell Total Body" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurzhantel-Ganzkörper"
+          }
+        }
+      }
     },
     "Duration" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer"
+          }
+        }
+      }
     },
     "Duration (Start Time)" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer (Startzeit)"
+          }
+        }
+      }
     },
     "Early Bird" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frühaufsteher"
+          }
+        }
+      }
     },
     "Edit Cycle Settings" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zyklus-Einstellungen bearbeiten"
+          }
+        }
+      }
     },
     "Edit duration for all exercises" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer für alle Übungen bearbeiten"
+          }
+        }
+      }
     },
     "Edit Duration for all Exercises" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer für alle Übungen bearbeiten"
+          }
+        }
+      }
     },
     "Edit exercise duration" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übungsdauer bearbeiten"
+          }
+        }
+      }
     },
     "Edit exercise rest time" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übungspause bearbeiten"
+          }
+        }
+      }
     },
     "Edit Exercises" : {
       "localizations" : {
@@ -393,13 +1026,34 @@
       }
     },
     "Edit number of cycles" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anzahl der Zyklen bearbeiten"
+          }
+        }
+      }
     },
     "Edit rest time between cycles" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausenzeit zwischen Zyklen bearbeiten"
+          }
+        }
+      }
     },
     "Edit rest time for all exercises" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausenzeit für alle Übungen bearbeiten"
+          }
+        }
+      }
     },
     "Edit Workouts" : {
       "localizations" : {
@@ -422,133 +1076,437 @@
       }
     },
     "Endurance Builder" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausdauer-Aufbau"
+          }
+        }
+      }
     },
     "Enduring" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausdauernd"
+          }
+        }
+      }
     },
     "Eternity" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ewigkeit"
+          }
+        }
+      }
     },
     "Exercise 1" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übung 1"
+          }
+        }
+      }
     },
     "Exercise 2" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übung 2"
+          }
+        }
+      }
     },
     "Exercise 3" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übung 3"
+          }
+        }
+      }
     },
     "Exercise 4" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übung 4"
+          }
+        }
+      }
     },
     "Exercise Duration" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übungsdauer"
+          }
+        }
+      }
     },
     "Exercise Rest" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übungspause"
+          }
+        }
+      }
     },
     "Exercise Title" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übungstitel"
+          }
+        }
+      }
     },
     "Exercises" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übungen"
+          }
+        }
+      }
     },
     "Exercises completed:" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abgeschlossene Übungen:"
+          }
+        }
+      }
     },
     "Explorer" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entdecker"
+          }
+        }
+      }
     },
     "Filter Workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workouts filtern"
+          }
+        }
+      }
     },
     "Flexibility and Mobility" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flexibilität und Mobilität"
+          }
+        }
+      }
     },
     "Fortnight" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwei Wochen"
+          }
+        }
+      }
     },
     "Full Body" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganzkörper"
+          }
+        }
+      }
     },
     "Full Body Fusion" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganzkörper-Fusion"
+          }
+        }
+      }
     },
     "Functional Fitness" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funktionelles Fitness"
+          }
+        }
+      }
     },
     "Glute Bridges" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gesäßbrücken"
+          }
+        }
+      }
     },
     "Goblet Squats" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Goblet Squats"
+          }
+        }
+      }
     },
     "Haftung für Links" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haftung für Links"
+          }
+        }
+      }
     },
     "Hello, World!" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hallo, Welt!"
+          }
+        }
+      }
     },
     "High Knees" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kniehebelauf"
+          }
+        }
+      }
     },
     "HIIT Cardio Blast" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HIIT Cardio-Explosion"
+          }
+        }
+      }
     },
     "Hip Circles" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hüftkreisen"
+          }
+        }
+      }
     },
     "History" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verlauf"
+          }
+        }
+      }
     },
     "Jog" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Joggen"
+          }
+        }
+      }
     },
     "Jump Lunges" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprung-Ausfallschritte"
+          }
+        }
+      }
     },
     "Jump Rope" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seilspringen"
+          }
+        }
+      }
     },
     "Jump Squats" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprung-Kniebeugen"
+          }
+        }
+      }
     },
     "Jumping Jacks" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hampelmänner"
+          }
+        }
+      }
     },
     "Kettlebell Swings" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kettlebell-Schwünge"
+          }
+        }
+      }
     },
     "Kickoff" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auftakt"
+          }
+        }
+      }
     },
     "Kontakt" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontakt"
+          }
+        }
+      }
+    },
+    "Language" : {
 
     },
     "Leg Day" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beintag"
+          }
+        }
+      }
     },
     "Leg Raises" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beinheben"
+          }
+        }
+      }
     },
     "Leg Swings" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beinschwünge"
+          }
+        }
+      }
     },
     "Legal Notice" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impressum"
+          }
+        }
+      }
     },
     "Loading..." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lädt..."
+          }
+        }
+      }
     },
     "Longest Streak" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Längste Serie"
+          }
+        }
+      }
     },
     "Lower Body Burner" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterkörper-Brenner"
+          }
+        }
+      }
     },
     "Lunges" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausfallschritte"
+          }
+        }
+      }
     },
     "Menu" : {
       "localizations" : {
@@ -561,7 +1519,14 @@
       }
     },
     "Metabolic Booster" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stoffwechsel-Booster"
+          }
+        }
+      }
     },
     "Minutes" : {
       "localizations" : {
@@ -574,16 +1539,44 @@
       }
     },
     "Monthly" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monatlich"
+          }
+        }
+      }
     },
     "More" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr"
+          }
+        }
+      }
     },
     "Mountain Climbers" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bergsteiger"
+          }
+        }
+      }
     },
     "My Workout" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mein Workout"
+          }
+        }
+      }
     },
     "New" : {
       "localizations" : {
@@ -596,13 +1589,34 @@
       }
     },
     "New Workout" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neues Workout"
+          }
+        }
+      }
     },
     "Newbie" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuling"
+          }
+        }
+      }
     },
     "Next: %@" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nächste: %@"
+          }
+        }
+      }
     },
     "No Workouts Found" : {
       "localizations" : {
@@ -635,31 +1649,94 @@
       }
     },
     "Organizer" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organisator"
+          }
+        }
+      }
     },
     "Persistent" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beharrlich"
+          }
+        }
+      }
     },
     "Pilates Core Sculpt" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilates-Kern-Formung"
+          }
+        }
+      }
     },
     "Plank" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterarmstütz"
+          }
+        }
+      }
     },
     "Plank Jacks" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterarmstütz-Hampelmänner"
+          }
+        }
+      }
     },
     "Plyo Push-ups" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plyometrische Liegestütze"
+          }
+        }
+      }
     },
     "Plyometric Power" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plyometrische Kraft"
+          }
+        }
+      }
     },
     "Power Yoga Flow" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power-Yoga-Flow"
+          }
+        }
+      }
     },
     "Preparation" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorbereitung"
+          }
+        }
+      }
     },
     "Preview" : {
       "localizations" : {
@@ -672,16 +1749,44 @@
       }
     },
     "Privacy Policy" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datenschutzrichtlinie"
+          }
+        }
+      }
     },
     "Push-ups" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liegestütze"
+          }
+        }
+      }
     },
     "Quelle" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelle"
+          }
+        }
+      }
     },
     "Quick HIIT" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schnelles HIIT"
+          }
+        }
+      }
     },
     "Rate WorkoutPulse" : {
       "localizations" : {
@@ -694,19 +1799,54 @@
       }
     },
     "Renegade Rows" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renegade Rows"
+          }
+        }
+      }
     },
     "Resilient" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widerstandsfähig"
+          }
+        }
+      }
     },
     "Rest" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause"
+          }
+        }
+      }
     },
     "Roll Up" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aufrollen"
+          }
+        }
+      }
     },
     "Russian Twists" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Russische Twists"
+          }
+        }
+      }
     },
     "Save" : {
       "localizations" : {
@@ -719,7 +1859,14 @@
       }
     },
     "Saved a template workout" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workout-Vorlage gespeichert"
+          }
+        }
+      }
     },
     "Seconds" : {
       "localizations" : {
@@ -742,7 +1889,14 @@
       }
     },
     "Send Feedback" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback senden"
+          }
+        }
+      }
     },
     "Settings" : {
       "localizations" : {
@@ -755,131 +1909,411 @@
       }
     },
     "Side Plank (Left)" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seitstütz (Links)"
+          }
+        }
+      }
     },
     "Side Plank (Right)" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seitstütz (Rechts)"
+          }
+        }
+      }
     },
     "Single Leg Circles" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einbeinige Kreise"
+          }
+        }
+      }
     },
     "Sit-ups" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sit-ups"
+          }
+        }
+      }
     },
     "Sprint" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprint"
+          }
+        }
+      }
     },
     "Sprint Intervals" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprint-Intervalle"
+          }
+        }
+      }
     },
     "Squat Jumps" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kniebeuge-Sprünge"
+          }
+        }
+      }
     },
     "Squat Thrusts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liegestütz-Hocksprünge"
+          }
+        }
+      }
     },
     "Squats" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kniebeugen"
+          }
+        }
+      }
     },
     "Starter" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anfänger"
+          }
+        }
+      }
     },
     "Streaks" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serien"
+          }
+        }
+      }
     },
     "Strength Endurance" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraftausdauer"
+          }
+        }
+      }
     },
     "Sun Salutation A" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonnengruß A"
+          }
+        }
+      }
     },
     "Superman" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Superman"
+          }
+        }
+      }
     },
     "Tabata Turbo" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tabata Turbo"
+          }
+        }
+      }
     },
     "Teaser" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teaser"
+          }
+        }
+      }
     },
     "Terms and Conditions" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allgemeine Geschäftsbedingungen"
+          }
+        }
+      }
     },
     "Test Workout" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test-Workout"
+          }
+        }
+      }
     },
     "The Hundred" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Hundert"
+          }
+        }
+      }
     },
     "Timekeeper" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeitnehmer"
+          }
+        }
+      }
     },
     "Torso Twists" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oberkörperdrehungen"
+          }
+        }
+      }
     },
     "Total Duration:" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gesamtdauer:"
+          }
+        }
+      }
     },
     "Tricep Dips" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trizeps-Dips"
+          }
+        }
+      }
     },
     "Tripler" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dreifach"
+          }
+        }
+      }
     },
     "Try 3 different workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Probiere 3 verschiedene Workouts aus"
+          }
+        }
+      }
     },
     "Try 5 different workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Probiere 5 verschiedene Workouts aus"
+          }
+        }
+      }
     },
     "Try 10 different workouts" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Probiere 10 verschiedene Workouts aus"
+          }
+        }
+      }
     },
     "Tuck Jumps" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hocksprünge"
+          }
+        }
+      }
     },
     "Unstoppable" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unaufhaltsam"
+          }
+        }
+      }
     },
     "Upper Body" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oberkörper"
+          }
+        }
+      }
     },
     "Upper Body Blitz" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oberkörper-Blitz"
+          }
+        }
+      }
     },
     "Visit our website" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Besuche unsere Website"
+          }
+        }
+      }
     },
     "Walk" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gehen"
+          }
+        }
+      }
     },
     "Wall Push-ups" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wand-Liegestütze"
+          }
+        }
+      }
     },
     "Wall Sit" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wandsitz"
+          }
+        }
+      }
     },
     "Warrior I" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krieger I"
+          }
+        }
+      }
     },
     "Warrior II" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krieger II"
+          }
+        }
+      }
     },
     "Weeklong" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wochenlang"
+          }
+        }
+      }
     },
     "Work out for 1 day" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trainiere für 1 Tag"
+          }
+        }
+      }
     },
     "Workout" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workout"
+          }
+        }
+      }
     },
     "Workout Settings" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Workout Einstellungen"
+            "value" : "Workout-Einstellungen"
           }
         }
       }
@@ -889,7 +2323,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Workout Titel"
+            "value" : "Workout-Titel"
           }
         }
       }
@@ -899,7 +2333,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Du hast dein Workout nun abgeschlossen!"
+            "value" : "Du hast gerade ein weiteres Workout beendet"
           }
         }
       }
@@ -909,7 +2343,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Du benötigst mindestens eine Übung in deinem Workout."
+            "value" : "Du musst mindestens eine Übung in deinem Workout haben."
           }
         }
       }
