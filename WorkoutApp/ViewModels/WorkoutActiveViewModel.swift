@@ -53,7 +53,6 @@ class WorkoutActiveViewModel: ObservableObject {
     }
     
     func resetWorkout() {
-        print("Workout reseted")
         isRunning = false
         isPaused = false
         activityIndex = 0
@@ -114,11 +113,6 @@ class WorkoutActiveViewModel: ObservableObject {
         currentActivityTimeLeft -= 0.01
         workoutTimeLeft -= 0.01
         currentActivityDurationDone += 0.01
-        //print("TIMER UPODATED:")
-        //print("currentActivityTimeLeft: \(currentActivityTimeLeft)")
-        //print("workoutTimeLeft: \(workoutTimeLeft)")
-        //print("currentActivityDurationDone: \(currentActivityDurationDone)")
-        // Add this block for the countdown sound
         if appState.soundsEnabled && currentActivityTimeLeft < 3 && !countdownPlayed {
             DispatchQueue.main.async {
                 SoundManager.instance.playSound(sound: .countdown)

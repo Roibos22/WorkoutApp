@@ -12,13 +12,13 @@ enum WorkoutSettingsCardFormats {
     case asNumber
 }
 
-enum WorkoutSettingsType: String {
+enum WorkoutSettingsType: LocalizedStringResource {
     case exerciseDuration = "Exercise Duration"
     case exerciseRest = "Exercise Rest"
     case cycles = "Cycles"
     case cycleRest = "Cycle Rest"
 
-    var changeValueString: String {
+    var changeValueString: LocalizedStringResource {
         switch self {
         case .exerciseDuration:
             return "Edit duration for all exercises"

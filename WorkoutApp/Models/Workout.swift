@@ -9,7 +9,7 @@ import Foundation
 
 struct Workout: Identifiable, Codable, Equatable, Hashable {
     let id: UUID
-    var title: String
+    var title: LocalizedStringResource
     var cycles: Int
     var cycleRestTime: TimeInterval
     var exercises: [Exercise]
@@ -22,7 +22,7 @@ struct Workout: Identifiable, Codable, Equatable, Hashable {
         return (Double(cycles) * totalExerciseTime) + (Double(cycles - 1) * cycleRestTime) - (Double(cycles) * restLastExercise) + prepDuration
     }
     
-    init(id: UUID = UUID(), title: String, cycles: Int, cycleRestTime: TimeInterval, exercises: [Exercise], completions: Int = 0) {
+    init(id: UUID = UUID(), title: LocalizedStringResource, cycles: Int, cycleRestTime: TimeInterval, exercises: [Exercise], completions: Int = 0) {
         self.id = id
         self.title = title
         self.cycles = cycles

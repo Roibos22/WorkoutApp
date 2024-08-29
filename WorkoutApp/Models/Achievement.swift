@@ -17,11 +17,11 @@ enum AchievementGroupType: String, Codable {
 
 struct AchievementGroup: Identifiable, Codable {
     var id = UUID()
-    var title: String
+    var title: LocalizedStringResource
     var type: AchievementGroupType
     var achievements: [Achievement]
     
-    init(id: UUID = UUID(), title: String, type: AchievementGroupType, achievements: [Achievement]) {
+    init(id: UUID = UUID(), title: LocalizedStringResource, type: AchievementGroupType, achievements: [Achievement]) {
         self.id = id
         self.title = title
         self.type = type
@@ -31,8 +31,8 @@ struct AchievementGroup: Identifiable, Codable {
 
 struct Achievement: Identifiable, Codable {
     var id = UUID()
-    var title: String
-    var caption: String
+    var title: LocalizedStringResource
+    var caption: LocalizedStringResource
     var icon: String
     var iconColorHex: String
     var achieved: Bool
@@ -42,7 +42,7 @@ struct Achievement: Identifiable, Codable {
         Color(hex: iconColorHex)
     }
     
-    init(id: UUID = UUID(), title: String, caption: String, icon: String, iconColor: Color, achieved: Bool, value: Int) {
+    init(id: UUID = UUID(), title: LocalizedStringResource, caption: LocalizedStringResource, icon: String, iconColor: Color, achieved: Bool, value: Int) {
         self.id = id
         self.title = title
         self.caption = caption

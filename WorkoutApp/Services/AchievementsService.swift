@@ -140,7 +140,6 @@ class AchievementsService {
         var achievements = dataManager.loadAchievements()
         var durationAchievements = achievements[2].achievements
         let totalDurationHours = getTotalDuration() / 3600
-        print("Duration Hours:")
         print(totalDurationHours)
         for i in 0..<durationAchievements.count {
             durationAchievements[i].achieved = Int(totalDurationHours) >= durationAchievements[i].value

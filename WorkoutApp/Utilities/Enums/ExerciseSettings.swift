@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum ExerciseSettingsType: String {
+enum ExerciseSettingsType: LocalizedStringResource {
     case exerciseDuration = "Exercise Duration"
     case exerciseRest = "Exercise Rest"
 
-    var changeValueString: String {
+    var changeValueString: LocalizedStringResource {
         switch self {
         case .exerciseDuration:
             return "Edit exercise duration"

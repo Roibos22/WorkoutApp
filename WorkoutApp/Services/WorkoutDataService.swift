@@ -34,7 +34,6 @@ class WorkoutDataService {
         var workouts = dataManager.loadWorkouts()
         if let index = workouts.firstIndex(where: { $0.id == workout.id }) {
             workouts[index] = workout
-            print("WDS: workout updated")
         } else {
             workouts.append(workout)
             if type == .custom {
@@ -46,7 +45,6 @@ class WorkoutDataService {
         }
         dataManager.saveWorkouts(workouts)
         if notifyObservers {
-            print("notified observers")
             workoutsSubject.send(workouts)
         }
     }
@@ -80,8 +78,8 @@ class WorkoutDataService {
     }
     
     func generateNewWorkout() -> Workout {
-        var title: String = "Workout"
-        var tmp: String = title
+        var title: LocalizedStringResource = "Workout"
+        var tmp: LocalizedStringResource = title
         var counter: Int = 1
         
         while dataManager.loadWorkouts().contains(where: { $0.title == tmp }) {

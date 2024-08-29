@@ -99,7 +99,7 @@ struct WorkoutCompletedView: View {
         Button {
             counter += 1
         } label: {
-            Text("🎉")
+            Text(String("🎉"))
                 .font(.system(size: 70))
         }
     }

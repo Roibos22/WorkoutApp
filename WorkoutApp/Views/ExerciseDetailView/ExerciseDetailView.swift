@@ -28,28 +28,20 @@ struct ExerciseDetailView: View {
             }
             .padding()
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(viewModel.exercise.title)
+            .navigationTitle(String(localized: viewModel.exercise.title))
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        viewModel.saveExercise()
-                        dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "chevron.left")
-                                .bold()
-                        }
-                    }
-                }
+                    dismissButton
+                } 
                 ToolbarItem(placement: .principal) {
-                    TextField("Exercise Title", text: $viewModel.exercise.title)
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .font(.title)
-                        .bold()
-                        .onSubmit {
-                            //viewModel.updateTitle(viewModel.workout.title)
-                        }
+                    TextField("Exercise Title", text: Binding(
+                        get: { String(localized: viewModel.exercise.title) },
+                        set: { viewModel.exercise.title = LocalizedStringResource(stringLiteral: $0) }
+                    ))
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .font(.title)
+                    .bold()
                 }
             }
         }
@@ -72,6 +64,18 @@ struct ExerciseDetailView: View {
                     viewModel.deleteExercise()
                     dismiss()
                 }
+            }
+        }
+    }
+    
+    private var dismissButton: some View {
+        Button(action: {
+            viewModel.saveExercise()
+            dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left")
+                    .bold()
             }
         }
     }

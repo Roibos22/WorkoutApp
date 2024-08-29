@@ -53,7 +53,7 @@ struct WorkoutSettingsSection: View {
         .fontWeight(.bold)
     }
     
-    private func settingsCard(title: String, icon: String, settingType: WorkoutSettingsType, workoutType: WorkoutType) -> some View {
+    private func settingsCard(title: LocalizedStringResource, icon: String, settingType: WorkoutSettingsType, workoutType: WorkoutType) -> some View {
         WorkoutSettingsSectionCard(title: title, icon: icon, workout: $workout, settingType: settingType, workoutType: workoutType)
             .contentShape(Rectangle())
     }

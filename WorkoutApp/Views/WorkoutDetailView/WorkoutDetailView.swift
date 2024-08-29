@@ -36,7 +36,7 @@ struct WorkoutDetailView: View {
             }
             .padding(.horizontal)
         }
-        .navigationTitle(viewModel.workout.title)
+        .navigationTitle(String(localized: viewModel.workout.title))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -55,13 +55,16 @@ struct WorkoutDetailView: View {
             }
             ToolbarItem(placement: .principal) {
                 if workoutType == .custom {
-                    TextField("Workout Title", text: $viewModel.workout.title)
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .font(.title)
-                        .bold()
-                        .onSubmit {
-                            viewModel.updateTitle(viewModel.workout.title)
-                        }
+                    TextField("Workout Title", text: Binding(
+                        get: { String(localized: viewModel.workout.title) },
+                        set: { viewModel.workout.title = LocalizedStringResource(stringLiteral: $0) }
+                    ))
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .font(.title)
+                    .bold()
+                    .onSubmit {
+                        viewModel.updateTitle(viewModel.workout.title)
+                    }
                 } else if workoutType == .preset {
                     HStack {
                         Text(viewModel.workout.title)

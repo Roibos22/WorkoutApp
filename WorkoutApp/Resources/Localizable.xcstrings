@@ -34,6 +34,16 @@
         }
       }
     },
+    "%@ %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$lld"
+          }
+        }
+      }
+    },
     "%@ worked out" : {
 
     },
@@ -59,6 +69,12 @@
           }
         }
       }
+    },
+    "%lld Cycles" : {
+
+    },
+    "%lld Exercises" : {
+
     },
     "%lld min" : {
       "localizations" : {
@@ -103,7 +119,37 @@
         }
       }
     },
-    "🎉" : {
+    "1 hour total workout time" : {
+
+    },
+    "3-day workout streak" : {
+
+    },
+    "5 hours total workout time" : {
+
+    },
+    "7-day workout streak" : {
+
+    },
+    "10 hours total workout time" : {
+
+    },
+    "14-day workout streak" : {
+
+    },
+    "24 hours total workout time" : {
+
+    },
+    "30-day workout streak" : {
+
+    },
+    "48 hours total workout time" : {
+
+    },
+    "90-day workout streak" : {
+
+    },
+    "100 hours total workout time" : {
 
     },
     "Achievements" : {
@@ -129,19 +175,130 @@
     "Adjust your filters or complete a workout to see your history!" : {
 
     },
+    "Adventurer" : {
+
+    },
+    "Angaben gemäß § 5 TMG" : {
+
+    },
     "Are you sure you want to end your workout?" : {
+
+    },
+    "Arm Circles" : {
+
+    },
+    "Bicycle Crunches" : {
+
+    },
+    "Bird Dog" : {
+
+    },
+    "Bodyweight Bootcamp" : {
+
+    },
+    "Box Jumps" : {
+
+    },
+    "Burpee" : {
+
+    },
+    "Burpees" : {
+
+    },
+    "Butt Kicks" : {
+
+    },
+    "Calf Raises" : {
 
     },
     "Cancel" : {
 
     },
+    "Cardio Kickstart" : {
+
+    },
+    "Cardio-Strength Fusion" : {
+
+    },
+    "Cat-Cow Stretch" : {
+
+    },
+    "Centurion" : {
+
+    },
+    "Chair Pose" : {
+
+    },
+    "Champion" : {
+
+    },
+    "Classic Tabata" : {
+
+    },
+    "Committed" : {
+
+    },
+    "Complete 1 workout" : {
+
+    },
+    "Complete 5 workouts" : {
+
+    },
+    "Complete 15 workouts" : {
+
+    },
+    "Complete 30 workouts" : {
+
+    },
+    "Complete 50 workouts" : {
+
+    },
+    "Complete 100 workouts" : {
+
+    },
+    "Complete a workout before 6 AM" : {
+
+    },
+    "Completions" : {
+
+    },
     "Congratulations!" : {
+
+    },
+    "Consistent" : {
+
+    },
+    "Core Crusher" : {
+
+    },
+    "Core Stability Flow" : {
+
+    },
+    "Core Strength" : {
+
+    },
+    "Create first custom workout" : {
+
+    },
+    "Criss-Cross" : {
+
+    },
+    "Curious" : {
 
     },
     "Current Streak" : {
 
     },
+    "Cycle Rest" : {
+
+    },
     "Cycle Settings" : {
+
+    },
+    "Cycles" : {
+
+    },
+    "Dedicated" : {
 
     },
     "Delete" : {
@@ -162,19 +319,67 @@
     "Deselect All" : {
 
     },
+    "Designer" : {
+
+    },
+    "Diamond Push-ups" : {
+
+    },
+    "Dips" : {
+
+    },
     "Discover Workouts" : {
 
     },
     "Done" : {
 
     },
+    "Double Leg Stretch" : {
+
+    },
+    "Downward Dog" : {
+
+    },
+    "Dumbbell Chest Press" : {
+
+    },
+    "Dumbbell Lunges" : {
+
+    },
+    "Dumbbell Rows" : {
+
+    },
+    "Dumbbell Shoulder Press" : {
+
+    },
+    "Dumbbell Squats" : {
+
+    },
+    "Dumbbell Total Body" : {
+
+    },
+    "Duration" : {
+
+    },
     "Duration (Start Time)" : {
+
+    },
+    "Early Bird" : {
 
     },
     "Edit Cycle Settings" : {
 
     },
+    "Edit duration for all exercises" : {
+
+    },
     "Edit Duration for all Exercises" : {
+
+    },
+    "Edit exercise duration" : {
+
+    },
+    "Edit exercise rest time" : {
 
     },
     "Edit Exercises" : {
@@ -186,6 +391,15 @@
           }
         }
       }
+    },
+    "Edit number of cycles" : {
+
+    },
+    "Edit rest time between cycles" : {
+
+    },
+    "Edit rest time for all exercises" : {
+
     },
     "Edit Workouts" : {
       "localizations" : {
@@ -207,6 +421,33 @@
         }
       }
     },
+    "Endurance Builder" : {
+
+    },
+    "Enduring" : {
+
+    },
+    "Eternity" : {
+
+    },
+    "Exercise 1" : {
+
+    },
+    "Exercise 2" : {
+
+    },
+    "Exercise 3" : {
+
+    },
+    "Exercise 4" : {
+
+    },
+    "Exercise Duration" : {
+
+    },
+    "Exercise Rest" : {
+
+    },
     "Exercise Title" : {
 
     },
@@ -216,13 +457,82 @@
     "Exercises completed:" : {
 
     },
+    "Explorer" : {
+
+    },
     "Filter Workouts" : {
+
+    },
+    "Flexibility and Mobility" : {
+
+    },
+    "Fortnight" : {
+
+    },
+    "Full Body" : {
+
+    },
+    "Full Body Fusion" : {
+
+    },
+    "Functional Fitness" : {
+
+    },
+    "Glute Bridges" : {
+
+    },
+    "Goblet Squats" : {
+
+    },
+    "Haftung für Links" : {
 
     },
     "Hello, World!" : {
 
     },
+    "High Knees" : {
+
+    },
+    "HIIT Cardio Blast" : {
+
+    },
+    "Hip Circles" : {
+
+    },
     "History" : {
+
+    },
+    "Jog" : {
+
+    },
+    "Jump Lunges" : {
+
+    },
+    "Jump Rope" : {
+
+    },
+    "Jump Squats" : {
+
+    },
+    "Jumping Jacks" : {
+
+    },
+    "Kettlebell Swings" : {
+
+    },
+    "Kickoff" : {
+
+    },
+    "Kontakt" : {
+
+    },
+    "Leg Day" : {
+
+    },
+    "Leg Raises" : {
+
+    },
+    "Leg Swings" : {
 
     },
     "Legal Notice" : {
@@ -232,6 +542,12 @@
 
     },
     "Longest Streak" : {
+
+    },
+    "Lower Body Burner" : {
+
+    },
+    "Lunges" : {
 
     },
     "Menu" : {
@@ -244,6 +560,9 @@
         }
       }
     },
+    "Metabolic Booster" : {
+
+    },
     "Minutes" : {
       "localizations" : {
         "de" : {
@@ -254,6 +573,18 @@
         }
       }
     },
+    "Monthly" : {
+
+    },
+    "More" : {
+
+    },
+    "Mountain Climbers" : {
+
+    },
+    "My Workout" : {
+
+    },
     "New" : {
       "localizations" : {
         "de" : {
@@ -263,6 +594,12 @@
           }
         }
       }
+    },
+    "New Workout" : {
+
+    },
+    "Newbie" : {
+
     },
     "Next: %@" : {
 
@@ -297,6 +634,33 @@
         }
       }
     },
+    "Organizer" : {
+
+    },
+    "Persistent" : {
+
+    },
+    "Pilates Core Sculpt" : {
+
+    },
+    "Plank" : {
+
+    },
+    "Plank Jacks" : {
+
+    },
+    "Plyo Push-ups" : {
+
+    },
+    "Plyometric Power" : {
+
+    },
+    "Power Yoga Flow" : {
+
+    },
+    "Preparation" : {
+
+    },
     "Preview" : {
       "localizations" : {
         "de" : {
@@ -306,6 +670,18 @@
           }
         }
       }
+    },
+    "Privacy Policy" : {
+
+    },
+    "Push-ups" : {
+
+    },
+    "Quelle" : {
+
+    },
+    "Quick HIIT" : {
+
     },
     "Rate WorkoutPulse" : {
       "localizations" : {
@@ -317,6 +693,21 @@
         }
       }
     },
+    "Renegade Rows" : {
+
+    },
+    "Resilient" : {
+
+    },
+    "Rest" : {
+
+    },
+    "Roll Up" : {
+
+    },
+    "Russian Twists" : {
+
+    },
     "Save" : {
       "localizations" : {
         "de" : {
@@ -326,6 +717,9 @@
           }
         }
       }
+    },
+    "Saved a template workout" : {
+
     },
     "Seconds" : {
       "localizations" : {
@@ -347,6 +741,9 @@
         }
       }
     },
+    "Send Feedback" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "de" : {
@@ -357,7 +754,124 @@
         }
       }
     },
+    "Side Plank (Left)" : {
+
+    },
+    "Side Plank (Right)" : {
+
+    },
+    "Single Leg Circles" : {
+
+    },
+    "Sit-ups" : {
+
+    },
+    "Sprint" : {
+
+    },
+    "Sprint Intervals" : {
+
+    },
+    "Squat Jumps" : {
+
+    },
+    "Squat Thrusts" : {
+
+    },
+    "Squats" : {
+
+    },
+    "Starter" : {
+
+    },
+    "Streaks" : {
+
+    },
+    "Strength Endurance" : {
+
+    },
+    "Sun Salutation A" : {
+
+    },
+    "Superman" : {
+
+    },
+    "Tabata Turbo" : {
+
+    },
+    "Teaser" : {
+
+    },
+    "Terms and Conditions" : {
+
+    },
+    "Test Workout" : {
+
+    },
+    "The Hundred" : {
+
+    },
+    "Timekeeper" : {
+
+    },
+    "Torso Twists" : {
+
+    },
     "Total Duration:" : {
+
+    },
+    "Tricep Dips" : {
+
+    },
+    "Tripler" : {
+
+    },
+    "Try 3 different workouts" : {
+
+    },
+    "Try 5 different workouts" : {
+
+    },
+    "Try 10 different workouts" : {
+
+    },
+    "Tuck Jumps" : {
+
+    },
+    "Unstoppable" : {
+
+    },
+    "Upper Body" : {
+
+    },
+    "Upper Body Blitz" : {
+
+    },
+    "Visit our website" : {
+
+    },
+    "Walk" : {
+
+    },
+    "Wall Push-ups" : {
+
+    },
+    "Wall Sit" : {
+
+    },
+    "Warrior I" : {
+
+    },
+    "Warrior II" : {
+
+    },
+    "Weeklong" : {
+
+    },
+    "Work out for 1 day" : {
+
+    },
+    "Workout" : {
 
     },
     "Workout Settings" : {

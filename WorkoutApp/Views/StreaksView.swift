@@ -128,7 +128,7 @@ struct StreaksView: View {
 
 struct achievementsScrollView: View {
     @ObservedObject var appState: AppState
-    let title: String
+    let title: LocalizedStringResource
     let achievements: AchievementGroup
     
     var totalAchievements: Int {

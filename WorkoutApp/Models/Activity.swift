@@ -9,7 +9,7 @@ import Foundation
 
 struct Activity: Hashable, Identifiable {
     let id: UUID
-    var title: String
+    var title: LocalizedStringResource
     var type: ActivityType
     var duration: TimeInterval
     var timeLeft: TimeInterval
@@ -17,7 +17,7 @@ struct Activity: Hashable, Identifiable {
     var cycleNo: Int
     var activityNo: Int
     
-    init(id: UUID = UUID(), title: String, type: ActivityType, duration: TimeInterval, timeLeft: TimeInterval, startingTime: TimeInterval, cycleNo: Int, activityNo: Int) {
+    init(id: UUID = UUID(), title: LocalizedStringResource, type: ActivityType, duration: TimeInterval, timeLeft: TimeInterval, startingTime: TimeInterval, cycleNo: Int, activityNo: Int) {
         self.id = id
         self.title = title
         self.type = type
@@ -26,6 +26,14 @@ struct Activity: Hashable, Identifiable {
         self.startingTime = startingTime
         self.cycleNo = cycleNo
         self.activityNo = activityNo
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: Activity, rhs: Activity) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 

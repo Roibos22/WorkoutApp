@@ -71,7 +71,7 @@ struct WorkoutCardView: View {
         .font(.title2)
     }
     
-    private func infoRow(icon: String, text: String) -> some View {
+    private func infoRow(icon: String, text: LocalizedStringResource) -> some View {
         HStack {
             Image(systemName: icon)
                 .frame(width: 50)

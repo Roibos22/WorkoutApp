@@ -91,9 +91,9 @@ struct SettingsView: View {
         }
     }
     
-    private func linkItem(_ title: String, url: URL) -> some View {
+    private func linkItem(_ title: LocalizedStringResource, url: URL) -> some View {
         HStack {
-            Link(title, destination: url)
+            Link(String(localized: title), destination: url)
                 .multilineTextAlignment(.leading)
             Spacer()
             Image(systemName: "chevron.right")
@@ -147,7 +147,7 @@ struct LegalNoticeView: View {
         }
     }
     
-    private func vStack(title: String, content: String) -> some View {
+    private func vStack(title: LocalizedStringResource, content: String) -> some View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(.title2)
