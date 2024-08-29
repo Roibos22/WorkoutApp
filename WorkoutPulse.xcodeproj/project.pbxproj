@@ -55,6 +55,7 @@
 		35CE057F2C5E957D006188AB /* WorkoutSettingsSectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE057E2C5E957D006188AB /* WorkoutSettingsSectionCard.swift */; };
 		35CE05812C5E95D3006188AB /* WorkoutSettingsSectionValueSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE05802C5E95D3006188AB /* WorkoutSettingsSectionValueSheet.swift */; };
 		35CE05872C5EB5AC006188AB /* ExerciseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE05862C5EB5AC006188AB /* ExerciseSettings.swift */; };
+		35DBCC072C80670800194A6C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35DBCC062C80670800194A6C /* Localizable.xcstrings */; };
 		35DE36F62C66379800482050 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE36F52C66379800482050 /* Date.swift */; };
 		35DE36FA2C66381C00482050 /* EmptyWorkoutHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE36F92C66381C00482050 /* EmptyWorkoutHistoryView.swift */; };
 		35DE36FC2C66384300482050 /* MultiSelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE36FB2C66384300482050 /* MultiSelectFilterView.swift */; };
@@ -116,6 +117,7 @@
 		35CE057E2C5E957D006188AB /* WorkoutSettingsSectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSettingsSectionCard.swift; sourceTree = "<group>"; };
 		35CE05802C5E95D3006188AB /* WorkoutSettingsSectionValueSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSettingsSectionValueSheet.swift; sourceTree = "<group>"; };
 		35CE05862C5EB5AC006188AB /* ExerciseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSettings.swift; sourceTree = "<group>"; };
+		35DBCC062C80670800194A6C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		35DE36F52C66379800482050 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		35DE36F92C66381C00482050 /* EmptyWorkoutHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWorkoutHistoryView.swift; sourceTree = "<group>"; };
 		35DE36FB2C66384300482050 /* MultiSelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectFilterView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		354EE6212C5C240500C97F99 /* WorkoutApp */ = {
 			isa = PBXGroup;
 			children = (
+				35DBCC052C8066E700194A6C /* Resources */,
 				353C1DC82C73E3CE00DB6458 /* Test */,
 				354EE6222C5C24AC00C97F99 /* Models */,
 				354EE6262C5C24ED00C97F99 /* Utilities */,
@@ -359,6 +362,14 @@
 			path = WorkoutButtonsSection;
 			sourceTree = "<group>";
 		};
+		35DBCC052C8066E700194A6C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				35DBCC062C80670800194A6C /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		35DE36F72C6637DA00482050 /* WorkoutHistoryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +451,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 352A62CB2ACDC85000CAC187;
 			packageReferences = (
@@ -464,6 +476,7 @@
 				358113C82B325192003325C0 /* jubilant.mp3 in Resources */,
 				352A62E02ACDC85200CAC187 /* Preview Assets.xcassets in Resources */,
 				352A62DC2ACDC85200CAC187 /* Assets.xcassets in Resources */,
+				35DBCC072C80670800194A6C /* Localizable.xcstrings in Resources */,
 				358113CA2B325192003325C0 /* dadam.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
