@@ -12,28 +12,36 @@ class AppState: ObservableObject {
     @Published var completedWorkouts: [CompletedWorkout] = []
     @Published var achievements: [AchievementGroup] = []
     @Published var soundsEnabled: Bool = true
-    @Published var locale: Locale = Locale(identifier: "EN")
+    
+    @Published var language: Language {
+        didSet {
+            UserDefaults.standard.set(language.rawValue, forKey: "AppLanguage")
+        }
+    }
     
     private let dataManager = DataManager()
     private let workoutService: WorkoutDataService
     private let historyService: HistoryDataService
     private let timelineService: WorkoutTimelineService
     private let achievemetnsService: AchievementsService
-    private let localizationService: LocalizationManager
 
     init() {
         workoutService = WorkoutDataService(dataManager: dataManager)
         historyService = HistoryDataService(dataManager: dataManager)
         timelineService = WorkoutTimelineService()
         achievemetnsService = AchievementsService(dataManager: dataManager)
-        localizationService = LocalizationManager(dataManager: dataManager)
+        let savedLanguage = UserDefaults.standard.string(forKey: "AppLanguage") ?? "EN"
+        self.language = Language(rawValue: savedLanguage) ?? .english
         loadData()
+    }
+       
+    func setLanguage(_ newLanguage: Language) {
+        self.language = newLanguage
     }
     
     func loadData() {
         workouts = workoutService.fetchWorkouts()
         completedWorkouts = historyService.fetchWorkoutHistory()
-        locale = localizationService.loadLocale()
     }
     
     func loadCompletedWorkout() {
@@ -128,12 +136,5 @@ class AppState: ObservableObject {
     func getTotalCompletionsString() -> Int {
         return achievemetnsService.getTotalCompletions()
     }
-    
-    func getLocale() -> Locale {
-        return localizationService.loadLocale()
-    }
-    
-    func saveLocale(locale: Locale) {
-        localizationService.saveLocale(locale: locale)
-    }
+
 }

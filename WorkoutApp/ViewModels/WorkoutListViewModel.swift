@@ -7,11 +7,20 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class WorkoutListViewModel: ObservableObject {
     @Published var workouts: [Workout] = []
+    @Published var selectedLanguage: Language = .english
     private var cancellables = Set<AnyCancellable>()
     private let appState: AppState
+    
+    var language: Binding<Language> {
+            Binding(
+                get: { self.appState.language },
+                set: { self.appState.setLanguage($0) }
+            )
+        }
     
     init(appState: AppState) {
         self.appState = appState
@@ -48,14 +57,6 @@ class WorkoutListViewModel: ObservableObject {
     
     func getAppState() -> AppState {
         return appState
-    }
-    
-    func getLocale() -> Locale {
-        return appState.getLocale()
-    }
-    
-    func saveLocale(locale: Locale) {
-        appState.saveLocale(locale: locale)
     }
     
 }

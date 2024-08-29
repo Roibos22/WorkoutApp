@@ -10,12 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var viewModel: WorkoutListViewModel
     @Environment(\.dismiss) private var dismiss
-    @State private var selectedLocale: Locale
-    
-    init(viewModel: WorkoutListViewModel) {
-        self.viewModel = viewModel
-        self.selectedLocale = viewModel.getLocale()
-    }
+    var supportedLanguages: [Language] = [.english, .german]
 
     private let urls = URLs()
     
@@ -36,6 +31,27 @@ struct SettingsView: View {
                 backButton
             }
         }
+    }
+    
+    private var languageSection: some View {
+        Section {
+            Section(header: Text("Language")) {
+                Picker("Select Language", selection: viewModel.language) {
+                    Text("English").tag(Language.english)
+                    Text("Deutsch").tag(Language.german)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+            }
+//            .onChange(of: viewModel.appState.language) { newValue in
+//                        print("Language changed to: \(newValue)")
+//                    }
+        } header: {
+            Text("Language")
+        }
+        .bold()
+        .foregroundColor(Color(.label))
+        .listRowBackground(Color(.systemGray5))
+        .listRowSeparator(.hidden)
     }
     
     private var contactSection: some View {
@@ -97,25 +113,6 @@ struct SettingsView: View {
                     .foregroundColor(.blue)
             }
         }
-    }
-    
-    private var languageSection: some View {
-        Section {
-            Picker("Language", selection: $selectedLocale) {
-                ForEach(Locales.allCases) { appLocale in
-                    Text(appLocale.displayName).tag(appLocale)
-                }
-            }
-            .onChange(of: selectedLocale) { newAppLocale in
-                viewModel.saveLocale(locale: newAppLocale)
-            }
-        } header: {
-            Text("Language")
-        }
-        .bold()
-        .foregroundColor(Color(.label))
-        .listRowBackground(Color(.systemGray5))
-        .listRowSeparator(.hidden)
     }
     
     private func linkItem(_ title: LocalizedStringResource, url: URL) -> some View {

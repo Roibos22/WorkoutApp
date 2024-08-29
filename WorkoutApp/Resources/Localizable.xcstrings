@@ -815,6 +815,9 @@
         }
       }
     },
+    "Deutsch" : {
+
+    },
     "Diamond Push-ups" : {
       "localizations" : {
         "de" : {
@@ -1094,6 +1097,9 @@
           }
         }
       }
+    },
+    "English" : {
+
     },
     "Eternity" : {
       "localizations" : {
@@ -1887,6 +1893,9 @@
           }
         }
       }
+    },
+    "Select Language" : {
+
     },
     "Send Feedback" : {
       "localizations" : {

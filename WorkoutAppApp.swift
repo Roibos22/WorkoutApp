@@ -16,7 +16,7 @@ struct WorkoutAppApp: App {
         WindowGroup {
             WorkoutListView(viewModel: WorkoutListViewModel(appState: appState))
                 .environmentObject(appState)
-                .environment(\.locale, appState.locale)
+                .environment(\.locale, appState.language.locale)
         }
     }
 }

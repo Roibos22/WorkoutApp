@@ -82,22 +82,4 @@ class DataManager {
         return completedWorkouts
     }
     
-    func saveLocalePreference(_ locale: Locale) {
-        do {
-            let localeIdentifier = locale.identifier
-            try localeIdentifier.write(to: savePathLanguage, atomically: true, encoding: .utf8)
-        } catch {
-            print("Failed to save locale preference: \(error.localizedDescription)")
-        }
-    }
-    
-    func loadLocalePreference() -> Locale {
-        do {
-            let localeIdentifier = try String(contentsOf: savePathLanguage, encoding: .utf8)
-            return Locale(identifier: localeIdentifier)
-        } catch {
-            print("Failed to load locale preference: \(error.localizedDescription)")
-            return Locale(identifier: "EN")
-        }
-    }
 }
