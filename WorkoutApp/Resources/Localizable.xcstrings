@@ -53,23 +53,6 @@
         }
       }
     },
-    "%@ %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ %2$lld"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$lld"
-          }
-        }
-      }
-    },
     "%@ worked out" : {
       "localizations" : {
         "de" : {
@@ -356,144 +339,12 @@
         }
       }
     },
-    "Arm Circles" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Armkreisen"
-          }
-        }
-      }
-    },
-    "Bicycle Crunches" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fahrrad-Crunches"
-          }
-        }
-      }
-    },
-    "Bird Dog" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vierfüßlerstand"
-          }
-        }
-      }
-    },
-    "Bodyweight Bootcamp" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Körpergewicht-Bootcamp"
-          }
-        }
-      }
-    },
-    "Box Jumps" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kastensprünge"
-          }
-        }
-      }
-    },
-    "Burpee" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Burpee"
-          }
-        }
-      }
-    },
-    "Burpees" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Burpees"
-          }
-        }
-      }
-    },
-    "Butt Kicks" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fersenlauf"
-          }
-        }
-      }
-    },
-    "Calf Raises" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wadenheben"
-          }
-        }
-      }
-    },
     "Cancel" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abbrechen"
-          }
-        }
-      }
-    },
-    "Cardio Kickstart" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cardio-Kickstart"
-          }
-        }
-      }
-    },
-    "Cardio-Strength Fusion" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cardio-Kraft-Fusion"
-          }
-        }
-      }
-    },
-    "Cat-Cow Stretch" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Katze-Kuh-Dehnung"
           }
         }
       }
@@ -508,34 +359,12 @@
         }
       }
     },
-    "Chair Pose" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stuhlhaltung"
-          }
-        }
-      }
-    },
     "Champion" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Champion"
-          }
-        }
-      }
-    },
-    "Classic Tabata" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klassisches Tabata"
           }
         }
       }
@@ -650,56 +479,12 @@
         }
       }
     },
-    "Core Crusher" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kernmuskel-Crusher"
-          }
-        }
-      }
-    },
-    "Core Stability Flow" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kernstabilitäts-Flow"
-          }
-        }
-      }
-    },
-    "Core Strength" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kernkraft"
-          }
-        }
-      }
-    },
     "Create first custom workout" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erstes angepasstes Workout erstellen"
-          }
-        }
-      }
-    },
-    "Criss-Cross" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Criss-Cross"
           }
         }
       }
@@ -834,28 +619,6 @@
         }
       }
     },
-    "Diamond Push-ups" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diamant-Liegestütze"
-          }
-        }
-      }
-    },
-    "Dips" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dips"
-          }
-        }
-      }
-    },
     "Discover Workouts" : {
       "localizations" : {
         "de" : {
@@ -872,94 +635,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fertig"
-          }
-        }
-      }
-    },
-    "Double Leg Stretch" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Doppelte Beindehnung"
-          }
-        }
-      }
-    },
-    "Downward Dog" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Herabschauender Hund"
-          }
-        }
-      }
-    },
-    "Dumbbell Chest Press" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kurzhantel-Brustpresse"
-          }
-        }
-      }
-    },
-    "Dumbbell Lunges" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kurzhantel-Ausfallschritte"
-          }
-        }
-      }
-    },
-    "Dumbbell Rows" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kurzhantel-Rudern"
-          }
-        }
-      }
-    },
-    "Dumbbell Shoulder Press" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kurzhantel-Schulterpresse"
-          }
-        }
-      }
-    },
-    "Dumbbell Squats" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kurzhantel-Kniebeugen"
-          }
-        }
-      }
-    },
-    "Dumbbell Total Body" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kurzhantel-Ganzkörper"
           }
         }
       }
@@ -1099,18 +774,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Workout beenden"
-          }
-        }
-      }
-    },
-    "Endurance Builder" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ausdauer-Aufbau"
+            "value" : "Beenden"
           }
         }
       }
@@ -1131,50 +795,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ewigkeit"
-          }
-        }
-      }
-    },
-    "Exercise 1" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Übung 1"
-          }
-        }
-      }
-    },
-    "Exercise 2" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Übung 2"
-          }
-        }
-      }
-    },
-    "Exercise 3" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Übung 3"
-          }
-        }
-      }
-    },
-    "Exercise 4" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Übung 4"
           }
         }
       }
@@ -1249,78 +869,12 @@
         }
       }
     },
-    "Flexibility and Mobility" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Flexibilität und Mobilität"
-          }
-        }
-      }
-    },
     "Fortnight" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zwei Wochen"
-          }
-        }
-      }
-    },
-    "Full Body" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ganzkörper"
-          }
-        }
-      }
-    },
-    "Full Body Fusion" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ganzkörper-Fusion"
-          }
-        }
-      }
-    },
-    "Functional Fitness" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Funktionelles Fitness"
-          }
-        }
-      }
-    },
-    "Glute Bridges" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gesäßbrücken"
-          }
-        }
-      }
-    },
-    "Goblet Squats" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Goblet Squats"
           }
         }
       }
@@ -1345,111 +899,12 @@
         }
       }
     },
-    "High Knees" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kniehebelauf"
-          }
-        }
-      }
-    },
-    "HIIT Cardio Blast" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HIIT Cardio-Explosion"
-          }
-        }
-      }
-    },
-    "Hip Circles" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hüftkreisen"
-          }
-        }
-      }
-    },
     "History" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verlauf"
-          }
-        }
-      }
-    },
-    "Jog" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Joggen"
-          }
-        }
-      }
-    },
-    "Jump Lunges" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sprung-Ausfallschritte"
-          }
-        }
-      }
-    },
-    "Jump Rope" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Seilspringen"
-          }
-        }
-      }
-    },
-    "Jump Squats" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sprung-Kniebeugen"
-          }
-        }
-      }
-    },
-    "Jumping Jacks" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hampelmänner"
-          }
-        }
-      }
-    },
-    "Kettlebell Swings" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kettlebell-Schwünge"
           }
         }
       }
@@ -1484,39 +939,6 @@
         }
       }
     },
-    "Leg Day" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beintag"
-          }
-        }
-      }
-    },
-    "Leg Raises" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beinheben"
-          }
-        }
-      }
-    },
-    "Leg Swings" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beinschwünge"
-          }
-        }
-      }
-    },
     "Legal Notice" : {
       "localizations" : {
         "de" : {
@@ -1547,45 +969,12 @@
         }
       }
     },
-    "Lower Body Burner" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterkörper-Brenner"
-          }
-        }
-      }
-    },
-    "Lunges" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ausfallschritte"
-          }
-        }
-      }
-    },
     "Menu" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menü"
-          }
-        }
-      }
-    },
-    "Metabolic Booster" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stoffwechsel-Booster"
           }
         }
       }
@@ -1630,56 +1019,12 @@
         }
       }
     },
-    "Mountain Climbers" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bergsteiger"
-          }
-        }
-      }
-    },
-    "My Workout" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mein Workout"
-          }
-        }
-      }
-    },
     "New" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Neu"
-          }
-        }
-      }
-    },
-    "New Workout" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neues Workout"
-          }
-        }
-      }
-    },
-    "New Workout %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neues Workout %lld"
           }
         }
       }
@@ -1699,7 +1044,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nächste: %@"
+            "value" : "Danach: %@"
           }
         }
       }
@@ -1754,83 +1099,6 @@
         }
       }
     },
-    "Pilates Core Sculpt" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pilates-Kern-Formung"
-          }
-        }
-      }
-    },
-    "Plank" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterarmstütz"
-          }
-        }
-      }
-    },
-    "Plank Jacks" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterarmstütz-Hampelmänner"
-          }
-        }
-      }
-    },
-    "Plyo Push-ups" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plyometrische Liegestütze"
-          }
-        }
-      }
-    },
-    "Plyometric Power" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plyometrische Kraft"
-          }
-        }
-      }
-    },
-    "Power Yoga Flow" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Power-Yoga-Flow"
-          }
-        }
-      }
-    },
-    "Preparation" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vorbereitung"
-          }
-        }
-      }
-    },
     "Preview" : {
       "localizations" : {
         "de" : {
@@ -1851,34 +1119,12 @@
         }
       }
     },
-    "Push-ups" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liegestütze"
-          }
-        }
-      }
-    },
     "Quelle" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelle"
-          }
-        }
-      }
-    },
-    "Quick HIIT" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schnelles HIIT"
           }
         }
       }
@@ -1893,56 +1139,12 @@
         }
       }
     },
-    "Renegade Rows" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Renegade Rows"
-          }
-        }
-      }
-    },
     "Resilient" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Widerstandsfähig"
-          }
-        }
-      }
-    },
-    "Rest" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pause"
-          }
-        }
-      }
-    },
-    "Roll Up" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aufrollen"
-          }
-        }
-      }
-    },
-    "Russian Twists" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Russische Twists"
           }
         }
       }
@@ -2007,105 +1209,6 @@
         }
       }
     },
-    "Side Plank (Left)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Seitstütz (Links)"
-          }
-        }
-      }
-    },
-    "Side Plank (Right)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Seitstütz (Rechts)"
-          }
-        }
-      }
-    },
-    "Single Leg Circles" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einbeinige Kreise"
-          }
-        }
-      }
-    },
-    "Sit-ups" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit-ups"
-          }
-        }
-      }
-    },
-    "Sprint" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sprint"
-          }
-        }
-      }
-    },
-    "Sprint Intervals" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sprint-Intervalle"
-          }
-        }
-      }
-    },
-    "Squat Jumps" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kniebeuge-Sprünge"
-          }
-        }
-      }
-    },
-    "Squat Thrusts" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liegestütz-Hocksprünge"
-          }
-        }
-      }
-    },
-    "Squats" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kniebeugen"
-          }
-        }
-      }
-    },
     "Starter" : {
       "localizations" : {
         "de" : {
@@ -2126,89 +1229,12 @@
         }
       }
     },
-    "Strength Endurance" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kraftausdauer"
-          }
-        }
-      }
-    },
-    "Sun Salutation A" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sonnengruß A"
-          }
-        }
-      }
-    },
-    "Superman" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Superman"
-          }
-        }
-      }
-    },
-    "Tabata Turbo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tabata Turbo"
-          }
-        }
-      }
-    },
-    "Teaser" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Teaser"
-          }
-        }
-      }
-    },
     "Terms and Conditions" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "AGB"
-          }
-        }
-      }
-    },
-    "Test Workout" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Test-Workout"
-          }
-        }
-      }
-    },
-    "The Hundred" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die Hundert"
           }
         }
       }
@@ -2223,34 +1249,12 @@
         }
       }
     },
-    "Torso Twists" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oberkörperdrehungen"
-          }
-        }
-      }
-    },
     "Total Duration:" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gesamtdauer:"
-          }
-        }
-      }
-    },
-    "Tricep Dips" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trizeps-Dips"
           }
         }
       }
@@ -2295,17 +1299,6 @@
         }
       }
     },
-    "Tuck Jumps" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hocksprünge"
-          }
-        }
-      }
-    },
     "Unstoppable" : {
       "localizations" : {
         "de" : {
@@ -2316,89 +1309,12 @@
         }
       }
     },
-    "Upper Body" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oberkörper"
-          }
-        }
-      }
-    },
-    "Upper Body Blitz" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oberkörper-Blitz"
-          }
-        }
-      }
-    },
     "Visit our website" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Besuche unsere Website"
-          }
-        }
-      }
-    },
-    "Walk" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gehen"
-          }
-        }
-      }
-    },
-    "Wall Push-ups" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wand-Liegestütze"
-          }
-        }
-      }
-    },
-    "Wall Sit" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wandsitz"
-          }
-        }
-      }
-    },
-    "Warrior I" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Krieger I"
-          }
-        }
-      }
-    },
-    "Warrior II" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Krieger II"
           }
         }
       }
@@ -2419,17 +1335,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trainiere für 1 Tag"
-          }
-        }
-      }
-    },
-    "Workout" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Workout"
           }
         }
       }
