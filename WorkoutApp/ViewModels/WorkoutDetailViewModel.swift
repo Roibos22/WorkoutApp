@@ -66,18 +66,18 @@ class WorkoutDetailViewModel: ObservableObject {
         appState.deleteWorkout(workout)
     }
 
-    func updateTitle(_ title: LocalizedStringResource) {
-        var newTitle = String(localized: title).trimmingCharacters(in: .whitespacesAndNewlines)
+    func updateTitle(_ title: String) {
+        var newTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
         var counter = 1
         
-        while appState.workouts.contains(where: { $0.id != workout.id && String(localized: $0.title) == newTitle }) {
+        while appState.workouts.contains(where: { $0.id != workout.id && $0.title == newTitle }) {
             counter += 1
             newTitle = "\(title) \(counter)"
         }
         
         appState.updateTitleCompletedWorkouts(workout: workout, title: workout.title)
 
-        workout.title = LocalizedStringResource(stringLiteral: newTitle)
+        workout.title = newTitle
         saveWorkout()
     }
     

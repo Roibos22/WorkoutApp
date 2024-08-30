@@ -9,7 +9,7 @@ import Foundation
 
 struct Activity: Hashable, Identifiable {
     let id: UUID
-    var title: LocalizedStringResource
+    var title: String
     var type: ActivityType
     var duration: TimeInterval
     var timeLeft: TimeInterval
@@ -17,7 +17,7 @@ struct Activity: Hashable, Identifiable {
     var cycleNo: Int
     var activityNo: Int
     
-    init(id: UUID = UUID(), title: LocalizedStringResource, type: ActivityType, duration: TimeInterval, timeLeft: TimeInterval, startingTime: TimeInterval, cycleNo: Int, activityNo: Int) {
+    init(id: UUID = UUID(), title: String, type: ActivityType, duration: TimeInterval, timeLeft: TimeInterval, startingTime: TimeInterval, cycleNo: Int, activityNo: Int) {
         self.id = id
         self.title = title
         self.type = type

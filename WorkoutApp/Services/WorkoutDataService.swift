@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class WorkoutDataService {
     private let dataManager: DataManager
@@ -78,22 +79,26 @@ class WorkoutDataService {
     }
     
     func generateNewWorkout() -> Workout {
-        var title: LocalizedStringResource = "Workout"
-        var tmp: LocalizedStringResource = title
-        var counter: Int = 1
+        let baseTitle = String(localized: "New Workout")
+        var title = baseTitle
+        var counter = 1
         
-        while dataManager.loadWorkouts().contains(where: { $0.title == tmp }) {
+        while dataManager.loadWorkouts().contains(where: { $0.title == title }) {
             counter += 1
-            tmp = "\(title) \(counter)"
+            title = String(localized: "New Workout \(counter)")
         }
-        title = tmp
         
-        return Workout(id: UUID(), title: title, cycles: 3, cycleRestTime: 60,
+        return Workout(
+            id: UUID(),
+            title: title,
+            cycles: 3,
+            cycleRestTime: 60,
             exercises: [
-                Exercise(title: "Exercise 1", duration: 20, rest: 10),
-                Exercise(title: "Exercise 2", duration: 20, rest: 10),
-                Exercise(title: "Exercise 3", duration: 20, rest: 10)
-            ])
+                Exercise(title: String(localized: "Exercise 1"), duration: 20, rest: 10),
+                Exercise(title: String(localized: "Exercise 2"), duration: 20, rest: 10),
+                Exercise(title: String(localized: "Exercise 3"), duration: 20, rest: 10)
+            ]
+        )
     }
 
 }

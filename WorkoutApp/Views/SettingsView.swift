@@ -114,9 +114,9 @@ struct SettingsView: View {
         }
     }
     
-    private func linkItem(_ title: LocalizedStringResource, url: URL) -> some View {
+    private func linkItem(_ title: LocalizedStringKey, url: URL) -> some View {
         HStack {
-            Link(String(localized: title), destination: url)
+            Link(title, destination: url)
                 .multilineTextAlignment(.leading)
             Spacer()
             Image(systemName: "chevron.right")

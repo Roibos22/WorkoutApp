@@ -92,7 +92,7 @@ class AppState: ObservableObject {
         historyService.saveCompletedWorkoutSession(session)
     }
     
-    func updateTitleCompletedWorkouts(workout: Workout, title: LocalizedStringResource) {
+    func updateTitleCompletedWorkouts(workout: Workout, title: String) {
         let completedWorkouts = getWorkoutsHistory()
         var updatedCompletedWorkouts: [CompletedWorkout] = []
         

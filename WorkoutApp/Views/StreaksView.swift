@@ -87,7 +87,7 @@ struct StreaksView: View {
                 achievementsScrollView(appState: appState, title: "Streaks", achievements: streakAchievements)
                 achievementsScrollView(appState: appState, title: "Completions", achievements: completionAchievements)
                 achievementsScrollView(appState: appState, title: "Duration", achievements: durationAchievements)
-                achievementsScrollView(appState: appState, title: "More", achievements: miscAchievements)
+                achievementsScrollView(appState: appState, title: "More Achievements", achievements: miscAchievements)
                 
             }
             .padding(.bottom, 40)
@@ -178,7 +178,7 @@ struct AchievementView: View {
         ZStack {
             VStack {
                 achievementCard
-                Text(achievement.title)
+                Text(LocalizedStringKey(achievement.title))
                     .font(.title3)
                     .bold()
                     .padding(.bottom)
@@ -228,7 +228,7 @@ struct AchievementView: View {
                     showingInfo = false
                 }
             } label: {
-                Text(achievement.caption)
+                Text(LocalizedStringKey(achievement.caption))
                     .padding()
                     .foregroundColor(.black)
                     .background(Color.white)
