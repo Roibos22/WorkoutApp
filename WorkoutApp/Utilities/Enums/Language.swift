@@ -26,4 +26,25 @@ enum Language: String, Identifiable, Codable, Equatable {
         case .german: return "Deutsch 🇩🇪"
         }
     }
+    
+    var defaultWorkoutTitle: String {
+        switch self {
+        case .english: return "New Workout"
+        case .german: return "Neues Workout"
+        }
+    }
+    
+    var defaultExerciseTitle: String {
+        switch self {
+        case .english: return "Exercise"
+        case .german: return "Übung"
+        }
+    }
+    
+    var defaultNewExerciseTitle: String {
+        switch self {
+        case .english: return "New Exercise"
+        case .german: return "Neue Übung"
+        }
+    }
 }

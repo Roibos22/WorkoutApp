@@ -1136,6 +1136,7 @@
       }
     },
     "Exercise 1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1146,6 +1147,7 @@
       }
     },
     "Exercise 2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1156,6 +1158,7 @@
       }
     },
     "Exercise 3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1660,6 +1663,7 @@
       }
     },
     "New Workout" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1670,6 +1674,7 @@
       }
     },
     "New Workout %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

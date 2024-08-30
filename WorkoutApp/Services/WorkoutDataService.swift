@@ -79,13 +79,15 @@ class WorkoutDataService {
     }
     
     func generateNewWorkout() -> Workout {
-        let baseTitle = String(localized: "New Workout")
+        let language: Language = Language(rawValue: UserDefaults.standard.string(forKey: "AppLanguage") ?? "EN") ?? .english
+        
+        let baseTitle = language.defaultWorkoutTitle
         var title = baseTitle
         var counter = 1
         
         while dataManager.loadWorkouts().contains(where: { $0.title == title }) {
             counter += 1
-            title = String(localized: "New Workout \(counter)")
+            title = "\(baseTitle) \(counter)"
         }
         
         return Workout(
@@ -94,9 +96,9 @@ class WorkoutDataService {
             cycles: 3,
             cycleRestTime: 60,
             exercises: [
-                Exercise(title: String(localized: "Exercise 1"), duration: 20, rest: 10),
-                Exercise(title: String(localized: "Exercise 2"), duration: 20, rest: 10),
-                Exercise(title: String(localized: "Exercise 3"), duration: 20, rest: 10)
+                Exercise(title: String("\(language.defaultExerciseTitle) 1"), duration: 20, rest: 10),
+                Exercise(title: String("\(language.defaultExerciseTitle) 2"), duration: 20, rest: 10),
+                Exercise(title: String("\(language.defaultExerciseTitle) 3"), duration: 20, rest: 10)
             ]
         )
     }
