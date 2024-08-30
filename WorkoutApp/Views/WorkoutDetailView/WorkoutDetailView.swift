@@ -55,12 +55,12 @@ struct WorkoutDetailView: View {
             }
             ToolbarItem(placement: .principal) {
                 if workoutType == .custom {
-                    TextField("Workout Title", text: $viewModel.workoutTitle)
+                    TextField("Workout Title", text: $viewModel.workout.title)
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.title)
                         .bold()
                         .onSubmit {
-                            viewModel.updateTitle("\(viewModel.workoutTitle)")
+                            viewModel.updateTitle(viewModel.workout.title)
                         }
                 } else if workoutType == .preset {
                     HStack {

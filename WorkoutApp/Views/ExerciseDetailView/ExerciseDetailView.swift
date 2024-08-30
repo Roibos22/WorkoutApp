@@ -35,13 +35,10 @@ struct ExerciseDetailView: View {
                     dismissButton
                 } 
                 ToolbarItem(placement: .principal) {
-                    TextField("Exercise Title", text: Binding(
-                        get: { String(localized: viewModel.exercise.title) },
-                        set: { viewModel.exercise.title = LocalizedStringResource(stringLiteral: $0) }
-                    ))
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .font(.title)
-                    .bold()
+                    TextField("Exercise Title", text: $viewModel.exercise.title)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .font(.title)
+                        .bold()
                 }
             }
         }

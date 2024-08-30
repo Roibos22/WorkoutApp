@@ -13,14 +13,11 @@ class WorkoutDetailViewModel: ObservableObject {
     @Published var showDeleteNotPossibleAlert = false
     private let appState: AppState
     let isNewWorkout: Bool
-    var workoutTitle: String
 
     init(workout: Workout? = nil, appState: AppState) {
         self.appState = appState
         self.isNewWorkout = workout == nil
         self.workout = workout ?? appState.generateNewWorkout()
-//        self.workoutTitle = "\(workout?.title ?? "Workout")"
-        self.workoutTitle = String(localized: workout?.title ?? "Workout")
     }
     
     func saveWorkout(notifyObservers: Bool = false) {
@@ -73,7 +70,7 @@ class WorkoutDetailViewModel: ObservableObject {
         var newTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
         var counter = 1
         
-        while appState.workouts.contains(where: { $0.id != workout.id && String(localized: $0.title) == newTitle }) {
+        while appState.workouts.contains(where: { $0.id != workout.id && $0.title == newTitle }) {
             counter += 1
             newTitle = "\(title) \(counter)"
         }

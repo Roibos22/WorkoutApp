@@ -85,7 +85,7 @@ class WorkoutDataService {
         var title = baseTitle
         var counter = 1
         
-        while dataManager.loadWorkouts().contains(where: { String(localized: $0.title) == title }) {
+        while dataManager.loadWorkouts().contains(where: {$0.title == title }) {
             counter += 1
             title = "\(baseTitle) \(counter)"
         }
