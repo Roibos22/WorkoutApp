@@ -144,7 +144,9 @@ struct LegalNoticeView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                vStack(title: "Angaben gemäß § 5 TMG", content: """
+                vStack(title: "Legal Notice", content: """
+                Angaben gemäß § 5 TMG
+                
                 Leon Grimmeisen
                 Petersburger Straße 42
                 10249 Berlin

@@ -8,12 +8,24 @@
             "state" : "translated",
             "value" : ""
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " "
+          }
         }
       }
     },
     "%@" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@"
@@ -34,6 +46,12 @@
             "state" : "new",
             "value" : "%1$@ (%2$@)"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ (%2$@)"
+          }
         }
       }
     },
@@ -50,6 +68,12 @@
             "state" : "new",
             "value" : "%1$@ (%2$lld/%3$lld)"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ (%2$lld/%3$lld)"
+          }
         }
       }
     },
@@ -60,12 +84,24 @@
             "state" : "translated",
             "value" : "%@ trainiert"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ worked out"
+          }
         }
       }
     },
     "%lld" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -80,6 +116,12 @@
             "state" : "translated",
             "value" : "%lld abgeschlossenes Workout"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld completed workout"
+          }
         }
       }
     },
@@ -89,6 +131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld abgeschlossene Workouts"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld completed workouts"
           }
         }
       }
@@ -100,6 +148,12 @@
             "state" : "translated",
             "value" : "%lld Zyklen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Cycles"
+          }
         }
       }
     },
@@ -109,6 +163,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld Übungen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Exercises"
           }
         }
       }
@@ -120,6 +180,12 @@
             "state" : "translated",
             "value" : "%lld Min."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
         }
       }
     },
@@ -130,6 +196,12 @@
             "state" : "translated",
             "value" : "%lld Sek."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sec"
+          }
         }
       }
     },
@@ -139,6 +211,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld. Durchgang"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld. Cycle"
           }
         }
       }
@@ -156,12 +234,24 @@
             "state" : "new",
             "value" : "%1$lld/%2$lld"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld/%2$lld"
+          }
         }
       }
     },
     "+" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "+"
@@ -176,6 +266,12 @@
             "state" : "translated",
             "value" : "1 Stunde Gesamttrainingszeit"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 hour total workout time"
+          }
         }
       }
     },
@@ -185,6 +281,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "3 Tage Trainings-Streak"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3-day workout streak"
           }
         }
       }
@@ -196,6 +298,12 @@
             "state" : "translated",
             "value" : "5 Stunden Gesamttrainingszeit"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 hours total workout time"
+          }
         }
       }
     },
@@ -205,6 +313,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "7 Tage Trainings-Streak"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7-day workout streak"
           }
         }
       }
@@ -216,6 +330,12 @@
             "state" : "translated",
             "value" : "10 Stunden Gesamttrainingszeit"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 hours total workout time"
+          }
         }
       }
     },
@@ -225,6 +345,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "14 Tage Trainings-Streak"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "14-day workout streak"
           }
         }
       }
@@ -236,6 +362,12 @@
             "state" : "translated",
             "value" : "24 Stunden Gesamttrainingszeit"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "24 hours total workout time"
+          }
         }
       }
     },
@@ -245,6 +377,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "30 Tage Trainings-Streak"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "30-day workout streak"
           }
         }
       }
@@ -256,6 +394,12 @@
             "state" : "translated",
             "value" : "48 Stunden Gesamttrainingszeit"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "48 hours total workout time"
+          }
         }
       }
     },
@@ -265,6 +409,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "90 Tage Trainings-Streak"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "90-day workout streak"
           }
         }
       }
@@ -276,6 +426,12 @@
             "state" : "translated",
             "value" : "100 Stunden Gesamttrainingszeit"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "100 hours total workout time"
+          }
         }
       }
     },
@@ -285,6 +441,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erfolge"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achievements"
           }
         }
       }
@@ -296,6 +458,12 @@
             "state" : "translated",
             "value" : "Aktivität"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activity"
+          }
         }
       }
     },
@@ -305,6 +473,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Passe deine Filter an oder schließe ein Workout ab, um deinen Verlauf zu sehen!"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adjust your filters or complete a workout to see your history!"
           }
         }
       }
@@ -316,15 +490,11 @@
             "state" : "translated",
             "value" : "Abenteurer"
           }
-        }
-      }
-    },
-    "Angaben gemäß § 5 TMG" : {
-      "localizations" : {
-        "de" : {
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Angaben gemäß § 5 TMG"
+            "value" : "Adventurer"
           }
         }
       }
@@ -336,6 +506,12 @@
             "state" : "translated",
             "value" : "Bist du sicher, dass du dein Workout beenden möchtest?"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to end your workout?"
+          }
         }
       }
     },
@@ -345,6 +521,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abbrechen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
           }
         }
       }
@@ -356,12 +538,24 @@
             "state" : "translated",
             "value" : "Zenturio"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Centurion"
+          }
         }
       }
     },
     "Champion" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Champion"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Champion"
@@ -376,6 +570,12 @@
             "state" : "translated",
             "value" : "Engagiert"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Committed"
+          }
         }
       }
     },
@@ -385,6 +585,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "1 Workout abschließen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 1 workout"
           }
         }
       }
@@ -396,6 +602,12 @@
             "state" : "translated",
             "value" : "5 Workouts abschließen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 5 workouts"
+          }
         }
       }
     },
@@ -405,6 +617,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "15 Workouts abschließen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 15 workouts"
           }
         }
       }
@@ -416,6 +634,12 @@
             "state" : "translated",
             "value" : "30 Workouts abschließen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 30 workouts"
+          }
         }
       }
     },
@@ -425,6 +649,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "50 Workouts abschließen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 50 workouts"
           }
         }
       }
@@ -436,6 +666,12 @@
             "state" : "translated",
             "value" : "100 Workouts abschließen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 100 workouts"
+          }
         }
       }
     },
@@ -445,6 +681,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ein Workout vor 6 Uhr morgens abschließen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete a workout before 6 AM"
           }
         }
       }
@@ -456,6 +698,12 @@
             "state" : "translated",
             "value" : "Abschlüsse"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Completions"
+          }
         }
       }
     },
@@ -465,6 +713,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Glückwunsch!"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Congratulations!"
           }
         }
       }
@@ -476,6 +730,12 @@
             "state" : "translated",
             "value" : "Beständig"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consistent"
+          }
         }
       }
     },
@@ -485,6 +745,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erstes angepasstes Workout erstellen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create first custom workout"
           }
         }
       }
@@ -496,6 +762,12 @@
             "state" : "translated",
             "value" : "Neugierig"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Curious"
+          }
         }
       }
     },
@@ -505,6 +777,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aktueller Streak"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current Streak"
           }
         }
       }
@@ -516,6 +794,12 @@
             "state" : "translated",
             "value" : "Zyklus-Pause"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle Rest"
+          }
         }
       }
     },
@@ -525,6 +809,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zyklus Einstellungen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle Settings"
           }
         }
       }
@@ -536,6 +826,12 @@
             "state" : "translated",
             "value" : "Zyklen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycles"
+          }
         }
       }
     },
@@ -545,6 +841,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Engagiert"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dedicated"
           }
         }
       }
@@ -556,6 +858,12 @@
             "state" : "translated",
             "value" : "Löschen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
         }
       }
     },
@@ -565,6 +873,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Übung löschen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Exercise"
           }
         }
       }
@@ -576,6 +890,12 @@
             "state" : "translated",
             "value" : "Übung löschen?"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Exercise?"
+          }
         }
       }
     },
@@ -585,6 +905,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Workout löschen?"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Workout?"
           }
         }
       }
@@ -596,6 +922,12 @@
             "state" : "translated",
             "value" : "Löschen nicht möglich"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deletion not possible"
+          }
         }
       }
     },
@@ -606,12 +938,24 @@
             "state" : "translated",
             "value" : "Alle abwählen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deselect All"
+          }
         }
       }
     },
     "Designer" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Designer"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Designer"
@@ -626,6 +970,12 @@
             "state" : "translated",
             "value" : "Workouts entdecken"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discover Workouts"
+          }
         }
       }
     },
@@ -635,6 +985,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fertig"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
           }
         }
       }
@@ -646,6 +1002,12 @@
             "state" : "translated",
             "value" : "Dauer"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duration"
+          }
         }
       }
     },
@@ -655,6 +1017,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dauer (Startzeit)"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duration (Start Time)"
           }
         }
       }
@@ -666,6 +1034,12 @@
             "state" : "translated",
             "value" : "Frühaufsteher"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Early Bird"
+          }
         }
       }
     },
@@ -675,6 +1049,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zyklus-Einstellungen bearbeiten"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Cycle Settings"
           }
         }
       }
@@ -686,6 +1066,12 @@
             "state" : "translated",
             "value" : "Dauer für alle Übungen bearbeiten"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit duration for all exercises"
+          }
         }
       }
     },
@@ -695,6 +1081,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dauer für alle Übungen bearbeiten"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Duration for all Exercises"
           }
         }
       }
@@ -706,6 +1098,12 @@
             "state" : "translated",
             "value" : "Übungsdauer bearbeiten"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit exercise duration"
+          }
         }
       }
     },
@@ -715,6 +1113,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Übungspause bearbeiten"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit exercise rest time"
           }
         }
       }
@@ -726,6 +1130,12 @@
             "state" : "translated",
             "value" : "Übungen bearbeiten"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Exercises"
+          }
         }
       }
     },
@@ -735,6 +1145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anzahl der Zyklen bearbeiten"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit number of cycles"
           }
         }
       }
@@ -746,6 +1162,12 @@
             "state" : "translated",
             "value" : "Pausenzeit zwischen Zyklen bearbeiten"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit rest time between cycles"
+          }
         }
       }
     },
@@ -755,6 +1177,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pausenzeit für alle Übungen bearbeiten"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit rest time for all exercises"
           }
         }
       }
@@ -766,6 +1194,12 @@
             "state" : "translated",
             "value" : "Workouts bearbeiten"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Workouts"
+          }
         }
       }
     },
@@ -775,6 +1209,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beenden"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End Workout"
           }
         }
       }
@@ -786,6 +1226,12 @@
             "state" : "translated",
             "value" : "Ausdauernd"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enduring"
+          }
         }
       }
     },
@@ -795,6 +1241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ewigkeit"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eternity"
           }
         }
       }
@@ -806,6 +1258,12 @@
             "state" : "translated",
             "value" : "Übungsdauer"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercise Duration"
+          }
         }
       }
     },
@@ -815,6 +1273,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Übungspause"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercise Rest"
           }
         }
       }
@@ -826,6 +1290,12 @@
             "state" : "translated",
             "value" : "Übungstitel"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercise Title"
+          }
         }
       }
     },
@@ -835,6 +1305,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Übungen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercises"
           }
         }
       }
@@ -846,6 +1322,12 @@
             "state" : "translated",
             "value" : "Abgeschlossene Übungen:"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercises completed:"
+          }
         }
       }
     },
@@ -855,6 +1337,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entdecker"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explorer"
           }
         }
       }
@@ -866,6 +1354,12 @@
             "state" : "translated",
             "value" : "Workouts filtern"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter Workouts"
+          }
         }
       }
     },
@@ -875,6 +1369,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zwei Wochen"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortnight"
           }
         }
       }
@@ -886,6 +1386,12 @@
             "state" : "translated",
             "value" : "Haftung für Links"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liability for Links"
+          }
         }
       }
     },
@@ -895,6 +1401,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hallo, Welt!"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello, World!"
           }
         }
       }
@@ -906,6 +1418,12 @@
             "state" : "translated",
             "value" : "Verlauf"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "History"
+          }
         }
       }
     },
@@ -915,6 +1433,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Auftakt"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kickoff"
           }
         }
       }
@@ -926,6 +1450,12 @@
             "state" : "translated",
             "value" : "Kontakt"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact"
+          }
         }
       }
     },
@@ -935,6 +1465,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sprache"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Language"
           }
         }
       }
@@ -946,6 +1482,12 @@
             "state" : "translated",
             "value" : "Impressum"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legal Notice"
+          }
         }
       }
     },
@@ -955,6 +1497,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lädt..."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
           }
         }
       }
@@ -966,6 +1514,12 @@
             "state" : "translated",
             "value" : "Längster Streak"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longest Streak"
+          }
         }
       }
     },
@@ -975,6 +1529,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menü"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu"
           }
         }
       }
@@ -986,6 +1546,12 @@
             "state" : "translated",
             "value" : "Minuten"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minutes"
+          }
         }
       }
     },
@@ -995,6 +1561,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Monatlich"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monthly"
           }
         }
       }
@@ -1006,6 +1578,12 @@
             "state" : "translated",
             "value" : "Mehr"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More"
+          }
         }
       }
     },
@@ -1015,6 +1593,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mehr Erfolge"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More Achievements"
           }
         }
       }
@@ -1026,6 +1610,12 @@
             "state" : "translated",
             "value" : "Neu"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New"
+          }
         }
       }
     },
@@ -1035,6 +1625,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Neuling"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Newbie"
           }
         }
       }
@@ -1046,6 +1642,12 @@
             "state" : "translated",
             "value" : "Danach: %@"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next: %@"
+          }
         }
       }
     },
@@ -1055,6 +1657,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keine Workouts gefunden"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Workouts Found"
           }
         }
       }
@@ -1066,12 +1674,24 @@
             "state" : "translated",
             "value" : "Nummer"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Number"
+          }
         }
       }
     },
     "OK" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
@@ -1086,6 +1706,12 @@
             "state" : "translated",
             "value" : "Organisator"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organiser"
+          }
         }
       }
     },
@@ -1095,6 +1721,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beharrlich"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Persistent"
           }
         }
       }
@@ -1106,6 +1738,12 @@
             "state" : "translated",
             "value" : "Vorschau"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preview"
+          }
         }
       }
     },
@@ -1115,6 +1753,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Datenschutzrichtlinie"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy Policy"
           }
         }
       }
@@ -1126,6 +1770,12 @@
             "state" : "translated",
             "value" : "Quelle"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source"
+          }
         }
       }
     },
@@ -1135,6 +1785,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "WorkoutPulse bewerten"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate WorkoutPulse"
           }
         }
       }
@@ -1146,6 +1802,12 @@
             "state" : "translated",
             "value" : "Widerstandsfähig"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resilient"
+          }
         }
       }
     },
@@ -1155,6 +1817,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Speichern"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
           }
         }
       }
@@ -1166,6 +1834,12 @@
             "state" : "translated",
             "value" : "Workout-Vorlage gespeichert"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved a template workout"
+          }
         }
       }
     },
@@ -1175,6 +1849,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sekunden"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seconds"
           }
         }
       }
@@ -1186,6 +1866,12 @@
             "state" : "translated",
             "value" : "Alle auswählen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select All"
+          }
         }
       }
     },
@@ -1195,6 +1881,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Feedback senden"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send Feedback"
           }
         }
       }
@@ -1206,6 +1898,12 @@
             "state" : "translated",
             "value" : "Einstellungen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
         }
       }
     },
@@ -1215,6 +1913,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anfänger"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starter"
           }
         }
       }
@@ -1226,6 +1930,12 @@
             "state" : "translated",
             "value" : "Streak"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Streaks"
+          }
         }
       }
     },
@@ -1235,6 +1945,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "AGB"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terms and Conditions"
           }
         }
       }
@@ -1246,6 +1962,12 @@
             "state" : "translated",
             "value" : "Zeitnehmer"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timekeeper"
+          }
         }
       }
     },
@@ -1255,6 +1977,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gesamtdauer:"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Duration:"
           }
         }
       }
@@ -1266,6 +1994,12 @@
             "state" : "translated",
             "value" : "Dreifach"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tripler"
+          }
         }
       }
     },
@@ -1275,6 +2009,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Probiere 3 verschiedene Workouts aus"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try 3 different workouts"
           }
         }
       }
@@ -1286,6 +2026,12 @@
             "state" : "translated",
             "value" : "Probiere 5 verschiedene Workouts aus"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try 5 different workouts"
+          }
         }
       }
     },
@@ -1295,6 +2041,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Probiere 10 verschiedene Workouts aus"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try 10 different workouts"
           }
         }
       }
@@ -1306,6 +2058,12 @@
             "state" : "translated",
             "value" : "Unaufhaltsam"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unstoppable"
+          }
         }
       }
     },
@@ -1315,6 +2073,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Besuche unsere Website"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visit our website"
           }
         }
       }
@@ -1326,6 +2090,12 @@
             "state" : "translated",
             "value" : "Wochenlang"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weeklong"
+          }
         }
       }
     },
@@ -1335,6 +2105,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trainiere für 1 Tag"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Work out for 1 day"
           }
         }
       }
@@ -1346,6 +2122,12 @@
             "state" : "translated",
             "value" : "Workout-Einstellungen"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workout Settings"
+          }
         }
       }
     },
@@ -1355,6 +2137,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Workout-Titel"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workout Title"
           }
         }
       }
@@ -1366,6 +2154,12 @@
             "state" : "translated",
             "value" : "Du hast gerade ein weiteres Workout beendet"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You just finished another Workout"
+          }
         }
       }
     },
@@ -1376,6 +2170,12 @@
             "state" : "translated",
             "value" : "Du musst mindestens eine Übung in deinem Workout haben."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You need to have at least one Exercise in your workout."
+          }
         }
       }
     },
@@ -1385,6 +2185,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Deine Workouts"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your Workouts"
           }
         }
       }
