@@ -26,6 +26,12 @@
             "state" : "translated",
             "value" : ""
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
         }
       }
     },
@@ -50,6 +56,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@"
@@ -88,6 +100,12 @@
             "state" : "translated",
             "value" : "%1$@ (%2$@)"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ (%2$@)"
+          }
         }
       }
     },
@@ -122,6 +140,12 @@
             "state" : "translated",
             "value" : "%1$@ (%2$lld/%3$lld)"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ (%2$lld/%3$lld)"
+          }
         }
       }
     },
@@ -150,6 +174,12 @@
             "state" : "translated",
             "value" : "%@ si è allenato"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ treinou"
+          }
         }
       }
     },
@@ -174,6 +204,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -206,6 +242,12 @@
             "state" : "translated",
             "value" : "%lld allenamento completato"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld treino concluído"
+          }
         }
       }
     },
@@ -233,6 +275,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld allenamenti completati"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld treinos concluídos"
           }
         }
       }
@@ -262,6 +310,12 @@
             "state" : "translated",
             "value" : "%lld Cicli"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Ciclos"
+          }
         }
       }
     },
@@ -290,6 +344,12 @@
             "state" : "translated",
             "value" : "%lld Esercizi"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Exercícios"
+          }
         }
       }
     },
@@ -314,6 +374,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld min"
@@ -346,6 +412,12 @@
             "state" : "translated",
             "value" : "%lld sec"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld seg"
+          }
         }
       }
     },
@@ -370,6 +442,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld. Ciclo"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld. Ciclo"
@@ -408,6 +486,12 @@
             "state" : "translated",
             "value" : "%1$lld/%2$lld"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld/%2$lld"
+          }
         }
       }
     },
@@ -432,6 +516,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "+"
@@ -464,6 +554,12 @@
             "state" : "translated",
             "value" : "1 ora di tempo totale di allenamento"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 hora de tempo total de treino"
+          }
         }
       }
     },
@@ -491,6 +587,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serie di allenamenti di 3 giorni"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sequência de treino de 3 dias"
           }
         }
       }
@@ -520,6 +622,12 @@
             "state" : "translated",
             "value" : "5 ore di tempo totale di allenamento"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 horas de tempo total de treino"
+          }
         }
       }
     },
@@ -547,6 +655,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serie di allenamenti di 7 giorni"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sequência de treino de 7 dias"
           }
         }
       }
@@ -576,6 +690,12 @@
             "state" : "translated",
             "value" : "10 ore di tempo totale di allenamento"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 horas de tempo total de treino"
+          }
         }
       }
     },
@@ -603,6 +723,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serie di allenamenti di 14 giorni"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sequência de treino de 14 dias"
           }
         }
       }
@@ -632,6 +758,12 @@
             "state" : "translated",
             "value" : "24 ore di tempo totale di allenamento"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "24 horas de tempo total de treino"
+          }
         }
       }
     },
@@ -659,6 +791,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serie di allenamenti di 30 giorni"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sequência de treino de 30 dias"
           }
         }
       }
@@ -688,6 +826,12 @@
             "state" : "translated",
             "value" : "48 ore di tempo totale di allenamento"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "48 horas de tempo total de treino"
+          }
         }
       }
     },
@@ -715,6 +859,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serie di allenamenti di 90 giorni"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sequência de treino de 90 dias"
           }
         }
       }
@@ -744,6 +894,12 @@
             "state" : "translated",
             "value" : "100 ore di tempo totale di allenamento"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "100 horas de tempo total de treino"
+          }
         }
       }
     },
@@ -771,6 +927,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Obiettivi raggiunti"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conquistas"
           }
         }
       }
@@ -800,6 +962,12 @@
             "state" : "translated",
             "value" : "Attività"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atividade"
+          }
         }
       }
     },
@@ -827,6 +995,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Regola i tuoi filtri o completa un allenamento per vedere la tua cronologia!"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuste seus filtros ou complete um treino para ver seu histórico!"
           }
         }
       }
@@ -856,6 +1030,12 @@
             "state" : "translated",
             "value" : "Avventuriero"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aventureiro"
+          }
         }
       }
     },
@@ -883,6 +1063,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sei sicuro di voler terminare il tuo allenamento?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem certeza de que deseja encerrar seu treino?"
           }
         }
       }
@@ -912,6 +1098,12 @@
             "state" : "translated",
             "value" : "Annulla"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
         }
       }
     },
@@ -939,6 +1131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Centurione"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Centurião"
           }
         }
       }
@@ -968,6 +1166,12 @@
             "state" : "translated",
             "value" : "Campione"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Campeão"
+          }
         }
       }
     },
@@ -995,6 +1199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impegnato"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprometido"
           }
         }
       }
@@ -1024,6 +1234,12 @@
             "state" : "translated",
             "value" : "Completa 1 allenamento"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 1 treino"
+          }
         }
       }
     },
@@ -1051,6 +1267,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Completa 5 allenamenti"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 5 treinos"
           }
         }
       }
@@ -1080,6 +1302,12 @@
             "state" : "translated",
             "value" : "Completa 15 allenamenti"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 15 treinos"
+          }
         }
       }
     },
@@ -1107,6 +1335,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Completa 30 allenamenti"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 30 treinos"
           }
         }
       }
@@ -1136,6 +1370,12 @@
             "state" : "translated",
             "value" : "Completa 50 allenamenti"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 50 treinos"
+          }
         }
       }
     },
@@ -1163,6 +1403,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Completa 100 allenamenti"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete 100 treinos"
           }
         }
       }
@@ -1192,6 +1438,12 @@
             "state" : "translated",
             "value" : "Completa un allenamento prima delle 6 del mattino"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complete um treino antes das 6h da manhã"
+          }
         }
       }
     },
@@ -1219,6 +1471,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Completamenti"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conclusões"
           }
         }
       }
@@ -1248,6 +1506,12 @@
             "state" : "translated",
             "value" : "Congratulazioni!"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parabéns!"
+          }
         }
       }
     },
@@ -1275,6 +1539,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Costante"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consistente"
           }
         }
       }
@@ -1304,6 +1574,12 @@
             "state" : "translated",
             "value" : "Crea il primo allenamento personalizzato"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criar primeiro treino personalizado"
+          }
         }
       }
     },
@@ -1328,6 +1604,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Curioso"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Curioso"
@@ -1360,6 +1642,12 @@
             "state" : "translated",
             "value" : "Serie attuale"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sequência Atual"
+          }
         }
       }
     },
@@ -1387,6 +1675,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Riposo del ciclo"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descanso do Ciclo"
           }
         }
       }
@@ -1416,6 +1710,12 @@
             "state" : "translated",
             "value" : "Impostazioni del ciclo"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações do Ciclo"
+          }
         }
       }
     },
@@ -1443,6 +1743,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cicli"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclos"
           }
         }
       }
@@ -1472,6 +1778,12 @@
             "state" : "translated",
             "value" : "Dedicato"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dedicado"
+          }
         }
       }
     },
@@ -1499,6 +1811,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elimina"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir"
           }
         }
       }
@@ -1528,6 +1846,12 @@
             "state" : "translated",
             "value" : "Elimina esercizio"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir Exercício"
+          }
         }
       }
     },
@@ -1555,6 +1879,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminare l'esercizio?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir Exercício?"
           }
         }
       }
@@ -1584,6 +1914,12 @@
             "state" : "translated",
             "value" : "Eliminare l'allenamento?"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir Treino?"
+          }
         }
       }
     },
@@ -1611,6 +1947,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminazione non possibile"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exclusão não é possível"
           }
         }
       }
@@ -1640,6 +1982,12 @@
             "state" : "translated",
             "value" : "Deseleziona tutto"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desmarcar Tudo"
+          }
         }
       }
     },
@@ -1664,6 +2012,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Designer"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Designer"
@@ -1696,6 +2050,12 @@
             "state" : "translated",
             "value" : "Scopri allenamenti"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descobrir Treinos"
+          }
         }
       }
     },
@@ -1723,6 +2083,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fatto"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concluído"
           }
         }
       }
@@ -1752,6 +2118,12 @@
             "state" : "translated",
             "value" : "Durata"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duração"
+          }
         }
       }
     },
@@ -1779,6 +2151,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Durata (Ora di inizio)"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duração (Hora de Início)"
           }
         }
       }
@@ -1808,6 +2186,12 @@
             "state" : "translated",
             "value" : "Mattiniero"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Madrugador"
+          }
         }
       }
     },
@@ -1835,6 +2219,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modifica impostazioni del ciclo"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Configurações do Ciclo"
           }
         }
       }
@@ -1864,6 +2254,12 @@
             "state" : "translated",
             "value" : "Modifica durata per tutti gli esercizi"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar duração para todos os exercícios"
+          }
         }
       }
     },
@@ -1891,6 +2287,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modifica durata per tutti gli esercizi"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Duração para todos os Exercícios"
           }
         }
       }
@@ -1920,6 +2322,12 @@
             "state" : "translated",
             "value" : "Modifica durata dell'esercizio"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar duração do exercício"
+          }
         }
       }
     },
@@ -1947,6 +2355,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modifica tempo di riposo dell'esercizio"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar tempo de descanso do exercício"
           }
         }
       }
@@ -1976,6 +2390,12 @@
             "state" : "translated",
             "value" : "Modifica esercizi"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Exercícios"
+          }
         }
       }
     },
@@ -2003,6 +2423,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modifica numero di cicli"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar número de ciclos"
           }
         }
       }
@@ -2032,6 +2458,12 @@
             "state" : "translated",
             "value" : "Modifica tempo di riposo tra i cicli"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar tempo de descanso entre ciclos"
+          }
         }
       }
     },
@@ -2059,6 +2491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modifica tempo di riposo per tutti gli esercizi"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar tempo de descanso para todos os exercícios"
           }
         }
       }
@@ -2088,6 +2526,12 @@
             "state" : "translated",
             "value" : "Modifica allenamenti"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Treinos"
+          }
         }
       }
     },
@@ -2116,6 +2560,12 @@
             "state" : "translated",
             "value" : "Termina allenamento"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finalizar Treino"
+          }
         }
       }
     },
@@ -2140,6 +2590,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resistente"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Resistente"
@@ -2172,6 +2628,12 @@
             "state" : "translated",
             "value" : "Eternità"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eternidade"
+          }
         }
       }
     },
@@ -2199,6 +2661,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Durata dell'esercizio"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duração do Exercício"
           }
         }
       }
@@ -2228,6 +2696,12 @@
             "state" : "translated",
             "value" : "Riposo dell'esercizio"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descanso do Exercício"
+          }
         }
       }
     },
@@ -2255,6 +2729,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Titolo dell'esercizio"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título do Exercício"
           }
         }
       }
@@ -2284,6 +2764,12 @@
             "state" : "translated",
             "value" : "Esercizi"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercícios"
+          }
         }
       }
     },
@@ -2311,6 +2797,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Esercizi completati:"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exercícios concluídos:"
           }
         }
       }
@@ -2340,6 +2832,12 @@
             "state" : "translated",
             "value" : "Esploratore"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explorador"
+          }
         }
       }
     },
@@ -2367,6 +2865,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Filtra allenamenti"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrar Treinos"
           }
         }
       }
@@ -2396,6 +2900,12 @@
             "state" : "translated",
             "value" : "Quindicina"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quinzena"
+          }
         }
       }
     },
@@ -2423,6 +2933,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Responsabilità per i link"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Responsabilidade por Links"
           }
         }
       }
@@ -2452,6 +2968,12 @@
             "state" : "translated",
             "value" : "Ciao, Mondo!"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olá, Mundo!"
+          }
         }
       }
     },
@@ -2479,6 +3001,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cronologia"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Histórico"
           }
         }
       }
@@ -2508,6 +3036,12 @@
             "state" : "translated",
             "value" : "Inizio"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Início"
+          }
         }
       }
     },
@@ -2535,6 +3069,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contatto"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contato"
           }
         }
       }
@@ -2564,6 +3104,12 @@
             "state" : "translated",
             "value" : "Lingua"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idioma"
+          }
         }
       }
     },
@@ -2591,6 +3137,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Avviso legale"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso Legal"
           }
         }
       }
@@ -2620,6 +3172,12 @@
             "state" : "translated",
             "value" : "Caricamento..."
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carregando..."
+          }
         }
       }
     },
@@ -2648,6 +3206,12 @@
             "state" : "translated",
             "value" : "Serie più lunga"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sequência Mais Longa"
+          }
         }
       }
     },
@@ -2672,6 +3236,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menu"
@@ -2704,6 +3274,12 @@
             "state" : "translated",
             "value" : "Minuti"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minutos"
+          }
         }
       }
     },
@@ -2731,6 +3307,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mensile"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mensal"
           }
         }
       }
@@ -2760,6 +3342,12 @@
             "state" : "translated",
             "value" : "Altro"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais"
+          }
         }
       }
     },
@@ -2787,6 +3375,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Altri obiettivi raggiunti"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais Conquistas"
           }
         }
       }
@@ -2816,6 +3410,12 @@
             "state" : "translated",
             "value" : "Nuovo"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novo"
+          }
         }
       }
     },
@@ -2843,6 +3443,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Principiante"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciante"
           }
         }
       }
@@ -2872,6 +3478,12 @@
             "state" : "translated",
             "value" : "Prossimo: %@"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo: %@"
+          }
         }
       }
     },
@@ -2899,6 +3511,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessun allenamento trovato"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum Treino Encontrado"
           }
         }
       }
@@ -2928,6 +3546,12 @@
             "state" : "translated",
             "value" : "Numero"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número"
+          }
         }
       }
     },
@@ -2952,6 +3576,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
@@ -2984,6 +3614,12 @@
             "state" : "translated",
             "value" : "Organizzatore"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organizador"
+          }
         }
       }
     },
@@ -3008,6 +3644,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Persistente"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Persistente"
@@ -3040,6 +3682,12 @@
             "state" : "translated",
             "value" : "Anteprima"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualizar"
+          }
         }
       }
     },
@@ -3068,6 +3716,12 @@
             "state" : "translated",
             "value" : "Informativa sulla privacy"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Política de Privacidade"
+          }
         }
       }
     },
@@ -3092,6 +3746,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fonte"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fonte"
@@ -3124,6 +3784,12 @@
             "state" : "translated",
             "value" : "Valuta WorkoutPulse"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaliar WorkoutPulse"
+          }
         }
       }
     },
@@ -3148,6 +3814,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resiliente"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Resiliente"
@@ -3180,6 +3852,12 @@
             "state" : "translated",
             "value" : "Salva"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
+          }
         }
       }
     },
@@ -3207,6 +3885,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salvato un modello di allenamento"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Treino modelo salvo"
           }
         }
       }
@@ -3236,6 +3920,12 @@
             "state" : "translated",
             "value" : "Secondi"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segundos"
+          }
         }
       }
     },
@@ -3263,6 +3953,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleziona tutto"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecionar Tudo"
           }
         }
       }
@@ -3292,6 +3988,12 @@
             "state" : "translated",
             "value" : "Invia feedback"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar Feedback"
+          }
         }
       }
     },
@@ -3319,6 +4021,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impostazioni"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações"
           }
         }
       }
@@ -3348,6 +4056,12 @@
             "state" : "translated",
             "value" : "Principiante"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciante"
+          }
         }
       }
     },
@@ -3375,6 +4089,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serie"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sequências"
           }
         }
       }
@@ -3404,6 +4124,12 @@
             "state" : "translated",
             "value" : "Termini e condizioni"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termos e Condições"
+          }
         }
       }
     },
@@ -3428,6 +4154,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cronometrista"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cronometrista"
@@ -3460,6 +4192,12 @@
             "state" : "translated",
             "value" : "Durata totale:"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duração Total:"
+          }
         }
       }
     },
@@ -3487,6 +4225,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Triplicatore"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Triplicador"
           }
         }
       }
@@ -3516,6 +4260,12 @@
             "state" : "translated",
             "value" : "Prova 3 allenamenti diversi"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tente 3 treinos diferentes"
+          }
         }
       }
     },
@@ -3543,6 +4293,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prova 5 allenamenti diversi"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tente 5 treinos diferentes"
           }
         }
       }
@@ -3572,6 +4328,12 @@
             "state" : "translated",
             "value" : "Prova 10 allenamenti diversi"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tente 10 treinos diferentes"
+          }
         }
       }
     },
@@ -3599,6 +4361,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Inarrestabile"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imparável"
           }
         }
       }
@@ -3628,6 +4396,12 @@
             "state" : "translated",
             "value" : "Visita il nostro sito web"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visite nosso site"
+          }
         }
       }
     },
@@ -3655,6 +4429,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settimanale"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semanal"
           }
         }
       }
@@ -3684,6 +4464,12 @@
             "state" : "translated",
             "value" : "Allenati per 1 giorno"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Treinar por 1 dia"
+          }
         }
       }
     },
@@ -3711,6 +4497,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impostazioni allenamento"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações do Treino"
           }
         }
       }
@@ -3740,6 +4532,12 @@
             "state" : "translated",
             "value" : "Titolo allenamento"
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título do Treino"
+          }
         }
       }
     },
@@ -3767,6 +4565,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hai appena terminato un altro allenamento"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acabou de terminar outro Treino"
           }
         }
       }
@@ -3796,6 +4600,12 @@
             "state" : "translated",
             "value" : "Devi avere almeno un esercizio nel tuo allenamento."
           }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você precisa ter pelo menos um Exercício em seu treino."
+          }
         }
       }
     },
@@ -3823,6 +4633,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "I tuoi allenamenti"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seus Treinos"
           }
         }
       }
