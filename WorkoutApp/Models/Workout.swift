@@ -9,7 +9,7 @@ import Foundation
 
 struct Workout: Identifiable, Codable, Equatable, Hashable {
     let id: UUID
-    var title: String
+    var title: LocalizedStringResource
     var cycles: Int
     var cycleRestTime: TimeInterval
     var exercises: [Exercise]
@@ -22,7 +22,7 @@ struct Workout: Identifiable, Codable, Equatable, Hashable {
         return (Double(cycles) * totalExerciseTime) + (Double(cycles - 1) * cycleRestTime) - (Double(cycles) * restLastExercise) + prepDuration
     }
     
-    init(id: UUID = UUID(), title: String, cycles: Int, cycleRestTime: TimeInterval, exercises: [Exercise], completions: Int = 0) {
+    init(id: UUID = UUID(), title: LocalizedStringResource, cycles: Int, cycleRestTime: TimeInterval, exercises: [Exercise], completions: Int = 0) {
         self.id = id
         self.title = title
         self.cycles = cycles
@@ -47,7 +47,7 @@ struct Workout: Identifiable, Codable, Equatable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-
+    
 }
 
 // MARK: - Sample Data
@@ -242,6 +242,7 @@ extension Workout {
             Exercise(title: "Dumbbell Shoulder Press", duration: 40, rest: 20)
         ], completions: 0)
     ]
+    
     
     static let sampleWorkoutHistory: [CompletedWorkout] = [
         // 1 day ago

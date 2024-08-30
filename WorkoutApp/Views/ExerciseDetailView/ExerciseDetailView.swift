@@ -28,17 +28,20 @@ struct ExerciseDetailView: View {
             }
             .padding()
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(viewModel.exercise.title)
+            .navigationTitle("\(viewModel.exercise.title)")
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     dismissButton
                 } 
                 ToolbarItem(placement: .principal) {
-                    TextField("Exercise Title", text: $viewModel.exercise.title)
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .font(.title)
-                        .bold()
+                    TextField("Exercise Title", text: Binding(
+                        get: { String(localized: viewModel.exercise.title) },
+                        set: { viewModel.exercise.title = LocalizedStringResource(stringLiteral: $0) }
+                    ))
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .font(.title)
+                    .bold()
                 }
             }
         }

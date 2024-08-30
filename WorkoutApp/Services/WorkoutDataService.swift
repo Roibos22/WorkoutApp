@@ -85,20 +85,20 @@ class WorkoutDataService {
         var title = baseTitle
         var counter = 1
         
-        while dataManager.loadWorkouts().contains(where: { $0.title == title }) {
+        while dataManager.loadWorkouts().contains(where: { String(localized: $0.title) == title }) {
             counter += 1
             title = "\(baseTitle) \(counter)"
         }
         
         return Workout(
             id: UUID(),
-            title: title,
+            title: "\(title)",
             cycles: 3,
             cycleRestTime: 60,
             exercises: [
-                Exercise(title: String("\(language.defaultExerciseTitle) 1"), duration: 20, rest: 10),
-                Exercise(title: String("\(language.defaultExerciseTitle) 2"), duration: 20, rest: 10),
-                Exercise(title: String("\(language.defaultExerciseTitle) 3"), duration: 20, rest: 10)
+                Exercise(title: "\(language.defaultExerciseTitle) 1", duration: 20, rest: 10),
+                Exercise(title: "\(language.defaultExerciseTitle) 2", duration: 20, rest: 10),
+                Exercise(title: "\(language.defaultExerciseTitle) 3", duration: 20, rest: 10)
             ]
         )
     }

@@ -1,0 +1,743 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%@" : {
+
+    },
+    "%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "%@ (%lld/%lld)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$lld/%3$lld)"
+          }
+        }
+      }
+    },
+    "%@ %lld" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$lld"
+          }
+        }
+      }
+    },
+    "%@ worked out" : {
+
+    },
+    "%lld" : {
+
+    },
+    "%lld completed workout" : {
+
+    },
+    "%lld completed workouts" : {
+
+    },
+    "%lld Cycles" : {
+
+    },
+    "%lld Exercises" : {
+
+    },
+    "%lld min" : {
+
+    },
+    "%lld sec" : {
+
+    },
+    "%lld. Cycle" : {
+
+    },
+    "%lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "+" : {
+
+    },
+    "1 hour total workout time" : {
+
+    },
+    "3-day workout streak" : {
+
+    },
+    "5 hours total workout time" : {
+
+    },
+    "7-day workout streak" : {
+
+    },
+    "10 hours total workout time" : {
+
+    },
+    "14-day workout streak" : {
+
+    },
+    "24 hours total workout time" : {
+
+    },
+    "30-day workout streak" : {
+
+    },
+    "48 hours total workout time" : {
+
+    },
+    "90-day workout streak" : {
+
+    },
+    "100 hours total workout time" : {
+
+    },
+    "Achievements" : {
+
+    },
+    "Activity" : {
+
+    },
+    "Adjust your filters or complete a workout to see your history!" : {
+
+    },
+    "Adventurer" : {
+
+    },
+    "Angaben gemäß § 5 TMG" : {
+
+    },
+    "Are you sure you want to end your workout?" : {
+
+    },
+    "Arm Circles" : {
+      "extractionState" : "stale"
+    },
+    "Bicycle Crunches" : {
+      "extractionState" : "stale"
+    },
+    "Bird Dog" : {
+      "extractionState" : "stale"
+    },
+    "Bodyweight Bootcamp" : {
+      "extractionState" : "stale"
+    },
+    "Box Jumps" : {
+      "extractionState" : "stale"
+    },
+    "Burpee" : {
+      "extractionState" : "stale"
+    },
+    "Burpees" : {
+      "extractionState" : "stale"
+    },
+    "Butt Kicks" : {
+      "extractionState" : "stale"
+    },
+    "Calf Raises" : {
+      "extractionState" : "stale"
+    },
+    "Cancel" : {
+
+    },
+    "Cardio Kickstart" : {
+      "extractionState" : "stale"
+    },
+    "Cardio-Strength Fusion" : {
+      "extractionState" : "stale"
+    },
+    "Cat-Cow Stretch" : {
+      "extractionState" : "stale"
+    },
+    "Centurion" : {
+
+    },
+    "Chair Pose" : {
+      "extractionState" : "stale"
+    },
+    "Champion" : {
+
+    },
+    "Classic Tabata" : {
+      "extractionState" : "stale"
+    },
+    "Committed" : {
+
+    },
+    "Complete 1 workout" : {
+
+    },
+    "Complete 5 workouts" : {
+
+    },
+    "Complete 15 workouts" : {
+
+    },
+    "Complete 30 workouts" : {
+
+    },
+    "Complete 50 workouts" : {
+
+    },
+    "Complete 100 workouts" : {
+
+    },
+    "Complete a workout before 6 AM" : {
+
+    },
+    "Completions" : {
+
+    },
+    "Congratulations!" : {
+
+    },
+    "Consistent" : {
+
+    },
+    "Core Crusher" : {
+      "extractionState" : "stale"
+    },
+    "Core Stability Flow" : {
+      "extractionState" : "stale"
+    },
+    "Core Strength" : {
+      "extractionState" : "stale"
+    },
+    "Create first custom workout" : {
+
+    },
+    "Criss-Cross" : {
+      "extractionState" : "stale"
+    },
+    "Curious" : {
+
+    },
+    "Current Streak" : {
+
+    },
+    "Cycle Rest" : {
+
+    },
+    "Cycle Settings" : {
+
+    },
+    "Cycles" : {
+
+    },
+    "Dedicated" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Delete Exercise" : {
+
+    },
+    "Delete Exercise?" : {
+
+    },
+    "Delete Workout?" : {
+
+    },
+    "Deletion not possible" : {
+
+    },
+    "Deselect All" : {
+
+    },
+    "Designer" : {
+
+    },
+    "Diamond Push-ups" : {
+      "extractionState" : "stale"
+    },
+    "Dips" : {
+      "extractionState" : "stale"
+    },
+    "Discover Workouts" : {
+
+    },
+    "Done" : {
+
+    },
+    "Double Leg Stretch" : {
+      "extractionState" : "stale"
+    },
+    "Downward Dog" : {
+      "extractionState" : "stale"
+    },
+    "Dumbbell Chest Press" : {
+      "extractionState" : "stale"
+    },
+    "Dumbbell Lunges" : {
+      "extractionState" : "stale"
+    },
+    "Dumbbell Rows" : {
+      "extractionState" : "stale"
+    },
+    "Dumbbell Shoulder Press" : {
+      "extractionState" : "stale"
+    },
+    "Dumbbell Squats" : {
+      "extractionState" : "stale"
+    },
+    "Dumbbell Total Body" : {
+      "extractionState" : "stale"
+    },
+    "Duration" : {
+
+    },
+    "Duration (Start Time)" : {
+
+    },
+    "Early Bird" : {
+
+    },
+    "Edit Cycle Settings" : {
+
+    },
+    "Edit duration for all exercises" : {
+
+    },
+    "Edit Duration for all Exercises" : {
+
+    },
+    "Edit exercise duration" : {
+
+    },
+    "Edit exercise rest time" : {
+
+    },
+    "Edit Exercises" : {
+
+    },
+    "Edit number of cycles" : {
+
+    },
+    "Edit rest time between cycles" : {
+
+    },
+    "Edit rest time for all exercises" : {
+
+    },
+    "Edit Workouts" : {
+
+    },
+    "End Workout" : {
+
+    },
+    "Endurance Builder" : {
+      "extractionState" : "stale"
+    },
+    "Enduring" : {
+
+    },
+    "Eternity" : {
+
+    },
+    "Exercise 1" : {
+      "extractionState" : "stale"
+    },
+    "Exercise 2" : {
+      "extractionState" : "stale"
+    },
+    "Exercise 3" : {
+      "extractionState" : "stale"
+    },
+    "Exercise 4" : {
+      "extractionState" : "stale"
+    },
+    "Exercise Duration" : {
+
+    },
+    "Exercise Rest" : {
+
+    },
+    "Exercise Title" : {
+
+    },
+    "Exercises" : {
+
+    },
+    "Exercises completed:" : {
+
+    },
+    "Explorer" : {
+
+    },
+    "Filter Workouts" : {
+
+    },
+    "Flexibility and Mobility" : {
+      "extractionState" : "stale"
+    },
+    "Fortnight" : {
+
+    },
+    "Full Body" : {
+      "extractionState" : "stale"
+    },
+    "Full Body Fusion" : {
+      "extractionState" : "stale"
+    },
+    "Functional Fitness" : {
+      "extractionState" : "stale"
+    },
+    "Glute Bridges" : {
+      "extractionState" : "stale"
+    },
+    "Goblet Squats" : {
+      "extractionState" : "stale"
+    },
+    "Haftung für Links" : {
+
+    },
+    "Hello, World!" : {
+
+    },
+    "High Knees" : {
+      "extractionState" : "stale"
+    },
+    "HIIT Cardio Blast" : {
+      "extractionState" : "stale"
+    },
+    "Hip Circles" : {
+      "extractionState" : "stale"
+    },
+    "History" : {
+
+    },
+    "Jog" : {
+      "extractionState" : "stale"
+    },
+    "Jump Lunges" : {
+      "extractionState" : "stale"
+    },
+    "Jump Rope" : {
+      "extractionState" : "stale"
+    },
+    "Jump Squats" : {
+      "extractionState" : "stale"
+    },
+    "Jumping Jacks" : {
+      "extractionState" : "stale"
+    },
+    "Kettlebell Swings" : {
+      "extractionState" : "stale"
+    },
+    "Kickoff" : {
+
+    },
+    "Kontakt" : {
+
+    },
+    "Language" : {
+
+    },
+    "Leg Day" : {
+      "extractionState" : "stale"
+    },
+    "Leg Raises" : {
+      "extractionState" : "stale"
+    },
+    "Leg Swings" : {
+      "extractionState" : "stale"
+    },
+    "Legal Notice" : {
+
+    },
+    "Loading..." : {
+
+    },
+    "Longest Streak" : {
+
+    },
+    "Lower Body Burner" : {
+      "extractionState" : "stale"
+    },
+    "Lunges" : {
+      "extractionState" : "stale"
+    },
+    "Menu" : {
+
+    },
+    "Metabolic Booster" : {
+      "extractionState" : "stale"
+    },
+    "Minutes" : {
+
+    },
+    "Monthly" : {
+
+    },
+    "More" : {
+
+    },
+    "More Achievements" : {
+
+    },
+    "Mountain Climbers" : {
+      "extractionState" : "stale"
+    },
+    "My Workout" : {
+      "extractionState" : "stale"
+    },
+    "New" : {
+
+    },
+    "New Workout" : {
+      "extractionState" : "stale"
+    },
+    "New Workout %lld" : {
+      "extractionState" : "stale"
+    },
+    "Newbie" : {
+
+    },
+    "Next: %@" : {
+
+    },
+    "No Workouts Found" : {
+
+    },
+    "Number" : {
+
+    },
+    "OK" : {
+
+    },
+    "Organizer" : {
+
+    },
+    "Persistent" : {
+
+    },
+    "Pilates Core Sculpt" : {
+      "extractionState" : "stale"
+    },
+    "Plank" : {
+      "extractionState" : "stale"
+    },
+    "Plank Jacks" : {
+      "extractionState" : "stale"
+    },
+    "Plyo Push-ups" : {
+      "extractionState" : "stale"
+    },
+    "Plyometric Power" : {
+      "extractionState" : "stale"
+    },
+    "Power Yoga Flow" : {
+      "extractionState" : "stale"
+    },
+    "Preparation" : {
+      "extractionState" : "stale"
+    },
+    "Preview" : {
+
+    },
+    "Privacy Policy" : {
+
+    },
+    "Push-ups" : {
+      "extractionState" : "stale"
+    },
+    "Quelle" : {
+
+    },
+    "Quick HIIT" : {
+      "extractionState" : "stale"
+    },
+    "Rate WorkoutPulse" : {
+
+    },
+    "Renegade Rows" : {
+      "extractionState" : "stale"
+    },
+    "Resilient" : {
+
+    },
+    "Rest" : {
+      "extractionState" : "stale"
+    },
+    "Roll Up" : {
+      "extractionState" : "stale"
+    },
+    "Russian Twists" : {
+      "extractionState" : "stale"
+    },
+    "Save" : {
+
+    },
+    "Saved a template workout" : {
+
+    },
+    "Seconds" : {
+
+    },
+    "Select All" : {
+
+    },
+    "Send Feedback" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Side Plank (Left)" : {
+      "extractionState" : "stale"
+    },
+    "Side Plank (Right)" : {
+      "extractionState" : "stale"
+    },
+    "Single Leg Circles" : {
+      "extractionState" : "stale"
+    },
+    "Sit-ups" : {
+      "extractionState" : "stale"
+    },
+    "Sprint" : {
+      "extractionState" : "stale"
+    },
+    "Sprint Intervals" : {
+      "extractionState" : "stale"
+    },
+    "Squat Jumps" : {
+      "extractionState" : "stale"
+    },
+    "Squat Thrusts" : {
+      "extractionState" : "stale"
+    },
+    "Squats" : {
+      "extractionState" : "stale"
+    },
+    "Starter" : {
+
+    },
+    "Streaks" : {
+
+    },
+    "Strength Endurance" : {
+      "extractionState" : "stale"
+    },
+    "Sun Salutation A" : {
+      "extractionState" : "stale"
+    },
+    "Superman" : {
+      "extractionState" : "stale"
+    },
+    "Tabata Turbo" : {
+      "extractionState" : "stale"
+    },
+    "Teaser" : {
+      "extractionState" : "stale"
+    },
+    "Terms and Conditions" : {
+
+    },
+    "Test Workout" : {
+      "extractionState" : "stale"
+    },
+    "The Hundred" : {
+      "extractionState" : "stale"
+    },
+    "Timekeeper" : {
+
+    },
+    "Torso Twists" : {
+      "extractionState" : "stale"
+    },
+    "Total Duration:" : {
+
+    },
+    "Tricep Dips" : {
+      "extractionState" : "stale"
+    },
+    "Tripler" : {
+
+    },
+    "Try 3 different workouts" : {
+
+    },
+    "Try 5 different workouts" : {
+
+    },
+    "Try 10 different workouts" : {
+
+    },
+    "Tuck Jumps" : {
+      "extractionState" : "stale"
+    },
+    "Unstoppable" : {
+
+    },
+    "Upper Body" : {
+      "extractionState" : "stale"
+    },
+    "Upper Body Blitz" : {
+      "extractionState" : "stale"
+    },
+    "Visit our website" : {
+
+    },
+    "Walk" : {
+      "extractionState" : "stale"
+    },
+    "Wall Push-ups" : {
+      "extractionState" : "stale"
+    },
+    "Wall Sit" : {
+      "extractionState" : "stale"
+    },
+    "Warrior I" : {
+      "extractionState" : "stale"
+    },
+    "Warrior II" : {
+      "extractionState" : "stale"
+    },
+    "Weeklong" : {
+
+    },
+    "Work out for 1 day" : {
+
+    },
+    "Workout" : {
+      "extractionState" : "stale"
+    },
+    "Workout Settings" : {
+
+    },
+    "Workout Title" : {
+
+    },
+    "You just finished another Workout" : {
+
+    },
+    "You need to have at least one Exercise in your workout." : {
+
+    },
+    "Your Workouts" : {
+
+    }
+  },
+  "version" : "1.0"
+}

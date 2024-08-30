@@ -100,7 +100,7 @@ class AppState: ObservableObject {
             if completedWorkout.workout.id == workout.id {
                 let updatedCompletedWorkout = CompletedWorkout(
                     id: completedWorkout.id,
-                    workout: Workout(id: workout.id, title: title, cycles: workout.cycles, cycleRestTime: workout.cycleRestTime, exercises: workout.exercises),
+                    workout: Workout(id: workout.id, title: "\(title)", cycles: workout.cycles, cycleRestTime: workout.cycleRestTime, exercises: workout.exercises),
                     timestamp: completedWorkout.timestamp
                 )
                 updatedCompletedWorkouts.append(updatedCompletedWorkout)

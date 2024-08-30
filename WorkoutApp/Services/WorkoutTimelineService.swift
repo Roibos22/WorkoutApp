@@ -87,7 +87,7 @@ class WorkoutTimelineService {
     }
     
     private func createExerciseActivity(exercise: Exercise, cycleNo: Int, activityNo: Int, startTime: inout Double) -> Activity {
-        let activity = Activity(title: exercise.title, type: .exercise, duration: exercise.duration, timeLeft: exercise.duration, startingTime: startTime, cycleNo: cycleNo, activityNo: activityNo)
+        let activity = Activity(title: "\(exercise.title)", type: .exercise, duration: exercise.duration, timeLeft: exercise.duration, startingTime: startTime, cycleNo: cycleNo, activityNo: activityNo)
         startTime += exercise.duration
         return activity
     }
