@@ -17,7 +17,7 @@ struct SettingsView: View {
     var body: some View {
         VStack {
             List {
-                languageSection
+                settingsSection
                 contactSection
             }
             .listStyle(InsetGroupedListStyle())
@@ -33,25 +33,24 @@ struct SettingsView: View {
         }
     }
     
-    private var languageSection: some View {
+    private var settingsSection: some View {
         Section {
-            Section(header: Text("Language")) {
-                Picker("Select Language", selection: viewModel.language) {
-                    Text("English").tag(Language.english)
-                    Text("Deutsch").tag(Language.german)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-            }
-//            .onChange(of: viewModel.appState.language) { newValue in
-//                        print("Language changed to: \(newValue)")
-//                    }
+            languagePicker
         } header: {
-            Text("Language")
+            Text("Settings")
         }
         .bold()
         .foregroundColor(Color(.label))
         .listRowBackground(Color(.systemGray5))
         .listRowSeparator(.hidden)
+    }
+    
+    private var languagePicker: some View {
+        Picker("Language", selection: viewModel.language) {
+            ForEach(supportedLanguages) { language in
+                Text(language.displayName).tag(language.self)
+            }
+        }
     }
     
     private var contactSection: some View {

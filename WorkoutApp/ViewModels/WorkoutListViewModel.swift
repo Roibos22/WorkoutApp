@@ -16,11 +16,11 @@ class WorkoutListViewModel: ObservableObject {
     private let appState: AppState
     
     var language: Binding<Language> {
-            Binding(
-                get: { self.appState.language },
-                set: { self.appState.setLanguage($0) }
-            )
-        }
+        Binding(
+            get: { self.appState.language },
+            set: { self.appState.setLanguage($0) }
+        )
+    }
     
     init(appState: AppState) {
         self.appState = appState

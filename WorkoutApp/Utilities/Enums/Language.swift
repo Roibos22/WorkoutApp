@@ -22,8 +22,8 @@ enum Language: String, Identifiable, Codable, Equatable {
     
     var displayName: String {
         switch self {
-        case .english: return "English"
-        case .german: return "Deutsch"
+        case .english: return "English 🇺🇸"
+        case .german: return "Deutsch 🇩🇪"
         }
     }
 }

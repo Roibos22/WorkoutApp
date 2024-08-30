@@ -114,7 +114,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld Durchgänge"
+            "value" : "%lld Zyklen"
           }
         }
       }
@@ -720,7 +720,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zyklus-Einstellungen"
+            "value" : "Zyklus Einstellungen"
           }
         }
       }
@@ -816,7 +816,15 @@
       }
     },
     "Deutsch" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deutsch"
+          }
+        }
+      }
     },
     "Diamond Push-ups" : {
       "localizations" : {
@@ -1099,7 +1107,15 @@
       }
     },
     "English" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English"
+          }
+        }
+      }
     },
     "Eternity" : {
       "localizations" : {
@@ -1432,7 +1448,14 @@
       }
     },
     "Language" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprache"
+          }
+        }
+      }
     },
     "Leg Day" : {
       "localizations" : {
@@ -1895,7 +1918,15 @@
       }
     },
     "Select Language" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprache auswählen"
+          }
+        }
+      }
     },
     "Send Feedback" : {
       "localizations" : {
