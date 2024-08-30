@@ -11,7 +11,7 @@ import SwiftUI
 
 class WorkoutListViewModel: ObservableObject {
     @Published var workouts: [Workout] = []
-    @Published var selectedLanguage: Language = .english
+    @Published var selectedLanguage: Language = .englishUS
     private var cancellables = Set<AnyCancellable>()
     private let appState: AppState
     

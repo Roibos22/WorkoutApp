@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var viewModel: WorkoutListViewModel
     @Environment(\.dismiss) private var dismiss
-    var supportedLanguages: [Language] = [.english, .german]
+    var supportedLanguages: [Language] = [.englishUK, .englishUS, .french, .german, .italian, .portugueseBR, .portuguesePT, .spanish]
 
     private let urls = URLs()
     

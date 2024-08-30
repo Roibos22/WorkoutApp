@@ -31,7 +31,7 @@ class AppState: ObservableObject {
         timelineService = WorkoutTimelineService()
         achievemetnsService = AchievementsService(dataManager: dataManager)
         let savedLanguage = UserDefaults.standard.string(forKey: "AppLanguage") ?? "EN"
-        self.language = Language(rawValue: savedLanguage) ?? .english
+        self.language = Language(rawValue: savedLanguage) ?? .englishUS
         loadData()
     }
        

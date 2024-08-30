@@ -79,7 +79,7 @@ class WorkoutDataService {
     }
     
     func generateNewWorkout() -> Workout {
-        let language: Language = Language(rawValue: UserDefaults.standard.string(forKey: "AppLanguage") ?? "EN") ?? .english
+        let language: Language = Language(rawValue: UserDefaults.standard.string(forKey: "AppLanguage") ?? "EN") ?? .englishUS
         
         let baseTitle = language.defaultWorkoutTitle
         var title = baseTitle

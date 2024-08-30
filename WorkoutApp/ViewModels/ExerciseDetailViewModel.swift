@@ -12,7 +12,7 @@ class ExerciseDetailViewModel: ObservableObject {
     private let workoutViewModel: WorkoutDetailViewModel
     
     init(exercise: Exercise? = nil, workoutViewModel: WorkoutDetailViewModel) {
-        let language: Language = Language(rawValue: UserDefaults.standard.string(forKey: "AppLanguage") ?? "EN") ?? .english
+        let language: Language = Language(rawValue: UserDefaults.standard.string(forKey: "AppLanguage") ?? "EN") ?? .englishUS
         self.exercise = exercise ?? Exercise(title: "\(language.defaultNewExerciseTitle)", duration: 20, rest: 10)
         self.workoutViewModel = workoutViewModel
     }
