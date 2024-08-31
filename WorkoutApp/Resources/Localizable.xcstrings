@@ -2234,6 +2234,12 @@
             "state" : "translated",
             "value" : "Zyklus %lld"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle %lld"
+          }
         }
       }
     },
@@ -4958,6 +4964,12 @@
             "state" : "translated",
             "value" : "Vorbereitung"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparation"
+          }
         }
       }
     },
@@ -4967,6 +4979,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vorbereitungs-Zyklus"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparation cycle"
           }
         }
       }
@@ -5162,6 +5180,12 @@
             "state" : "translated",
             "value" : "Erholungs-Zyklus"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recovery cycle"
+          }
         }
       }
     },
@@ -5217,6 +5241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pause"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rest"
           }
         }
       }
