@@ -7,13 +7,14 @@
 
 import Foundation
 import SwiftUI
+import ActivityKit
 
 class DataManager {
     let savePathWorkouts = FileManager.documentsDirectory.appendingPathComponent("Workouts")
     let savePathCompletedWorkouts = FileManager.documentsDirectory.appendingPathComponent("CompletedWorkouts")
     let savePathAchievements = FileManager.documentsDirectory.appendingPathComponent("Achievements")
     let savePathLanguage = FileManager.documentsDirectory.appendingPathComponent("LanguagePreference")
-
+    
     func saveWorkouts(_ workouts: [Workout]) {
         do {
             let data = try JSONEncoder().encode(workouts)

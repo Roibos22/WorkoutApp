@@ -2968,7 +2968,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zyklus-Einstellungen bearbeiten"
+            "value" : "Zyklus Einstellungen bearbeiten"
           }
         },
         "en-GB" : {
@@ -5130,7 +5130,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Widerstandsfähig"
+            "value" : "Resilient"
           }
         },
         "en-GB" : {
@@ -5222,7 +5222,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Workout-Vorlage gespeichert"
+            "value" : "Workout Vorlage gespeichert"
           }
         },
         "en-GB" : {
@@ -6050,7 +6050,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Workout-Einstellungen"
+            "value" : "Workout Einstellungen"
           }
         },
         "en-GB" : {
@@ -6096,7 +6096,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Workout-Titel"
+            "value" : "Workout Titel"
           }
         },
         "en-GB" : {

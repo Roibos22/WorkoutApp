@@ -38,7 +38,7 @@ enum Language: String, Identifiable, Codable, Equatable {
         case .german: return "🇩🇪 Deutsch"
         case .italian: return "🇮🇹 Italiano"
         case .french: return "🇫🇷 Français"
-        case .spanish: return "🇪🇸 Español "
+        case .spanish: return "🇪🇸 Español"
         case .portuguesePT: return "🇵🇹 Português (PT)"
         case .portugueseBR: return "🇧🇷 Português (BR)"
         }
