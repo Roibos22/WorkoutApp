@@ -33,14 +33,14 @@ enum Language: String, Identifiable, Codable, Equatable {
     
     var displayName: String {
         switch self {
-        case .englishUK: return "🇬🇧 English (UK)"
-        case .englishUS: return "🇺🇸 English (US)"
+        case .englishUK: return "🇬🇧 English"
+        case .englishUS: return "🇺🇸 English"
         case .german: return "🇩🇪 Deutsch"
         case .italian: return "🇮🇹 Italiano"
         case .french: return "🇫🇷 Français"
         case .spanish: return "🇪🇸 Español"
-        case .portuguesePT: return "🇵🇹 Português (PT)"
-        case .portugueseBR: return "🇧🇷 Português (BR)"
+        case .portuguesePT: return "🇵🇹 Português"
+        case .portugueseBR: return "🇧🇷 Português"
         }
     }
     

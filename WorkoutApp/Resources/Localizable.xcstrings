@@ -2252,6 +2252,12 @@
             "state" : "translated",
             "value" : "Ciclo %lld"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo %lld"
+          }
         }
       }
     },
@@ -4996,6 +5002,12 @@
             "state" : "translated",
             "value" : "Preparazione"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparação"
+          }
         }
       }
     },
@@ -5023,6 +5035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciclo di preparazione"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo de preparação"
           }
         }
       }
@@ -5237,6 +5255,12 @@
             "state" : "translated",
             "value" : "Ciclo di recupero"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo de recuperação"
+          }
         }
       }
     },
@@ -5310,6 +5334,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recupero"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descanso"
           }
         }
       }
