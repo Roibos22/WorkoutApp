@@ -2241,6 +2241,12 @@
             "value" : "Cycle %lld"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo %lld"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2254,6 +2260,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo %lld"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciclo %lld"
@@ -2784,7 +2796,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Descubrir entrenamientos"
+            "value" : "Descubrir"
           }
         },
         "fr" : {
@@ -3474,7 +3486,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Finalizar entrenamiento"
+            "value" : "Finalizar"
           }
         },
         "fr" : {
@@ -3963,53 +3975,6 @@
         }
       }
     },
-    "Haftung für Links" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haftung für Links"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liability for Links"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Responsabilidad por enlaces"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Responsabilité pour les liens"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Responsabilità per i link"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Responsabilidade por Links"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Responsabilidade por Links"
-          }
-        }
-      }
-    },
     "Hello, World!" : {
       "localizations" : {
         "de" : {
@@ -4144,53 +4109,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Início"
-          }
-        }
-      }
-    },
-    "Kontakt" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kontakt"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contact"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contacto"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contact"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contatto"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contato"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contato"
           }
         }
       }
@@ -4991,6 +4909,12 @@
             "value" : "Preparation"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparación"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5004,6 +4928,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparação"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Preparação"
@@ -5025,6 +4955,12 @@
             "value" : "Preparation cycle"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo de preparación"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5038,6 +4974,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo de preparação"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciclo de preparação"
@@ -5137,53 +5079,6 @@
         }
       }
     },
-    "Quelle" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quelle"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Source"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fuente"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Source"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fonte"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fonte"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fonte"
-          }
-        }
-      }
-    },
     "Rate WorkoutPulse" : {
       "localizations" : {
         "de" : {
@@ -5244,6 +5139,12 @@
             "value" : "Recovery cycle"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo de recuperación"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5257,6 +5158,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo de recuperação"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciclo de recuperação"
@@ -5324,6 +5231,12 @@
             "value" : "Rest"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descansa"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5337,6 +5250,12 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descanso"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descanso"
@@ -6235,7 +6154,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Configuración del entrenamiento"
+            "value" : "Configuración"
           }
         },
         "fr" : {
