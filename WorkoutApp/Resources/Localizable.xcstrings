@@ -1238,7 +1238,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Réalisations"
+            "value" : "Achèvements"
           }
         },
         "it" : {
@@ -2240,6 +2240,12 @@
             "state" : "translated",
             "value" : "Cycle %lld"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle %lld"
+          }
         }
       }
     },
@@ -2772,7 +2778,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Découvrir les entraînements"
+            "value" : "Découvrir"
           }
         },
         "it" : {
@@ -3462,7 +3468,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminer l'entraînement"
+            "value" : "Terminer"
           }
         },
         "it" : {
@@ -3876,7 +3882,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Filtrer les entraînements"
+            "value" : "Filtrer"
           }
         },
         "it" : {
@@ -4566,7 +4572,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plus de réalisations"
+            "value" : "Plus de achèvements"
           }
         },
         "it" : {
@@ -4970,6 +4976,12 @@
             "state" : "translated",
             "value" : "Preparation"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préparation"
+          }
         }
       }
     },
@@ -4985,6 +4997,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Preparation cycle"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle de préparation"
           }
         }
       }
@@ -5186,6 +5204,12 @@
             "state" : "translated",
             "value" : "Recovery cycle"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle de récupération"
+          }
         }
       }
     },
@@ -5247,6 +5271,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rest"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repos"
           }
         }
       }
@@ -6148,7 +6178,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Paramètres d'entraînement"
+            "value" : "Paramètres"
           }
         },
         "it" : {
