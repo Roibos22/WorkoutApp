@@ -145,7 +145,7 @@ struct LegalNoticeView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 15) {
                 VStack(alignment: .leading) {
-                    Text("Legal Notice")
+                    Text(String("Legal Notice"))
                         .font(.title2)
                         .bold()
                     Text(String("""
@@ -158,7 +158,7 @@ struct LegalNoticeView: View {
                 }
                 
                 VStack(alignment: .leading) {
-                    Text("Kontakt")
+                    Text(String("Kontakt"))
                         .font(.title2)
                         .bold()
                     Text(String("""
@@ -168,7 +168,7 @@ struct LegalNoticeView: View {
                 }
                 
                 VStack(alignment: .leading) {
-                    Text("Haftung für Links")
+                    Text(String("Haftung für Links"))
                         .font(.title2)
                         .bold()
                     Text(String("""
@@ -177,7 +177,7 @@ struct LegalNoticeView: View {
                 }
                 
                 VStack(alignment: .leading) {
-                    Text("Quelle")
+                    Text(String("Quelle"))
                         .font(.title2)
                         .bold()
                     Text(String("""

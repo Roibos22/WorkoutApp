@@ -2246,6 +2246,12 @@
             "state" : "translated",
             "value" : "Cycle %lld"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo %lld"
+          }
         }
       }
     },
@@ -3474,7 +3480,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Termina allenamento"
+            "value" : "Termina"
           }
         },
         "pt-BR" : {
@@ -3952,6 +3958,7 @@
       }
     },
     "Haftung für Links" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4136,6 +4143,7 @@
       }
     },
     "Kontakt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4982,6 +4990,12 @@
             "state" : "translated",
             "value" : "Préparation"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparazione"
+          }
         }
       }
     },
@@ -5003,6 +5017,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cycle de préparation"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo di preparazione"
           }
         }
       }
@@ -5100,6 +5120,7 @@
       }
     },
     "Quelle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5210,6 +5231,12 @@
             "state" : "translated",
             "value" : "Cycle de récupération"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclo di recupero"
+          }
         }
       }
     },
@@ -5277,6 +5304,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repos"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recupero"
           }
         }
       }
