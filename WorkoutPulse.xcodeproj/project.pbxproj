@@ -13,8 +13,6 @@
 		352A62E02ACDC85200CAC187 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352A62DF2ACDC85200CAC187 /* Preview Assets.xcassets */; };
 		352A62ED2ACDD47300CAC187 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62EC2ACDD47300CAC187 /* Double.swift */; };
 		352A62F42ACDD91900CAC187 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */; };
-		3530078A2C83C61900B13AAE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353007892C83C61900B13AAE /* SwiftUI.framework */; };
-		353007952C83C61B00B13AAE /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 353007852C83C61900B13AAE /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		353C1DC12C70F95700DB6458 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353C1DC02C70F95700DB6458 /* Achievement.swift */; };
 		353C1DC52C72ACF700DB6458 /* AchievementsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353C1DC42C72ACF700DB6458 /* AchievementsService.swift */; };
 		353C1DC72C735E7A00DB6458 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353C1DC62C735E7A00DB6458 /* Color.swift */; };
@@ -71,16 +69,6 @@
 		35F164DF2C6AC44800D81865 /* StreaksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F164DE2C6AC44800D81865 /* StreaksView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		353007932C83C61B00B13AAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 352A62CC2ACDC85000CAC187 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 353007842C83C61900B13AAE;
-			remoteInfo = LiveActivityExtension;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		353007962C83C61B00B13AAE /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -88,7 +76,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				353007952C83C61B00B13AAE /* LiveActivityExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +91,6 @@
 		352A62DF2ACDC85200CAC187 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		352A62EC2ACDD47300CAC187 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		352A62F32ACDD91900CAC187 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
-		353007852C83C61900B13AAE /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		353007892C83C61900B13AAE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		3530079C2C83C7C400B13AAE /* WorkoutPulse-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WorkoutPulse-Info.plist"; sourceTree = "<group>"; };
 		353C1DC02C70F95700DB6458 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
@@ -171,14 +157,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		353007822C83C61900B13AAE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3530078A2C83C61900B13AAE /* SwiftUI.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -198,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				352A62D42ACDC85000CAC187 /* WorkoutPulse.app */,
-				353007852C83C61900B13AAE /* LiveActivityExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -475,7 +452,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				353007942C83C61B00B13AAE /* PBXTargetDependency */,
 			);
 			name = WorkoutPulse;
 			packageProductDependencies = (
@@ -484,23 +460,6 @@
 			productName = WorkoutApp;
 			productReference = 352A62D42ACDC85000CAC187 /* WorkoutPulse.app */;
 			productType = "com.apple.product-type.application";
-		};
-		353007842C83C61900B13AAE /* LiveActivityExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 353007992C83C61B00B13AAE /* Build configuration list for PBXNativeTarget "LiveActivityExtension" */;
-			buildPhases = (
-				353007812C83C61900B13AAE /* Sources */,
-				353007822C83C61900B13AAE /* Frameworks */,
-				353007832C83C61900B13AAE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LiveActivityExtension;
-			productName = LiveActivityExtension;
-			productReference = 353007852C83C61900B13AAE /* LiveActivityExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -514,9 +473,6 @@
 				TargetAttributes = {
 					352A62D32ACDC85000CAC187 = {
 						CreatedOnToolsVersion = 14.3.1;
-					};
-					353007842C83C61900B13AAE = {
-						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -544,7 +500,6 @@
 			projectRoot = "";
 			targets = (
 				352A62D32ACDC85000CAC187 /* WorkoutPulse */,
-				353007842C83C61900B13AAE /* LiveActivityExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -561,13 +516,6 @@
 				352A62DC2ACDC85200CAC187 /* Assets.xcassets in Resources */,
 				35DBCC072C80670800194A6C /* Localizable.xcstrings in Resources */,
 				358113CA2B325192003325C0 /* dadam.mp3 in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		353007832C83C61900B13AAE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,22 +581,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		353007812C83C61900B13AAE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		353007942C83C61B00B13AAE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 353007842C83C61900B13AAE /* LiveActivityExtension */;
-			targetProxy = 353007932C83C61B00B13AAE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		352A62E12ACDC85200CAC187 /* Debug */ = {
@@ -856,72 +789,6 @@
 			};
 			name = Release;
 		};
-		353007972C83C61B00B13AAE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8KT99V2DNB;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LiveActivity/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lmg.JustTabata.LiveActivity;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		353007982C83C61B00B13AAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8KT99V2DNB;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LiveActivity/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lmg.JustTabata.LiveActivity;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -939,15 +806,6 @@
 			buildConfigurations = (
 				352A62E42ACDC85200CAC187 /* Debug */,
 				352A62E52ACDC85200CAC187 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		353007992C83C61B00B13AAE /* Build configuration list for PBXNativeTarget "LiveActivityExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				353007972C83C61B00B13AAE /* Debug */,
-				353007982C83C61B00B13AAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

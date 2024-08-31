@@ -56,16 +56,6 @@ class WorkoutTimelineService {
         return cycles
     }
     
-//    func updateWorkoutTitle(workout: Workout, title: String) {
-//        for index in completedWorkouts.indices where completedWorkouts[index].workout.title == workout.title {
-//            completedWorkouts[index].workout.title = title
-//        }
-//        if let index = workouts.firstIndex(where: {$0.id == workout.id}) {
-//            workouts[index].title = title
-//        }
-//        //save()
-//    }
-    
     // MARK: - Private Helper Methods
     
     private func createPreparationActivity(startTime: Double) -> Activity {

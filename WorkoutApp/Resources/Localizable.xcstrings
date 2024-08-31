@@ -2227,6 +2227,16 @@
         }
       }
     },
+    "Cycle %lld" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zyklus %lld"
+          }
+        }
+      }
+    },
     "Cycle Rest" : {
       "localizations" : {
         "de" : {
@@ -4941,6 +4951,26 @@
         }
       }
     },
+    "Preparation" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorbereitung"
+          }
+        }
+      }
+    },
+    "Preparation cycle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorbereitungs-Zyklus"
+          }
+        }
+      }
+    },
     "Preview" : {
       "localizations" : {
         "de" : {
@@ -5125,6 +5155,16 @@
         }
       }
     },
+    "Recovery cycle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erholungs-Zyklus"
+          }
+        }
+      }
+    },
     "Resilient" : {
       "localizations" : {
         "de" : {
@@ -5167,6 +5207,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Resiliente"
+          }
+        }
+      }
+    },
+    "Rest" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause"
           }
         }
       }
