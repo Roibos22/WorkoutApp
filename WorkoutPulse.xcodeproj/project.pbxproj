@@ -50,6 +50,7 @@
 		358113CE2B33448D003325C0 /* WorkoutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358113CD2B33448D003325C0 /* WorkoutPreviewView.swift */; };
 		3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582F8382B31F8A000AC6C53 /* WorkoutCompletedView.swift */; };
 		3586C39C2C69360C000C18AC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3586C39B2C69360C000C18AC /* SettingsView.swift */; };
+		359DD4062C83DEA300FAEFA9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359DD4052C83DEA300FAEFA9 /* UserDefaults.swift */; };
 		35A838A12C8134A900D4A426 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A838A02C8134A900D4A426 /* Language.swift */; };
 		35CA54262C6EA20B0032A68F /* EditWorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA54252C6EA20B0032A68F /* EditWorkoutsView.swift */; };
 		35CE057B2C5E94DB006188AB /* WorkoutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE057A2C5E94DB006188AB /* WorkoutSettings.swift */; };
@@ -129,6 +130,7 @@
 		358113CD2B33448D003325C0 /* WorkoutPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPreviewView.swift; sourceTree = "<group>"; };
 		3582F8382B31F8A000AC6C53 /* WorkoutCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCompletedView.swift; sourceTree = "<group>"; };
 		3586C39B2C69360C000C18AC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		359DD4052C83DEA300FAEFA9 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		35A838A02C8134A900D4A426 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		35CA54252C6EA20B0032A68F /* EditWorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutsView.swift; sourceTree = "<group>"; };
 		35CE057A2C5E94DB006188AB /* WorkoutSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSettings.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				35DE36F52C66379800482050 /* Date.swift */,
 				353C1DC62C735E7A00DB6458 /* Color.swift */,
 				35DBCC082C8070D600194A6C /* LocalizedStringResource.swift */,
+				359DD4052C83DEA300FAEFA9 /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				35CE057F2C5E957D006188AB /* WorkoutSettingsSectionCard.swift in Sources */,
 				3582F8392B31F8A000AC6C53 /* WorkoutCompletedView.swift in Sources */,
 				35A838A12C8134A900D4A426 /* Language.swift in Sources */,
+				359DD4062C83DEA300FAEFA9 /* UserDefaults.swift in Sources */,
 				35E4D4132C601FB5001B00B1 /* ExerciseDetailViewModel.swift in Sources */,
 				354EE63F2C5D94EF00C97F99 /* WorkoutTimelineService.swift in Sources */,
 				353C1DC72C735E7A00DB6458 /* Color.swift in Sources */,

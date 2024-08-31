@@ -49,7 +49,8 @@ class WorkoutActiveViewModel: ObservableObject {
     }
     
     func getSoundsEnabled() -> Bool {
-        return appState.soundsEnabled
+        print(UserDefaults.standard.hasSoundsEnabled)
+        return UserDefaults.standard.hasSoundsEnabled
     }
     
     func resetWorkout() {
@@ -70,14 +71,16 @@ class WorkoutActiveViewModel: ObservableObject {
             activityIndex += 1
             currentActivityTimeLeft = currentActivity.duration
             currentActivityDurationDone = 0.0
-            SoundManager.instance.stopSound()
+            if getSoundsEnabled() {
+                SoundManager.instance.stopSound()
+            }
         }
     }
 
     func togglePause() {
         isPaused.toggle()
         isRunning = !isPaused
-        if isPaused == true {
+        if isPaused == true && getSoundsEnabled() {
             SoundManager.instance.pauseSound()
         } else {
             SoundManager.instance.resumeSound()
@@ -114,8 +117,10 @@ class WorkoutActiveViewModel: ObservableObject {
         workoutTimeLeft -= 0.01
         currentActivityDurationDone += 0.01
         if appState.soundsEnabled && currentActivityTimeLeft < 3 && !countdownPlayed {
-            DispatchQueue.main.async {
-                SoundManager.instance.playSound(sound: .countdown)
+            if getSoundsEnabled() {
+                DispatchQueue.main.async {
+                    SoundManager.instance.playSound(sound: .countdown)
+                }
             }
             countdownPlayed = true
         }

@@ -177,19 +177,4 @@ class AchievementsService {
 }
 
 
-extension UserDefaults {
-    private enum Keys {
-        static let hasCreatedCustomWorkout = "hasCreatedCustomWorkout"
-        static let hasSavedTemplateWorkout = "hasSavedTemplateWorkout"
-    }
-    
-    var hasCreatedCustomWorkout: Bool {
-        get { bool(forKey: Keys.hasCreatedCustomWorkout) }
-        set { set(newValue, forKey: Keys.hasCreatedCustomWorkout) }
-    }
-    
-    var hasSavedTemplateWorkout: Bool {
-        get { bool(forKey: Keys.hasSavedTemplateWorkout) }
-        set { set(newValue, forKey: Keys.hasSavedTemplateWorkout) }
-    }
-}
+

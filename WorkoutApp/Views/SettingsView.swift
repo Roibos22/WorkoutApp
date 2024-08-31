@@ -11,7 +11,17 @@ struct SettingsView: View {
     @ObservedObject var viewModel: WorkoutListViewModel
     @Environment(\.dismiss) private var dismiss
     var supportedLanguages: [Language] = [.englishUK, .englishUS, .french, .german, .italian, .portugueseBR, .portuguesePT, .spanish]
-
+    @State private var soundsEnabled = UserDefaults.standard.hasSoundsEnabled
+//    private var soundsEnabledBinding: Binding<Bool> {
+//        Binding(
+//            get: { self.soundsEnabled },
+//            set: { newValue in
+//                self.soundsEnabled = newValue
+//                UserDefaults.standard.hasSoundsEnabled = newValue
+//                print(newValue)
+//            }
+//        )
+//    }
     private let urls = URLs()
     
     var body: some View {
@@ -36,6 +46,7 @@ struct SettingsView: View {
     private var settingsSection: some View {
         Section {
             languagePicker
+            soundsEnabledToggle
         } header: {
             Text("Settings")
         }
@@ -44,6 +55,23 @@ struct SettingsView: View {
         .listRowBackground(Color(.systemGray5))
         .listRowSeparator(.hidden)
     }
+    
+    private var soundsEnabledToggle: some View {
+        Toggle(isOn: $soundsEnabled) {
+            HStack {
+                Text("Enable Sounds")
+            }
+        }
+        .onTapGesture {
+            if !soundsEnabled {
+                UserDefaults.standard.hasSoundsEnabled = true
+            } else {
+                UserDefaults.standard.hasSoundsEnabled = false
+            }
+        }
+
+    }
+
     
     private var languagePicker: some View {
         Picker("Language", selection: viewModel.language) {

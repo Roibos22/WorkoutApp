@@ -136,5 +136,4 @@ class AppState: ObservableObject {
     func getTotalCompletionsString() -> Int {
         return achievemetnsService.getTotalCompletions()
     }
-
 }
