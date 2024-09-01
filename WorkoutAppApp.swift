@@ -10,6 +10,10 @@ import SwiftUI
 @main
 struct WorkoutAppApp: App {
     
+    init() {
+        setupDefaults()
+    }
+    
    @StateObject private var appState: AppState = AppState()
     
     var body: some Scene {
@@ -17,6 +21,14 @@ struct WorkoutAppApp: App {
             WorkoutListView(viewModel: WorkoutListViewModel(appState: appState))
                 .environmentObject(appState)
                 .environment(\.locale, appState.language.locale)
+        }
+    }
+    
+    private func setupDefaults() {
+        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+        if !hasLaunchedBefore {
+            UserDefaults.standard.set(true, forKey: "hasSoundsEnabled")
+            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
         }
     }
 }
