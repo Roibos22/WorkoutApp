@@ -31,6 +31,25 @@ enum Language: String, Identifiable, Codable, Equatable {
         }
     }
     
+    // ... other properties ...
+
+    static func from(locale: Locale) -> Language {
+        let languageCode = locale.language.languageCode?.identifier.lowercased()
+        let regionCode = locale.region?.identifier.uppercased()
+        
+        switch (languageCode, regionCode) {
+        case ("en", "GB"): return .englishUK
+        case ("en", "US"): return .englishUS
+        case ("de", _): return .german
+        case ("it", _): return .italian
+        case ("fr", _): return .french
+        case ("es", _): return .spanish
+        case ("pt", "PT"): return .portuguesePT
+        case ("pt", "BR"): return .portugueseBR
+        default: return .englishUS // Default to US English if no match
+        }
+    }
+    
     var displayName: String {
         switch self {
         case .englishUK: return "🇬🇧 English"
@@ -77,3 +96,4 @@ enum Language: String, Identifiable, Codable, Equatable {
         }
     }
 }
+

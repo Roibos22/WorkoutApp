@@ -9,12 +9,11 @@ import SwiftUI
 
 @main
 struct WorkoutAppApp: App {
-    
+    @StateObject private var appState: AppState = AppState()
+
     init() {
         setupDefaults()
     }
-    
-   @StateObject private var appState: AppState = AppState()
     
     var body: some Scene {
         WindowGroup {
@@ -29,6 +28,7 @@ struct WorkoutAppApp: App {
         if !hasLaunchedBefore {
             UserDefaults.standard.set(true, forKey: "hasSoundsEnabled")
             UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+            appState.language = Language.from(locale: Locale.current)
         }
     }
 }
