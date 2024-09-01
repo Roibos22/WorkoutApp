@@ -34,7 +34,6 @@ class WorkoutDetailViewModel: ObservableObject {
             newTitle = "\(newWorkout.title) \(counter)"
         }
         newWorkout.title = newTitle
-        print("Saved Preset Workout")
         appState.saveWorkout(newWorkout, notifyObservers: notifyObservers, type: .preset)
     }
     

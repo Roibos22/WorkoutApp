@@ -42,7 +42,6 @@ class WorkoutDataService {
             } else if type == .preset {
                 UserDefaults.standard.hasSavedTemplateWorkout = true
             }
-            //print("WDS: workout added")
         }
         dataManager.saveWorkouts(workouts)
         if notifyObservers {

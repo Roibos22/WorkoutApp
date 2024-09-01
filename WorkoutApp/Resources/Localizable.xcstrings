@@ -3470,6 +3470,7 @@
       }
     },
     "Enable Sounds" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5587,6 +5588,9 @@
           }
         }
       }
+    },
+    "Sounds" : {
+
     },
     "Starter" : {
       "localizations" : {

@@ -10,18 +10,8 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var viewModel: WorkoutListViewModel
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("hasSoundsEnabled") private var soundsEnabled = true
     var supportedLanguages: [Language] = [.englishUK, .englishUS, .french, .german, .italian, .portugueseBR, .portuguesePT, .spanish]
-    @State private var soundsEnabled = UserDefaults.standard.hasSoundsEnabled
-//    private var soundsEnabledBinding: Binding<Bool> {
-//        Binding(
-//            get: { self.soundsEnabled },
-//            set: { newValue in
-//                self.soundsEnabled = newValue
-//                UserDefaults.standard.hasSoundsEnabled = newValue
-//                print(newValue)
-//            }
-//        )
-//    }
     private let urls = URLs()
     
     var body: some View {
@@ -70,19 +60,10 @@ struct SettingsView: View {
     private var soundsEnabledToggle: some View {
         Toggle(isOn: $soundsEnabled) {
             HStack {
-                Text("Enable Sounds")
+                Text("Sounds")
             }
         }
-        .onTapGesture {
-            if !soundsEnabled {
-                UserDefaults.standard.hasSoundsEnabled = true
-            } else {
-                UserDefaults.standard.hasSoundsEnabled = false
-            }
-        }
-
     }
-
     
     private var languagePicker: some View {
         Picker("Language", selection: viewModel.language) {
@@ -165,7 +146,6 @@ struct SettingsView: View {
     
     private func rateApp() {
         let appReviewURL = "itms-apps://itunes.apple.com/app/idid6444348524?action=write-review&mt=8"
-        print(appReviewURL)
         UIApplication.shared.open(URL(string:appReviewURL)!, options: [:])
     }
 }

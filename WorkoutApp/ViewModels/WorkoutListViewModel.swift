@@ -29,9 +29,7 @@ class WorkoutListViewModel: ObservableObject {
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] workouts in
-                //print("WorkoutListViewModel received update: \(workouts.count) workouts")
                 self?.workouts = workouts
-                //print("WorkoutListViewModel updated: \(self?.workouts.count ?? 0) workouts")
             }
             .store(in: &cancellables)
     }

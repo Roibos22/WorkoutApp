@@ -122,11 +122,6 @@ struct WorkoutHistoryView: View {
             .values
             .compactMap { $0.last?.workout }
             .sorted(by: { $0.title < $1.title })
-        
-//        for workout in result {
-//            print("\(workout.title): \(workout.id)")
-//        }
-        
         return result
     }
 }

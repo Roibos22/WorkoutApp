@@ -19,9 +19,6 @@ class DataManager {
         do {
             let data = try JSONEncoder().encode(workouts)
             try data.write(to: savePathWorkouts, options: [.atomicWrite, .completeFileProtection])
-            for workout in workouts {
-                print("saved \(workout.title)")
-            }
         } catch {
             print("Failed to save workouts: \(error.localizedDescription)")
         }

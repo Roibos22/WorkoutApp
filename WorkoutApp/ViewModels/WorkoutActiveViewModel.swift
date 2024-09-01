@@ -49,7 +49,6 @@ class WorkoutActiveViewModel: ObservableObject {
     }
     
     func getSoundsEnabled() -> Bool {
-        print(UserDefaults.standard.hasSoundsEnabled)
         return UserDefaults.standard.hasSoundsEnabled
     }
     
@@ -82,7 +81,7 @@ class WorkoutActiveViewModel: ObservableObject {
         isRunning = !isPaused
         if isPaused == true && getSoundsEnabled() {
             SoundManager.instance.pauseSound()
-        } else {
+        } else if getSoundsEnabled() {
             SoundManager.instance.resumeSound()
         }
     }

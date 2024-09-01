@@ -56,7 +56,6 @@ class AppState: ObservableObject {
         workoutService.saveWorkout(workout, notifyObservers: notifyObservers, type: type)
         if notifyObservers {
             self.workouts = workoutService.fetchWorkouts()
-            print("workouts loaded")
         }
     }
     
