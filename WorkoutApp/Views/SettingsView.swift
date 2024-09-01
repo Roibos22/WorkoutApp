@@ -29,10 +29,12 @@ struct SettingsView: View {
             List {
                 settingsSection
                 contactSection
+                madeWithLove
             }
             .listStyle(InsetGroupedListStyle())
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
+            
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -40,6 +42,15 @@ struct SettingsView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 backButton
             }
+        }
+    }
+    
+    private var madeWithLove: some View {
+        HStack(alignment: .center) {
+            Spacer()
+            Text("Made with ❤️ in Berlin")
+                .font(.footnote)
+            Spacer()
         }
     }
     
