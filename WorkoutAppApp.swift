@@ -11,15 +11,14 @@ import SwiftUI
 struct WorkoutAppApp: App {
     @StateObject private var appState: AppState = AppState()
 
-    init() {
-        setupDefaults()
-    }
-    
     var body: some Scene {
         WindowGroup {
             WorkoutListView(viewModel: WorkoutListViewModel(appState: appState))
                 .environmentObject(appState)
                 .environment(\.locale, appState.language.locale)
+                .onAppear {
+                    setupDefaults()
+                }
         }
     }
     

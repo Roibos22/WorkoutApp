@@ -2411,6 +2411,9 @@
         }
       }
     },
+    "Dark Mode" : {
+
+    },
     "Dedicated" : {
       "localizations" : {
         "de" : {
@@ -4251,6 +4254,9 @@
           }
         }
       }
+    },
+    "Light Mode" : {
+
     },
     "Loading..." : {
       "localizations" : {
