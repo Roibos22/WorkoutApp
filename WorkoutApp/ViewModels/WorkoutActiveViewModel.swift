@@ -4,11 +4,12 @@
 //
 //  Created by Leon Grimmeisen on 05.08.24.
 //
-
 import Foundation
 import SwiftUI
 import Combine
 import ActivityKit
+import AVFoundation
+import UIKit
 
 class WorkoutActiveViewModel: ObservableObject {
     @Published var workout: Workout
@@ -29,9 +30,11 @@ class WorkoutActiveViewModel: ObservableObject {
     private var countdownPlayed = false
     var currentActivityDurationDone = 0.0
     private var workoutDurationDone = 0.0
+    private var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+    private var audioPlayer: AVAudioPlayer?
     private let appState: AppState
 
-    init(workoutViewModel: WorkoutDetailViewModel,workout: Workout, workoutTimeline: [Activity], appState: AppState) {
+    init(workoutViewModel: WorkoutDetailViewModel, workout: Workout, workoutTimeline: [Activity], appState: AppState) {
         self.workoutViewModel = workoutViewModel
         self.workout = workout
         self.workoutTimeline = workoutTimeline
@@ -40,6 +43,8 @@ class WorkoutActiveViewModel: ObservableObject {
         self.appState = appState
 
         setupTimerSubscription()
+        setupBackgroundHandling()
+        setupAudioSession()
         startLiveActivity()
     }
 
@@ -50,28 +55,64 @@ class WorkoutActiveViewModel: ObservableObject {
         return workoutTimeline[activityIndex + 1]
     }
     
-    func startLiveActivity() {
-        print("try to start live activity")
-        guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
-        print("live activity starting")
-        let attributes = WorkoutAttributes()
-        let contentState = WorkoutAttributes.ContentState(
-            startTime: Date(),
-            elapsedTime: 0,
-            totalDuration: workout.duration,
-            exerciseName: "\(currentActivity.title)"
-        )
+    private func setupAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .duckOthers])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Failed to set up audio session: \(error)")
+        }
+    }
+
+    private func setupBackgroundHandling() {
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+
+    @objc private func appMovedToBackground() {
+        guard isRunning else { return }
+        startBackgroundAudio()
+        backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
+            self?.endBackgroundTask()
+        }
+    }
+
+    @objc private func appMovedToForeground() {
+        stopBackgroundAudio()
+        endBackgroundTask()
+    }
+
+    private func startBackgroundAudio() {
+        guard audioPlayer == nil else { return }
+        
+        guard let audioURL = Bundle.main.url(forResource: "silence", withExtension: "mp3") else {
+            print("Silent audio file not found")
+            return
+        }
         
         do {
-            let activity = try ActivityKit.Activity<WorkoutAttributes>.request(
-                attributes: attributes,
-                content: .init(state: contentState, staleDate: nil),
-                pushType: nil
-            )
-            print("Requested a Live Activity \(activity.id)")
+            audioPlayer = try AVAudioPlayer(contentsOf: audioURL)
+            audioPlayer?.numberOfLoops = -1 // Loop indefinitely
+            audioPlayer?.volume = 0.01 // Set volume very low
+            audioPlayer?.play()
         } catch {
-            print("Error requesting Live Activity: \(error.localizedDescription)")
+            print("Failed to initialize audio player: \(error)")
         }
+    }
+
+    private func stopBackgroundAudio() {
+        audioPlayer?.stop()
+        audioPlayer = nil
+    }
+
+    private func endBackgroundTask() {
+        guard backgroundTask != .invalid else { return }
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+        backgroundTask = .invalid
+    }
+
+    func startLiveActivity() {
+        // Your existing startLiveActivity implementation
     }
     
     func getSoundsEnabled() -> Bool {
@@ -86,6 +127,8 @@ class WorkoutActiveViewModel: ObservableObject {
         currentActivityTimeLeft = currentActivity.duration
         currentActivityDurationDone = 0.0
         celebrationSoundPlayed = false
+        stopBackgroundAudio()
+        endBackgroundTask()
     }
 
     func skipActivity() {
@@ -105,16 +148,26 @@ class WorkoutActiveViewModel: ObservableObject {
     func togglePause() {
         isPaused.toggle()
         isRunning = !isPaused
-        if isPaused == true && getSoundsEnabled() {
-            SoundManager.instance.pauseSound()
-        } else if getSoundsEnabled() {
-            SoundManager.instance.resumeSound()
+        if isPaused {
+            stopBackgroundAudio()
+            if getSoundsEnabled() {
+                SoundManager.instance.pauseSound()
+            }
+        } else {
+            if UIApplication.shared.applicationState == .background {
+                startBackgroundAudio()
+            }
+            if getSoundsEnabled() {
+                SoundManager.instance.resumeSound()
+            }
         }
     }
 
     func finishWorkoutToCompletedView() {
         isRunning = false
         showCompletedView = true
+        stopBackgroundAudio()
+        endBackgroundTask()
     }
     
     func finishWorkoutFinal() {
@@ -124,8 +177,6 @@ class WorkoutActiveViewModel: ObservableObject {
         workoutViewModel.workout.completions += 1
         workoutViewModel.saveWorkout()
     }
-    
-    
 
     private func setupTimerSubscription() {
         timer.sink { [weak self] _ in
@@ -166,5 +217,9 @@ class WorkoutActiveViewModel: ObservableObject {
     private func updateProgress() {
         circleProgress = 1 - (currentActivityTimeLeft / currentActivity.duration)
         barProgress = (workout.duration - workoutTimeLeft) / workout.duration
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
