@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import ActivityKit
 
 class WorkoutActiveViewModel: ObservableObject {
     @Published var workout: Workout
@@ -39,6 +40,7 @@ class WorkoutActiveViewModel: ObservableObject {
         self.appState = appState
 
         setupTimerSubscription()
+        startLiveActivity()
     }
 
     var currentActivity: Activity { workoutTimeline[activityIndex] }
@@ -46,6 +48,30 @@ class WorkoutActiveViewModel: ObservableObject {
     var nextActivity: Activity? {
         guard activityIndex + 1 < workoutTimeline.count else { return nil }
         return workoutTimeline[activityIndex + 1]
+    }
+    
+    func startLiveActivity() {
+        print("try to start live activity")
+        guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
+        print("live activity starting")
+        let attributes = WorkoutAttributes()
+        let contentState = WorkoutAttributes.ContentState(
+            startTime: Date(),
+            elapsedTime: 0,
+            totalDuration: workout.duration,
+            exerciseName: "\(currentActivity.title)"
+        )
+        
+        do {
+            let activity = try ActivityKit.Activity<WorkoutAttributes>.request(
+                attributes: attributes,
+                content: .init(state: contentState, staleDate: nil),
+                pushType: nil
+            )
+            print("Requested a Live Activity \(activity.id)")
+        } catch {
+            print("Error requesting Live Activity: \(error.localizedDescription)")
+        }
     }
     
     func getSoundsEnabled() -> Bool {

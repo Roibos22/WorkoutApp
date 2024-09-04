@@ -9,72 +9,96 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct LiveActivityWorkoutAttributes: ActivityAttributes {
-    public struct ContentState: Codable, Hashable {
-        // Dynamic stateful properties about your activity go here!
-        var emoji: String
+struct WorkoutAttributes: ActivityAttributes {
+    struct ContentState: Codable, Hashable {
+        var startTime: Date
+        var elapsedTime: TimeInterval
+        var totalDuration: TimeInterval
+        var exerciseName: String
     }
-
-    // Fixed non-changing properties about your activity go here!
-    var name: String
 }
 
 struct LiveActivityWorkoutLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: LiveActivityWorkoutAttributes.self) { context in
+        ActivityConfiguration(for: WorkoutAttributes.self) { context in
             // Lock screen/banner UI goes here
-            VStack {
-                Text("Hello \(context.state.emoji)")
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(Color.blue)
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Image(systemName: "dumbbell.fill")
+                        Text(context.state.exerciseName)
+                            .font(.headline)
+                    }
+                    
+                    HStack {
+                        Image(systemName: "figure.run")
+                        Text(timeString(from: context.state.elapsedTime))
+                            .font(.system(size: 20, weight: .bold, design: .monospaced))
+                    }
+        
+                    
+                    HStack {
+                        ProgressView(value: context.state.elapsedTime, total: context.state.totalDuration)
+                            .tint(.white)
+                        Spacer()
+                        Text(timeString(from: context.state.totalDuration))
+                            .font(.caption)
+                    }
+                }
+                .foregroundColor(.white)
+                .padding()
             }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
-
         } dynamicIsland: { context in
             DynamicIsland {
-                // Expanded UI goes here.  Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
+                // Expanded UI
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    Text(context.state.exerciseName)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    Text(timeString(from: context.state.elapsedTime))
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
-                    // more content
+                    ProgressView(value: context.state.elapsedTime, total: context.state.totalDuration)
                 }
             } compactLeading: {
-                Text("L")
+                Text(context.state.exerciseName)
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+                Text(timeString(from: context.state.elapsedTime))
             } minimal: {
-                Text(context.state.emoji)
+                Text(timeString(from: context.state.elapsedTime))
             }
-            .widgetURL(URL(string: "http://www.apple.com"))
-            .keylineTint(Color.red)
         }
     }
-}
-
-extension LiveActivityWorkoutAttributes {
-    fileprivate static var preview: LiveActivityWorkoutAttributes {
-        LiveActivityWorkoutAttributes(name: "World")
+    
+    func timeString(from timeInterval: TimeInterval) -> String {
+        let minutes = Int(timeInterval) / 60
+        let seconds = Int(timeInterval) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
     }
 }
 
-extension LiveActivityWorkoutAttributes.ContentState {
-    fileprivate static var smiley: LiveActivityWorkoutAttributes.ContentState {
-        LiveActivityWorkoutAttributes.ContentState(emoji: "😀")
-     }
-     
-     fileprivate static var starEyes: LiveActivityWorkoutAttributes.ContentState {
-         LiveActivityWorkoutAttributes.ContentState(emoji: "🤩")
-     }
-}
+//#Preview("Notification", as: .content, using: WorkoutAttributes.preview) {
+//   LiveActivityWorkoutLiveActivity()
+//} contentStates: {
+//    WorkoutAttributes.ContentState.sampleState
+//}
+//
+//extension WorkoutAttributes {
+//    fileprivate static var preview: WorkoutAttributes {
+//        WorkoutAttributes()
+//    }
+//}
 
-#Preview("Notification", as: .content, using: LiveActivityWorkoutAttributes.preview) {
-   LiveActivityWorkoutLiveActivity()
-} contentStates: {
-    LiveActivityWorkoutAttributes.ContentState.smiley
-    LiveActivityWorkoutAttributes.ContentState.starEyes
+extension WorkoutAttributes.ContentState {
+    fileprivate static var sampleState: WorkoutAttributes.ContentState {
+        WorkoutAttributes.ContentState(
+            startTime: Date(),
+            elapsedTime: 20,
+            totalDuration: 440,
+            exerciseName: "Exercise 1"
+        )
+    }
 }

@@ -6,75 +6,58 @@
 //
 
 import WidgetKit
+import ActivityKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
-    }
+//struct WorkoutLiveActivityView: View {
+//    let context: ActivityViewContext<WorkoutAttributes>
+//    
+//    var body: some View {
+//        VStack {
+//            Text(context.attributes.workoutName)
+//                .font(.headline)
+//            Text("Round: \(context.state.currentRound)")
+//            Text(context.state.isWorkPhase ? "Work" : "Rest")
+//            TimelineView(.animation) { timeline in
+//                let elapsedTime = timeline.date.timeIntervalSince(context.state.startTime)
+//                let remainingTime = max(context.state.totalDuration - elapsedTime, 0)
+//                Text(timeString(from: remainingTime))
+//            }
+//            Text("Started at: \(formattedTime(context.state.startTime))")
+//            Text("Current time: \(formattedTime(Date()))")
+//        }
+//    }
+//    
+//    func timeString(from timeInterval: TimeInterval) -> String {
+//        let minutes = Int(timeInterval) / 60
+//        let seconds = Int(timeInterval) % 60
+//        return String(format: "%02d:%02d", minutes, seconds)
+//    }
+//    
+//    func formattedTime(_ date: Date) -> String {
+//        let formatter = DateFormatter()
+//        formatter.timeStyle = .medium
+//        return formatter.string(from: date)
+//    }
+//}
+//
+//struct LiveActivityWorkout: Widget {
+//    let kind: String = "LiveActivityWorkout"
+//
+//    var body: some WidgetConfiguration {
+//        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+//                LiveActivityWorkoutEntryView(entry: entry)
+//                    .padding()
+//                    .background()
+//        }
+//        .configurationDisplayName("My Widget")
+//        .description("This is an example widget.")
+//    }
+//}
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
-        completion(entry)
-    }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
-    }
-}
-
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let emoji: String
-}
-
-struct LiveActivityWorkoutEntryView : View {
-    var entry: Provider.Entry
-
-    var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
-        }
-    }
-}
-
-struct LiveActivityWorkout: Widget {
-    let kind: String = "LiveActivityWorkout"
-
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                LiveActivityWorkoutEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                LiveActivityWorkoutEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
-        }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-    }
-}
-
-#Preview(as: .systemSmall) {
-    LiveActivityWorkout()
-} timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
-}
+//#Preview(as: .systemSmall) {
+//    LiveActivityWorkout()
+//} timeline: {
+//    SimpleEntry(date: .now, emoji: "😀")
+//    SimpleEntry(date: .now, emoji: "🤩")
+//}

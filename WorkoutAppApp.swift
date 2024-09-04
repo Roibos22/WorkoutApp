@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct WorkoutAppApp: App {
     @StateObject private var appState: AppState = AppState()
-
+    
     var body: some Scene {
         WindowGroup {
             WorkoutListView(viewModel: WorkoutListViewModel(appState: appState))
