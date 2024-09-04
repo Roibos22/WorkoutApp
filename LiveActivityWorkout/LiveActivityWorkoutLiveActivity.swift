@@ -29,26 +29,40 @@ struct LiveActivityWorkoutLiveActivity: Widget {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Image(systemName: "dumbbell.fill")
+                            .frame(width: 30)
                         Text(context.state.exerciseName)
-                            .font(.headline)
+                            .font(.title3)
+                            .bold()
                     }
                     
                     HStack {
                         Image(systemName: "figure.run")
+                            .frame(width: 30)
                         Text(timeString(from: context.state.elapsedTime))
-                            .font(.system(size: 20, weight: .bold, design: .monospaced))
+                            .font(.title3)
+                            .bold()
                     }
         
                     
                     HStack {
-                        ProgressView(value: context.state.elapsedTime, total: context.state.totalDuration)
-                            .tint(.white)
+                        GeometryReader { geometry in
+                            ZStack(alignment: .leading) {
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color.black, lineWidth: 8)
+                                Rectangle()
+                                    .fill(Color.black)
+                                    .frame(width: geometry.size.width * 0.4)
+                            }
+                        }
+                        .frame(height: 20)
+                        .cornerRadius(15)
                         Spacer()
                         Text(timeString(from: context.state.totalDuration))
-                            .font(.caption)
+                            .font(.title3)
+                            .bold()
                     }
                 }
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .padding()
             }
         } dynamicIsland: { context in
@@ -85,12 +99,12 @@ struct LiveActivityWorkoutLiveActivity: Widget {
 //} contentStates: {
 //    WorkoutAttributes.ContentState.sampleState
 //}
-//
-//extension WorkoutAttributes {
-//    fileprivate static var preview: WorkoutAttributes {
-//        WorkoutAttributes()
-//    }
-//}
+
+extension WorkoutAttributes {
+    fileprivate static var preview: WorkoutAttributes {
+        WorkoutAttributes()
+    }
+}
 
 extension WorkoutAttributes.ContentState {
     fileprivate static var sampleState: WorkoutAttributes.ContentState {
