@@ -13,10 +13,10 @@ struct WorkoutAttributes: ActivityAttributes {
     struct ContentState: Codable, Hashable {
         var endTime: Date
         var startTime: Date
-        var activities: [ActivityInfo]
-        var currentActivityIndex: Int
-        var totalDuration: TimeInterval
+        var activitiyName: String
+        var activityDuration: Double
     }
+    var workoutEndTime: Date
 }
 
 struct ActivityInfo: Codable, Hashable {
@@ -31,20 +31,20 @@ struct LiveActivityWorkoutLiveActivity: Widget {
             DynamicIsland {
                 // Expanded UI
                 DynamicIslandExpandedRegion(.leading) {
-                    Text(context.state.activities[context.state.currentActivityIndex].name)
+                    Text(context.state.activitiyName)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text(timeString(from: remainingTime(context: context)))
+                    Text(context.state.activitiyName)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    ProgressView(value: progress(context: context), total: 1.0)
+                    Text(context.state.activitiyName)
                 }
             } compactLeading: {
-                Text(context.state.activities[context.state.currentActivityIndex].name)
+                Text(context.state.activitiyName)
             } compactTrailing: {
-                Text(timeString(from: remainingTime(context: context)))
+                Text(context.state.activitiyName)
             } minimal: {
-                Text(timeString(from: remainingTime(context: context)))
+                Text(context.state.activitiyName)
             }
         }
     }
@@ -53,16 +53,6 @@ struct LiveActivityWorkoutLiveActivity: Widget {
         let minutes = Int(timeInterval) / 60
         let seconds = Int(timeInterval) % 60
         return String(format: "%02d:%02d", minutes, seconds)
-    }
-    
-    func remainingTime(context: ActivityViewContext<WorkoutAttributes>) -> TimeInterval {
-        let elapsedTime = Date().timeIntervalSince(context.state.startTime)
-        return max(context.state.totalDuration - elapsedTime, 0)
-    }
-    
-    func progress(context: ActivityViewContext<WorkoutAttributes>) -> Double {
-        let elapsedTime = Date().timeIntervalSince(context.state.startTime)
-        return min(elapsedTime / context.state.totalDuration, 1.0)
     }
 }
 
@@ -78,7 +68,7 @@ struct LiveActivityView: View {
                 HStack {
                     Image(systemName: "dumbbell.fill")
                         .frame(width: 30)
-                    Text(currentActivity.name)
+                    Text(context.state.activitiyName)
                         .font(.title3)
                         .bold()
                 }
@@ -98,13 +88,13 @@ struct LiveActivityView: View {
                                 .stroke(Color.black, lineWidth: 8)
                             Rectangle()
                                 .fill(Color.black)
-                                .frame(width: geometry.size.width * CGFloat(progress))
+                                .frame(width: geometry.size.width * CGFloat(0.2))
                         }
                     }
                     .frame(height: 20)
                     .cornerRadius(15)
                     Spacer()
-                    Text(timeString(from: remainingTime))
+                    Text(context.state.activitiyName)
                         .font(.title3)
                         .bold()
                 }
@@ -112,20 +102,6 @@ struct LiveActivityView: View {
             .foregroundColor(.black)
             .padding()
         }
-    }
-    
-    var currentActivity: ActivityInfo {
-        context.state.activities[context.state.currentActivityIndex]
-    }
-    
-    var remainingTime: TimeInterval {
-        let elapsedTime = Date().timeIntervalSince(context.state.startTime)
-        return max(context.state.totalDuration - elapsedTime, 0)
-    }
-    
-    var progress: Double {
-        let elapsedTime = Date().timeIntervalSince(context.state.startTime)
-        return min(elapsedTime / context.state.totalDuration, 1.0)
     }
     
     func timeString(from timeInterval: TimeInterval) -> String {

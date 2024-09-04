@@ -112,7 +112,52 @@ class WorkoutActiveViewModel: ObservableObject {
     }
 
     func startLiveActivity() {
-        // Your existing startLiveActivity implementation
+        guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
+        
+        let attributes = WorkoutAttributes(workoutEndTime: Date().addingTimeInterval(TimeInterval(workout.duration) + 1))
+        let contentState = WorkoutAttributes.ContentState(
+            endTime: Date().addingTimeInterval(TimeInterval(currentActivityTimeLeft + 1)),
+            startTime: Date(),
+            activitiyName: currentActivity.title,
+            activityDuration: currentActivity.duration
+        )
+        
+        do {
+            let activity = try ActivityKit.Activity.request(
+                attributes: attributes,
+                content: .init(state: contentState, staleDate: nil),
+                pushType: nil
+            )
+            print("Requested a Live Activity \(activity.id)")
+        } catch {
+            print("Error requesting Live Activity: \(error.localizedDescription)")
+        }
+    }
+    
+    func updateLiveActivity() {
+        guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
+        print("updated activity")
+
+        let updatedContentState = WorkoutAttributes.ContentState(
+            endTime: Date().addingTimeInterval(TimeInterval(currentActivityTimeLeft)),
+            startTime: Date(),
+            activitiyName: currentActivity.title,
+            activityDuration: currentActivity.duration
+        )
+        
+        Task {
+            for activity in ActivityKit.Activity<WorkoutAttributes>.activities {
+                await activity.update(ActivityContent(state: updatedContentState, staleDate: nil))
+            }
+        }
+    }
+
+    func endLiveActivity() {
+        Task {
+            for activity in ActivityKit.Activity<WorkoutAttributes>.activities {
+                await activity.end(ActivityContent(state: activity.content.state, staleDate: nil), dismissalPolicy: .immediate)
+            }
+        }
     }
     
     func getSoundsEnabled() -> Bool {
@@ -192,6 +237,11 @@ class WorkoutActiveViewModel: ObservableObject {
         currentActivityTimeLeft -= 0.01
         workoutTimeLeft -= 0.01
         currentActivityDurationDone += 0.01
+        
+        if Int(workoutTimeLeft * 100) % 100 == 0 {
+            updateLiveActivity()
+        }
+        
         if appState.soundsEnabled && currentActivityTimeLeft < 3 && !countdownPlayed {
             if getSoundsEnabled() {
                 DispatchQueue.main.async {
@@ -206,10 +256,12 @@ class WorkoutActiveViewModel: ObservableObject {
         if currentActivityTimeLeft <= 0 {
             if activityIndex == workoutTimeline.count - 2 {
                 finishWorkoutToCompletedView()
+                endLiveActivity()
             } else {
                 activityIndex += 1
                 currentActivityTimeLeft = currentActivity.duration
                 countdownPlayed = false
+                updateLiveActivity()
             }
         }
     }
