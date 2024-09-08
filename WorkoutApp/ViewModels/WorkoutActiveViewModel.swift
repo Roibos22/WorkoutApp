@@ -33,6 +33,7 @@ class WorkoutActiveViewModel: ObservableObject {
     private var backgroundTask: UIBackgroundTaskIdentifier = .invalid
     private var audioPlayer: AVAudioPlayer?
     private let appState: AppState
+    
 
     init(workoutViewModel: WorkoutDetailViewModel, workout: Workout, workoutTimeline: [Activity], appState: AppState) {
         self.workoutViewModel = workoutViewModel
@@ -137,6 +138,7 @@ class WorkoutActiveViewModel: ObservableObject {
     func updateLiveActivity() {
         guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
         print("updated activity")
+        print("new activity: \(currentActivity.title)")
 
         let updatedContentState = WorkoutAttributes.ContentState(
             endTime: Date().addingTimeInterval(TimeInterval(currentActivityTimeLeft)),
@@ -239,7 +241,7 @@ class WorkoutActiveViewModel: ObservableObject {
         currentActivityDurationDone += 0.01
         
         if Int(workoutTimeLeft * 100) % 100 == 0 {
-            updateLiveActivity()
+            // updateLiveActivity()
         }
         
         if appState.soundsEnabled && currentActivityTimeLeft < 3 && !countdownPlayed {

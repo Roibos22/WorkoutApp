@@ -19,37 +19,39 @@ struct WorkoutAttributes: ActivityAttributes {
     var workoutEndTime: Date
 }
 
-struct ActivityInfo: Codable, Hashable {
-    var name: String
-    var duration: TimeInterval
-}
 struct LiveActivityWorkoutLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: WorkoutAttributes.self) { context in
             LiveActivityView(context: context)
+                .activityBackgroundTint(Color.blue)
         } dynamicIsland: { context in
             DynamicIsland {
                 // Expanded UI
                 DynamicIslandExpandedRegion(.leading) {
                     Text(context.state.activitiyName)
+                        .padding(.leading, 5)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text(context.state.activitiyName)
+                    Text(timeString(from: context.state.activityDuration))
+                        .padding(.trailing, 5)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     Text(context.state.activitiyName)
                 }
             } compactLeading: {
                 Text(context.state.activitiyName)
+                    .padding(.leading, 5)
             } compactTrailing: {
-                Text(context.state.activitiyName)
+                Text(timeString(from: context.state.activityDuration))
+                    .padding(.trailing, 5)
             } minimal: {
                 Text(context.state.activitiyName)
             }
+
         }
     }
     
-    func timeString(from timeInterval: TimeInterval) -> String {
+    func timeString(from timeInterval: Double) -> String {
         let minutes = Int(timeInterval) / 60
         let seconds = Int(timeInterval) % 60
         return String(format: "%02d:%02d", minutes, seconds)
