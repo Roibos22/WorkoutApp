@@ -5,6 +5,7 @@
 //  Created by Leon Grimmeisen on 19.08.24.
 //
 
+
 import Foundation
 
 func generateTestData() -> [CompletedWorkout] {
